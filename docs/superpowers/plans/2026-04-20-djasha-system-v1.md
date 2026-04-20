@@ -159,11 +159,13 @@ git commit -m "chore(bootstrap): init Astro 5 with React + MDX"
 - Create: `postcss.config.cjs`, `tailwind.config.cjs`, `src/styles/global.css`, `src/styles/tokens.css`
 - Modify: `src/pages/index.astro`
 
-- [ ] **Step 1: Install deps**
+- [ ] **Step 1: Install deps (pinned to Tailwind 3)**
 
 ```bash
-npm install -D tailwindcss postcss autoprefixer
+npm install -D tailwindcss@^3 postcss autoprefixer
 ```
+
+> Pinned to Tailwind 3.x because the config shape and `@tailwind` directives below assume the v3 API. Tailwind 4 uses CSS-first config (`@theme`, `@import "tailwindcss"`) and is a future upgrade path, not a v1 migration.
 
 - [ ] **Step 2: Create `postcss.config.cjs`**
 
