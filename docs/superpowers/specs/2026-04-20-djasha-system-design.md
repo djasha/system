@@ -37,7 +37,7 @@ Library only. No AI-driven admin editor. Authoring is terminal Claude Code writi
 
 ### Stack
 
-- **Framework:** Astro 5 (`output: 'static'`)
+- **Framework:** Astro 6 (`output: 'static'`) — uses loader-based content collections API
 - **Interactivity:** React islands with Astro hydration directives
 - **Styling:** PostCSS + Tailwind (matches portfolio convention)
 - **Fonts:** Geist Variable (UI), Space Grotesk (display), Geist Mono (code) — all self-hosted via `@fontsource-variable`

@@ -4,9 +4,11 @@
 
 **Goal:** Build v1 of Djasha System — a static AI-native design system library at `system.djasha.me` that lets visitors browse, search, filter, and copy tokens/components/patterns/voice, with live playgrounds and a tabbed copy surface (Preview / Code / Prompt / Bundle).
 
-**Architecture:** Astro 5 static site with React islands, git-only content via Astro content collections, Zod-validated frontmatter, build-time Shiki + Fuse.js + OG images, static JSON API emitted at build, CI-enforced doc coverage + reference integrity. No runtime server.
+**Architecture:** Astro 6 static site with React 19 islands, git-only content via Astro content collections (loader-based API), Zod v4-validated frontmatter, build-time Shiki + Fuse.js + OG images, static JSON API emitted at build, CI-enforced doc coverage + reference integrity. No runtime server.
 
-**Tech Stack:** Astro 5, React 18, Tailwind (PostCSS), TypeScript, Zod, Shiki, Fuse.js, astro-og-canvas, `@fontsource-variable/*`, Vitest (unit), Playwright (smoke), GitHub Actions, Coolify (deploy).
+**Tech Stack:** Astro 6, React 19, Tailwind (PostCSS), TypeScript, Zod v4 (via `astro:content`), Shiki, Fuse.js, astro-og-canvas, `@fontsource-variable/*`, Vitest (unit), Playwright (smoke), GitHub Actions, Coolify (deploy).
+
+> **Note on Astro 6 content collections:** Astro 6 removed the legacy `type: 'content'` / `type: 'data'` shorthand. All collections now require an explicit `loader`. The plan's schemas (Task 1.1) use `glob()` from `astro/loaders`. See Task 1.1 for the corrected shape.
 
 **Source spec:** `docs/superpowers/specs/2026-04-20-djasha-system-design.md`
 
@@ -328,11 +330,13 @@ npm run build && git add . && git commit -m "feat(fonts): add Geist + Space Grot
 npm install fuse.js clsx
 ```
 
-- [ ] **Step 2: Install build-time deps**
+- [ ] **Step 2: Install build-time deps (incl. Astro's type-checker + TypeScript)**
 
 ```bash
-npm install -D vitest @types/node shiki gray-matter astro-og-canvas canvaskit-wasm glob
+npm install -D @astrojs/check typescript vitest @types/node shiki gray-matter astro-og-canvas canvaskit-wasm glob js-yaml @types/js-yaml
 ```
+
+> `@astrojs/check` + `typescript` are required for `npx astro check`. Astro 6 no longer bundles them and will prompt interactively for install without them — which hangs CI. `js-yaml` is used by the reference-integrity script in Task 2.2.
 
 - [ ] **Step 3: Install Playwright**
 
@@ -344,7 +348,7 @@ npx playwright install chromium
 - [ ] **Step 4: Commit**
 
 ```bash
-git add . && git commit -m "chore(deps): add Fuse.js, Vitest, Shiki, Playwright, astro-og-canvas"
+git add . && git commit -m "chore(deps): add Fuse.js, Vitest, Shiki, Playwright, astro-og-canvas, @astrojs/check"
 ```
 
 ---
@@ -369,49 +373,55 @@ export const TOKEN_CATEGORIES = ['color', 'type', 'space', 'radius', 'shadow', '
 export type TokenCategory = typeof TOKEN_CATEGORIES[number];
 ```
 
-- [ ] **Step 2: Create `src/content.config.ts`**
+- [ ] **Step 2: Create `src/content.config.ts` (Astro 6 loader API)**
+
+> Astro 6 removed the legacy `type: 'content'`/`type: 'data'` shorthand. All collections now require an explicit `loader`. We use `glob()` from `astro/loaders` and `generateId` to produce clean slugs from `<slug>.doc.mdx` files.
 
 ```ts
 import { defineCollection, z } from 'astro:content';
+import { glob } from 'astro/loaders';
 import { CATEGORIES, STATUSES, TOKEN_CATEGORIES } from './lib/types';
 
+const componentSchema = z.object({
+  name: z.string(),
+  slug: z.string().optional(),
+  description: z.string(),
+  category: z.enum(CATEGORIES),
+  tags: z.array(z.string()).default([]),
+  tokens_used: z.array(z.string()).default([]),
+  related: z.array(z.string()).default([]),
+  status: z.enum(STATUSES).default('experimental'),
+  source_path: z.string(),
+  a11y_notes: z.string(),
+  created: z.coerce.date(),
+});
+
 const components = defineCollection({
-  type: 'content',
-  schema: z.object({
-    name: z.string(),
-    slug: z.string().optional(),
-    description: z.string(),
-    category: z.enum(CATEGORIES),
-    tags: z.array(z.string()).default([]),
-    tokens_used: z.array(z.string()).default([]),
-    related: z.array(z.string()).default([]),
-    status: z.enum(STATUSES).default('experimental'),
-    source_path: z.string(),
-    a11y_notes: z.string(),
-    created: z.coerce.date(),
+  loader: glob({
+    pattern: '**/*.doc.mdx',
+    base: './src/content/components',
+    generateId: ({ entry }) => entry.replace(/\.doc\.mdx$/, ''),
   }),
+  schema: componentSchema,
 });
 
 const patterns = defineCollection({
-  type: 'content',
-  schema: z.object({
-    name: z.string(),
-    slug: z.string().optional(),
-    description: z.string(),
-    category: z.enum(CATEGORIES),
-    tags: z.array(z.string()).default([]),
-    tokens_used: z.array(z.string()).default([]),
+  loader: glob({
+    pattern: '**/*.doc.mdx',
+    base: './src/content/patterns',
+    generateId: ({ entry }) => entry.replace(/\.doc\.mdx$/, ''),
+  }),
+  schema: componentSchema.extend({
     components_used: z.array(z.string()).default([]),
-    related: z.array(z.string()).default([]),
-    status: z.enum(STATUSES).default('experimental'),
-    source_path: z.string(),
-    a11y_notes: z.string(),
-    created: z.coerce.date(),
   }),
 });
 
 const tokens = defineCollection({
-  type: 'data',
+  loader: glob({
+    pattern: '**/*.yaml',
+    base: './src/content/tokens',
+    generateId: ({ entry }) => entry.replace(/\.yaml$/, ''),
+  }),
   schema: z.object({
     name: z.string(),
     category: z.enum(TOKEN_CATEGORIES),
@@ -423,7 +433,11 @@ const tokens = defineCollection({
 });
 
 const voice = defineCollection({
-  type: 'data',
+  loader: glob({
+    pattern: '**/*.yaml',
+    base: './src/content/voice',
+    generateId: ({ entry }) => entry.replace(/\.yaml$/, ''),
+  }),
   schema: z.object({
     topic: z.string(),
     description: z.string(),
@@ -434,6 +448,8 @@ const voice = defineCollection({
 
 export const collections = { components, patterns, tokens, voice };
 ```
+
+> **Note on entry ids throughout the rest of the plan:** Because `generateId` strips the `.doc.mdx` / `.yaml` suffix, `entry.id` is already the clean slug (`magnetic-button`, not `magnetic-button.doc.mdx`). Later tasks that call `.replace(/\.doc\.mdx$/, '')` on `entry.id` are defensive no-ops and can be left as-is, OR simplified to just use `entry.id` directly — both produce the same value.
 
 - [ ] **Step 3: Verify Astro picks up schemas**
 
