@@ -7,11 +7,15 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "npm run check:all && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "check:docs": "tsx scripts/check-doc-coverage.ts",
+    "check:refs": "tsx scripts/check-reference-integrity.ts",
+    "check:all": "npm run check:docs && npm run check:refs && astro check",
+    "lint": "astro check"
   },
   "dependencies": {
     "@astrojs/mdx": "^5.0.3",
@@ -42,6 +46,7 @@
     "postcss": "^8.5.10",
     "shiki": "^4.0.2",
     "tailwindcss": "^3.4.19",
+    "tsx": "^4.21.0",
     "typescript": "^5.9.3",
     "vitest": "^4.1.4"
   }
