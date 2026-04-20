@@ -1,0 +1,11 @@
+@import './tokens.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { background: var(--color-ink); color: var(--color-bone); -webkit-font-smoothing: antialiased; }
+  body { font-family: 'Geist Variable', system-ui, sans-serif; min-height: 100vh; }
+  ::selection { background: rgba(232, 70, 44, 0.28); color: var(--color-bone); }
+  :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; border-radius: 2px; }
+}

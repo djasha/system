@@ -1,0 +1,15 @@
+---
+import '../styles/global.css';
+interface Props { title: string; description?: string; }
+const { title, description = 'An AI-native design system.' } = Astro.props;
+---
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} — Djasha System</title>
+    <meta name="description" content={description} />
+  </head>
+  <body><slot /></body>
+</html>
