@@ -2,8 +2,14 @@
 import '../styles/global.css';
 import { CommandK } from '../components/chrome/CommandK';
 import Nav from '../components/chrome/Nav.astro';
-interface Props { title: string; description?: string; }
-const { title, description = 'An AI-native design system.' } = Astro.props;
+interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+}
+const { title, description = 'An AI-native design system.', ogImage } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://system.djasha.me').toString();
+const ogImageAbs = ogImage ? new URL(ogImage, Astro.site ?? 'https://system.djasha.me').toString() : undefined;
 ---
 <!doctype html>
 <html lang="en" data-theme="dark">
@@ -12,6 +18,14 @@ const { title, description = 'An AI-native design system.' } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title} — Djasha System</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:title" content={`${title} — Djasha System`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:type" content="website" />
+    {ogImageAbs && <meta property="og:image" content={ogImageAbs} />}
+    <meta name="twitter:card" content={ogImageAbs ? 'summary_large_image' : 'summary'} />
+    {ogImageAbs && <meta name="twitter:image" content={ogImageAbs} />}
     <script is:inline>
       (() => {
         const t = localStorage.getItem('theme') ?? 'system';
