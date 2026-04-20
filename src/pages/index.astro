@@ -1,9 +1,84 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import DocLayout from '../layouts/DocLayout.astro';
+import { getCollection } from 'astro:content';
+
+const components = await getCollection('components');
+const featured = components.slice(0, 4);
+const counts = {
+  components: components.length,
+  tokens: (await getCollection('tokens')).length,
+  patterns: (await getCollection('patterns')).length,
+};
 ---
-<BaseLayout title="Home">
-  <main class="max-w-content mx-auto px-6 py-16">
-    <h1 class="font-display text-5xl tracking-tight">Djasha System</h1>
-    <p class="text-bone/70 mt-4">An AI-native design system.</p>
-  </main>
-</BaseLayout>
+<DocLayout title="Home" description="An AI-native design system.">
+  <section class="pt-12 pb-16">
+    <h1 class="font-display text-6xl md:text-7xl tracking-tight leading-[0.95]">An AI-native design system.</h1>
+    <p class="text-xl text-bone/70 mt-6 max-w-2xl leading-relaxed">Copy code, copy prompts, copy the whole context bundle into Claude Code, Cursor, v0, or Bolt — port any component into your stack in one paste.</p>
+    <div class="mt-8 flex flex-wrap gap-3">
+      <a href="/components" class="px-5 py-2.5 bg-accent text-ink font-mono text-sm rounded-md hover:bg-accent/90 transition-colors">Browse components</a>
+      <a href="/api" class="px-5 py-2.5 border border-bone/20 font-mono text-sm rounded-md hover:border-accent/60 transition-colors">API reference</a>
+    </div>
+  </section>
+
+  <section class="py-12 border-t border-bone/10">
+    <h2 class="font-display text-3xl mb-8">How to use with any AI</h2>
+    <ol class="space-y-6 text-bone/80 max-w-2xl">
+      <li class="flex gap-4">
+        <span class="font-mono text-accent font-semibold shrink-0 w-8">01</span>
+        <div>
+          <p class="font-medium text-bone">Pick a component.</p>
+          <p class="text-sm text-bone/60 mt-1">Browse the grid or hit <code class="font-mono text-xs text-bone/80">⌘K</code> to search.</p>
+        </div>
+      </li>
+      <li class="flex gap-4">
+        <span class="font-mono text-accent font-semibold shrink-0 w-8">02</span>
+        <div>
+          <p class="font-medium text-bone">Copy the Bundle tab.</p>
+          <p class="text-sm text-bone/60 mt-1">One click grabs prompt + resolved tokens + source + a11y — ~1–2KB of pasteable context.</p>
+        </div>
+      </li>
+      <li class="flex gap-4">
+        <span class="font-mono text-accent font-semibold shrink-0 w-8">03</span>
+        <div>
+          <p class="font-medium text-bone">Paste into any agent.</p>
+          <p class="text-sm text-bone/60 mt-1">Claude Code, Cursor, v0, Bolt — the component ports into your stack in one turn.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section class="py-12 border-t border-bone/10">
+    <div class="flex items-baseline justify-between mb-8">
+      <h2 class="font-display text-3xl">Featured</h2>
+      <a href="/components" class="text-sm font-mono text-bone/70 hover:text-accent transition-colors">All {counts.components} components →</a>
+    </div>
+    <div class="grid sm:grid-cols-2 gap-4">
+      {featured.map((c) => (
+        <a href={`/components/${c.id}`} class="block p-5 border border-bone/10 rounded-lg bg-elevated/40 hover:border-accent/60 transition-colors group">
+          <div class="flex justify-between items-start mb-2 gap-3">
+            <h3 class="font-display text-lg group-hover:text-accent transition-colors">{c.data.name}</h3>
+            <span class="text-xs font-mono text-bone/50 uppercase shrink-0">{c.data.category}</span>
+          </div>
+          <p class="text-sm text-bone/70 leading-relaxed">{c.data.description}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12 border-t border-bone/10">
+    <div class="grid sm:grid-cols-3 gap-4 text-center">
+      <a href="/components" class="p-6 border border-bone/10 rounded-lg bg-elevated/40 hover:border-accent/60 transition-colors">
+        <div class="font-display text-4xl">{counts.components}</div>
+        <div class="font-mono text-xs text-bone/50 mt-2 uppercase tracking-wide">Components</div>
+      </a>
+      <a href="/tokens" class="p-6 border border-bone/10 rounded-lg bg-elevated/40 hover:border-accent/60 transition-colors">
+        <div class="font-display text-4xl">{counts.tokens}</div>
+        <div class="font-mono text-xs text-bone/50 mt-2 uppercase tracking-wide">Tokens</div>
+      </a>
+      <a href="/patterns" class="p-6 border border-bone/10 rounded-lg bg-elevated/40 hover:border-accent/60 transition-colors">
+        <div class="font-display text-4xl">{counts.patterns}</div>
+        <div class="font-mono text-xs text-bone/50 mt-2 uppercase tracking-wide">Patterns</div>
+      </a>
+    </div>
+  </section>
+</DocLayout>

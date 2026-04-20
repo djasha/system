@@ -1,0 +1,33 @@
+---
+import DocLayout from '../layouts/DocLayout.astro';
+---
+<DocLayout title="About" description="Why AI-first — the positioning behind Djasha System.">
+  <header class="mb-10">
+    <h1 class="font-display text-5xl tracking-tight">About</h1>
+  </header>
+  <div class="space-y-6 text-bone/80 text-lg leading-relaxed max-w-2xl">
+    <p>Djasha System is a reference library, built so any AI agent can read it.</p>
+    <p>Every component ships three things: a live preview, the source code, and a natural-language prompt you can paste into Claude Code, Cursor, v0, or Bolt. There's also a <strong class="text-bone">full bundle</strong> — prompt plus resolved tokens plus source plus accessibility notes — in one clipboard-ready block.</p>
+    <p>The system is maintained by <a href="https://djasha.me" class="text-accent hover:underline">Diaa Asha</a>. Source on <a href="https://github.com/djasha/system" class="text-accent hover:underline">GitHub</a>.</p>
+  </div>
+
+  <section class="mt-16 pt-10 border-t border-bone/10">
+    <h2 class="font-display text-2xl mb-6">Why another design system?</h2>
+    <div class="space-y-4 text-bone/80 max-w-2xl">
+      <p>Most design systems optimize for human designers and engineers reading docs. Copy the code snippet, translate it to your stack, tweak.</p>
+      <p>AI agents need different inputs. A snippet without tokens is useless; a snippet without the prompt context is missing the "why." Djasha System ships the full package — source, tokens, prompt, a11y — as one paste-ready bundle.</p>
+      <p>It's the same components, presented so agents actually get them right on the first try.</p>
+    </div>
+  </section>
+
+  <section class="mt-16 pt-10 border-t border-bone/10">
+    <h2 class="font-display text-2xl mb-6">Stack</h2>
+    <ul class="space-y-2 text-bone/70 font-mono text-sm">
+      <li>Astro 6, static output, React 19 islands</li>
+      <li>Tailwind 3 via PostCSS, custom design tokens</li>
+      <li>Geist + Space Grotesk + Geist Mono (variable fonts)</li>
+      <li>Shiki for syntax, Fuse.js for search, Zod for schemas</li>
+      <li>Fully build-time — no runtime server, cacheable everywhere</li>
+    </ul>
+  </section>
+</DocLayout>
