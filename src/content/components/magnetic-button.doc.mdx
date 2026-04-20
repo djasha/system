@@ -1,0 +1,29 @@
+---
+name: MagneticButton
+description: Button with cursor-proximity magnetic pull for subtle attention in primary CTAs.
+category: input
+tags: [motion, button, interactive]
+tokens_used: [color.accent, motion.ease-out-quart, motion.duration-base, space.4]
+related: []
+status: stable
+source_path: src/components/MagneticButton.tsx
+a11y_notes: Respects prefers-reduced-motion — pull effect disables. Focus ring uses outline (no transform). Keyboard-activatable via Space/Enter.
+created: 2026-04-20
+---
+
+## Prompt
+
+Build a button component that applies a subtle translation toward the cursor when the cursor enters a small radius around it. Use a configurable pull strength (0–1, default 0.3) and eased duration (default 300ms, ease-out-quart). On mouseleave, the button springs back to center. Respect `prefers-reduced-motion` — disable the pull effect entirely. Primary color accent for focus ring and hover state.
+
+## Usage
+
+- Use for primary CTAs where subtle motion draws the eye without shouting.
+- **Not** for forms, modal buttons, or anywhere users expect clicks at pixel-precise positions.
+- Do not stack multiple MagneticButtons in close proximity — they'll compete for cursor attention.
+
+## Do / Don't
+
+- **Do** pair with `color.accent` for focal CTAs.
+- **Do** respect reduced-motion preferences.
+- **Don't** use for destructive actions — motion suggests playfulness.
+- **Don't** nest inside scrolling containers — pull calculation gets weird.
