@@ -1,25 +1,24 @@
 ---
 import { getCollection } from 'astro:content';
 import DocLayout from '../../layouts/DocLayout.astro';
-import ComponentCard from '../../components/chrome/ComponentCard.astro';
+import { ComponentFilters } from '../../components/chrome/ComponentFilters';
 
 const components = await getCollection('components');
-const sorted = components.sort((a, b) => a.data.name.localeCompare(b.data.name));
+const items = components
+  .sort((a, b) => a.data.name.localeCompare(b.data.name))
+  .map((c) => ({
+    slug: c.id,
+    name: c.data.name,
+    description: c.data.description,
+    category: c.data.category,
+    tags: c.data.tags,
+    tokens_used: c.data.tokens_used,
+  }));
 ---
 <DocLayout title="Components" description="Browse the full component library.">
   <header class="mb-10">
     <h1 class="font-display text-5xl tracking-tight">Components</h1>
-    <p class="text-xl text-bone/70 mt-3">{components.length} component{components.length === 1 ? '' : 's'}. Copy code, prompts, or full bundles into any AI agent.</p>
+    <p class="text-xl text-bone/70 mt-3">{items.length} component{items.length === 1 ? '' : 's'}. Copy code, prompts, or full bundles into any AI agent.</p>
   </header>
-  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-    {sorted.map((c) => (
-      <ComponentCard
-        slug={c.id}
-        name={c.data.name}
-        description={c.data.description}
-        category={c.data.category}
-        tags={c.data.tags}
-      />
-    ))}
-  </div>
+  <ComponentFilters client:idle items={items} />
 </DocLayout>
