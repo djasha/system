@@ -16,6 +16,8 @@ jobs:
       - run: npm ci
       - run: npm run test
       - run: npm run check:all
+      - run: npx tsx scripts/warn-stale-docs.ts
+        continue-on-error: true
       - run: npm run build
       - uses: actions/upload-artifact@v4
         with:
