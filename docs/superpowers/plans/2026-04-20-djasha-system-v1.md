@@ -760,7 +760,7 @@ Create `scripts/check-reference-integrity.ts`:
 import { globSync } from 'glob';
 import matter from 'gray-matter';
 import fs from 'node:fs';
-import yaml from 'node:util';
+import yaml from 'js-yaml';
 
 export interface Entry {
   file: string;
@@ -793,7 +793,7 @@ export async function run(): Promise<number> {
   const tokenFiles = globSync('src/content/tokens/*.yaml');
   const knownTokens = new Set(
     tokenFiles.map((f) => {
-      const parsed = require('js-yaml').load(fs.readFileSync(f, 'utf8')) as { category: string; name: string };
+      const parsed = yaml.load(fs.readFileSync(f, 'utf8')) as { category: string; name: string };
       return `${parsed.category}.${parsed.name}`;
     }),
   );
@@ -827,11 +827,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
 }
 ```
 
-- [ ] **Step 4: Install js-yaml**
-
-```bash
-npm install js-yaml && npm install -D @types/js-yaml
-```
+- [ ] **Step 4: (js-yaml already installed in Task 0.4 — skip)**
 
 - [ ] **Step 5: Run tests**
 
