@@ -1,0 +1,47 @@
+---
+import { getCollection } from 'astro:content';
+import DocLayout from '../../layouts/DocLayout.astro';
+const tokens = await getCollection('tokens');
+const byCategory = tokens.reduce((acc, t) => {
+  (acc[t.data.category] ??= []).push(t);
+  return acc;
+}, {} as Record<string, typeof tokens>);
+const categoryOrder = ['color', 'type', 'space', 'radius', 'shadow', 'motion'];
+const orderedCategories = Object.keys(byCategory).sort((a, b) => {
+  const ai = categoryOrder.indexOf(a);
+  const bi = categoryOrder.indexOf(b);
+  return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi);
+});
+---
+<DocLayout title="Tokens" description="Design tokens — colors, space, motion, radius, shadow, type.">
+  <header class="mb-10">
+    <h1 class="font-display text-5xl tracking-tight">Tokens</h1>
+    <p class="text-xl text-bone/70 mt-3">{tokens.length} token{tokens.length === 1 ? '' : 's'}, grouped by category. Click a token to copy its CSS variable.</p>
+  </header>
+
+  {orderedCategories.map((cat) => (
+    <section class="mb-12">
+      <h2 class="font-display text-2xl mb-5 capitalize">{cat}</h2>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-3">
+        {byCategory[cat].map((t) => (
+          <div id={`${cat}.${t.data.name}`} class="p-4 border border-bone/10 rounded-lg bg-elevated/40 hover:border-accent/60 transition-colors">
+            <div class="flex items-center gap-3 mb-2">
+              {cat === 'color' && (
+                <span class="w-7 h-7 rounded border border-bone/15 shrink-0" style={`background:${t.data.value}`} />
+              )}
+              <span class="font-mono text-sm truncate">{cat}.{t.data.name}</span>
+            </div>
+            <div class="font-mono text-xs text-bone/70 truncate">{t.data.value}</div>
+            <p class="text-xs text-bone/60 mt-2 leading-relaxed">{t.data.description}</p>
+            {t.data.tailwind_class && (
+              <div class="font-mono text-xs text-accent mt-2">{t.data.tailwind_class}</div>
+            )}
+            {t.data.css_var && (
+              <div class="font-mono text-xs text-bone/50 mt-1">var({t.data.css_var})</div>
+            )}
+          </div>
+        ))}
+      </div>
+    </section>
+  ))}
+</DocLayout>
