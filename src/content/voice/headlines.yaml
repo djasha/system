@@ -1,0 +1,11 @@
+topic: Headlines
+description: How to write headings that carry weight without shouting.
+rules:
+  - Write in sentence case, not title case.
+  - Prefer nouns and verbs over adjectives. Remove the first adjective; if the headline still works, remove it.
+  - Keep under 10 words. If you need more words, you need a subhead instead.
+examples:
+  - good: A design system built for AI agents.
+    bad: The incredibly powerful, AI-native, next-generation design system of the future.
+  - good: Ship faster. Ship with taste.
+    bad: We're proud to announce our groundbreaking new initiative.
