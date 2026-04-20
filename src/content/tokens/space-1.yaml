@@ -1,0 +1,5 @@
+name: '1'
+category: space
+value: '0.25rem'
+css_var: '--space-1'
+description: Smallest spacing unit.

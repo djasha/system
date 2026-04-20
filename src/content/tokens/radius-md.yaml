@@ -1,0 +1,5 @@
+name: md
+category: radius
+value: '8px'
+css_var: '--radius-md'
+description: Default border-radius.

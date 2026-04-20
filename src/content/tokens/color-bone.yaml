@@ -1,0 +1,6 @@
+name: bone
+category: color
+value: '#F5F1EC'
+tailwind_class: text-bone / bg-bone
+css_var: '--color-bone'
+description: Body text on dark. Background in light theme.

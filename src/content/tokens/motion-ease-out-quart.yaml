@@ -1,0 +1,5 @@
+name: ease-out-quart
+category: motion
+value: 'cubic-bezier(0.165, 0.84, 0.44, 1)'
+css_var: '--motion-ease-out-quart'
+description: Default easing for outgoing motion.

@@ -1,0 +1,5 @@
+name: '8'
+category: space
+value: '2rem'
+css_var: '--space-8'
+description: Section-gap spacing.

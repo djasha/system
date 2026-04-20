@@ -1,0 +1,6 @@
+name: accent
+category: color
+value: '#E8462C'
+tailwind_class: text-accent / bg-accent
+css_var: '--color-accent'
+description: Primary accent color. Use sparingly for focal points, CTAs, focus rings, and selection.

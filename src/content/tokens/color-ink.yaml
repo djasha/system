@@ -1,0 +1,6 @@
+name: ink
+category: color
+value: '#0A0606'
+tailwind_class: text-ink / bg-ink
+css_var: '--color-ink'
+description: Background / foreground in dark theme. The deep neutral.

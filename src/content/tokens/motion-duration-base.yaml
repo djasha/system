@@ -1,0 +1,5 @@
+name: duration-base
+category: motion
+value: '300ms'
+css_var: '--motion-duration-base'
+description: Base animation duration.

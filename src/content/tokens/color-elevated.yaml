@@ -1,0 +1,6 @@
+name: elevated
+category: color
+value: '#1A1210'
+tailwind_class: text-elevated / bg-elevated
+css_var: '--color-elevated'
+description: Elevated surfaces — cards, tabs, modals.

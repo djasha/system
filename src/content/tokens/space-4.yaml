@@ -1,0 +1,5 @@
+name: '4'
+category: space
+value: '1rem'
+css_var: '--space-4'
+description: Default body-copy spacing.
