@@ -1,0 +1,90 @@
+---
+import { getCollection } from 'astro:content';
+import matter from 'gray-matter';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import DocLayout from '../../layouts/DocLayout.astro';
+import { ComponentTabs } from '../../components/chrome/ComponentTabs';
+import { PlaygroundIsland } from '../../components/chrome/PlaygroundIsland';
+import { MetaRail } from '../../components/chrome/MetaRail';
+import { composeBundle } from '../../lib/bundle';
+import { readSource, languageFromPath, highlightCode } from '../../lib/source-reader';
+
+export async function getStaticPaths() {
+  const patterns = await getCollection('patterns');
+  return patterns.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const slug = entry.id;
+
+const rawPath = path.resolve(process.cwd(), `src/content/patterns/${slug}.doc.mdx`);
+const raw = await fs.readFile(rawPath, 'utf8');
+const { content: body } = matter(raw);
+const extract = (h: string) =>
+  body.match(new RegExp(`##\\s+${h}\\s*\\n([\\s\\S]*?)(?=\\n##\\s|$)`, 'i'))?.[1].trim() ?? '';
+const promptBody = extract('Prompt');
+const usageBody = extract('Usage');
+const doDontBody = extract("Do / Don't");
+
+const tokenCollection = await getCollection('tokens');
+const tokenMap = new Map(tokenCollection.map((t) => [`${t.data.category}.${t.data.name}`, t.data]));
+const tokens = entry.data.tokens_used.map((s: string) => ({ slug: s, value: tokenMap.get(s)?.value ?? '(unresolved)' }));
+
+const componentCollection = await getCollection('components');
+const componentMap = new Map(componentCollection.map((c) => [c.id, c.data]));
+const related = entry.data.related.map((s: string) => ({ slug: s, name: componentMap.get(s)?.name }));
+
+const sourceCode = await readSource(entry.data.source_path);
+const sourceLang = languageFromPath(entry.data.source_path);
+const sourceHtml = await highlightCode(sourceCode, sourceLang);
+
+const bundle = composeBundle({
+  name: entry.data.name,
+  description: entry.data.description,
+  promptBody,
+  usageBody,
+  tokens,
+  a11yNotes: entry.data.a11y_notes,
+  sourcePath: entry.data.source_path,
+  sourceCode,
+  sourceLanguage: sourceLang,
+});
+---
+<DocLayout title={entry.data.name} description={entry.data.description}>
+  <header class="mb-10">
+    <h1 class="font-display text-5xl tracking-tight">{entry.data.name}</h1>
+    <p class="text-xl text-bone/70 mt-3 max-w-2xl">{entry.data.description}</p>
+    <div class="mt-4 flex flex-wrap gap-2 text-xs font-mono text-bone/50">
+      <span class="px-2 py-0.5 border border-bone/15 rounded">{entry.data.status}</span>
+      <span class="px-2 py-0.5 border border-bone/15 rounded">pattern</span>
+      {entry.data.tags.map((t: string) => <span class="px-2 py-0.5 border border-bone/15 rounded">#{t}</span>)}
+    </div>
+  </header>
+
+  <section class="mb-12">
+    <h2 class="sr-only">Live playground</h2>
+    <PlaygroundIsland client:load slug={slug} />
+  </section>
+
+  <ComponentTabs client:idle slug={slug} sourceHtml={sourceHtml} promptBody={promptBody} bundle={bundle} />
+
+  <aside class="mt-12 grid md:grid-cols-[1fr_260px] gap-10">
+    <section>
+      <h2 class="font-display text-2xl mb-3">Usage</h2>
+      <div class="text-bone/80 whitespace-pre-wrap">{usageBody}</div>
+      {doDontBody && (
+        <>
+          <h2 class="font-display text-2xl mt-8 mb-3">Do / Don't</h2>
+          <div class="text-bone/80 whitespace-pre-wrap">{doDontBody}</div>
+        </>
+      )}
+    </section>
+    <MetaRail
+      tokens={tokens}
+      related={related}
+      a11yNotes={entry.data.a11y_notes}
+      sourcePath={entry.data.source_path}
+    />
+  </aside>
+</DocLayout>

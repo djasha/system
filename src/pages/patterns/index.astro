@@ -1,0 +1,30 @@
+---
+import { getCollection } from 'astro:content';
+import DocLayout from '../../layouts/DocLayout.astro';
+const patterns = await getCollection('patterns');
+const sorted = patterns.sort((a, b) => a.data.name.localeCompare(b.data.name));
+---
+<DocLayout title="Patterns" description="Higher-order composition of components into editorial patterns.">
+  <header class="mb-10">
+    <h1 class="font-display text-5xl tracking-tight">Patterns</h1>
+    <p class="text-xl text-bone/70 mt-3">{patterns.length} pattern{patterns.length === 1 ? '' : 's'}. Compositions of components into higher-order primitives — editorial hero, case-study body, filterable work grid.</p>
+  </header>
+  {patterns.length === 0 ? (
+    <div class="p-8 border border-dashed border-bone/15 rounded-lg text-center">
+      <p class="text-bone/60">No patterns yet.</p>
+      <p class="text-sm text-bone/40 mt-2 font-mono">Patterns arrive in Phase 8 — editorial hero, case-study body, filterable work grid.</p>
+    </div>
+  ) : (
+    <div class="grid sm:grid-cols-2 gap-4">
+      {sorted.map((p) => (
+        <a href={`/patterns/${p.id}`} class="block p-5 border border-bone/10 rounded-lg bg-elevated/40 hover:border-accent/60 transition-colors group">
+          <div class="flex justify-between items-start mb-2 gap-3">
+            <h3 class="font-display text-lg group-hover:text-accent transition-colors">{p.data.name}</h3>
+            <span class="text-xs font-mono text-bone/50 uppercase shrink-0">{p.data.category}</span>
+          </div>
+          <p class="text-sm text-bone/70 leading-relaxed">{p.data.description}</p>
+        </a>
+      ))}
+    </div>
+  )}
+</DocLayout>
