@@ -15,7 +15,7 @@ export function findMissingDocs(componentNames: string[], docSlugs: string[]): s
 
 export async function run(): Promise<number> {
   const sourceFiles = globSync('src/components/*.{tsx,astro}', { cwd: process.cwd() })
-    .filter((f) => !/\.(playground|preview)\.tsx$/.test(f));
+    .filter((f) => !/\.(playground|preview)\.(tsx|astro)$/.test(f));
   const componentNames = sourceFiles.map((f) => path.basename(f).replace(/\.(tsx|astro)$/, ''));
 
   const docFiles = globSync('src/content/components/*.doc.mdx', { cwd: process.cwd() });
