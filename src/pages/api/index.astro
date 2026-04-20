@@ -1,0 +1,41 @@
+---
+import DocLayout from '../../layouts/DocLayout.astro';
+
+const endpoints = [
+  { method: 'GET', path: '/api/index.json', desc: 'Full manifest — components, patterns, tokens, voice with summary fields and counts.' },
+  { method: 'GET', path: '/api/components/<slug>.json', desc: 'Full component record: metadata, resolved tokens, related, source code.' },
+  { method: 'GET', path: '/api/patterns/<slug>.json', desc: 'Pattern record, plus resolved components_used.' },
+  { method: 'GET', path: '/bundles/<slug>.md', desc: 'Copy-paste markdown bundle. Paste into any AI agent.' },
+  { method: 'GET', path: '/tokens.json', desc: 'All tokens keyed by <category>.<name>.' },
+  { method: 'GET', path: '/search-index.json', desc: 'Fuzzy-search index (Fuse.js shape).' },
+];
+---
+<DocLayout title="API" description="Static endpoints emitted at build. Safe to curl, cacheable, AI-agent-ready.">
+  <header class="mb-10">
+    <h1 class="font-display text-5xl tracking-tight">API</h1>
+    <p class="text-xl text-bone/70 mt-3 max-w-2xl">Static endpoints emitted at build. All responses are cacheable and safe to curl.</p>
+  </header>
+
+  <section class="space-y-3 mb-12">
+    {endpoints.map(({ method, path, desc }) => (
+      <div class="p-4 border border-bone/10 rounded-lg bg-elevated/40">
+        <div class="flex items-baseline gap-3 mb-1">
+          <span class="font-mono text-xs text-accent font-semibold">{method}</span>
+          <code class="font-mono text-sm">{path}</code>
+        </div>
+        <p class="text-sm text-bone/70 leading-relaxed">{desc}</p>
+      </div>
+    ))}
+  </section>
+
+  <section class="mb-12">
+    <h2 class="font-display text-2xl mb-3">Example</h2>
+    <p class="text-bone/70 mb-4">Grab a component's full context bundle and pipe it straight into your clipboard:</p>
+    <pre class="font-mono text-sm bg-elevated p-4 rounded-md border border-bone/10 overflow-auto"><code>curl -s https://system.djasha.me/bundles/magnetic-button.md | pbcopy</code></pre>
+  </section>
+
+  <section>
+    <h2 class="font-display text-2xl mb-3">Stability</h2>
+    <p class="text-bone/70 leading-relaxed max-w-2xl">These endpoint shapes are frozen for v1. Phase 2 will add authenticated POST endpoints via the Payload admin — existing GET shapes will remain backward-compatible.</p>
+  </section>
+</DocLayout>
