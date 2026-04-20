@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { CommandK } from '../components/chrome/CommandK';
 interface Props { title: string; description?: string; }
 const { title, description = 'An AI-native design system.' } = Astro.props;
 ---
@@ -11,5 +12,8 @@ const { title, description = 'An AI-native design system.' } = Astro.props;
     <title>{title} — Djasha System</title>
     <meta name="description" content={description} />
   </head>
-  <body><slot /></body>
+  <body>
+    <slot />
+    <CommandK client:idle />
+  </body>
 </html>
