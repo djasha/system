@@ -1,5 +1,5 @@
 import { useRef, type MouseEvent, type ReactNode } from 'react';
-import { motion, useMotionValue, useSpring } from 'motion/react';
+import { motion, useMotionValue, useSpring, useReducedMotion } from 'motion/react';
 
 export interface MagneticButtonProps {
   children: ReactNode;
@@ -21,6 +21,7 @@ export function MagneticButton({
   onClick,
 }: MagneticButtonProps) {
   const ref = useRef<HTMLDivElement>(null);
+  const reduced = useReducedMotion();
 
   const stiffness = Math.max(50, 600 - durationMs * 0.9);
   const damping = Math.max(10, 30 - durationMs * 0.01);
@@ -30,6 +31,7 @@ export function MagneticButton({
   const y = useSpring(useMotionValue(0), springConfig);
 
   const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
+    if (reduced) return;
     const el = ref.current;
     if (!el) return;
     const rect = el.getBoundingClientRect();

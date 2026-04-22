@@ -1,5 +1,5 @@
 import { useRef, useState, type MouseEvent } from 'react';
-import { motion, useMotionValue, useSpring } from 'motion/react';
+import { motion, useMotionValue, useSpring, useReducedMotion } from 'motion/react';
 
 export interface TiltCardProps {
   children: React.ReactNode;
@@ -13,6 +13,7 @@ const springConfig = { stiffness: 200, damping: 20 };
 export function TiltCard({ children, maxTiltDeg = 10, perspective = 800, className }: TiltCardProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [hovering, setHovering] = useState(false);
+  const reduced = useReducedMotion();
 
   const rotateX = useSpring(useMotionValue(0), springConfig);
   const rotateY = useSpring(useMotionValue(0), springConfig);
@@ -20,6 +21,7 @@ export function TiltCard({ children, maxTiltDeg = 10, perspective = 800, classNa
   const glowY = useMotionValue(50);
 
   function handleMouseMove(e: MouseEvent<HTMLDivElement>) {
+    if (reduced) return;
     const el = ref.current;
     if (!el) return;
 

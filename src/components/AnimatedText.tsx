@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion, useReducedMotion } from 'motion/react';
 
 export interface AnimatedTextProps {
   text: string;
@@ -17,6 +17,7 @@ export function AnimatedText({
   className,
   as: Tag = 'p',
 }: AnimatedTextProps) {
+  const reduced = useReducedMotion();
   const words = text.split(' ');
   const MotionTag = motion.create(Tag);
 
@@ -29,10 +30,10 @@ export function AnimatedText({
         <span key={i} style={{ overflow: 'hidden', display: 'inline-block' }}>
           <motion.span
             style={{ display: 'inline-block' }}
-            initial={{ opacity: 0, y: '100%' }}
+            initial={reduced ? { opacity: 1, y: '0%' } : { opacity: 0, y: '100%' }}
             whileInView={{ opacity: 1, y: '0%' }}
             viewport={{ once: true, margin: '-50px' }}
-            transition={{
+            transition={reduced ? { duration: 0 } : {
               duration,
               ease,
               delay: i * stagger,
