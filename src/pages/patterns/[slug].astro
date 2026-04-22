@@ -51,7 +51,7 @@ const bundle = composeBundle({
   sourceLanguage: sourceLang,
 });
 ---
-<DocLayout title={entry.data.name} description={entry.data.description}>
+<DocLayout title={entry.data.name} description={entry.data.description} ogImage={`/og/${slug}.png`}>
   <header class="mb-10">
     <h1 class="font-display text-5xl tracking-tight">{entry.data.name}</h1>
     <p class="text-xl text-bone/70 mt-3 max-w-2xl">{entry.data.description}</p>
