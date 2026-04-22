@@ -1,0 +1,30 @@
+---
+name: TiltCard
+description: Card with 3D perspective tilt that follows the cursor.
+category: display
+tags: [motion, hover, interactive]
+tokens_used: [motion.ease-out-quart, motion.duration-base, radius.md]
+related: []
+status: stable
+source_path: src/components/TiltCard.tsx
+a11y_notes: Respects prefers-reduced-motion — tilt effect disables. Hover-only, doesn't interfere with keyboard navigation.
+created: 2026-04-22
+---
+
+## Prompt
+
+Build a card component with a 3D tilt effect that follows the cursor. Use CSS perspective (default 800px) and compute rotateX/rotateY from cursor position relative to card center. Max tilt 10deg by default, configurable. Spring-animate the rotation back to center on mouseleave. Respect prefers-reduced-motion.
+
+## Usage
+
+Use for featured cards, hero content, or any grid where you want a subtle liveliness without overdoing motion. Works best on larger card surfaces where the tilt arc is perceptible but not disorienting.
+
+- **Not** for small icon buttons or tight list items — the effect reads as jitter below ~200px width.
+- **Not** inside scrolling containers where the user's cursor sweeps the card quickly.
+
+## Do / Don't
+
+- **Do** keep `maxTiltDeg` at 10° or below for readability — text shifts noticeably past 15°.
+- **Do** pair with a subtle border and elevated background so the 3D lift has contrast.
+- **Don't** stack multiple TiltCards in a tight grid — competing tilts look chaotic.
+- **Don't** put interactive inputs inside a TiltCard — the perspective transform makes focus rings appear to float.

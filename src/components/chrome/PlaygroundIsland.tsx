@@ -7,6 +7,10 @@ const registry: Record<string, { loadConfig: () => Promise<any>; loadDemo: () =>
     loadConfig: () => import('../MagneticButton.playground'),
     loadDemo: () => import('../MagneticButton.preview'),
   },
+  'tilt-card': {
+    loadConfig: () => import('../TiltCard.playground'),
+    loadDemo: () => import('../TiltCard.preview'),
+  },
 };
 
 function PlaygroundAsync({ configPromise, Demo }: { configPromise: Promise<any>; Demo: any }) {
