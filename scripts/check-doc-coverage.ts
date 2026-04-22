@@ -1,12 +1,7 @@
 import { globSync } from 'glob';
 import path from 'node:path';
-
-export function slugify(componentName: string): string {
-  return componentName
-    .replace(/([A-Z]+)([A-Z][a-z])/g, '$1-$2')
-    .replace(/([a-z0-9])([A-Z])/g, '$1-$2')
-    .toLowerCase();
-}
+import { slugify } from './utils';
+export { slugify };  // maintain existing import path for backwards compat
 
 export function findMissingDocs(componentNames: string[], docSlugs: string[]): string[] {
   const docSet = new Set(docSlugs);

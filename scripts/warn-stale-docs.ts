@@ -1,16 +1,13 @@
 import { execSync } from 'node:child_process';
 import { globSync } from 'glob';
 import path from 'node:path';
+import { slugify } from './utils';
 
 function lastCommitTimestamp(file: string): number {
   try {
     const out = execSync(`git log -1 --format=%ct -- "${file}"`, { encoding: 'utf8' }).trim();
     return out ? Number(out) * 1000 : 0;
   } catch { return 0; }
-}
-
-function slugify(name: string): string {
-  return name.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase();
 }
 
 const WINDOW_DAYS = 30;

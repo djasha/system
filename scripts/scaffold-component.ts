@@ -1,17 +1,10 @@
 import fs from 'node:fs';
+import { slugify } from './utils';
 
 const name = process.argv[2];
 if (!name) {
   console.error('Usage: npx tsx scripts/scaffold-component.ts <ComponentName>');
   process.exit(1);
-}
-
-// Handle both PascalCase and camelCase; insert hyphens before consecutive-uppercase boundaries too.
-function slugify(s: string): string {
-  return s
-    .replace(/([A-Z]+)([A-Z][a-z])/g, '$1-$2')
-    .replace(/([a-z0-9])([A-Z])/g, '$1-$2')
-    .toLowerCase();
 }
 
 const slug = slugify(name);
