@@ -1,0 +1,31 @@
+---
+name: CharacterReveal
+description: Character-by-character text reveal with spring-animated masking.
+category: motion
+tags: [motion, text, reveal, masking]
+tokens_used: [motion.ease-out-quart, motion.duration-base]
+related: [animated-text]
+status: stable
+source_path: src/components/CharacterReveal.tsx
+a11y_notes: Respects prefers-reduced-motion — renders text statically when enabled. Screen readers read the complete string; the per-character animation is purely visual and does not affect semantics.
+created: 2026-04-22
+---
+
+## Prompt
+
+Build a text reveal component that animates each character individually from a masked state to visible, with a small vertical translation. Use motion/react. Configurable stagger (default 0.02s) and duration (default 0.4s). Render as inline-block spans so the text wraps naturally. Respect prefers-reduced-motion.
+
+## Usage
+
+Use for short, high-impact strings like hero headlines, section titles, or display quotes where you want maximum cinematic entrance. The per-character animation draws the eye across the entire word before it resolves.
+
+- Keep strings under ~30 characters — longer text produces a noticeably slow tail.
+- The default 0.02s stagger is tuned for 5–15 character strings; increase to 0.03s for shorter text, decrease to 0.015s for longer.
+- **Not** for body copy or multi-sentence content — use AnimatedText (word-level) instead.
+
+## Do / Don't
+
+- **Do** use for 1–5 word hero phrases where every character counts.
+- **Do** pair with a high-contrast background — the reveal direction (bottom-up) needs visual separation.
+- **Don't** use inside flowing prose — per-character animation breaks reading rhythm.
+- **Don't** set stagger above 0.05s for strings longer than 8 characters — the last character arrives too late.

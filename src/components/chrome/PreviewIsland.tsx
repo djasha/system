@@ -4,6 +4,7 @@ const registry: Record<string, () => Promise<any>> = {
   'magnetic-button': () => import('../MagneticButton.preview'),
   'tilt-card': () => import('../TiltCard.preview'),
   'animated-text': () => import('../AnimatedText.preview'),
+  'character-reveal': () => import('../CharacterReveal.preview'),
 };
 
 export function PreviewIsland({ slug }: { slug: string }) {
