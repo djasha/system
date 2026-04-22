@@ -1,0 +1,41 @@
+:80 {
+    root * /usr/share/caddy
+    encode gzip zstd
+    file_server
+
+    # SPA-style fallback for 404s (static site has no SPA routing but helps with typos)
+    @notFound {
+        not file
+        not path /api/* /bundles/* /og/*
+    }
+    rewrite @notFound /404.html
+
+    # Cache static assets aggressively
+    @assets {
+        path /_astro/*
+    }
+    header @assets Cache-Control "public, max-age=31536000, immutable"
+
+    # JSON endpoints: short cache, respect downstream revalidation
+    @json {
+        path *.json
+    }
+    header @json Cache-Control "public, max-age=300, must-revalidate"
+
+    # OG images: medium cache
+    @og {
+        path /og/*
+    }
+    header @og Cache-Control "public, max-age=86400"
+
+    # Default: no cache for HTML (rebuilds change content)
+    header /*.html Cache-Control "public, max-age=0, must-revalidate"
+
+    # Security headers
+    header {
+        X-Content-Type-Options "nosniff"
+        X-Frame-Options "DENY"
+        Referrer-Policy "strict-origin-when-cross-origin"
+        Permissions-Policy "camera=(), microphone=(), geolocation=()"
+    }
+}
