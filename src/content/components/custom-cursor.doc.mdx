@@ -1,0 +1,29 @@
+---
+name: CustomCursor
+description: Custom branded cursor replacement with smooth trailing motion.
+category: overlay
+tags: [cursor, motion, branding]
+tokens_used: [color.accent, motion.duration-base]
+related: []
+status: stable
+source_path: src/components/CustomCursor.tsx
+a11y_notes: Disabled on touch devices (doesn't mount on pointer:coarse). Falls back to native cursor if prefers-reduced-motion. Does not hide the native cursor on hover-interactive elements like inputs. Cleans up all event listeners and the global CSS class on unmount.
+created: 2026-04-22
+---
+
+## Prompt
+
+Build a custom cursor component that replaces the default pointer. A small dot tracks the cursor instantly, and a larger outline ring trails with a slight lerp delay. Hide on touch devices. Respect prefers-reduced-motion — ring snaps rather than lerps. Accept props for color, dot size, and trail size. Clean up all DOM mutations (class, listeners) on unmount.
+
+## Usage
+
+Mount at the app root so it's active sitewide. In the Djasha System playground it applies globally for the duration of the preview — this is intentional and expected.
+
+Use on brand-forward sites where cursor personality adds to the experience. Not for utility apps or sites with lots of precise click targets.
+
+## Do / Don't
+
+- **Do** mount exactly once, at the layout root.
+- **Do** test with keyboard navigation — the cursor hides on mouse leave and respects focus order.
+- **Don't** use on sites with heavy form use — even though native cursor is restored on inputs, the overlay can feel distracting.
+- **Don't** stack multiple `<CustomCursor>` instances — they'll fight over the global class.

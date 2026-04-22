@@ -23,6 +23,10 @@ const registry: Record<string, { loadConfig: () => Promise<any>; loadDemo: () =>
     loadConfig: () => import('../ScrollMarquee.playground'),
     loadDemo: () => import('../ScrollMarquee.preview'),
   },
+  'custom-cursor': {
+    loadConfig: () => import('../CustomCursor.playground'),
+    loadDemo: () => import('../CustomCursor.preview'),
+  },
 };
 
 function PlaygroundAsync({ configPromise, Demo }: { configPromise: Promise<any>; Demo: any }) {
