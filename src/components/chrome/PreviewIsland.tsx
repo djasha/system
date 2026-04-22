@@ -5,6 +5,7 @@ const registry: Record<string, () => Promise<any>> = {
   'tilt-card': () => import('../TiltCard.preview'),
   'animated-text': () => import('../AnimatedText.preview'),
   'character-reveal': () => import('../CharacterReveal.preview'),
+  'scroll-marquee': () => import('../ScrollMarquee.preview'),
 };
 
 export function PreviewIsland({ slug }: { slug: string }) {

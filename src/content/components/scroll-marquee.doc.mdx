@@ -1,0 +1,27 @@
+---
+name: ScrollMarquee
+description: Horizontally-scrolling marquee for announcements, brand ribbons, or feature tickers.
+category: display
+tags: [motion, marquee, infinite-scroll]
+tokens_used: [motion.ease-out-quart, motion.duration-base]
+related: []
+status: stable
+source_path: src/components/ScrollMarquee.tsx
+a11y_notes: Respects prefers-reduced-motion — animation disables. Pauses on hover and on keyboard focus. Use aria-label on the wrapper to describe contents.
+created: 2026-04-22
+---
+
+## Prompt
+
+Build a horizontal marquee component that scrolls its children continuously. Configurable speed in pixels per second (default 50), direction (left/right, default left), and pause-on-hover (default true). Duplicate the content to create seamless looping. Use CSS animation with a transform: translateX and duration derived from content width / speed. Respect prefers-reduced-motion — pause or disable. Ensure keyboard focus also pauses the animation for a11y.
+
+## Usage
+
+Use for brand logo ribbons, tool tickers on landing pages, or announcement bars where the horizontal motion adds energy.
+
+## Do / Don't
+
+- **Do** provide an `aria-label` on the wrapping element describing the marquee's purpose.
+- **Do** set a comfortable `speed` — values above 120 px/s are hard to read.
+- **Don't** put interactive elements inside the marquee; focus management becomes problematic.
+- **Don't** use on pages with lots of text-heavy content — it competes for attention.

@@ -19,6 +19,10 @@ const registry: Record<string, { loadConfig: () => Promise<any>; loadDemo: () =>
     loadConfig: () => import('../CharacterReveal.playground'),
     loadDemo: () => import('../CharacterReveal.preview'),
   },
+  'scroll-marquee': {
+    loadConfig: () => import('../ScrollMarquee.playground'),
+    loadDemo: () => import('../ScrollMarquee.preview'),
+  },
 };
 
 function PlaygroundAsync({ configPromise, Demo }: { configPromise: Promise<any>; Demo: any }) {
