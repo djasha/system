@@ -8,6 +8,7 @@ const registry: Record<string, () => Promise<any>> = {
   'scroll-marquee': () => import('../ScrollMarquee.preview'),
   'custom-cursor': () => import('../CustomCursor.preview'),
   'stacking-cards': () => import('../StackingCards.preview'),
+  'parallax-image': () => import('../ParallaxImage.preview'),
 };
 
 export function PreviewIsland({ slug }: { slug: string }) {

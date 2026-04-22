@@ -1,0 +1,27 @@
+---
+name: ParallaxImage
+description: Image that translates at a fraction of the scroll speed for depth.
+category: display
+tags: [scroll, motion, image]
+tokens_used: [motion.ease-out-quart]
+related: []
+status: stable
+source_path: src/components/ParallaxImage.tsx
+a11y_notes: Respects prefers-reduced-motion — image renders statically. Always provide alt text. Image is wrapped in a container with overflow:hidden to prevent layout shift.
+created: 2026-04-22
+---
+
+## Prompt
+
+Build a parallax image component. The image translates vertically at a configurable fraction of the scroll speed (default 0.5). Use framer-motion `useScroll` + `useTransform` targeting the component's own element with `offset: ['start end', 'end start']`. The image height is expanded by `speed × 48%` to prevent clipping. Configurable speed multiplier. Always requires alt text for a11y. Respect prefers-reduced-motion.
+
+## Usage
+
+Use for hero images, project covers, or decorative imagery where a subtle depth effect adds visual richness as users scroll. Works best with tall images or images with a clear subject in the center.
+
+## Do / Don't
+
+- **Do** always provide meaningful `alt` text — the image is real content.
+- **Do** set `speed` between 0.2 and 0.8 for subtle effects; values above 1 are dramatic.
+- **Don't** use inside `overflow: hidden` parent containers — the scroll tracking breaks.
+- **Don't** use for images with critical edge content — parallax clips the edges.

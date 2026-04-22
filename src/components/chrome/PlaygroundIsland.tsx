@@ -31,6 +31,10 @@ const registry: Record<string, { loadConfig: () => Promise<any>; loadDemo: () =>
     loadConfig: () => import('../StackingCards.playground'),
     loadDemo: () => import('../StackingCards.preview'),
   },
+  'parallax-image': {
+    loadConfig: () => import('../ParallaxImage.playground'),
+    loadDemo: () => import('../ParallaxImage.preview'),
+  },
 };
 
 function PlaygroundAsync({ configPromise, Demo }: { configPromise: Promise<any>; Demo: any }) {
