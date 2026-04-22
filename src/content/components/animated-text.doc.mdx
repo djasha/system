@@ -1,0 +1,31 @@
+---
+name: AnimatedText
+description: Word-by-word or character-by-character staggered text reveal.
+category: motion
+tags: [motion, text, reveal]
+tokens_used: [motion.ease-out-quart, motion.duration-base]
+related: []
+status: stable
+source_path: src/components/AnimatedText.tsx
+a11y_notes: Respects prefers-reduced-motion — renders text statically when enabled. Screen readers read the complete text; animation is purely visual.
+created: 2026-04-22
+---
+
+## Prompt
+
+Build a text component that reveals words in sequence with a configurable stagger delay. Each word fades in and translates upward slightly. Use motion/react's stagger feature. Default stagger 0.05s, duration 0.6s per word. Support semantic as= prop (h1/h2/p/span). Respect prefers-reduced-motion — disable animation if set.
+
+## Usage
+
+Use to give headings and body copy a deliberate entrance. Especially effective on hero sections and section intros where you want to control reading pace.
+
+- Use `as="h1"` or `as="h2"` to preserve semantic heading hierarchy — the animation wraps the element, not a div.
+- Keep stagger under 0.08s for sentences longer than 6 words — longer stagger makes the end of a sentence feel like it's loading.
+- **Not** for dynamic content that updates frequently — the animation fires once via IntersectionObserver.
+
+## Do / Don't
+
+- **Do** use `as=` to match the correct semantic element — headings should remain headings.
+- **Do** use lower stagger values (0.03–0.05s) for prose; higher (0.08s) only for 2–3 word phrases.
+- **Don't** animate full paragraphs word-by-word — use AnimatedText for headings, static text for body copy.
+- **Don't** stack multiple AnimatedText blocks that animate simultaneously — they'll compete for attention.

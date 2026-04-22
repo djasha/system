@@ -11,6 +11,10 @@ const registry: Record<string, { loadConfig: () => Promise<any>; loadDemo: () =>
     loadConfig: () => import('../TiltCard.playground'),
     loadDemo: () => import('../TiltCard.preview'),
   },
+  'animated-text': {
+    loadConfig: () => import('../AnimatedText.playground'),
+    loadDemo: () => import('../AnimatedText.preview'),
+  },
 };
 
 function PlaygroundAsync({ configPromise, Demo }: { configPromise: Promise<any>; Demo: any }) {
