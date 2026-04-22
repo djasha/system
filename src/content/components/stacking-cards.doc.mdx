@@ -1,0 +1,29 @@
+---
+name: StackingCards
+description: Scroll-pinned stack of cards that layer on top of each other as the user scrolls.
+category: layout
+tags: [scroll, motion, layout]
+tokens_used: [motion.ease-out-quart, radius.md, space.8]
+related: []
+status: stable
+source_path: src/components/StackingCards.tsx
+a11y_notes: Respects prefers-reduced-motion — cards render stacked vertically without pinning. All cards are in DOM order so screen readers read them sequentially.
+created: 2026-04-22
+---
+
+## Prompt
+
+Build a scroll-pinned stacking cards component. Cards enter from the bottom and pin in place as the user scrolls, stacking above each other with a slight offset. Uses CSS `position: sticky` with progressively higher `top` values per card, and IntersectionObserver for entrance animations. Configurable sticky behavior. Respect prefers-reduced-motion — render as a simple vertical list when enabled.
+
+## Usage
+
+Use for process steps, feature lists, or any sequential content where the "piling up" metaphor reinforces hierarchy. Works best inside a sufficiently tall container so the scroll effect has room to play out.
+
+The sticky effect requires the component to be embedded in a real scrolling layout. The playground preview shows the static layout — embed in a page to see the pinned effect.
+
+## Do / Don't
+
+- **Do** give each card a meaningful `title` and `body` — the layout is text-first.
+- **Do** keep the card count to 3–6 — more cards break the visual hierarchy.
+- **Don't** nest inside `overflow: hidden` containers — sticky positioning breaks.
+- **Don't** use for interactive content (forms, accordions) — the stacking creates confusing z-order.

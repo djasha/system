@@ -27,6 +27,10 @@ const registry: Record<string, { loadConfig: () => Promise<any>; loadDemo: () =>
     loadConfig: () => import('../CustomCursor.playground'),
     loadDemo: () => import('../CustomCursor.preview'),
   },
+  'stacking-cards': {
+    loadConfig: () => import('../StackingCards.playground'),
+    loadDemo: () => import('../StackingCards.preview'),
+  },
 };
 
 function PlaygroundAsync({ configPromise, Demo }: { configPromise: Promise<any>; Demo: any }) {
