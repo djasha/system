@@ -15,7 +15,8 @@
     "check:docs": "tsx scripts/check-doc-coverage.ts",
     "check:refs": "tsx scripts/check-reference-integrity.ts",
     "check:all": "npm run check:docs && npm run check:refs && astro check",
-    "lint": "astro check"
+    "lint": "astro check",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "@astrojs/mdx": "^5.0.3",
