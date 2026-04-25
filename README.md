@@ -9,6 +9,14 @@
 
 A standalone static design system library. Not another shadcn clone — the differentiator is **built for AI-agent consumption**. Every component ships a natural-language prompt and a full-context bundle (tokens + source + a11y) that any AI agent (Claude Code, Cursor, v0, Bolt) can paste in one shot to port into a target stack.
 
+## What's in v1
+
+- **8 components** — AnimatedText, CharacterReveal, CustomCursor, MagneticButton, ParallaxImage, ScrollMarquee, StackingCards, TiltCard
+- **Public JSON API** at `/api/index.json` — full manifest, no auth, CORS-open
+- **AI-native bundles** at `/bundles/<slug>.md` — tokens + source + a11y notes in one paste-ready file
+- **Command-K search** powered by Fuse.js across components, props, and prompts
+- **Per-component OG images** auto-generated via astro-og-canvas
+
 ## Quick start
 
 Browse the library at https://djasha-system.vercel.app.
