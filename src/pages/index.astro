@@ -1,6 +1,7 @@
 ---
 import DocLayout from '../layouts/DocLayout.astro';
 import { getCollection } from 'astro:content';
+import { jsonLdForWebsite } from '../lib/jsonld';
 
 const components = await getCollection('components');
 const featured = components.slice(0, 4);
@@ -9,8 +10,9 @@ const counts = {
   tokens: (await getCollection('tokens')).length,
   patterns: (await getCollection('patterns')).length,
 };
+const jsonLd = jsonLdForWebsite({ url: 'https://system.djasha.me' });
 ---
-<DocLayout title="Home" description="An AI-native design system.">
+<DocLayout title="Home" description="An AI-native design system." jsonLd={jsonLd}>
   <section class="pt-12 pb-16">
     <h1 class="font-display text-6xl md:text-7xl tracking-tight leading-[0.95]">An AI-native design system.</h1>
     <p class="text-xl text-bone/70 mt-6 max-w-2xl leading-relaxed">Copy code, copy prompts, copy the whole context bundle into Claude Code, Cursor, v0, or Bolt — port any component into your stack in one paste.</p>

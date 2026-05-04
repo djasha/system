@@ -6,10 +6,12 @@ interface Props {
   title: string;
   description?: string;
   ogImage?: string;
+  jsonLd?: object | object[];
 }
-const { title, description = 'An AI-native design system.', ogImage } = Astro.props;
+const { title, description = 'An AI-native design system.', ogImage, jsonLd } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://system.djasha.me').toString();
 const ogImageAbs = ogImage ? new URL(ogImage, Astro.site ?? 'https://system.djasha.me').toString() : undefined;
+const jsonLdArray = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 ---
 <!doctype html>
 <html lang="en" data-theme="dark">
@@ -26,6 +28,9 @@ const ogImageAbs = ogImage ? new URL(ogImage, Astro.site ?? 'https://system.djas
     {ogImageAbs && <meta property="og:image" content={ogImageAbs} />}
     <meta name="twitter:card" content={ogImageAbs ? 'summary_large_image' : 'summary'} />
     {ogImageAbs && <meta name="twitter:image" content={ogImageAbs} />}
+    {jsonLdArray.map((obj) => (
+      <script type="application/ld+json" set:html={JSON.stringify(obj)} />
+    ))}
     <script is:inline>
       (() => {
         const t = localStorage.getItem('theme') ?? 'system';

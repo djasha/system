@@ -9,6 +9,7 @@ import { ComponentTabs } from '../../components/chrome/ComponentTabs';
 import { MetaRail } from '../../components/chrome/MetaRail';
 import { composeBundle } from '../../lib/bundle';
 import { readSource, languageFromPath, highlightCode } from '../../lib/source-reader';
+import { jsonLdForComponent, jsonLdForBreadcrumbs } from '../../lib/jsonld';
 
 export async function getStaticPaths() {
   const components = await getCollection('components');
@@ -55,8 +56,27 @@ const bundle = composeBundle({
   sourceCode,
   sourceLanguage: sourceLang,
 });
+
+// JSON-LD
+const jsonLd = [
+  jsonLdForComponent({
+    name: entry.data.name,
+    slug,
+    description: entry.data.description,
+    sourcePath: entry.data.source_path,
+    tags: entry.data.tags,
+    site: 'https://system.djasha.me',
+    githubBase: 'https://github.com/djasha/system',
+    license: 'See repo',
+  }),
+  jsonLdForBreadcrumbs([
+    { name: 'Home', url: 'https://system.djasha.me' },
+    { name: 'Components', url: 'https://system.djasha.me/components' },
+    { name: entry.data.name, url: `https://system.djasha.me/components/${slug}` },
+  ]),
+];
 ---
-<DocLayout title={entry.data.name} description={entry.data.description} ogImage={`/og/${slug}.png`}>
+<DocLayout title={entry.data.name} description={entry.data.description} ogImage={`/og/${slug}.png`} jsonLd={jsonLd}>
   <header class="mb-10">
     <h1 class="font-display text-5xl tracking-tight">{entry.data.name}</h1>
     <p class="text-xl text-bone/70 mt-3 max-w-2xl">{entry.data.description}</p>
