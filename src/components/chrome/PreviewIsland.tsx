@@ -10,6 +10,7 @@ const registry: Record<string, () => Promise<any>> = {
   'stacking-cards': () => import('../StackingCards.preview'),
   'parallax-image': () => import('../ParallaxImage.preview'),
   'figure': () => import('../Figure.preview'),
+  'tool-ticker': () => import('../ToolTicker.preview'),
 };
 
 export function PreviewIsland({ slug }: { slug: string }) {

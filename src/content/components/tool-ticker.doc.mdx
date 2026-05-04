@@ -1,0 +1,29 @@
+---
+name: ToolTicker
+description: Horizontal scrolling ticker of tools, technologies, or skills.
+category: display
+tags: [motion, marquee, branding]
+tokens_used: [motion.duration-base, motion.ease-out-quart, space.4]
+related: [scroll-marquee]
+status: stable
+source_path: src/components/ToolTicker.tsx
+a11y_notes: Respects prefers-reduced-motion — animation pauses. Pauses on hover and keyboard focus. Use aria-label on wrapper to describe contents.
+created: 2026-05-04
+---
+
+## Prompt
+
+Build a horizontal ticker that scrolls a list of tools (name + optional icon) continuously. Configurable speed (px/s), direction, pause-on-hover. Duplicate content for seamless loop. Respect prefers-reduced-motion. Lighter than ScrollMarquee — for branding ribbons and "tools we use" sections specifically.
+
+## Usage
+
+- Use on About / Lab / brand-forward pages to show your toolset.
+- 8–20 items optimal — fewer feels sparse, more is overwhelming.
+- Pair with subtle dividers between items (vertical bars, dots, asterisks) for editorial feel.
+
+## Do / Don't
+
+- **Do** keep tool names short (one or two words).
+- **Do** include semantic icons or initials when possible.
+- **Don't** use for actual links — focus disappears too fast.
+- **Don't** mix with ScrollMarquee on the same page (motion competition).

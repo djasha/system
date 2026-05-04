@@ -39,6 +39,10 @@ const registry: Record<string, { loadConfig: () => Promise<any>; loadDemo: () =>
     loadConfig: () => import('../Figure.playground'),
     loadDemo: () => import('../Figure.preview'),
   },
+  'tool-ticker': {
+    loadConfig: () => import('../ToolTicker.playground'),
+    loadDemo: () => import('../ToolTicker.preview'),
+  },
 };
 
 function PlaygroundAsync({ configPromise, Demo }: { configPromise: Promise<any>; Demo: any }) {
