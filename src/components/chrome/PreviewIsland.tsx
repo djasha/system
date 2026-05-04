@@ -13,6 +13,7 @@ const registry: Record<string, () => Promise<any>> = {
   'tool-ticker': () => import('../ToolTicker.preview'),
   'scroll-progress': () => import('../ScrollProgress.preview'),
   'expandable': () => import('../Expandable.preview'),
+  'project-card': () => import('../ProjectCard.preview'),
 };
 
 export function PreviewIsland({ slug }: { slug: string }) {

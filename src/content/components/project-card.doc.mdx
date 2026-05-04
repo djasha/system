@@ -1,0 +1,29 @@
+---
+name: ProjectCard
+description: Case-study card with hover-state image reveal — image, title, description, tag chips.
+category: display
+tags: [card, case-study, hover, interactive]
+tokens_used: [color.accent, color.elevated, motion.duration-base, space.4, radius.md]
+related: [tilt-card, magnetic-button]
+status: stable
+source_path: src/components/ProjectCard.tsx
+a11y_notes: The whole card is a single anchor (one focusable element). Image alt text is required when imageSrc provided. Hover state is decorative; all info is in text. Focus state is highly visible (outline + accent border).
+created: 2026-05-04
+---
+
+## Prompt
+
+Build a case-study card for portfolio / project listings. Layout: image on top (16:9 aspect), title + description below, tag chips at the bottom. Hover: image scale-up subtle (1.02-1.04), accent border reveal. The whole card is a single `<a>` link. Required props: title, description, href. Optional: imageSrc + imageAlt, tags. Respect prefers-reduced-motion — skip the scale animation.
+
+## Usage
+
+- Use on /work, /projects, /portfolio listing pages.
+- Pair with `FilterableWorkGrid` or `ImageGrid` for layout structure.
+- Use 2-3 tags max — more clutter the card.
+
+## Do / Don't
+
+- **Do** write descriptions as a single sentence (under 20 words).
+- **Do** crop hero images consistently across cards (16:9 or 4:3).
+- **Don't** put more than one CTA in the card — the card IS the CTA.
+- **Don't** auto-rotate images on hover (motion-cliché).
