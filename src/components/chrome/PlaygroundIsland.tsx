@@ -43,6 +43,10 @@ const registry: Record<string, { loadConfig: () => Promise<any>; loadDemo: () =>
     loadConfig: () => import('../ToolTicker.playground'),
     loadDemo: () => import('../ToolTicker.preview'),
   },
+  'scroll-progress': {
+    loadConfig: () => import('../ScrollProgress.playground'),
+    loadDemo: () => import('../ScrollProgress.preview'),
+  },
 };
 
 function PlaygroundAsync({ configPromise, Demo }: { configPromise: Promise<any>; Demo: any }) {

@@ -11,6 +11,7 @@ const registry: Record<string, () => Promise<any>> = {
   'parallax-image': () => import('../ParallaxImage.preview'),
   'figure': () => import('../Figure.preview'),
   'tool-ticker': () => import('../ToolTicker.preview'),
+  'scroll-progress': () => import('../ScrollProgress.preview'),
 };
 
 export function PreviewIsland({ slug }: { slug: string }) {

@@ -1,0 +1,29 @@
+---
+name: ScrollProgress
+description: Thin top/bottom bar tracking scroll position as percentage of page height.
+category: feedback
+tags: [scroll, progress, indicator]
+tokens_used: [color.accent]
+related: []
+status: stable
+source_path: src/components/ScrollProgress.tsx
+a11y_notes: Decorative only — visually indicates progress for sighted users. Has aria-hidden by default. Does NOT replace any structural progress indicator.
+created: 2026-05-04
+---
+
+## Prompt
+
+Build a fixed-position thin bar indicating scroll progress through the current page. Bar fills left-to-right as the user scrolls, hits 100% at page bottom. Configurable color, height (default 3px), and position (top or bottom of viewport). Decorative — aria-hidden. Use a passive scroll listener with rAF for smoothness. Reset to 0 on navigation.
+
+## Usage
+
+- Use on long-form pages: blog posts, case studies, docs.
+- Don't use on short pages where scroll is minimal.
+- Pair with sticky nav at top, or place at bottom to avoid visual conflict.
+
+## Do / Don't
+
+- **Do** use the accent color or a brand color — it's a personality cue.
+- **Do** keep height under 5px — taller bars feel heavy.
+- **Don't** use for forms, multi-step flows, or anywhere it could be confused with form progress.
+- **Don't** apply to pages with horizontal scroll — semantics break.
