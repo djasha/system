@@ -12,6 +12,7 @@ const registry: Record<string, () => Promise<any>> = {
   'figure': () => import('../Figure.preview'),
   'tool-ticker': () => import('../ToolTicker.preview'),
   'scroll-progress': () => import('../ScrollProgress.preview'),
+  'expandable': () => import('../Expandable.preview'),
 };
 
 export function PreviewIsland({ slug }: { slug: string }) {

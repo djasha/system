@@ -47,6 +47,10 @@ const registry: Record<string, { loadConfig: () => Promise<any>; loadDemo: () =>
     loadConfig: () => import('../ScrollProgress.playground'),
     loadDemo: () => import('../ScrollProgress.preview'),
   },
+  'expandable': {
+    loadConfig: () => import('../Expandable.playground'),
+    loadDemo: () => import('../Expandable.preview'),
+  },
 };
 
 function PlaygroundAsync({ configPromise, Demo }: { configPromise: Promise<any>; Demo: any }) {

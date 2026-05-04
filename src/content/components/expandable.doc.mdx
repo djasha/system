@@ -1,0 +1,29 @@
+---
+name: Expandable
+description: Click-to-toggle disclosure with smooth height animation.
+category: layout
+tags: [disclosure, accordion, interactive]
+tokens_used: [color.accent, motion.duration-base, motion.ease-out-quart, space.4, radius.md]
+related: []
+status: stable
+source_path: src/components/Expandable.tsx
+a11y_notes: Header is a button (keyboard accessible). aria-expanded reflects state. aria-controls links header to body. Respects prefers-reduced-motion — height transition disabled. Body has role="region" + accessible name.
+created: 2026-05-04
+---
+
+## Prompt
+
+Build an accordion-style disclosure component. A clickable header reveals/hides body content with a smooth height animation. Include `aria-expanded`, `aria-controls`, and a region role for accessibility. Configurable `defaultOpen`. Use modern CSS grid-row animation (0fr → 1fr) or motion/react. Respect prefers-reduced-motion — instant toggle when set.
+
+## Usage
+
+- Use for FAQs, optional details, "show more" content.
+- Pair with chevron icon in header (rotates on open).
+- Don't nest deeper than 2 levels — gets confusing.
+
+## Do / Don't
+
+- **Do** keep header content concise (under 12 words).
+- **Do** use sentence case for headers.
+- **Don't** put critical info inside Expandables — users miss it.
+- **Don't** auto-open on page load except for `defaultOpen` props you set.
