@@ -9,6 +9,7 @@ const registry: Record<string, () => Promise<any>> = {
   'custom-cursor': () => import('../CustomCursor.preview'),
   'stacking-cards': () => import('../StackingCards.preview'),
   'parallax-image': () => import('../ParallaxImage.preview'),
+  'figure': () => import('../Figure.preview'),
 };
 
 export function PreviewIsland({ slug }: { slug: string }) {

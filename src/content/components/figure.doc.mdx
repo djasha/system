@@ -1,0 +1,30 @@
+---
+name: Figure
+description: Semantic figure with image + caption + optional click-to-expand lightbox.
+category: display
+tags: [image, semantic, accessibility]
+tokens_used: [color.bone, color.elevated, space.4, radius.md]
+related: [parallax-image]
+status: stable
+source_path: src/components/Figure.tsx
+a11y_notes: Uses semantic <figure> + <figcaption>. Alt text required (TS-enforced). Lightbox closes on Escape, click-outside, and dedicated close button. Focus trapped in lightbox while open.
+created: 2026-05-04
+---
+
+## Prompt
+
+Build a semantic figure component for editorial / blog content. Wraps an image in `<figure>` with a `<figcaption>`. Support click-to-expand into a lightbox overlay. Lightbox: dims background, centers the full-size image, dismisses on Escape, click-outside, and a close button. Caption is optional. Alt text is required for accessibility. Respect `prefers-reduced-motion` — disable lightbox transitions.
+
+## Usage
+
+- Use for blog post images, case-study images, anywhere caption + image semantic structure matters.
+- Set `expandable={false}` for thumbnails or anywhere a lightbox would be jarring (small icons, decorative images).
+- Always provide alt text.
+- Don't nest figures inside other figures — semantically invalid.
+
+## Do / Don't
+
+- **Do** provide alt text describing the image, not "image of X".
+- **Do** keep captions short — under 20 words.
+- **Don't** use for decorative images (use a styled `<img>` directly).
+- **Don't** override the lightbox's keyboard handling (Escape should always close).
