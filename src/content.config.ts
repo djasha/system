@@ -11,7 +11,9 @@ const componentSchema = z.object({
   tokens_used: z.array(z.string()).default([]),
   related: z.array(z.string()).default([]),
   status: z.enum(STATUSES).default('experimental'),
-  source_path: z.string(),
+  source_path: z.string().regex(/^src\/[^.\/].*\.(tsx|ts|jsx|js|astro|css|md)$/, {
+    message: 'source_path must start with "src/" and end with a known source extension (tsx/ts/jsx/js/astro/css/md). No traversal allowed.',
+  }),
   a11y_notes: z.string(),
   created: z.coerce.date(),
 });
