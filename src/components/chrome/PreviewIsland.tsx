@@ -14,6 +14,7 @@ const registry: Record<string, () => Promise<any>> = {
   'scroll-progress': () => import('../ScrollProgress.preview'),
   'expandable': () => import('../Expandable.preview'),
   'project-card': () => import('../ProjectCard.preview'),
+  'hero-gallery': () => import('../HeroGallery.preview'),
 };
 
 export function PreviewIsland({ slug }: { slug: string }) {

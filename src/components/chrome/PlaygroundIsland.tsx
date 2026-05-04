@@ -55,6 +55,10 @@ const registry: Record<string, { loadConfig: () => Promise<any>; loadDemo: () =>
     loadConfig: () => import('../ProjectCard.playground'),
     loadDemo: () => import('../ProjectCard.preview'),
   },
+  'hero-gallery': {
+    loadConfig: () => import('../HeroGallery.playground'),
+    loadDemo: () => import('../HeroGallery.preview'),
+  },
 };
 
 function PlaygroundAsync({ configPromise, Demo }: { configPromise: Promise<any>; Demo: any }) {

@@ -1,0 +1,29 @@
+---
+name: HeroGallery
+description: Multi-image hero arrangement — grid or asymmetric collage with entrance reveal.
+category: display
+tags: [hero, grid, image, layout]
+tokens_used: [motion.ease-out-quart, motion.duration-base, space.4, radius.md]
+related: [project-card]
+status: stable
+source_path: src/components/HeroGallery.tsx
+a11y_notes: Each image requires alt text. Decorative entrance animation respects prefers-reduced-motion. Grid is responsive — collapses to single column on mobile.
+created: 2026-05-04
+---
+
+## Prompt
+
+Build a hero-section image arrangement. Two layouts: `grid` (uniform 2x2) and `asymmetric` (one larger image + 2-3 smaller — magazine-style). Images stagger-fade-in on mount. Configurable per-image aspect ratios. Responsive: collapses to single column under 640px. Respect prefers-reduced-motion — render without animation.
+
+## Usage
+
+- Use as the visual anchor for landing/about pages.
+- 3-5 images optimal — fewer feels sparse, more is busy.
+- Pair with editorial typography (Space Grotesk display) for the headline that sits beside the gallery.
+
+## Do / Don't
+
+- **Do** use varied image content — texture, person, product, environment.
+- **Do** keep aspect ratios within the same family (don't mix 1:1 with 16:9 dramatically).
+- **Don't** use as a generic image grid (use `ImageGrid` for that).
+- **Don't** put text inside the gallery — let images carry visual weight, headline lives outside.
