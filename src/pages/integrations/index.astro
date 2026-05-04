@@ -1,0 +1,47 @@
+---
+import DocLayout from '../../layouts/DocLayout.astro';
+
+const mcpInstall = {
+  claudeCode: `claude mcp add djasha-system https://system.djasha.me/api/mcp`,
+  cursor: `# In ~/.cursor/mcp.json
+{
+  "mcpServers": {
+    "djasha-system": {
+      "url": "https://system.djasha.me/api/mcp"
+    }
+  }
+}`,
+};
+---
+<DocLayout title="Integrations" description="How AI agents connect to Djasha System.">
+  <header class="mb-10">
+    <h1 class="font-display text-5xl tracking-tight">Integrations</h1>
+    <p class="text-xl text-bone/70 mt-3 max-w-2xl">Three ways for AI agents to consume the library.</p>
+  </header>
+
+  <section class="mb-12">
+    <h2 class="font-display text-2xl mb-4">MCP server (recommended)</h2>
+    <p class="text-bone/70 mb-4">Native Model Context Protocol. Agents call <code class="font-mono text-sm text-accent">search_components</code>, <code class="font-mono text-sm text-accent">get_bundle</code>, <code class="font-mono text-sm text-accent">find_by_token</code>, etc. as tools — no copy/paste.</p>
+
+    <h3 class="font-mono text-sm uppercase tracking-wide text-bone/50 mt-6 mb-2">Claude Code</h3>
+    <pre class="font-mono text-sm bg-elevated p-4 rounded-md border border-bone/10 overflow-auto"><code>{mcpInstall.claudeCode}</code></pre>
+
+    <h3 class="font-mono text-sm uppercase tracking-wide text-bone/50 mt-6 mb-2">Cursor</h3>
+    <pre class="font-mono text-sm bg-elevated p-4 rounded-md border border-bone/10 overflow-auto"><code>{mcpInstall.cursor}</code></pre>
+
+    <p class="text-sm text-bone/60 mt-4">Discovery manifest at <a href="/.well-known/mcp.json" class="font-mono text-accent hover:underline">/.well-known/mcp.json</a>.</p>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="font-display text-2xl mb-4">JSON API</h2>
+    <p class="text-bone/70 mb-4">Static, cacheable, CORS-open. See the <a href="/api" class="text-accent hover:underline">API page</a> for endpoints. OpenAPI 3.1 spec at <a href="/openapi.json" class="text-accent hover:underline font-mono text-sm">/openapi.json</a>.</p>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="font-display text-2xl mb-4">Site indexes for crawler agents</h2>
+    <ul class="space-y-2 text-bone/70">
+      <li><a href="/llms.txt" class="font-mono text-sm text-accent hover:underline">/llms.txt</a> — concise LLM-readable index per the llms.txt spec</li>
+      <li><a href="/llms-full.txt" class="font-mono text-sm text-accent hover:underline">/llms-full.txt</a> — full content dump for one-fetch consumption</li>
+    </ul>
+  </section>
+</DocLayout>
