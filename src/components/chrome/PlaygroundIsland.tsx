@@ -59,6 +59,10 @@ const registry: Record<string, { loadConfig: () => Promise<any>; loadDemo: () =>
     loadConfig: () => import('../HeroGallery.playground'),
     loadDemo: () => import('../HeroGallery.preview'),
   },
+  'text-mask-reveal': {
+    loadConfig: () => import('../TextMaskReveal.playground'),
+    loadDemo: () => import('../TextMaskReveal.preview'),
+  },
 };
 
 function PlaygroundAsync({ configPromise, Demo }: { configPromise: Promise<any>; Demo: any }) {

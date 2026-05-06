@@ -1,0 +1,30 @@
+---
+name: TextMaskReveal
+description: Editorial typographic intro that reveals from a full-block mask wiping in one of four directions.
+category: motion
+tags: [motion, text, reveal, masking, editorial]
+tokens_used: [motion.ease-out-quart, motion.duration-base]
+related: [animated-text, character-reveal]
+status: stable
+source_path: src/components/TextMaskReveal.tsx
+a11y_notes: Respects prefers-reduced-motion — renders static text. Uses semantic heading element via `as=` prop. Screen readers read the complete string; the reveal is purely visual.
+created: 2026-05-06
+---
+
+## Prompt
+
+Build a typographic reveal component for editorial heroes. The text is initially fully covered by a solid block (the "mask") that wipes off in a configurable direction (up/down/left/right) using `clip-path: inset(...)`. The wipe is a single ease-out-quart sweep, default 0.9s. Triggers once on scroll-into-view. Configurable duration, delay, and direction. Semantic `as=` prop (default `h1`). Respect `prefers-reduced-motion` — render text statically with no animation when set.
+
+## Usage
+
+- Use as the headline of a landing or about page hero — once per page, max twice.
+- Pair with smaller `AnimatedText` or static body copy below — TextMaskReveal owns the entrance.
+- Keep the text under 12 words — long lines wrap unpredictably during the wipe.
+- Up direction (default) feels assertive; down feels gentler; left/right feel editorial.
+
+## Do / Don't
+
+- **Do** use Space Grotesk or another display face — the wipe rewards heavy stroke.
+- **Do** trigger once per session — repeated reveals on re-entry feels like a glitch.
+- **Don't** chain multiple TextMaskReveals in immediate succession (use `delay` to stagger if you must).
+- **Don't** apply to body text or interactive elements (buttons, links).

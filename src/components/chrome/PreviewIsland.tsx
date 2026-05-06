@@ -15,6 +15,7 @@ const registry: Record<string, () => Promise<any>> = {
   'expandable': () => import('../Expandable.preview'),
   'project-card': () => import('../ProjectCard.preview'),
   'hero-gallery': () => import('../HeroGallery.preview'),
+  'text-mask-reveal': () => import('../TextMaskReveal.preview'),
 };
 
 export function PreviewIsland({ slug }: { slug: string }) {
