@@ -1,0 +1,25 @@
+---
+import { TextMaskReveal } from './TextMaskReveal';
+import { MagneticButton } from './MagneticButton';
+import { HeroGallery } from './HeroGallery';
+
+interface Props {
+  headline: string;
+  body: string;
+  ctaLabel: string;
+  ctaHref: string;
+  images: Array<{ src: string; alt: string; aspect?: 'square' | 'portrait' | 'landscape' }>;
+}
+
+const { headline, body, ctaLabel, ctaHref, images } = Astro.props;
+---
+<section class="grid md:grid-cols-[1.2fr_1fr] gap-10 md:gap-16 items-center py-20">
+  <div>
+    <TextMaskReveal client:load text={headline} as="h1" duration={1} className="font-display text-6xl md:text-7xl tracking-tight leading-[0.95] mb-6" />
+    <p class="text-xl text-bone/70 mb-8 max-w-xl">{body}</p>
+    <MagneticButton client:load href={ctaHref} accent="#E8462C">{ctaLabel}</MagneticButton>
+  </div>
+  <div>
+    <HeroGallery client:visible layout="asymmetric" images={images} />
+  </div>
+</section>

@@ -1,0 +1,31 @@
+---
+name: EditorialHero
+description: Magazine-style landing hero — TextMaskReveal headline + magnetic CTA + asymmetric image collage.
+category: layout
+tags: [hero, editorial, composition]
+tokens_used: [color.accent, motion.ease-out-quart, motion.duration-base, space.8]
+related: []
+status: stable
+source_path: src/components/EditorialHero.astro
+a11y_notes: Headline is a proper h1 via TextMaskReveal. CTA is a real link with accessible name. Images require alt text. Respects prefers-reduced-motion via TextMaskReveal and MagneticButton's own guards.
+created: 2026-05-06
+components_used: [text-mask-reveal, magnetic-button, hero-gallery]
+---
+
+## Prompt
+
+Compose a magazine-style landing hero. Left column: TextMaskReveal headline (h1, display face, ~6xl, tight tracking, 0.95 line-height) + body paragraph (xl, bone/70, max ~xl width) + MagneticButton CTA. Right column: HeroGallery in asymmetric layout. Two-column grid (1.2fr / 1fr) on md+, stacked on mobile. Generous vertical padding (~py-20). Hands the wow-factor to TextMaskReveal's wipe-in and the magnetic pull on the CTA.
+
+## Usage
+
+- Use as the `<main>` opening for `/`, `/about`, `/lab`, or any landing page.
+- One per page — multiple competing TextMaskReveals fight for entrance attention.
+- Pair with subtle background grain or solid `--color-ink` — never busy backgrounds.
+- 3–5 images in the gallery is ideal; vary aspect ratios.
+
+## Do / Don't
+
+- **Do** keep headline under 12 words and body under 25 words.
+- **Do** match image color palette to brand — they're the second loudest element after the headline.
+- **Don't** stack two of these patterns on a single page.
+- **Don't** add a secondary CTA — the magnetic button is THE call to action.

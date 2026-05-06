@@ -16,8 +16,13 @@ export async function run(): Promise<number> {
     .filter((f) => !/\.(playground|preview)\.(tsx|astro)$/.test(f));
   const componentNames = sourceFiles.map((f) => path.basename(f).replace(/\.(tsx|astro)$/, ''));
 
-  const docFiles = globSync('src/content/components/*.doc.mdx', { cwd: process.cwd() });
-  const docSlugs = docFiles.map((f) => path.basename(f).replace(/\.doc\.mdx$/, ''));
+  const componentDocFiles = globSync('src/content/components/*.doc.mdx', { cwd: process.cwd() });
+  const patternDocFiles = globSync('src/content/patterns/*.doc.mdx', { cwd: process.cwd() });
+  // Patterns are documented in src/content/patterns/ — include those slugs so
+  // pattern .astro source files don't trip the component-coverage check.
+  const docSlugs = [...componentDocFiles, ...patternDocFiles].map((f) =>
+    path.basename(f).replace(/\.doc\.mdx$/, ''),
+  );
 
   const missing = findMissingDocs(componentNames, docSlugs);
   if (missing.length > 0) {
