@@ -17,6 +17,7 @@ const registry: Record<string, () => Promise<any>> = {
   'hero-gallery': () => import('../HeroGallery.preview'),
   'text-mask-reveal': () => import('../TextMaskReveal.preview'),
   'editorial-hero': () => import('../EditorialHero.preview'),
+  'case-study-body': () => import('../CaseStudyBody.preview'),
 };
 
 export function PreviewIsland({ slug }: { slug: string }) {

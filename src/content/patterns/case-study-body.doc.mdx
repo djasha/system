@@ -1,0 +1,31 @@
+---
+name: CaseStudyBody
+description: Long-form case-study layout — hero figure, scroll-pinned process steps, expandable footnotes.
+category: layout
+tags: [case-study, long-form, composition, scroll]
+tokens_used: [color.bone, color.elevated, motion.ease-out-quart, space.8, radius.md]
+related: []
+status: stable
+source_path: src/components/CaseStudyBody.astro
+a11y_notes: Hero figure has alt text + caption + lightbox. StackingCards collapses to a static stack under prefers-reduced-motion. Expandable disclosures use proper aria-expanded/controls. Document layout uses semantic <article> and <section> landmarks.
+created: 2026-05-06
+components_used: [figure, expandable, stacking-cards]
+---
+
+## Prompt
+
+Compose a long-form case-study body with three layers: a hero Figure with caption + click-to-zoom; a "process" section using StackingCards (3–5 sticky-pinned cards covering Discovery → Direction → Build → Ship); and optional Expandable disclosures for footnotes / deep cuts. Wrapped in a semantic `<article>` with `prose prose-invert` for typographic defaults. Centered max-content width. Generous vertical rhythm between sections (space-y-12). Respects prefers-reduced-motion via StackingCards' own guard.
+
+## Usage
+
+- Use for `/work/[slug]` case-study pages and any long-form authored content.
+- 3–5 process steps is the sweet spot — fewer feels thin, more loses momentum.
+- Use Expandables for footnotes / deep-dive details readers can choose to open.
+- Pair with EditorialHero above and a ContactCTA below.
+
+## Do / Don't
+
+- **Do** name process steps as verbs ("Discover", "Build", "Ship") not nouns.
+- **Do** include a hero Figure — case studies without imagery feel hollow.
+- **Don't** put more than 3 Expandables in one page — they fragment the read.
+- **Don't** nest CaseStudyBody inside another article landmark.

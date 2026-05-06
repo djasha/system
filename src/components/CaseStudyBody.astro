@@ -1,0 +1,30 @@
+---
+import { Figure } from './Figure';
+import { Expandable } from './Expandable';
+import { StackingCards } from './StackingCards';
+
+interface Props {
+  steps: Array<{ title: string; body: string; color?: string }>;
+  hero: { src: string; alt: string; caption?: string };
+  expandables?: Array<{ title: string; body: string }>;
+}
+
+const { steps, hero, expandables = [] } = Astro.props;
+---
+<article class="prose prose-invert max-w-content mx-auto py-16 px-6 space-y-12">
+  <Figure client:load src={hero.src} alt={hero.alt} caption={hero.caption} expandable={true} />
+
+  <section>
+    <h2 class="font-display text-3xl mb-6">How it came together</h2>
+    <StackingCards client:visible cards={steps} sticky={true} />
+  </section>
+
+  {expandables.length > 0 && (
+    <section class="space-y-3">
+      <h2 class="font-display text-3xl mb-6">Notes</h2>
+      {expandables.map((e) => (
+        <Expandable client:load title={e.title}>{e.body}</Expandable>
+      ))}
+    </section>
+  )}
+</article>
