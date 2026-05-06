@@ -1,0 +1,30 @@
+---
+name: FilterableWorkGrid
+description: Work index page composition — heading + tools ticker + responsive grid of ProjectCards.
+category: layout
+tags: [grid, work-index, composition, browse]
+tokens_used: [color.accent, color.elevated, motion.duration-base, space.4, radius.md]
+related: []
+status: stable
+source_path: src/components/FilterableWorkGrid.astro
+a11y_notes: ProjectCards are real anchors with accessible names. ToolTicker pauses on hover and respects prefers-reduced-motion. Grid uses semantic landmarks. Heading hierarchy starts at h1 (the page heading).
+created: 2026-05-06
+components_used: [project-card, tool-ticker]
+---
+
+## Prompt
+
+Compose a `/work` index page. Header: large display heading + optional intro paragraph. Optional ToolTicker brand ribbon below the header (full-bleed, slow speed). Responsive grid of ProjectCards (1 col mobile / 2 col sm / 3 col lg). Centered max-content container. Pure layout — no scroll-pinning, no fancy entrance animations beyond the cards' own hover states.
+
+## Usage
+
+- Use as the body of `/work` or any project listing page.
+- Ticker is optional — include it on About / Brand pages where the toolset matters; skip on `/work` itself if it competes for attention.
+- 6–18 projects is the sweet spot. Fewer feels thin (consider featuring one); more demands real filtering UI (out of scope for v2).
+
+## Do / Don't
+
+- **Do** put the strongest project first — it sets the bar.
+- **Do** keep card descriptions short (one sentence each) so the grid scans.
+- **Don't** mix card sizes (lengths/aspect) — visual rhythm matters.
+- **Don't** nest a second pattern inside the grid — projects are the unit.
