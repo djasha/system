@@ -1,0 +1,17 @@
+topic: Error messages
+description: How to acknowledge a failure, explain what happened, and offer a path forward.
+rules:
+  - Lead with what happened in plain terms. Skip the apology.
+  - Tell the user what to do next — never end on the failure.
+  - No technical jargon unless the audience is technical.
+  - Inline errors live next to the field they refer to. Toasts are for transient failures.
+  - Never blame the user. Use "this didn't work" not "you didn't enter".
+examples:
+  - good: That email is already in use. Try signing in instead.
+    bad: Validation failed — email exists.
+  - good: We couldn't reach the server. Check your connection and try again.
+    bad: Network error 503.
+  - good: This file is too large (max 5MB). Try compressing it.
+    bad: ERROR — invalid input
+  - good: Double-check the password and try again.
+    bad: You entered the wrong password.

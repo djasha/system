@@ -1,0 +1,17 @@
+topic: Microcopy
+description: Button labels, link text, form hints — the words you hardly notice.
+rules:
+  - Verbs over nouns. "Send" not "Sending". "Save changes" not "Submit form".
+  - Avoid "click" and "tap" — name what happens, not the gesture.
+  - Match user goals, not system mechanics. "Get started" not "Initialize account".
+  - One verb per button. "Save & exit" is fine; "Save, validate, and continue" is not.
+  - Sentence case for buttons; lowercase for inline links.
+examples:
+  - good: Save changes
+    bad: Submit
+  - good: Try the demo
+    bad: Click here to view interactive demonstration
+  - good: Sign in
+    bad: Log into account
+  - good: Continue
+    bad: Click Continue button below

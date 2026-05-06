@@ -1,0 +1,17 @@
+topic: Empty states
+description: What to say when there's nothing to show — the moment a user wonders if it's broken.
+rules:
+  - Confirm there's no data, not "no results found".
+  - Explain why the state is empty when the cause matters (filter applied, no data yet, etc.).
+  - Give the user a single next step — don't dead-end them.
+  - Use the empty state as onboarding when relevant ("First time here? Try X").
+  - Skip the illustration unless it adds meaning. A good sentence beats a generic graphic.
+examples:
+  - good: No components match these filters. Clear filters or browse all.
+    bad: No results found.
+  - good: You haven't created any projects yet. Start with a template?
+    bad: 0 results
+  - good: Search returned nothing. Try a different keyword or check spelling.
+    bad: Empty result set.
+  - good: All caught up. New activity will appear here.
+    bad: No notifications.

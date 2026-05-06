@@ -1,0 +1,17 @@
+topic: CTAs
+description: Calls to action — the primary verbs that move users forward.
+rules:
+  - Lead with the value, not the action. "Get the spec" not "Download PDF".
+  - One primary CTA per view. Multiple primaries dilute attention.
+  - Match the CTA to the conversion stage. "Start free trial" early; "Book a demo" later.
+  - Avoid generic verbs (Submit, Continue) when a specific verb tells the user what they get.
+  - Test, but commit — don't ship three near-identical variants of the same CTA on different pages.
+examples:
+  - good: Start free trial
+    bad: Sign up
+  - good: Get the spec
+    bad: Download
+  - good: Book a 20-min demo
+    bad: Schedule meeting
+  - good: Browse components
+    bad: View library

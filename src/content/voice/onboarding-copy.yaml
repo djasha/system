@@ -1,0 +1,17 @@
+topic: Onboarding copy
+description: The first words a user reads — welcome, setup, and the path to first value.
+rules:
+  - Skip the hello. Open with the first thing they need to do.
+  - Show progress (step 1 of 3) when there are more than 2 steps.
+  - Make the path optional when you can. Skippable onboarding respects experienced users.
+  - Reduce input. Each form field is friction; defer non-critical ones.
+  - Set expectations on length. "Takes 2 minutes" is a contract.
+examples:
+  - good: Step 1 of 3 — name your workspace
+    bad: Welcome! Let's get started by creating your workspace.
+  - good: We need three things to set you up. Takes 2 minutes.
+    bad: Hi there! Welcome to our platform. We're excited to have you join us.
+  - good: Add a teammate (optional — you can do this later)
+    bad: Please add a teammate to continue
+  - good: You're in. Try copying a bundle into your AI agent.
+    bad: Setup complete. Click here to view the dashboard.
