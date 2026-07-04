@@ -26,6 +26,9 @@ and bundle documents. Entries are tagged `autokit` and namespaced
 
 - Tokens: `color.autokit-*` / `type.autokit-*` (core layer; bundle themes
   override the accent layer only — see the AutokitBundleThemes entry)
+- Rules and rationale: [`src/autokit/DESIGN.md`](src/autokit/DESIGN.md) —
+  includes the weekly new-bundle checklist and the theme template
+  (`src/autokit/themes/_template.css`)
 - Browsable demos (static, published as design examples):
   [`/autokit/catalog.html`](public/autokit/catalog.html),
   [`/autokit/funnels/ai-agent-starter-box/`](public/autokit/funnels/ai-agent-starter-box/index.html),
