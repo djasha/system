@@ -12,7 +12,9 @@ export default defineConfig({
     trace: 'on-first-retry',
   },
   webServer: {
-    command: 'npx astro preview --port 4323',
+    // astro preview 404s all routes under the @astrojs/vercel adapter, so
+    // serve the built static client output directly.
+    command: 'npx http-server dist/client -p 4323 -c-1 --silent',
     url: 'http://localhost:4323',
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,
