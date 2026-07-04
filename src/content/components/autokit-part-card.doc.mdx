@@ -1,0 +1,28 @@
+---
+name: AutokitPartCard
+description: AutoKit Labs numbered part card — "what's in the box" card with a floating Part-number chip, stroke icon, title, and one-line pitch.
+category: display
+tags: [autokit, card, product]
+tokens_used: [color.autokit-card, color.autokit-accent-text, type.autokit-display]
+related: [autokit-ticket, autokit-icons]
+status: stable
+source_path: src/autokit/part-card.css
+a11y_notes: Heading is a real h3 inside document outline. Icon is decorative (aria-hidden via the symbol block). Body text uses --ink-2 which passes AA on the card surface. No motion; scroll-reveal (if used) comes from AutokitMotionRecipes with its reduced-motion and no-JS fallbacks.
+created: 2026-07-04
+---
+
+## Prompt
+
+Build a product-contents card, 250px wide: card surface, 2px neutral border, 18px radius, 24px padding. A small capsule chip labeled "Part NN" floats half-overlapping the top edge (absolute, top -13px), set in mono uppercase, white on the deep accent. Inside: a 23px stroke icon in the text-safe accent color, a bold display-face title at 17px, and a 13.5px muted one-liner. Everything reads from CSS custom properties so bundle themes recolor the chip and icon automatically.
+
+## Usage
+
+- Use in a grid to enumerate what a kit/bundle contains — one card per numbered part.
+- Number chips ("Part 01" … "Part 08") imply completeness; don't skip numbers.
+- Icons come from AutokitIconSet; keep one icon per card.
+
+## Do / Don't
+
+- **Do** keep the pitch line to a single sentence naming a concrete outcome.
+- **Don't** make the whole card a link without a visible focus style.
+- **Don't** exceed ~8 parts in one grid — the numbering stops feeling like a box inventory.

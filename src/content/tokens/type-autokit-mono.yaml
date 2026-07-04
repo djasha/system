@@ -1,0 +1,5 @@
+name: autokit-mono
+category: type
+value: Fragment Mono 400
+css_var: '--mono'
+description: AutoKit Labs meta face — uppercase, letter-spaced labels, kickers, file names, and terminal text. Usually 9.5-12px with .08-.3em tracking.

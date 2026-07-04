@@ -1,0 +1,17 @@
+/* Bundle theme: Hermes — messenger amber. Mark: winged bolt (no lobster).
+   Apply with <body class="bundle-hermes">. */
+.bundle-hermes{
+  --accent:#F5A300;
+  --accent-text:#8A5A00;
+  --accent-deep:#C98600;
+  --accent-soft:#FFF2D2;
+  --btn-bg:#B57800;
+  --btn-edge:#8A5A00;
+}
+[data-theme="dark"] .bundle-hermes{
+  --accent:#FFB01F;
+  --accent-text:#FFB01F;
+  --accent-soft:#3A2E12;
+  --btn-bg:#C98600;
+}
+.bundle-hermes .mascot-lobby{display:none}

@@ -1,0 +1,17 @@
+/* Bundle theme: OpenClaw — lobster red. Mascot: Lobby (mascots/lobby-lobster.svg).
+   Apply with <body class="bundle-openclaw">. Lobby appears ONLY with this theme. */
+.bundle-openclaw{
+  --accent:#F43F1E;
+  --accent-text:#C22C08;
+  --accent-deep:#D32F0E;
+  --accent-soft:#FFE8E0;
+  --btn-bg:#D32F0E;
+  --btn-edge:#A82605;
+}
+[data-theme="dark"] .bundle-openclaw{
+  --accent:#FF5A33;
+  --accent-text:#FF6E4A;
+  --accent-soft:#3A2018;
+}
+.bundle-openclaw .mascot-lobby{display:block}
+:not(.bundle-openclaw) .mascot-lobby{display:none}

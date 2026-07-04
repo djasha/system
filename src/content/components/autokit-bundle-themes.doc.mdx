@@ -1,0 +1,29 @@
+---
+name: AutokitBundleThemes
+description: AutoKit Labs per-bundle theming — one CSS class per product bundle (OpenClaw lobster red, Hermes messenger amber) that overrides only the accent token layer.
+category: display
+tags: [autokit, theming, tokens]
+tokens_used: [color.autokit-accent, color.autokit-amber]
+related: [autokit-lobby-lobster]
+status: stable
+source_path: src/autokit/themes/openclaw.css
+a11y_notes: Every theme must supply text-safe --accent-text values for both light and dark modes — contrast is re-checked per theme, not inherited. Mascot gating is pure CSS (display), so assistive tech never encounters the lobster outside OpenClaw surfaces.
+created: 2026-07-04
+---
+
+## Prompt
+
+Implement per-product theming for a token-based design system: core tokens define surfaces, ink, and a default accent layer; each bundle theme is a body class (e.g. .bundle-openclaw, .bundle-hermes) that overrides ONLY the accent-layer variables — --accent, --accent-text, --accent-deep, --accent-soft, --btn-bg, --btn-edge — plus their [data-theme="dark"] counterparts. Components are never forked per bundle. Themes also gate bundle-specific mascots: .bundle-openclaw shows .mascot-lobby, every other context hides it.
+
+## Usage
+
+- Apply with `<body class="bundle-openclaw">` (lobster red, Lobby visible) or `<body class="bundle-hermes">` (messenger amber, winged bolt, no lobster).
+- New bundle = new `themes/<bundle>.css` overriding the accent layer. Nothing else changes.
+- Hermes source lives alongside at `src/autokit/themes/hermes.css`; core tokens at `src/autokit/tokens.css`.
+
+## Do / Don't
+
+- **Do** keep theme files tiny — if a theme needs to touch surfaces or ink, the core tokens are wrong.
+- **Do** re-check WCAG contrast for each theme's `-text` variants in both light and dark.
+- **Don't** fork components per bundle — that's the rule the whole system exists to enforce.
+- **Don't** show Lobby outside `.bundle-openclaw` — the theme CSS is the enforcement point.

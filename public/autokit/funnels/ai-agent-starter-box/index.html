@@ -1,0 +1,1179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<script>
+/* theme + js-gate: runs before first paint (no flash, no-JS users get visible content) */
+document.documentElement.classList.add('js');
+(function(){var t=null;try{t=localStorage.getItem('akl-theme')}catch(e){}
+document.documentElement.dataset.theme=t||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AI Agent Starter Box — OpenClaw &amp; Hermes in One Sitting</title>
+<meta name="description" content="The boxed install kit for your first real AI agent. Step-by-step OpenClaw & Hermes setup, provider keys, Telegram & Slack gateways, verified commands, and a 60-minute golden path. No code skills needed." />
+<link rel="canonical" href="https://botbento.com/ai-agent-starter-box" />
+<meta name="robots" content="noindex" />
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#FAF3E3" />
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#16130E" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="AI Agent Starter Box — your first AI agent, alive in one sitting" />
+<meta property="og:description" content="Install OpenClaw or Hermes without drowning in docs. Verified commands, gateway checklists, 60-minute golden path." />
+<meta property="og:url" content="https://botbento.com/ai-agent-starter-box" />
+<meta property="og:site_name" content="AutoKit Labs" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:image" content="https://botbento.com/assets/starter-box-og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="AI Agent Starter Box — boxed install kit for OpenClaw and Hermes with Lobby the lobster mascot" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="AI Agent Starter Box — your first AI agent, alive in one sitting" />
+<meta name="twitter:description" content="Install OpenClaw or Hermes without drowning in docs. Verified commands, 60-minute golden path." />
+<meta name="twitter:image" content="https://botbento.com/assets/starter-box-og.png" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='24' font-size='24'%3E%F0%9F%A6%9E%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700..800&family=Archivo:wght@400;500;600;700&family=Fragment+Mono&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","@id":"https://autokitlabs.com/#org","name":"AutoKit Labs","url":"https://autokitlabs.com","email":"support@autokitlabs.com","sameAs":["https://botbento.com"],"description":"AutoKit Labs builds practical boxed AI kits: install guides, checklists and workflow boxes for people who want working AI agents without the confusion."}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Product","name":"AI Agent Starter Box — OpenClaw + Hermes Edition","brand":{"@id":"https://autokitlabs.com/#org"},"description":"Boxed install kit for beginners: step-by-step OpenClaw and Hermes Agent install guides, provider key setup, Telegram and Slack gateway checklists, troubleshooting index, safety checklist, and a verified 60-minute golden path.","image":"https://botbento.com/assets/starter-box-og.png","url":"https://botbento.com/ai-agent-starter-box","offers":[
+{"@type":"Offer","name":"Starter","price":"29","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://botbento.com/ai-agent-starter-box#pricing","hasMerchantReturnPolicy":{"@type":"MerchantReturnPolicy","returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow","merchantReturnDays":14,"applicableCountry":"US"}},
+{"@type":"Offer","name":"Pro","price":"79","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://botbento.com/ai-agent-starter-box#pricing","hasMerchantReturnPolicy":{"@type":"MerchantReturnPolicy","returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow","merchantReturnDays":14,"applicableCountry":"US"}},
+{"@type":"Offer","name":"Setup Service","priceSpecification":{"@type":"PriceSpecification","minPrice":1500,"priceCurrency":"USD"},"availability":"https://schema.org/LimitedAvailability","url":"https://botbento.com/ai-agent-starter-box#pricing"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"What is the AI Agent Starter Box?","acceptedAnswer":{"@type":"Answer","text":"A boxed install kit that takes a beginner from an empty terminal to a working OpenClaw or Hermes AI agent connected to Telegram or Slack — using verified commands, gateway checklists and a 60-minute golden path, with no coding skills required."}},
+{"@type":"Question","name":"Do I need to know how to code?","acceptedAnswer":{"@type":"Answer","text":"No. If you can open a terminal and paste commands, the guides carry you through the rest. Every step says what it does, what you should see, and what to do if you don't see it."}},
+{"@type":"Question","name":"Which is better — OpenClaw or Hermes?","acceptedAnswer":{"@type":"Answer","text":"Both are covered, and the kit includes an honest comparison so you can pick by use case. If you just want the fastest path to a Telegram agent, the golden path uses Hermes."}},
+{"@type":"Question","name":"What exactly do I get after paying?","acceptedAnswer":{"@type":"Answer","text":"Instant digital access — nothing ships. You get 8 numbered guides as PDF and Markdown, the gateway checklists, the command-verification matrix, and the bonus prompt pack. Yours forever, with all v1.x updates included."}},
+{"@type":"Question","name":"What does it cost to run an agent after install?","acceptedAnswer":{"@type":"Answer","text":"The agents are free, open-source software. You pay your model provider for usage — and the Provider Setup guide has you set a hard spending cap before your agent sends its first message, so a learning mistake can't become an expensive one."}},
+{"@type":"Question","name":"Will this make me money?","acceptedAnswer":{"@type":"Answer","text":"We don't promise income — anyone who does is selling you something else. This kit installs real software and teaches you to operate it safely. What you build with it is up to you."}},
+{"@type":"Question","name":"What's the refund policy?","acceptedAnswer":{"@type":"Answer","text":"14 days, no drama: if you follow the golden path and your agent doesn't run, you get your money back."}},
+{"@type":"Question","name":"What if I get stuck anyway?","acceptedAnswer":{"@type":"Answer","text":"The troubleshooting index covers the errors beginners actually hit. Pro includes priority email support, and the Setup Service is the just-do-it-with-me option."}}]}
+</script>
+<style>
+:root{
+  --bg:#FAF3E3;--bg-2:#F2E8D0;--card:#FFFCF4;--line:#E3D7B8;--line-2:#CBBD98;--shadow:#E0D2AE;
+  --ink:#221D15;--ink-2:#5A5140;--ink-3:#7A6E53;
+  --accent:#F43F1E;--accent-text:#C22C08;--accent-deep:#D32F0E;--accent-soft:#FFE8E0;
+  --btn-bg:#D32F0E;--btn-edge:#A82605;
+  --amber:#F5A300;--amber-text:#8A5A00;--amber-soft:#FFF2D2;
+  --live:#18A957;--live-text:#0E7A3C;--live-soft:#DDF4E4;
+  --term:#1B1712;--term-ink:#F2EAD8;
+  --paper:#FFFEF9;--paper-edge:#EFE6CF;
+  --tg:#EAF3FB;--tg-out:#DCF2C8;--tg-ink:#1A2530;
+  --max:1180px;
+  --disp:"Bricolage Grotesque",sans-serif;--sans:"Archivo",sans-serif;--mono:"Fragment Mono",monospace;
+}
+html[data-theme="dark"]{
+  --bg:#16130E;--bg-2:#1E1A13;--card:#211C14;--line:#352E20;--line-2:#4A4130;--shadow:#0C0A06;
+  --ink:#F6EEDC;--ink-2:#BFB299;--ink-3:#9A8D72;
+  --accent:#FF5A33;--accent-text:#FF6E4A;--accent-deep:#D32F0E;--accent-soft:#3A2018;
+  --btn-bg:#D32F0E;--btn-edge:#8E2003;
+  --amber:#FFB01F;--amber-text:#FFB01F;--amber-soft:#3A2E12;
+  --live:#2ED573;--live-text:#2ED573;--live-soft:#12321F;
+  --term:#0F0D09;--term-ink:#F2EAD8;
+  --paper:#F6EFDC;--paper-edge:#D8CBAA;
+  --tg:#1B2733;--tg-out:#24371C;--tg-ink:#E8F0F8;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;transition:background .3s ease,color .3s ease;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:11;pointer-events:none;opacity:.4;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.4 0 0 0 0 0.36 0 0 0 0 0.28 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E")}
+a{color:inherit}
+img,svg{display:block;max-width:100%}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+.mono{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+h1,h2,h3{font-family:var(--disp)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:-9999px;top:12px;z-index:100;background:var(--ink);color:var(--bg);padding:12px 18px;border-radius:10px;font-family:var(--mono);font-size:13px}
+.skip:focus{left:12px}
+.ic{width:1em;height:1em;stroke:currentColor;stroke-width:1.9;fill:none;stroke-linecap:round;stroke-linejoin:round;display:inline-block;vertical-align:-.12em}
+
+/* ------------ buttons ------------ */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--disp);font-weight:700;font-size:16px;white-space:nowrap;
+  background:var(--btn-bg);color:#fff;text-decoration:none;padding:15px 26px;border-radius:14px;border:2px solid var(--btn-edge);
+  box-shadow:0 4px 0 var(--btn-edge);transition:transform .14s ease,box-shadow .14s ease,background .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 6px 0 var(--btn-edge);background:var(--accent)}
+.btn:active{transform:translateY(2px);box-shadow:0 1px 0 var(--btn-edge)}
+.btn.ghost{background:var(--card);color:var(--ink);border-color:var(--line-2);box-shadow:0 4px 0 var(--line-2)}
+.btn.ghost:hover{background:var(--bg-2)}
+.btn.small{padding:11px 18px;font-size:14px;border-radius:11px}
+
+/* ------------ header ------------ */
+header{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header::before{content:"";display:block;height:3px;background:linear-gradient(90deg,var(--accent),var(--amber) 55%,var(--live))}
+.bar{display:flex;align-items:center;justify-content:space-between;height:66px;gap:18px}
+.wordmark{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--disp);font-weight:800;font-size:19px;letter-spacing:-.02em;white-space:nowrap}
+.wordmark .dot{width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft);flex:none}
+.wordmark small{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--ink-3);text-transform:uppercase;font-weight:400}
+nav.links{display:flex;gap:24px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
+nav.links a{text-decoration:none}
+nav.links a:hover{color:var(--accent-text)}
+.bar-right{display:flex;align-items:center;gap:12px}
+.theme-btn{width:42px;height:42px;border-radius:12px;border:1px solid var(--line-2);background:var(--card);cursor:pointer;font-size:17px;display:flex;align-items:center;justify-content:center;transition:transform .15s;flex:none}
+.theme-btn:hover{transform:rotate(15deg)}
+
+/* ------------ marquee ------------ */
+.marquee{background:var(--accent-deep);color:#fff;overflow:hidden;white-space:nowrap;border-bottom:2px solid var(--btn-edge)}
+.marquee-track{display:inline-flex;animation:slide 26s linear infinite;padding:8px 0}
+.marquee:hover .marquee-track,.marquee:focus-within .marquee-track{animation-play-state:paused}
+.marquee span{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;padding:0 26px;border-right:1px solid rgba(255,255,255,.35)}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* ------------ hero ------------ */
+.hero{padding:72px 0 84px;position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(400px,.98fr);gap:56px;align-items:center;position:relative}
+.pill{display:inline-flex;align-items:center;gap:9px;background:var(--live-soft);color:var(--live-text);border:1px solid color-mix(in srgb,var(--live) 40%,transparent);border-radius:999px;padding:8px 16px;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase}
+.pill .beat{width:8px;height:8px;border-radius:50%;background:var(--live);animation:beat 1.6s ease infinite}
+@keyframes beat{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.7);opacity:.5}}
+h1{font-size:clamp(46px,5.8vw,82px);font-weight:800;line-height:.98;letter-spacing:-.035em;margin:24px 0}
+h1 .claw{color:var(--accent-text);white-space:nowrap}
+h1 .zap{color:var(--amber-text);white-space:nowrap}
+html[data-theme="dark"] h1 .zap{color:var(--amber)}
+.lead{font-size:19px;line-height:1.65;color:var(--ink-2);max-width:32em}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin:32px 0 22px}
+.micro{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--ink-3);text-transform:uppercase;display:flex;gap:18px;flex-wrap:wrap}
+.micro b{color:var(--accent-text);font-weight:400}
+
+/* terminal + mascot */
+.stage{position:relative;padding-top:64px}
+.term{background:var(--term);color:var(--term-ink);border-radius:20px;border:2px solid #000;box-shadow:0 14px 0 var(--shadow);font-family:var(--mono);font-size:13.5px;line-height:1.95;position:relative;z-index:2}
+.term-bar{display:flex;align-items:center;gap:8px;padding:14px 18px;border-bottom:1px solid rgba(255,255,255,.12)}
+.term-bar i{width:11px;height:11px;border-radius:50%;background:#5A5142}
+.term-bar i:first-child{background:var(--accent)}
+.term-bar i:nth-child(2){background:var(--amber)}
+.term-bar i:nth-child(3){background:var(--live)}
+.term-bar .mono{margin-left:auto;color:#8F8672;font-size:10.5px}
+.term-body{padding:20px 22px 24px;height:300px;overflow:hidden}
+.term .u{color:#B8AD93}
+.term .a{color:#7FD79B}
+.term .hl{color:#FF9B7E}
+.cursor{display:inline-block;width:8px;height:15px;background:var(--live);vertical-align:-2px;animation:blinkc 1s steps(1) infinite}
+@keyframes blinkc{50%{opacity:0}}
+.lob{position:absolute;top:-34px;right:112px;width:190px;z-index:3;animation:bob 4.5s ease-in-out infinite;transform-origin:50% 90%}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-9px) rotate(1.5deg)}}
+.lob .clawL{transform-origin:82% 70%;animation:snapL 3.2s ease-in-out infinite}
+.lob .clawR{transform-origin:18% 70%;animation:snapR 3.2s .35s ease-in-out infinite}
+@keyframes snapL{0%,72%,100%{transform:rotate(0)}80%{transform:rotate(-14deg)}88%{transform:rotate(4deg)}}
+@keyframes snapR{0%,72%,100%{transform:rotate(0)}80%{transform:rotate(14deg)}88%{transform:rotate(-4deg)}}
+.lob .antL{transform-origin:40% 100%;animation:sway 3.8s ease-in-out infinite}
+.lob .antR{transform-origin:60% 100%;animation:sway 3.8s .5s ease-in-out infinite reverse}
+@keyframes sway{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(6deg)}}
+.lob .eyes,.lob-wave .eyes{animation:blinke 5s steps(1) infinite;transform-origin:center 60%}
+@keyframes blinke{0%,92%,100%{transform:scaleY(1)}94%,96%{transform:scaleY(.08)}}
+
+/* ------------ sections + ghost numerals ------------ */
+section{padding:96px 0;border-top:1px solid var(--line);position:relative;overflow:hidden}
+.sec-num{position:absolute;top:34px;right:-10px;font-family:var(--disp);font-weight:800;font-size:clamp(120px,16vw,230px);line-height:1;color:transparent;-webkit-text-stroke:1.5px var(--line-2);opacity:.5;pointer-events:none;user-select:none;letter-spacing:-.05em}
+.sec-tag{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-text);margin-bottom:18px}
+.sec-tag::before{content:"" / "";width:26px;height:2px;background:var(--accent);border-radius:2px}
+h2{font-size:clamp(34px,4vw,56px);font-weight:800;line-height:1.02;letter-spacing:-.03em;max-width:17em}
+.sec-intro{color:var(--ink-2);max-width:44em;margin-top:16px;font-size:18px}
+
+/* reveal: hidden ONLY when JS present */
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.js .rv.in{opacity:1;transform:none}
+
+/* ------------ platforms ------------ */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:46px}
+.plat{background:var(--card);border:2px solid var(--line);border-radius:22px;padding:34px 32px;position:relative;overflow:hidden;transition:transform .2s ease,border-color .2s ease}
+.plat:hover{transform:translateY(-4px)}
+.plat.claw:hover{border-color:var(--accent)}
+.plat.zap:hover{border-color:var(--amber)}
+.plat .mark{width:74px;height:74px;border-radius:18px;display:flex;align-items:center;justify-content:center;margin-bottom:22px}
+.plat.claw .mark{background:var(--accent-soft)}
+.plat.zap .mark{background:var(--amber-soft)}
+.plat h3{font-size:27px;font-weight:800;letter-spacing:-.02em;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.plat h3 .mono{font-size:10px;padding:4px 9px;border-radius:6px;letter-spacing:.1em}
+.plat.claw h3 .mono{background:var(--accent-soft);color:var(--accent-text)}
+.plat.zap h3 .mono{background:var(--amber-soft);color:var(--amber-text)}
+.plat p{color:var(--ink-2);font-size:15.5px;margin-top:12px}
+.plat ul{margin-top:18px;padding:0}
+.plat li{list-style:none;position:relative;padding:8px 0 8px 24px;color:var(--ink-2);font-size:15px;border-top:1px dashed var(--line)}
+.plat.claw li::before{content:"▸" / "";position:absolute;left:2px;color:var(--accent);font-size:14px}
+.plat.zap li::before{content:"▸" / "";position:absolute;left:2px;color:var(--amber);font-size:14px}
+.both{grid-column:1/-1;text-align:center;background:var(--bg-2);border:2px dashed var(--line-2);border-radius:16px;padding:18px;font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.both b{color:var(--accent-text)}
+
+/* ------------ CTA band ------------ */
+.ctaband{margin-top:46px;background:var(--bg-2);border:2px dashed var(--line-2);border-radius:16px;padding:20px 26px;display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap}
+.ctaband p{font-family:var(--mono);font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-2)}
+.ctaband p b{color:var(--accent-text);font-weight:400}
+
+/* ------------ pipeline ------------ */
+.pipe-card{background:var(--card);border:2px solid var(--line);border-radius:24px;padding:38px 34px 30px;margin-top:46px;box-shadow:0 10px 0 var(--shadow)}
+.pipe-head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:10px;margin-bottom:26px}
+.pipe-head h3{font-size:22px;font-weight:800}
+.pipe-head .mono{color:var(--ink-3)}
+.pipe-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.pipe{width:100%;height:auto}
+.pipe text{font-family:var(--mono)}
+.pipe .lbl{font-size:14px;fill:var(--ink);font-weight:600}
+.pipe .sub{font-size:11px;fill:var(--ink-3);letter-spacing:.05em}
+.pipe .ref{font-size:11px;fill:var(--accent-text);letter-spacing:.04em}
+.pipe .node{fill:var(--bg-2);stroke:var(--line-2);stroke-width:1.6}
+.pipe .node-hot{fill:var(--accent-soft);stroke:var(--accent)}
+.pipe .node-amber{fill:var(--amber-soft);stroke:var(--amber)}
+.pipe .node-live{fill:var(--live-soft);stroke:var(--live)}
+.pipe .link{stroke:var(--line-2);stroke-width:2;fill:none;stroke-dasharray:6 7;animation:flow 1.2s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-13}}
+.pipe .nico{stroke:var(--ink-2);stroke-width:1.9;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.legend{display:flex;gap:20px;flex-wrap:wrap;margin-top:18px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.legend i{display:inline-block;width:9px;height:9px;border-radius:3px;margin-right:7px}
+.timeline{margin-top:52px;position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.timeline::before{content:"";position:absolute;top:26px;left:4%;right:4%;height:3px;background:repeating-linear-gradient(90deg,var(--line-2) 0 10px,transparent 10px 18px);z-index:0}
+.tstep{position:relative;z-index:1;padding-top:58px}
+.tstep .clock{position:absolute;top:0;left:0;width:52px;height:52px;border-radius:50%;background:var(--card);border:3px solid var(--accent);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:10.5px;color:var(--accent-text)}
+.tstep:last-child .clock{background:var(--live);border-color:var(--live);color:#fff}
+.tstep h3{font-size:18px;font-weight:700}
+.tstep p{font-size:14px;color:var(--ink-2);margin-top:6px}
+
+/* ------------ alive showcase: phone ------------ */
+.alive{display:grid;grid-template-columns:minmax(0,1fr) minmax(340px,.8fr);gap:64px;align-items:center;margin-top:46px}
+.alive-copy h3{font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-.025em;line-height:1.05}
+.alive-copy p{color:var(--ink-2);margin-top:14px;max-width:34em}
+.alive-points{margin-top:26px;padding:0}
+.alive-points li{list-style:none;display:flex;gap:14px;align-items:flex-start;padding:13px 0;border-top:1px dashed var(--line);font-size:15.5px;color:var(--ink-2)}
+.alive-points .ic{flex:none;font-size:20px;color:var(--accent-text);margin-top:2px}
+.phone{width:min(320px,100%);margin:0 auto;background:var(--card);border:3px solid var(--ink);border-radius:44px;padding:12px;box-shadow:0 18px 0 var(--shadow);position:relative}
+.phone::before{content:"";position:absolute;top:12px;left:50%;transform:translateX(-50%);width:110px;height:26px;background:var(--ink);border-radius:0 0 16px 16px;z-index:3}
+.screen{background:var(--tg);border-radius:32px;overflow:hidden;color:var(--tg-ink)}
+.tg-head{display:flex;align-items:center;gap:11px;padding:38px 16px 12px;background:color-mix(in srgb,var(--tg) 60%,var(--card));border-bottom:1px solid color-mix(in srgb,var(--tg-ink) 12%,transparent)}
+.tg-ava{width:38px;height:38px;border-radius:50%;background:var(--amber-soft);display:flex;align-items:center;justify-content:center;flex:none}
+.tg-ava svg{width:20px;height:20px}
+.tg-head b{font-size:14.5px;display:block;font-family:var(--sans)}
+.tg-head .on{font-size:11.5px;color:var(--live-text);font-family:var(--mono);text-transform:uppercase;letter-spacing:.06em}
+.chat{padding:16px 14px 20px;display:flex;flex-direction:column;gap:10px;min-height:330px}
+.msg{max-width:82%;padding:10px 14px;border-radius:16px;font-size:13.8px;line-height:1.5;font-family:var(--sans);position:relative}
+.msg.in{background:var(--card);border:1px solid color-mix(in srgb,var(--tg-ink) 10%,transparent);border-bottom-left-radius:5px;align-self:flex-start}
+.msg.out{background:var(--tg-out);border-bottom-right-radius:5px;align-self:flex-end}
+.msg .t{display:block;font-size:10px;color:var(--ink-3);font-family:var(--mono);margin-top:5px;text-align:right}
+.msg ul{margin:6px 0 0;padding-left:18px}
+.msg li{font-size:13px;padding:1.5px 0}
+.typing{display:inline-flex;gap:4px;padding:12px 16px;background:var(--card);border:1px solid color-mix(in srgb,var(--tg-ink) 10%,transparent);border-radius:16px;border-bottom-left-radius:5px;align-self:flex-start}
+.typing i{width:7px;height:7px;border-radius:50%;background:var(--ink-3);animation:tdots 1.2s ease infinite}
+.typing i:nth-child(2){animation-delay:.15s}
+.typing i:nth-child(3){animation-delay:.3s}
+@keyframes tdots{0%,60%,100%{transform:translateY(0);opacity:.5}30%{transform:translateY(-4px);opacity:1}}
+
+/* ------------ look inside: document mockups (CSS-only tabs) ------------ */
+.inside-grid{display:grid;grid-template-columns:minmax(300px,.9fr) minmax(0,1.1fr);gap:60px;align-items:center;margin-top:46px}
+.doctabs input{position:absolute;opacity:0;pointer-events:none}
+.doctab-btns{display:flex;flex-direction:column;gap:12px}
+.doctab-btns label{cursor:pointer;border:2px solid var(--line);border-radius:16px;background:var(--card);padding:18px 20px;display:flex;gap:14px;align-items:center;transition:border-color .2s,transform .2s}
+.doctab-btns label:hover{transform:translateX(4px)}
+.doctab-btns .ic{font-size:22px;color:var(--accent-text);flex:none}
+.doctab-btns b{font-family:var(--disp);font-size:16.5px;display:block}
+.doctab-btns span{font-size:13px;color:var(--ink-3);display:block}
+#doc1:checked ~ .inside-grid .doctab-btns label[for="doc1"],
+#doc2:checked ~ .inside-grid .doctab-btns label[for="doc2"],
+#doc3:checked ~ .inside-grid .doctab-btns label[for="doc3"]{border-color:var(--accent);box-shadow:0 6px 0 var(--shadow)}
+.docstage{position:relative;perspective:1200px;min-height:540px}
+.doc{position:absolute;inset:0;margin:auto;width:min(400px,92%);aspect-ratio:1/1.32;background:var(--paper);border:1px solid var(--paper-edge);border-radius:6px;
+  box-shadow:0 1px 2px rgba(0,0,0,.08),0 24px 48px -18px rgba(60,45,20,.35);padding:34px 32px;color:#2A241A;
+  opacity:0;transform:rotate(4deg) translateY(24px) scale(.96);transition:opacity .45s ease,transform .55s cubic-bezier(.2,.7,.2,1);pointer-events:none;display:flex;flex-direction:column}
+html[data-theme="dark"] .doc{color:#2A241A}
+#doc1:checked ~ .inside-grid .doc.d1,#doc2:checked ~ .inside-grid .doc.d2,#doc3:checked ~ .inside-grid .doc.d3{opacity:1;transform:rotate(-1deg) translateY(0) scale(1);pointer-events:auto;z-index:2}
+.doc .doc-kicker{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:#B4470E;display:flex;justify-content:space-between}
+.doc h4{font-family:var(--disp);font-weight:800;font-size:27px;line-height:1.05;letter-spacing:-.025em;margin:18px 0 6px}
+.doc .doc-sub{font-size:12.5px;color:#77694C;line-height:1.55}
+.doc .rule{height:2px;background:#B4470E;width:44px;border-radius:2px;margin:16px 0}
+.doc .doc-li{display:flex;gap:10px;align-items:flex-start;font-size:11.8px;line-height:1.5;color:#4A3F2C;padding:7px 0;border-bottom:1px dotted #D8CBAA}
+.doc .doc-li .cb{width:13px;height:13px;border:1.6px solid #B4470E;border-radius:4px;flex:none;margin-top:2px}
+.doc .doc-li .cb.done{background:#B4470E;position:relative}
+.doc .doc-li .cb.done::after{content:"";position:absolute;inset:2px 3px;border-left:2px solid #FFFEF9;border-bottom:2px solid #FFFEF9;transform:rotate(-45deg) translateY(-1px)}
+.doc .doc-li b{font-weight:600;color:#2A241A}
+.doc .promptbox{background:#221D15;color:#F2EAD8;border-radius:8px;padding:14px;font-family:var(--mono);font-size:10.2px;line-height:1.75;margin-top:4px}
+.doc .promptbox .v{color:#FFB98A}
+.doc .doc-foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:#9A8A66;border-top:1px solid #E4D9BC;padding-top:12px}
+.doc .doc-foot .dot{width:8px;height:8px;border-radius:50%;background:#B4470E}
+.doc .parts-mini{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px}
+.doc .parts-mini span{font-family:var(--mono);font-size:9px;color:#4A3F2C;border:1px solid #D8CBAA;border-radius:5px;padding:6px 8px;letter-spacing:.02em}
+
+/* ------------ contents grid ------------ */
+.parts{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:52px}
+.part{background:var(--card);border:2px solid var(--line);border-radius:18px;padding:24px 22px;transition:transform .2s ease,border-color .2s ease;position:relative}
+.part:hover{transform:translateY(-4px) rotate(-.4deg);border-color:var(--accent)}
+.part .no{position:absolute;top:-13px;left:18px;background:var(--btn-bg);color:#fff;font-family:var(--mono);font-size:11px;padding:4px 10px;border-radius:999px;letter-spacing:.08em}
+.part .ic{font-size:23px;color:var(--accent-text);margin:6px 0 10px}
+.part h3{font-size:17.5px;font-weight:700;letter-spacing:-.01em}
+.part p{font-size:14px;color:var(--ink-2);margin-top:8px;line-height:1.55}
+.part .file{font-family:var(--mono);font-size:10px;color:var(--ink-3);margin-top:12px;display:block;letter-spacing:.02em;word-break:break-all}
+
+/* ------------ fit check ------------ */
+.forwho{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:46px}
+.who{border-radius:22px;padding:32px;border:2px solid var(--line);background:var(--card)}
+.who.yes{border-color:color-mix(in srgb,var(--live) 45%,transparent)}
+.who h3{font-size:22px;font-weight:800;margin-bottom:16px}
+.who ul{padding:0}
+.who li{list-style:none;padding:9px 0 9px 30px;position:relative;font-size:15px;color:var(--ink-2);border-top:1px dashed var(--line)}
+.who.yes li::before{content:"✓" / "";position:absolute;left:2px;color:var(--live-text);font-weight:700}
+.who.no li::before{content:"✕" / "";position:absolute;left:2px;color:var(--ink-3)}
+
+/* ------------ bonus ticket ------------ */
+.ticket{margin-top:46px;background:var(--card);border:2px solid var(--amber);border-radius:22px;display:grid;grid-template-columns:1fr auto;overflow:hidden;position:relative;box-shadow:0 10px 0 var(--shadow)}
+.ticket::before,.ticket::after{content:"";position:absolute;width:26px;height:26px;border-radius:50%;background:var(--bg);border:2px solid var(--amber);top:50%;transform:translateY(-50%)}
+.ticket::before{left:-15px}
+.ticket::after{right:105px}
+.ticket-main{padding:34px 40px}
+.ticket-main .mono{color:var(--amber-text)}
+.ticket-main h3{font-size:26px;font-weight:800;margin:10px 0 10px}
+.ticket-main p{color:var(--ink-2);max-width:48em;font-size:15.5px}
+.ticket-main .fine{font-size:12.5px;color:var(--ink-3);margin-top:14px}
+.ticket-stub{width:118px;border-left:2px dashed var(--amber);display:flex;align-items:center;justify-content:center}
+.ticket-stub span{writing-mode:vertical-rl;font-family:var(--mono);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--amber-text)}
+
+/* ------------ pricing ------------ */
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px;align-items:stretch}
+.tier{background:var(--card);border:2px solid var(--line);border-radius:24px;padding:34px 30px;display:flex;flex-direction:column;position:relative;transition:transform .2s ease}
+.tier:hover{transform:translateY(-4px)}
+.tier.feat{border-color:var(--accent);box-shadow:0 12px 0 var(--shadow)}
+.tier .tab{position:absolute;top:-15px;left:50%;transform:translateX(-50%);background:var(--btn-bg);color:#fff;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;padding:6px 14px;border-radius:999px;white-space:nowrap}
+.tier .mono{color:var(--ink-3)}
+.tier h3{font-size:24px;font-weight:800;margin:8px 0 2px}
+.price{font-family:var(--disp);font-size:58px;font-weight:800;letter-spacing:-.04em;margin:14px 0 2px}
+.price sup{font-size:24px;font-weight:600;vertical-align:24px;margin-right:2px}
+.price small{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;color:var(--ink-3);margin-left:8px;text-transform:uppercase;font-weight:400}
+.price .from{font-family:var(--mono);font-size:11px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-right:6px;vertical-align:18px}
+.was{font-family:var(--mono);font-size:12px;color:var(--ink-3)}
+.was b{color:var(--accent-text);font-weight:400}
+.digital{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);margin-top:6px}
+.tier ul{margin:18px 0 26px;flex:1;padding:0}
+.tier li{list-style:none;padding:8px 0 8px 26px;position:relative;font-size:14.5px;color:var(--ink-2);border-top:1px dashed var(--line)}
+.tier li::before{content:"→" / "";position:absolute;left:0;color:var(--accent-text)}
+.tier .fine{margin-top:12px;text-align:center;font-size:12.5px;color:var(--ink-3)}
+.tier .fine b{color:var(--live-text);font-weight:600}
+.slots{margin-top:12px;text-align:center;font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--amber-text);text-transform:uppercase}
+
+/* ------------ faq ------------ */
+.faq{margin-top:46px;max-width:820px}
+.faq details{border:2px solid var(--line);border-radius:16px;background:var(--card);margin-bottom:12px;overflow:hidden}
+.faq details[open]{border-color:var(--accent)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;padding:20px 24px;font-family:var(--disp);font-size:18.5px;font-weight:700}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+" / "";color:var(--accent-text);font-size:22px;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 24px 22px;color:var(--ink-2);font-size:15.5px;max-width:46em;animation:faqIn .25s ease}
+@keyframes faqIn{from{opacity:0;transform:translateY(-4px)}}
+
+/* ------------ answer blocks ------------ */
+.answer{margin-top:44px;background:var(--bg-2);border-left:4px solid var(--accent);border-radius:0 16px 16px 0;padding:24px 28px;max-width:56em}
+.answer h3{font-size:15px;font-family:var(--mono);font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px}
+.answer p{font-size:16.5px;color:var(--ink)}
+
+/* ------------ final ------------ */
+.final{text-align:center;background:var(--bg-2);border-top:1px solid var(--line)}
+.final h2{margin:20px auto 16px;max-width:15em}
+.final p{color:var(--ink-2);max-width:34em;margin:0 auto 32px}
+.final .lob-wave{width:120px;margin:0 auto}
+.lob-wave .clawL,.lob-wave .clawR{animation:none}
+
+footer{padding:44px 0 60px;color:var(--ink-3);font-size:13px;border-top:1px solid var(--line)}
+footer .wrap{display:grid;grid-template-columns:1fr auto;gap:30px}
+footer .safe{max-width:46em;line-height:1.7}
+
+/* ------------ responsive ------------ */
+@media (max-width:1020px){
+  .hero .wrap{grid-template-columns:1fr;gap:60px}
+  .parts{grid-template-columns:1fr 1fr}
+  .timeline{grid-template-columns:1fr 1fr;gap:34px}
+  .timeline::before{display:none}
+  .duo,.forwho{grid-template-columns:1fr}
+  .alive{grid-template-columns:1fr;gap:48px}
+  .inside-grid{grid-template-columns:1fr;gap:44px}
+  .docstage{min-height:560px}
+  .tiers{grid-template-columns:1fr;max-width:520px;margin-left:auto;margin-right:auto}
+  nav.links a{display:none}
+  nav.links a.keep{display:inline}
+  .sec-num{opacity:.3}
+}
+@media (max-width:620px){
+  body{font-size:16px}
+  section{padding:64px 0}
+  .hero{padding:52px 0 64px}
+  .wrap{padding:0 20px}
+  .hero-cta .btn{width:100%}
+  .parts,.timeline{grid-template-columns:1fr}
+  .stage{padding-top:76px}
+  .lob{width:150px;right:10px;top:-30px}
+  .ticket{grid-template-columns:1fr}
+  .ticket-stub{width:100%;height:56px;border-left:0;border-top:2px dashed var(--amber)}
+  .ticket-stub span{writing-mode:horizontal-tb}
+  .ticket::after{display:none}
+  .hero .wrap{gap:44px}
+  .wordmark small{display:none}
+  .btn.small{padding:9px 14px;font-size:13px}
+  .bar{gap:10px}
+  .pipe-scroll{mask-image:linear-gradient(90deg,#000 90%,transparent);-webkit-mask-image:linear-gradient(90deg,#000 90%,transparent)}
+  .pipe{min-width:880px}
+  .term-body{height:340px}
+  .docstage{min-height:520px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+  .js .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body class="bundle-openclaw">
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- design-system icon set (stroke, currentColor) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-term" viewBox="0 0 24 24"><rect x="2.5" y="4" width="19" height="16" rx="3"/><path d="M7 9.5l3.2 2.5L7 14.5M12.5 15H17"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><path d="M3.5 8.5 12 4l8.5 4.5v7L12 20l-8.5-4.5z"/><path d="M3.5 8.5 12 13l8.5-4.5M12 13v7"/></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="9" r="4.5"/><path d="M11.5 12.5 20 21M16 17l2.4-2.4M13.5 14.5l2 2"/></symbol>
+    <symbol id="i-signal" viewBox="0 0 24 24"><circle cx="12" cy="18" r="1.6" fill="currentColor" stroke="none"/><path d="M8.5 14.5a5 5 0 0 1 7 0M5.5 11.5a9.2 9.2 0 0 1 13 0M2.8 8.4a13.5 13.5 0 0 1 18.4 0"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5c0 4.1-4 7.5-9 7.5-1 0-2-.14-2.9-.4L4 20l1.3-3.1C3.9 15.6 3 13.6 3 11.5 3 7.4 7 4 12 4s9 3.4 9 7.5z"/><path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01"/></symbol>
+    <symbol id="i-ring" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M5.7 5.7l3.5 3.5M18.3 5.7l-3.5 3.5M18.3 18.3l-3.5-3.5M5.7 18.3l3.5-3.5"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 2.8h8L20 8.8v12.4H6z"/><path d="M14 2.8v6h6M9.5 13h7M9.5 16.5h7M9.5 9.5H11"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12.4 2.6 2.6L16 9.5"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13.5 2.5 5.5 14h5l-1.5 7.5L17 10h-5z"/></symbol>
+    <symbol id="i-claw" viewBox="0 0 24 24"><path d="M12 21c-4 0-7-3-7-7 0-3.5 2.5-6 5.5-6.5C9.5 5.5 8 4 6 3.5 9 2 12.5 3.5 13.5 6c.5-2 2.5-3.5 5-3.5-1.5 2-1.5 3.5-.5 5C20.5 9 21.5 11.5 21 14c-.6 3.5-4 7-9 7z"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4.5 6v5.5c0 4.5 3 8 7.5 9.5 4.5-1.5 7.5-5 7.5-9.5V6z"/><path d="m8.8 12 2.2 2.2 4.2-4.4"/></symbol>
+  </defs>
+</svg>
+
+<header>
+  <div class="wrap bar">
+    <a class="wordmark" href="#top"><span class="dot"></span>AutoKit&nbsp;Labs <small>Kit Nº 01</small></a>
+    <nav class="links" aria-label="Page sections">
+      <a href="#platforms">Platforms</a>
+      <a href="#pipeline">How it works</a>
+      <a href="#inside">Inside the box</a>
+      <a class="keep" href="#pricing">Pricing</a>
+      <a class="keep" href="#faq">FAQ</a>
+    </nav>
+    <div class="bar-right">
+      <button class="theme-btn" id="themeBtn" aria-label="Switch to dark theme" aria-pressed="false">🌙</button>
+      <a class="btn small" href="#pricing">Get it · $29</a>
+    </div>
+  </div>
+</header>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>🦞 Launch week</span><span>Founding pricing — rises at v1.1</span><span>Kit Nº 01 · OpenClaw + Hermes</span><span>Every command verified</span><span>14-day refund</span>
+    <span>🦞 Launch week</span><span>Founding pricing — rises at v1.1</span><span>Kit Nº 01 · OpenClaw + Hermes</span><span>Every command verified</span><span>14-day refund</span>
+  </div>
+</div>
+
+<main id="main">
+<section class="hero" id="top" style="border-top:0">
+  <div class="wrap">
+    <div>
+      <span class="pill"><i class="beat"></i> Your agent could be alive tonight</span>
+      <h1>Your first AI agent, <span class="claw">claws</span> and all — <span class="zap">alive</span> in one sitting.</h1>
+      <p class="lead">The demos look effortless. Then come the provider keys, gateways, and forty red lines in the terminal. The Starter Box is the install kit that should have shipped with <strong>OpenClaw</strong> and <strong>Hermes</strong> — verified commands, checklists, and one golden path from empty terminal to an agent answering you on Telegram.</p>
+      <div class="hero-cta">
+        <a class="btn" href="#pricing">Get the Starter Box — $29 →</a>
+        <a class="btn ghost" href="#pipeline">See how it works</a>
+      </div>
+      <p class="micro"><span><b>8</b> numbered guides</span><span><b>2</b> platforms</span><span><b>60</b>-min golden path</span><span>14-day refund</span></p>
+    </div>
+
+    <div class="stage">
+      <svg class="lob mascot-lobby" viewBox="0 0 200 150" fill="none" role="img" aria-label="Lobby, the OpenClaw lobster mascot, waving its claws">
+        <path class="antL" d="M84 52 C74 30 60 22 46 20" stroke="#D32F0E" stroke-width="4" stroke-linecap="round"/>
+        <path class="antR" d="M116 52 C126 30 140 22 154 20" stroke="#D32F0E" stroke-width="4" stroke-linecap="round"/>
+        <circle cx="46" cy="20" r="5" fill="#F43F1E"/><circle cx="154" cy="20" r="5" fill="#F43F1E"/>
+        <g class="clawL">
+          <ellipse cx="38" cy="86" rx="26" ry="20" fill="#F43F1E"/>
+          <path d="M22 74 Q10 66 14 54 Q26 58 30 68 Z" fill="#F43F1E"/>
+          <path d="M20 94 Q6 96 4 108 Q18 108 26 100 Z" fill="#D32F0E"/>
+          <circle cx="46" cy="84" r="4" fill="#D32F0E" opacity=".5"/>
+        </g>
+        <g class="clawR">
+          <ellipse cx="162" cy="86" rx="26" ry="20" fill="#F43F1E"/>
+          <path d="M178 74 Q190 66 186 54 Q174 58 170 68 Z" fill="#F43F1E"/>
+          <path d="M180 94 Q194 96 196 108 Q182 108 174 100 Z" fill="#D32F0E"/>
+          <circle cx="154" cy="84" r="4" fill="#D32F0E" opacity=".5"/>
+        </g>
+        <path d="M62 92 Q76 96 84 90" stroke="#D32F0E" stroke-width="7" stroke-linecap="round"/>
+        <path d="M138 92 Q124 96 116 90" stroke="#D32F0E" stroke-width="7" stroke-linecap="round"/>
+        <ellipse cx="100" cy="92" rx="34" ry="40" fill="#F43F1E"/>
+        <path d="M78 106 Q100 118 122 106" stroke="#D32F0E" stroke-width="3" fill="none" opacity=".6"/>
+        <path d="M80 92 Q100 102 120 92" stroke="#D32F0E" stroke-width="3" fill="none" opacity=".6"/>
+        <path d="M84 128 Q100 142 116 128 L108 122 Q100 130 92 122 Z" fill="#D32F0E"/>
+        <g class="eyes">
+          <circle cx="88" cy="74" r="7" fill="#fff"/><circle cx="112" cy="74" r="7" fill="#fff"/>
+          <circle class="pupil" cx="90" cy="75" r="3.4" fill="#221D15"/><circle class="pupil" cx="110" cy="75" r="3.4" fill="#221D15"/>
+        </g>
+        <path d="M92 86 Q100 92 108 86" stroke="#7A1F04" stroke-width="3" stroke-linecap="round" fill="none"/>
+      </svg>
+
+      <div class="term" role="img" aria-label="Terminal log showing an agent coming alive: provider key found, model connected, Telegram webhook live">
+        <div class="term-bar"><i></i><i></i><i></i><span class="mono">first-boot.log</span></div>
+        <div class="term-body" id="termBody"><span class="u">$ </span><span class="cursor"></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="platforms">
+  <span class="sec-num" aria-hidden="true">01</span>
+  <div class="wrap">
+    <span class="sec-tag rv">Pick your creature</span>
+    <h2 class="rv">Two famous agents. One box installs both.</h2>
+    <p class="sec-intro rv">OpenClaw is the internet's favorite pinch-everything agent. Hermes is the fast messenger that lives in your Telegram. The Starter Box covers both — with an honest comparison so you pick by use case, not by hype.</p>
+    <div class="duo">
+      <div class="plat claw rv">
+        <div class="mark">
+          <svg width="46" height="46" viewBox="0 0 46 46" fill="none" aria-hidden="true">
+            <ellipse cx="23" cy="26" rx="10" ry="12" fill="#F43F1E"/>
+            <ellipse cx="9" cy="20" rx="7.5" ry="6" fill="#F43F1E"/><path d="M5 16 Q1 13 2 8 Q7 10 8 14 Z" fill="#D32F0E"/>
+            <ellipse cx="37" cy="20" rx="7.5" ry="6" fill="#F43F1E"/><path d="M41 16 Q45 13 44 8 Q39 10 38 14 Z" fill="#D32F0E"/>
+            <circle cx="19.5" cy="21" r="2.4" fill="#fff"/><circle cx="26.5" cy="21" r="2.4" fill="#fff"/>
+            <circle cx="20" cy="21.5" r="1.1" fill="#221D15"/><circle cx="26" cy="21.5" r="1.1" fill="#221D15"/>
+            <path d="M14 42 Q23 47 32 42 L28 38 Q23 41 18 38 Z" fill="#D32F0E"/>
+          </svg>
+        </div>
+        <h3>OpenClaw <span class="mono">the powerhouse</span></h3>
+        <p>The do-everything open-source agent — files, browser, tools, memory. Huge community, moves fast, endless skills.</p>
+        <ul>
+          <li>Best when you want one agent that can touch everything</li>
+          <li>Richest skill &amp; plugin ecosystem</li>
+          <li>Steeper config — exactly why the guide exists</li>
+        </ul>
+      </div>
+      <div class="plat zap rv" style="--d:.1s">
+        <div class="mark">
+          <svg width="46" height="46" viewBox="0 0 46 46" fill="none" aria-hidden="true">
+            <path d="M26 3 L12 26 L21 26 L18 43 L34 18 L24 18 Z" fill="#F5A300"/>
+            <path d="M10 12 Q2 10 1 16 Q6 18 11 16" fill="#F5A300" opacity=".75"/>
+            <path d="M36 12 Q44 10 45 16 Q40 18 35 16" fill="#F5A300" opacity=".75"/>
+          </svg>
+        </div>
+        <h3>Hermes <span class="mono">the messenger</span></h3>
+        <p>The multi-profile agent that answers you on Telegram and Slack. Lean, quick to wire up, brilliant for daily driving.</p>
+        <ul>
+          <li>Fastest path to a chat agent that feels alive</li>
+          <li>Profiles keep work, home &amp; projects separate</li>
+          <li>The 60-minute golden path uses Hermes</li>
+        </ul>
+      </div>
+      <div class="both rv">Can't choose? The box installs <b>both</b> — compare them on your own machine.</div>
+    </div>
+  </div>
+</section>
+
+<section id="pipeline">
+  <span class="sec-num" aria-hidden="true">02</span>
+  <div class="wrap">
+    <span class="sec-tag rv">How it works</span>
+    <h2 class="rv">From empty terminal to living agent.</h2>
+    <p class="sec-intro rv">This is the whole pipeline the box walks you through. Every node maps to a numbered guide — nothing decorative, nothing skipped.</p>
+
+    <div class="pipe-card rv">
+      <div class="pipe-head"><h3>The install pipeline</h3><span class="mono">each node = a guide in the box</span></div>
+      <div class="pipe-scroll">
+      <svg class="pipe" viewBox="0 0 1100 260" aria-label="Install pipeline diagram: your terminal, install the agent, provider keys, wire a gateway, it's alive — with a safety and troubleshooting rail under every step">
+        <path class="link" d="M190 98 H238"/>
+        <path class="link" d="M428 98 H476"/>
+        <path class="link" d="M656 98 H704"/>
+        <path class="link" d="M894 98 H942"/>
+        <rect class="node" x="40" y="56" width="150" height="84" rx="14"/>
+        <g class="nico" transform="translate(60,72) scale(1)"><use href="#i-term" width="22" height="22"/></g>
+        <text class="ref" x="176" y="76" text-anchor="end">G.01</text>
+        <text class="lbl" x="62" y="112">Your terminal</text>
+        <text class="sub" x="62" y="129">start here</text>
+        <rect class="node node-hot" x="238" y="56" width="190" height="84" rx="14"/>
+        <g class="nico" transform="translate(258,72)"><use href="#i-claw" width="22" height="22"/></g>
+        <text class="ref" x="414" y="76" text-anchor="end">G.02–03</text>
+        <text class="lbl" x="260" y="112">Install the agent</text>
+        <text class="sub" x="260" y="129">OpenClaw / Hermes</text>
+        <rect class="node node-amber" x="476" y="56" width="180" height="84" rx="14"/>
+        <g class="nico" transform="translate(496,72)"><use href="#i-key" width="22" height="22"/></g>
+        <text class="ref" x="642" y="76" text-anchor="end">G.04</text>
+        <text class="lbl" x="498" y="112">Provider keys</text>
+        <text class="sub" x="498" y="129">+ cost controls</text>
+        <rect class="node node-hot" x="704" y="56" width="190" height="84" rx="14"/>
+        <g class="nico" transform="translate(724,72)"><use href="#i-signal" width="22" height="22"/></g>
+        <text class="ref" x="880" y="76" text-anchor="end">G.05</text>
+        <text class="lbl" x="726" y="112">Wire a gateway</text>
+        <text class="sub" x="726" y="129">Telegram / Slack</text>
+        <rect class="node node-live" x="942" y="56" width="130" height="84" rx="14"/>
+        <g class="nico" transform="translate(960,72)"><use href="#i-chat" width="22" height="22"/></g>
+        <text class="ref" x="1058" y="76" text-anchor="end">G.08</text>
+        <text class="lbl" x="962" y="112">It's alive</text>
+        <text class="sub" x="962" y="129">first 10 tasks</text>
+        <path class="link" d="M556 140 V184"/>
+        <rect class="node" x="416" y="184" width="280" height="48" rx="12"/>
+        <g class="nico" transform="translate(434,196)"><use href="#i-ring" width="20" height="20"/></g>
+        <text class="lbl" x="464" y="208">Safety &amp; troubleshooting rail</text>
+        <text class="sub" x="464" y="224">G.06–07 · runs under every step</text>
+      </svg>
+      </div>
+      <div class="legend">
+        <span><i style="background:var(--accent)"></i>Install steps</span>
+        <span><i style="background:var(--amber)"></i>Keys &amp; config</span>
+        <span><i style="background:var(--live)"></i>Alive</span>
+        <span><i style="background:var(--line-2)"></i>Always-on safety</span>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <div class="tstep rv"><span class="clock">00:00</span><h3>Unbox &amp; choose</h3><p>Start Here picks your platform, provider and gateway in 10 minutes.</p></div>
+      <div class="tstep rv" style="--d:.08s"><span class="clock">00:15</span><h3>Install &amp; keys</h3><p>Copy-paste the verified commands. Keys go exactly where the guide says.</p></div>
+      <div class="tstep rv" style="--d:.16s"><span class="clock">00:40</span><h3>Wire Telegram</h3><p>Checklist-driven bot setup — every silent failure explained.</p></div>
+      <div class="tstep rv" style="--d:.24s"><span class="clock">01:00</span><h3>First reply</h3><p>Your agent answers. Hand it the First 10 Tasks and keep going.</p></div>
+    </div>
+
+    <div class="answer rv">
+      <h3>What is the AI Agent Starter Box?</h3>
+      <p>The <strong>AI Agent Starter Box</strong> is a boxed install kit that takes a beginner from an empty terminal to a working <strong>OpenClaw</strong> or <strong>Hermes</strong> AI agent connected to <strong>Telegram or Slack</strong> — using verified commands, gateway checklists and a 60-minute golden path, with no coding skills required.</p>
+    </div>
+  </div>
+</section>
+
+<section id="alive">
+  <span class="sec-num" aria-hidden="true">03</span>
+  <div class="wrap">
+    <span class="sec-tag rv">Minute 61</span>
+    <h2 class="rv">This is what "alive" looks like.</h2>
+    <div class="alive">
+      <div class="alive-copy rv">
+        <h3>Your agent, in your pocket, doing real work.</h3>
+        <p>Not a chat tab you keep forgetting to open — an agent that lives where you already are. Message it from the couch. It remembers your projects, runs your little jobs, and answers in seconds.</p>
+        <ul class="alive-points">
+          <li><svg class="ic"><use href="#i-chat"/></svg><span><b>Telegram or Slack native.</b> The gateway checklists wire it into your real chats — not another app to install.</span></li>
+          <li><svg class="ic"><use href="#i-shield"/></svg><span><b>Safe by default.</b> The safety checklist caps spending and locks down access before the first message.</span></li>
+          <li><svg class="ic"><use href="#i-check"/></svg><span><b>Ten first jobs included.</b> Week one is planned for you — briefings, summaries, research runs, reminders.</span></li>
+        </ul>
+      </div>
+      <div class="phone rv" role="img" aria-label="Phone mockup: a Telegram chat where the user asks the agent to plan their week and it replies with extracted tasks">
+        <div class="screen">
+          <div class="tg-head">
+            <span class="tg-ava"><svg viewBox="0 0 24 24" class="ic" style="color:var(--amber-text)"><use href="#i-bolt"/></svg></span>
+            <div><b>Hermes · your agent</b><span class="on">● online</span></div>
+          </div>
+          <div class="chat" id="chat">
+            <div class="msg out">you alive?<span class="t">21:04</span></div>
+            <div class="msg in">Alive and listening. What are we building?<span class="t">21:04</span></div>
+            <div class="msg out">plan my week from this email dump 📎<span class="t">21:06</span></div>
+            <div class="typing" aria-hidden="true"><i></i><i></i><i></i></div>
+            <div class="msg in">Done — 6 tasks extracted:
+              <ul>
+                <li>Invoice follow-up → Tue 10:00</li>
+                <li>Renew domain (expires Fri)</li>
+                <li>Reply to supplier quote</li>
+              </ul>
+              Want the rest as a Notion table?<span class="t">21:06</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="inside">
+  <span class="sec-num" aria-hidden="true">04</span>
+  <div class="wrap">
+    <span class="sec-tag rv">Contents</span>
+    <h2 class="rv">Eight parts. Zero filler.</h2>
+    <p class="sec-intro rv">These aren't slides with stock photos — they're working documents. Flip through actual pages from the box:</p>
+
+    <div class="doctabs rv">
+      <input type="radio" name="doctab" id="doc1" checked>
+      <input type="radio" name="doctab" id="doc2">
+      <input type="radio" name="doctab" id="doc3">
+      <div class="inside-grid">
+        <div class="doctab-btns">
+          <label for="doc1"><svg class="ic"><use href="#i-box"/></svg><span><b>Start Here guide</b><span>Your next 60 minutes, mapped</span></span></label>
+          <label for="doc2"><svg class="ic"><use href="#i-signal"/></svg><span><b>Gateway checklist</b><span>Guide 05 · the Telegram page</span></span></label>
+          <label for="doc3"><svg class="ic"><use href="#i-doc"/></svg><span><b>Bonus prompt card</b><span>From the Fable 5 / Mythos pack</span></span></label>
+        </div>
+        <div class="docstage">
+          <div class="doc d1">
+            <div class="doc-kicker"><span>AutoKit Labs · Kit Nº 01</span><span>Guide 01</span></div>
+            <h4>Start Here.<br>Your next 60 minutes.</h4>
+            <p class="doc-sub">Pick one platform, one provider, one gateway. This guide makes each choice for you if you can't — then shows exactly what "done" looks like before you open a terminal.</p>
+            <div class="rule"></div>
+            <div class="doc-li"><span class="cb done"></span><span><b>Choose your agent</b> — OpenClaw or Hermes, honest comparison inside</span></div>
+            <div class="doc-li"><span class="cb done"></span><span><b>Choose your provider</b> — with the cost-cap setting you set first</span></div>
+            <div class="doc-li"><span class="cb"></span><span><b>Choose your gateway</b> — Telegram (fastest) or Slack</span></div>
+            <div class="parts-mini">
+              <span>02 · OpenClaw install</span><span>03 · Hermes install</span>
+              <span>04 · Provider keys</span><span>05 · Gateways</span>
+              <span>06 · Golden path ✓</span><span>07 · Rescue &amp; safety</span>
+            </div>
+            <div class="doc-foot"><span>START-HERE.pdf · p.1</span><span class="dot"></span><span>autokitlabs.com</span></div>
+          </div>
+          <div class="doc d2">
+            <div class="doc-kicker"><span>Gateway checklists</span><span>Guide 05 · p.3</span></div>
+            <h4>Telegram, wired in 9 checks.</h4>
+            <p class="doc-sub">Every step tells you what you should see. If you don't see it, the margin points at the fix.</p>
+            <div class="rule"></div>
+            <div class="doc-li"><span class="cb done"></span><span><b>5.1</b> Open @BotFather → <b>/newbot</b> — name it something you'll say out loud</span></div>
+            <div class="doc-li"><span class="cb done"></span><span><b>5.2</b> Copy the bot token → paste into <b>.env</b> as TELEGRAM_TOKEN — never into chat</span></div>
+            <div class="doc-li"><span class="cb done"></span><span><b>5.3</b> Run the gateway add command → expect <b>"webhook live"</b></span></div>
+            <div class="doc-li"><span class="cb"></span><span><b>5.4</b> Send your bot "hello" → reply within 5s</span></div>
+            <div class="doc-li"><span class="cb"></span><span><b>5.5</b> Silent? → §7.2 "the three silent failures" (token, privacy mode, webhook)</span></div>
+            <div class="doc-foot"><span>GATEWAY-CHECKLISTS.pdf</span><span class="dot"></span><span>verified 2026-07</span></div>
+          </div>
+          <div class="doc d3">
+            <div class="doc-kicker"><span>Bonus pack · operator prompts</span><span>Card 03</span></div>
+            <h4>Morning Ops Brief</h4>
+            <p class="doc-sub">Give your new agent its first standing job: a daily brief that reads your calendar and inbox summary, then hands you the day in 8 lines.</p>
+            <div class="rule"></div>
+            <div class="promptbox">You are my operations briefer. Every morning at 07:30:<br>1. Read {calendar} and {inbox_summary}.<br>2. List the <span class="v">3 things that break today</span> if ignored.<br>3. Flag anything that needs a human decision.<br>4. End with one line: what would make today a win.<br>Rules: no fluff, no motivational quotes, flag uncertainty.</div>
+            <div class="doc-li" style="border:0;margin-top:8px"><span class="cb done"></span><span><b>Review step:</b> read before acting — the brief drafts, you decide</span></div>
+            <div class="doc-foot"><span>FABLE5-OPERATOR-PROMPTS.pdf</span><span class="dot"></span><span>independent work — no vendor affiliation</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="parts">
+      <div class="part rv"><span class="no">Part 01</span><svg class="ic"><use href="#i-box"/></svg><h3>Start Here guide</h3><p>Pick platform, provider and gateway — and see your next 60 minutes before touching a terminal.</p><span class="file">START-HERE.pdf</span></div>
+      <div class="part rv" style="--d:.05s"><span class="no">Part 02</span><svg class="ic"><use href="#i-claw"/></svg><h3>OpenClaw install</h3><p>Prereqs, install, first run and the settings that matter — macOS &amp; Linux.</p><span class="file">OPENCLAW-BEGINNER-INSTALL.pdf</span></div>
+      <div class="part rv" style="--d:.1s"><span class="no">Part 03</span><svg class="ic"><use href="#i-bolt"/></svg><h3>Hermes install</h3><p>Install, profiles, provider config and your first working chat session.</p><span class="file">HERMES-BEGINNER-INSTALL.pdf</span></div>
+      <div class="part rv" style="--d:.15s"><span class="no">Part 04</span><svg class="ic"><use href="#i-key"/></svg><h3>Provider keys</h3><p>Where every key lives, cost-control settings, and switching models later without breakage.</p><span class="file">PROVIDER-SETUP.pdf</span></div>
+      <div class="part rv"><span class="no">Part 05</span><svg class="ic"><use href="#i-signal"/></svg><h3>Gateway checklists</h3><p>Telegram &amp; Slack step-by-step: tokens, permissions, webhooks — every silent failure named.</p><span class="file">GATEWAY-CHECKLISTS.pdf</span></div>
+      <div class="part rv" style="--d:.05s"><span class="no">Part 06</span><svg class="ic"><use href="#i-check"/></svg><h3>Golden path</h3><p>One honest zero-to-agent run with a dated command-verification matrix.</p><span class="file">GOLDEN-PATH + MATRIX</span></div>
+      <div class="part rv" style="--d:.1s"><span class="no">Part 07</span><svg class="ic"><use href="#i-ring"/></svg><h3>Rescue &amp; safety</h3><p>The errors beginners actually hit, plus a safety checklist so your agent can't overspend or leak.</p><span class="file">TROUBLESHOOTING + SAFETY</span></div>
+      <div class="part rv" style="--d:.15s"><span class="no">Part 08</span><svg class="ic"><use href="#i-chat"/></svg><h3>First 10 tasks</h3><p>Ten useful week-one jobs so the install becomes a habit, not a screenshot.</p><span class="file">FIRST-10-AGENT-TASKS.pdf</span></div>
+    </div>
+    <div class="ctaband rv">
+      <p><b>8 guides</b> · 60-min golden path · founding price <b>$29</b></p>
+      <a class="btn small" href="#pricing">Get the Starter Box →</a>
+    </div>
+  </div>
+</section>
+
+<section id="who">
+  <span class="sec-num" aria-hidden="true">05</span>
+  <div class="wrap">
+    <span class="sec-tag rv">Fit check</span>
+    <h2 class="rv">Read this before buying.</h2>
+    <div class="forwho">
+      <div class="who yes rv">
+        <h3>The box is for you if…</h3>
+        <ul>
+          <li>You've watched agent demos and want one on your own machine</li>
+          <li>You can open a terminal and paste a command — that's the whole prerequisite</li>
+          <li>You want your agent on Telegram or Slack</li>
+          <li>You'd rather follow one verified path than six tutorials</li>
+        </ul>
+      </div>
+      <div class="who no rv" style="--d:.1s">
+        <h3>Skip it if…</h3>
+        <ul>
+          <li>You already run agents in production — this is a beginner kit</li>
+          <li>You want a no-terminal, app-store experience</li>
+          <li>You expect a business-in-a-box — this installs software, it doesn't promise income</li>
+          <li>You need Windows-native paths today (macOS &amp; Linux first, WSL notes included)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ctaband rv">
+      <p>Sounds like you? <b>14-day refund</b> if your agent doesn't run.</p>
+      <a class="btn small" href="#pricing">Start the install tonight →</a>
+    </div>
+  </div>
+</section>
+
+<section id="bonus">
+  <span class="sec-num" aria-hidden="true">06</span>
+  <div class="wrap">
+    <span class="sec-tag rv">In-box bonus</span>
+    <h2 class="rv">Your new agent's first real job.</h2>
+    <div class="ticket rv">
+      <div class="ticket-main">
+        <span class="mono">Included free with launch-week orders</span>
+        <h3>The Fable 5 &amp; Mythos-style prompt pack</h3>
+        <p>Copy-paste operator prompts and long-horizon loop patterns written for the newest frontier models — so the agent you just installed has somewhere serious to go on day one. Safe-defender loops and a quick-reference card included.</p>
+        <p class="fine">Independent AutoKit Labs work. Not affiliated with, or endorsed by, any model vendor.</p>
+      </div>
+      <div class="ticket-stub"><span>Bonus pack</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <span class="sec-num" aria-hidden="true">07</span>
+  <div class="wrap">
+    <span class="sec-tag rv">Pricing</span>
+    <h2 class="rv">One box. Three ways in.</h2>
+    <p class="sec-intro rv">Founding prices for launch week — they rise when v1.1 ships with the expanded walkthrough set. No subscriptions, no drip content.</p>
+    <div class="tiers">
+      <div class="tier rv">
+        <span class="mono">Digital kit</span>
+        <h3>Starter</h3>
+        <div class="price"><sup>$</sup>29<small>one-time</small></div>
+        <span class="was">founding price · <b>rises at v1.1</b></span>
+        <p class="digital">Instant digital access — nothing ships</p>
+        <ul>
+          <li>Full Starter Box — all 8 parts</li>
+          <li>OpenClaw + Hermes install paths</li>
+          <li>Fable 5 / Mythos bonus pack</li>
+          <li>All v1.x updates included</li>
+        </ul>
+        <!-- PLACEHOLDER: checkout intentionally not wired — this copy is published as a design-system example. The live funnel ships from botbento.com with a hosted checkout URL. -->
+        <a class="btn ghost" href="#" data-checkout="starter" aria-disabled="true" title="Design-system demo — checkout not wired">Get Starter →</a>
+        <p class="fine"><b>14-day guarantee</b> — if your agent doesn't run, money back.</p>
+      </div>
+      <div class="tier feat rv" style="--d:.08s">
+        <span class="tab">Best for going past the install</span>
+        <span class="mono">Digital kit +</span>
+        <h3>Pro</h3>
+        <div class="price"><sup>$</sup>79<small>one-time</small></div>
+        <span class="was">founding price · <b>rises at v1.1</b></span>
+        <p class="digital">Instant digital access — nothing ships</p>
+        <ul>
+          <li>Everything in Starter</li>
+          <li>Editable Notion + Google Sheets command trackers</li>
+          <li>Extra use-case walkthroughs &amp; ops templates</li>
+          <li>Priority email support for your install</li>
+        </ul>
+        <!-- PLACEHOLDER: checkout intentionally not wired — this copy is published as a design-system example. The live funnel ships from botbento.com with a hosted checkout URL. -->
+        <a class="btn" href="#" data-checkout="pro" aria-disabled="true" title="Design-system demo — checkout not wired">Get Pro →</a>
+        <p class="fine"><b>14-day guarantee</b> — if your agent doesn't run, money back.</p>
+      </div>
+      <div class="tier rv" style="--d:.16s">
+        <span class="mono">Done with you</span>
+        <h3>Setup Service</h3>
+        <div class="price"><span class="from">from</span><sup>$</sup>1,500</div>
+        <span class="was">live, 1-on-1 install session</span>
+        <ul>
+          <li>We install your agent with you, live</li>
+          <li>Provider, gateway &amp; safety config done right</li>
+          <li>Your first 10 tasks wired to your business</li>
+        </ul>
+        <a class="btn ghost" href="mailto:support@autokitlabs.com?subject=Setup%20Service%20application&body=Tell%20us%3A%20what%20do%20you%20want%20your%20agent%20to%20do%2C%20and%20what%20machine%20will%20it%20run%20on%3F" data-checkout="service">Apply for a slot →</a>
+        <div class="slots">Limited slots each month — capacity is real</div>
+      </div>
+    </div>
+    <div class="answer rv">
+      <h3>How much does the AI Agent Starter Box cost?</h3>
+      <p>The <strong>Starter Box costs $29</strong> (all 8 guides + bonus pack) or <strong>$79 for Pro</strong> (adds editable trackers, extra walkthroughs and priority support) — one-time founding prices that rise at v1.1. A done-with-you <strong>Setup Service starts at $1,500</strong>. Every paid kit has a 14-day refund policy.</p>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <span class="sec-num" aria-hidden="true">08</span>
+  <div class="wrap">
+    <span class="sec-tag rv">Questions</span>
+    <h2 class="rv">Fair questions.</h2>
+    <div class="faq rv">
+      <details>
+        <summary>What is the AI Agent Starter Box?</summary>
+        <p>A boxed install kit that takes a beginner from an empty terminal to a working OpenClaw or Hermes AI agent connected to Telegram or Slack — using verified commands, gateway checklists and a 60-minute golden path, with no coding skills required.</p>
+      </details>
+      <details>
+        <summary>Do I need to know how to code?</summary>
+        <p>No. If you can open a terminal and paste commands, the guides carry you through the rest. Every step says what it does, what you should see, and what to do if you don't see it.</p>
+      </details>
+      <details>
+        <summary>Which is better — OpenClaw or Hermes?</summary>
+        <p>Both are covered, and the kit includes an honest comparison so you can pick by use case. If you just want the fastest path to a Telegram agent, the golden path uses Hermes.</p>
+      </details>
+      <details>
+        <summary>What exactly do I get after paying?</summary>
+        <p>Instant digital access — nothing ships. You get 8 numbered guides as PDF and Markdown, the gateway checklists, the command-verification matrix, and the bonus prompt pack. Yours forever, with all v1.x updates included.</p>
+      </details>
+      <details>
+        <summary>What does it cost to run an agent after install?</summary>
+        <p>The agents are free, open-source software. You pay your model provider for usage — and the Provider Setup guide has you set a hard spending cap before your agent sends its first message, so a learning mistake can't become an expensive one.</p>
+      </details>
+      <details>
+        <summary>Will this make me money?</summary>
+        <p>We don't promise income — anyone who does is selling you something else. This kit installs real software and teaches you to operate it safely. What you build with it is up to you.</p>
+      </details>
+      <details>
+        <summary>What's the refund policy?</summary>
+        <p>14 days, no drama: if you follow the golden path and your agent doesn't run, you get your money back.</p>
+      </details>
+      <details>
+        <summary>What if I get stuck anyway?</summary>
+        <p>The troubleshooting index covers the errors beginners actually hit. Pro includes priority email support, and the Setup Service is the just-do-it-with-me option.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <svg class="lob-wave mascot-lobby" viewBox="0 0 200 150" fill="none" aria-hidden="true">
+      <path class="antL" d="M84 52 C74 30 60 22 46 20" stroke="#D32F0E" stroke-width="4" stroke-linecap="round"/>
+      <path class="antR" d="M116 52 C126 30 140 22 154 20" stroke="#D32F0E" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="46" cy="20" r="5" fill="#F43F1E"/><circle cx="154" cy="20" r="5" fill="#F43F1E"/>
+      <g class="clawL"><ellipse cx="38" cy="86" rx="26" ry="20" fill="#F43F1E"/><path d="M22 74 Q10 66 14 54 Q26 58 30 68 Z" fill="#F43F1E"/><path d="M20 94 Q6 96 4 108 Q18 108 26 100 Z" fill="#D32F0E"/></g>
+      <g class="clawR"><ellipse cx="162" cy="86" rx="26" ry="20" fill="#F43F1E"/><path d="M178 74 Q190 66 186 54 Q174 58 170 68 Z" fill="#F43F1E"/><path d="M180 94 Q194 96 196 108 Q182 108 174 100 Z" fill="#D32F0E"/></g>
+      <path d="M62 92 Q76 96 84 90" stroke="#D32F0E" stroke-width="7" stroke-linecap="round"/>
+      <path d="M138 92 Q124 96 116 90" stroke="#D32F0E" stroke-width="7" stroke-linecap="round"/>
+      <ellipse cx="100" cy="92" rx="34" ry="40" fill="#F43F1E"/>
+      <g class="eyes"><circle cx="88" cy="74" r="7" fill="#fff"/><circle cx="112" cy="74" r="7" fill="#fff"/><circle cx="90" cy="75" r="3.4" fill="#221D15"/><circle cx="110" cy="75" r="3.4" fill="#221D15"/></g>
+      <path d="M92 86 Q100 92 108 86" stroke="#7A1F04" stroke-width="3" stroke-linecap="round" fill="none"/>
+    </svg>
+    <h2>Stop watching agent demos. Adopt one.</h2>
+    <p>One verified path from empty terminal to an agent that answers you on Telegram — with every command checked before it was printed.</p>
+    <a class="btn" href="#pricing">Get the Starter Box — $29 →</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="safe">AutoKit Labs builds practical AI kits. No income, sales or results guarantees — outcomes depend on your inputs, judgment and review. Not legal, financial, medical or tax advice. OpenClaw and Hermes are open-source projects of their respective authors; AutoKit Labs is independent and unaffiliated. Lobby the lobster is our mascot, not theirs.</p>
+    <div class="mono">© 2026 AutoKit Labs · autokitlabs.com<br>support@autokitlabs.com</div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/ScrollTrigger.min.js"></script>
+<script>
+/* ---- theme toggle (init ran in <head>) ---- */
+(function(){
+  const btn=document.getElementById('themeBtn'),root=document.documentElement;
+  sync();
+  btn.addEventListener('click',()=>{
+    const t=root.dataset.theme==='dark'?'light':'dark';
+    root.dataset.theme=t;
+    try{localStorage.setItem('akl-theme',t)}catch(e){}
+    sync();
+  });
+  function sync(){
+    const dark=root.dataset.theme==='dark';
+    btn.textContent=dark?'☀️':'🌙';
+    btn.setAttribute('aria-pressed',String(dark));
+    btn.setAttribute('aria-label',dark?'Switch to light theme':'Switch to dark theme');
+  }
+})();
+
+/* ---- Motion strategy (3 layers): CSS media block kills keyframes/transitions;
+   GSAP created only inside gsap.matchMedia(no-preference); typewriter prints statically under reduce. ---- */
+
+/* ---- scroll reveal (CSS fallback when GSAP absent) ---- */
+(function(){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){
+    document.querySelectorAll('.rv').forEach(el=>el.classList.add('in'));return;
+  }
+  if(window.gsap)return;
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+})();
+
+/* ---- typewriter: single-owner, grapheme-safe, 2 passes then hold ---- */
+(function(){
+  const body=document.getElementById('termBody');
+  const FULL='<span class="u">$ </span>hermes chat -q "you alive?"<br><span class="a">✓ provider key found<br>✓ model connected · 1.2s<br></span><span class="hl">agent: </span>Alive and listening. What are we building?<br><br><span class="u">$ </span>hermes gateway add telegram<br><span class="a">✓ bot token accepted<br>✓ webhook live — say hi in Telegram</span>';
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){body.innerHTML=FULL;return}
+  const script=[
+    {t:'$ ',c:'u'},{t:'hermes chat -q "you alive?"\n',c:'',type:true},
+    {t:'✓ provider key found\n',c:'a',pause:400},
+    {t:'✓ model connected · 1.2s\n',c:'a',pause:300},
+    {t:'agent: ',c:'hl',pause:500},{t:'Alive and listening. What are we building?\n\n',c:'',type:true},
+    {t:'$ ',c:'u',pause:700},{t:'hermes gateway add telegram\n',c:'',type:true},
+    {t:'✓ bot token accepted\n',c:'a',pause:450},
+    {t:'✓ webhook live — say hi in Telegram\n',c:'a',pause:350},
+  ];
+  let runId=0,pass=0,timer=null,running=false;
+  function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/\n/g,'<br>')}
+  function cur(on){const c=body.querySelector('.cursor');if(c)c.remove();if(on)body.insertAdjacentHTML('beforeend','<span class="cursor"></span>')}
+  function start(){
+    if(running)return;running=true;
+    const my=++runId;body.innerHTML='';let i=0;
+    (function step(){
+      if(my!==runId)return;
+      if(i>=script.length){
+        pass++;
+        if(pass>=2){cur(true);running=false;return}
+        timer=setTimeout(()=>{if(my===runId){running=false;start()}},6000);return;
+      }
+      const s=script[i++];
+      timer=setTimeout(()=>{
+        if(my!==runId)return;
+        if(s.type){
+          const chars=[...s.t];let j=0;
+          (function ch(){
+            if(my!==runId)return;
+            cur(false);
+            body.insertAdjacentHTML('beforeend',`<span class="${s.c}">${esc(chars[j])}</span>`);
+            cur(true);
+            if(++j<chars.length)timer=setTimeout(ch,34+((j*7)%40));else step();
+          })();
+        }else{
+          cur(false);
+          body.insertAdjacentHTML('beforeend',`<span class="${s.c}">${esc(s.t)}</span>`);
+          cur(true);
+          step();
+        }
+      },s.pause||60);
+    })();
+  }
+  function stop(){runId++;clearTimeout(timer);running=false}
+  document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();else if(pass<2)start()});
+  window.__termStart=start;
+  if(!window.gsap)start();
+})();
+
+/* ---- GSAP choreography ---- */
+(function(){
+  if(!window.gsap)return;
+  gsap.registerPlugin(ScrollTrigger);
+  const mm=gsap.matchMedia();
+  mm.add('(prefers-reduced-motion: no-preference)',()=>{
+    gsap.defaults({duration:.7,ease:'power3.out'});
+    const kill=document.createElement('style');
+    kill.textContent='.js .rv{transition:none!important;opacity:1;transform:none}';
+    document.head.appendChild(kill);
+    document.querySelectorAll('.rv').forEach(el=>el.classList.add('in'));
+
+    /* hero entrance */
+    const tl=gsap.timeline();
+    tl.from('.pill',{y:24,autoAlpha:0,scale:.85,ease:'back.out(1.6)'},.05)
+      .from('.hero h1',{y:56,autoAlpha:0,duration:.9,ease:'expo.out'},.15)
+      .from('.hero .lead',{y:30,autoAlpha:0},.38)
+      .from('.hero-cta .btn',{y:22,autoAlpha:0,scale:.92,stagger:.09,ease:'back.out(1.5)'},.52)
+      .from('.hero .micro span',{y:14,autoAlpha:0,stagger:.06,duration:.45},.68)
+      .from('.term',{y:70,autoAlpha:0,duration:.9,ease:'expo.out'},.3)
+      .from('.lob',{y:-110,autoAlpha:0,duration:.85,ease:'bounce.out'},.75)
+      .call(()=>window.__termStart&&window.__termStart(),null,1.1);
+
+    /* counters */
+    document.querySelectorAll('.micro b').forEach(b=>{
+      const n=parseInt(b.textContent,10);if(isNaN(n))return;
+      const o={v:0};
+      gsap.to(o,{v:n,duration:1.2,delay:.8,ease:'power2.out',onUpdate:()=>{b.textContent=Math.round(o.v)}});
+    });
+
+    /* ghost numerals: slow parallax drift */
+    document.querySelectorAll('.sec-num').forEach(el=>{
+      gsap.fromTo(el,{yPercent:18},{yPercent:-14,ease:'none',
+        scrollTrigger:{trigger:el.parentElement,start:'top bottom',end:'bottom top',scrub:1.2}});
+    });
+
+    /* section headers */
+    document.querySelectorAll('section .sec-tag, section h2, section .sec-intro').forEach(el=>{
+      gsap.from(el,{y:34,autoAlpha:0,duration:.75,scrollTrigger:{trigger:el,start:'top 88%',once:true}});
+    });
+
+    /* platforms */
+    gsap.from('.duo .plat',{y:44,autoAlpha:0,rotation:i=>i?1.2:-1.2,stagger:.12,duration:.8,ease:'back.out(1.3)',
+      scrollTrigger:{trigger:'.duo',start:'top 82%',once:true}});
+
+    /* pipeline */
+    const pc=document.querySelector('.pipe-card');
+    if(pc){
+      gsap.timeline({scrollTrigger:{trigger:pc,start:'top 78%',once:true}})
+        .from(pc,{y:50,autoAlpha:0,duration:.7,ease:'expo.out'})
+        .from('.pipe rect',{scale:.6,autoAlpha:0,transformOrigin:'center',stagger:.14,ease:'back.out(1.8)',duration:.5},.25)
+        .from('.pipe text, .pipe .nico',{autoAlpha:0,stagger:.025,duration:.3},.5)
+        .from('.pipe .link',{autoAlpha:0,stagger:.12,duration:.4},.45)
+        .from('.legend span',{y:12,autoAlpha:0,stagger:.07,duration:.4},'>-.2');
+    }
+    gsap.from('.tstep',{y:38,autoAlpha:0,stagger:.14,ease:'back.out(1.4)',
+      scrollTrigger:{trigger:'.timeline',start:'top 82%',once:true}});
+    document.querySelectorAll('.answer').forEach(el=>{
+      gsap.from(el,{x:-40,autoAlpha:0,duration:.8,scrollTrigger:{trigger:el,start:'top 86%',once:true}});
+    });
+
+    /* alive: phone + chat choreography */
+    const chat=document.getElementById('chat');
+    if(chat){
+      const msgs=chat.querySelectorAll('.msg, .typing');
+      gsap.set(msgs,{autoAlpha:0,y:16,scale:.96});
+      gsap.timeline({scrollTrigger:{trigger:'.phone',start:'top 72%',once:true}})
+        .from('.phone',{y:60,autoAlpha:0,rotation:2,duration:.8,ease:'back.out(1.2)'})
+        .to(msgs[0],{autoAlpha:1,y:0,scale:1,duration:.4,ease:'back.out(1.6)'},'+=.2')
+        .to(msgs[1],{autoAlpha:1,y:0,scale:1,duration:.4,ease:'back.out(1.6)'},'+=.5')
+        .to(msgs[2],{autoAlpha:1,y:0,scale:1,duration:.4,ease:'back.out(1.6)'},'+=.6')
+        .to(msgs[3],{autoAlpha:1,y:0,scale:1,duration:.3},'+=.4')
+        .to(msgs[3],{autoAlpha:0,duration:.25,display:'none'},'+=1.1')
+        .to(msgs[4],{autoAlpha:1,y:0,scale:1,duration:.45,ease:'back.out(1.5)'},'<+.1');
+      gsap.from('.alive-points li',{x:-24,autoAlpha:0,stagger:.12,duration:.6,
+        scrollTrigger:{trigger:'.alive-points',start:'top 85%',once:true}});
+    }
+
+    /* inside: doc stage + tab buttons */
+    gsap.from('.doctab-btns label',{x:-30,autoAlpha:0,stagger:.1,duration:.6,
+      scrollTrigger:{trigger:'.doctab-btns',start:'top 82%',once:true}});
+    gsap.from('.docstage',{y:50,autoAlpha:0,rotation:1.5,duration:.8,ease:'back.out(1.2)',
+      scrollTrigger:{trigger:'.docstage',start:'top 80%',once:true}});
+
+    /* parts, bands, fit, ticket, faq */
+    ScrollTrigger.batch('.parts .part',{start:'top 88%',once:true,
+      onEnter:els=>gsap.from(els,{y:40,autoAlpha:0,scale:.94,stagger:.08,ease:'back.out(1.3)',duration:.6})});
+    document.querySelectorAll('.ctaband').forEach(el=>{
+      gsap.from(el,{y:24,autoAlpha:0,duration:.6,scrollTrigger:{trigger:el,start:'top 90%',once:true}});
+    });
+    gsap.from('.forwho .who',{y:40,autoAlpha:0,stagger:.12,scrollTrigger:{trigger:'.forwho',start:'top 84%',once:true}});
+    gsap.from('.ticket',{rotation:-1.5,y:44,autoAlpha:0,duration:.8,ease:'back.out(1.2)',
+      scrollTrigger:{trigger:'.ticket',start:'top 84%',once:true}});
+    gsap.from('.faq details',{y:26,autoAlpha:0,stagger:.07,duration:.55,
+      scrollTrigger:{trigger:'.faq',start:'top 84%',once:true}});
+
+    /* pricing */
+    gsap.timeline({scrollTrigger:{trigger:'.tiers',start:'top 80%',once:true}})
+      .from('.tier',{y:52,autoAlpha:0,stagger:.13,duration:.75,ease:'back.out(1.25)'})
+      .from('.tier .tab',{scale:0,transformOrigin:'50% 100%',ease:'back.out(2.2)',duration:.45},'-=.15')
+      .from('.slots',{autoAlpha:0,y:6,duration:.4},'-=.1');
+
+    /* final one-shot wave */
+    gsap.timeline({scrollTrigger:{trigger:'.final',start:'top 65%',once:true}})
+      .from('.final .lob-wave',{y:24,autoAlpha:0,scale:.8,transformOrigin:'50% 90%',ease:'back.out(1.7)',duration:.6})
+      .to('.final .lob-wave .clawR',{rotation:22,transformOrigin:'18% 70%',duration:.18,ease:'power2.out'})
+      .to('.final .lob-wave .clawR',{rotation:-8,duration:.16})
+      .to('.final .lob-wave .clawR',{rotation:16,duration:.16})
+      .to('.final .lob-wave .clawR',{rotation:0,duration:.25,ease:'power2.inOut'})
+      .from('.final h2',{y:18,autoAlpha:0,duration:.5},'-=.5')
+      .from('.final .btn',{y:12,autoAlpha:0,duration:.4},'-=.25');
+
+    /* pointer-only delights */
+    if(matchMedia('(pointer:fine)').matches){
+      const px=gsap.utils.toArray('.lob .pupil').map(p=>gsap.quickTo(p,'x',{duration:.3,ease:'power2.out'}));
+      const py=gsap.utils.toArray('.lob .pupil').map(p=>gsap.quickTo(p,'y',{duration:.3,ease:'power2.out'}));
+      if(px.length){
+        addEventListener('mousemove',e=>{
+          const lob=document.querySelector('.lob');if(!lob)return;
+          const r=lob.getBoundingClientRect();
+          const dx=gsap.utils.clamp(-1,1,(e.clientX-(r.left+r.width/2))/400);
+          const dy=gsap.utils.clamp(-1,1,(e.clientY-(r.top+r.height/2))/400);
+          px.forEach(f=>f(dx*2.2));py.forEach(f=>f(dy*1.8));
+        },{passive:true});
+      }
+      /* doc tilt on hover */
+      const stage=document.querySelector('.docstage');
+      if(stage){
+        gsap.set(stage,{transformPerspective:900});
+        const rx=gsap.quickTo(stage,'rotationX',{duration:.5,ease:'power2.out'});
+        const ry=gsap.quickTo(stage,'rotationY',{duration:.5,ease:'power2.out'});
+        stage.addEventListener('mousemove',e=>{
+          const r=stage.getBoundingClientRect();
+          ry(gsap.utils.clamp(-6,6,((e.clientX-r.left)/r.width-.5)*10));
+          rx(gsap.utils.clamp(-6,6,-((e.clientY-r.top)/r.height-.5)*10));
+        });
+        stage.addEventListener('mouseleave',()=>{rx(0);ry(0)});
+      }
+      /* magnetic hero CTA */
+      const mag=document.querySelector('.hero-cta .btn:not(.ghost)');
+      if(mag){
+        const qx=gsap.quickTo(mag,'x',{duration:.35,ease:'power3'}),qy=gsap.quickTo(mag,'y',{duration:.35,ease:'power3'});
+        mag.addEventListener('mousemove',e=>{
+          const r=mag.getBoundingClientRect();
+          qx(gsap.utils.clamp(-4,4,(e.clientX-r.left-r.width/2)*.08));
+          qy(gsap.utils.clamp(-4,4,(e.clientY-r.top-r.height/2)*.15));
+        });
+        mag.addEventListener('mouseleave',()=>{gsap.to(mag,{x:0,y:0,duration:.45,ease:'elastic.out(1,.5)'})});
+      }
+    }
+    return ()=>{};
+  });
+  mm.add('(prefers-reduced-motion: reduce)',()=>{
+    document.querySelectorAll('.rv').forEach(el=>el.classList.add('in'));
+    const chat=document.getElementById('chat');
+    if(chat){const t=chat.querySelector('.typing');if(t)t.style.display='none'}
+  });
+})();
+</script>
+</body>
+</html>

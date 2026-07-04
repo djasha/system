@@ -1,0 +1,17 @@
+topic: AutoKit funnel copy
+description: Buyer-facing copy rules for AutoKit Labs funnels and in-bundle artifacts. Competence is the persuasion channel — the copy sells by naming real failure modes, real constraints, and real prices.
+rules:
+  - No income guarantees — promise a working agent, never revenue or business outcomes.
+  - No fake urgency or scarcity. Deadlines and slot limits appear only when true, stated plainly ("Limited slots each month — capacity is real").
+  - No fake testimonials or invented social proof — ship without reviews until real ones exist.
+  - Name real risks and failure modes ("every silent failure named", "watch out for stale data") — honesty about sharp edges is the differentiator.
+  - Refund terms sit next to every price in plain words, not fine print.
+  - Emoji are personality accents in copy only — never UI iconography, never in headings.
+  - Every prompt artifact states where the human decides (the review-step footer).
+examples:
+  - good: Founding prices for launch week — they rise when v1.1 ships with the expanded walkthrough set.
+    bad: 🔥 87% OFF — ONLY 3 LEFT! Price doubles at midnight!
+  - good: 14-day guarantee — if your agent doesn't run, money back.
+    bad: Join 10,000+ founders already earning $10k/mo with AI agents!
+  - good: Silent? → §7.2 "the three silent failures" (token, privacy mode, webhook).
+    bad: Setup is effortless — nothing can go wrong.

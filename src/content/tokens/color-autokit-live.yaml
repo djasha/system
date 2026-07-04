@@ -1,0 +1,5 @@
+name: autokit-live
+category: color
+value: '#18A957'
+css_var: '--live'
+description: AutoKit Labs status green — "agent is alive" signals, pulse dots, live pills. Fills only; text uses --live-text (#0E7A3C).

@@ -1,0 +1,28 @@
+---
+name: AutokitPill
+description: AutoKit Labs live-status pill — soft green capsule with a CSS-pulsing dot, used for "your agent is alive" signals.
+category: feedback
+tags: [autokit, badge, status]
+tokens_used: [color.autokit-live, type.autokit-mono]
+related: [autokit-button]
+status: stable
+source_path: src/autokit/pill.css
+a11y_notes: Text uses --live-text (WCAG-checked) on the soft green surface, never the bright --live fill. The pulse is a CSS ambient loop disabled under prefers-reduced-motion; the pill is fully informative without it. Uppercase styling is CSS text-transform, so screen readers get normal-case text.
+created: 2026-07-04
+---
+
+## Prompt
+
+Build a status pill: mono uppercase label at 11.5px with 0.1em tracking inside a 999px-radius capsule. Surface is a soft tint of the status green, text is the darker text-safe green, border is the status green at 40% opacity via color-mix. Prepend an 8px dot in the bright status green that pulses (scale 1.7, 50% opacity at the midpoint) on a 1.6s CSS loop. Disable the pulse under prefers-reduced-motion. The pulse is a CSS ambient loop by design — JS/GSAP never owns looping animation.
+
+## Usage
+
+- Use for live/positive status moments: "Your agent could be alive tonight", uptime signals, install-verified badges.
+- One pill per viewport region — it's an attention magnet.
+- Keep the label under ~6 words; it's a signal, not a sentence.
+
+## Do / Don't
+
+- **Do** let CSS own the pulse loop (see AutokitMotionRecipes rules).
+- **Don't** repurpose the green pill for errors or warnings — status color is part of its meaning.
+- **Don't** set text in bright --live; copy uses --live-text.

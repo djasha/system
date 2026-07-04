@@ -1,0 +1,5 @@
+name: autokit-ink
+category: color
+value: '#221D15'
+css_var: '--ink'
+description: AutoKit Labs primary text — near-black warm ink. Secondary and tertiary steps are --ink-2 / --ink-3 (--ink-3 is WCAG-checked at 4.6:1 on autokit-bg). Dark mode #F6EEDC.

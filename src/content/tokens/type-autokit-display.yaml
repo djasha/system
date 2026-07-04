@@ -1,0 +1,5 @@
+name: autokit-display
+category: type
+value: Bricolage Grotesque 700-800
+css_var: '--disp'
+description: AutoKit Labs display face — carries all the personality. Tight leading (~1.0) and negative tracking on large sizes; the body face stays calm so this one can be loud.

@@ -1,0 +1,28 @@
+---
+name: AutokitTicket
+description: AutoKit Labs perforated bonus ticket — amber-bordered card with a dashed tear-off stub, reserved for bonuses and coupons.
+category: display
+tags: [autokit, card, bonus]
+tokens_used: [color.autokit-amber, color.autokit-card, type.autokit-mono]
+related: [autokit-part-card]
+status: stable
+source_path: src/autokit/ticket.css
+a11y_notes: Content is regular document flow (kicker, h3, paragraph) — the ticket look is pure decoration. Kicker and stub text use --amber-text (WCAG-checked), never bright --amber. Vertical stub text uses writing-mode and stays real text for screen readers.
+created: 2026-07-04
+---
+
+## Prompt
+
+Build a ticket-shaped card: two-column grid (content + 84px stub), 2px amber border, 22px radius, hard 10px drop shadow in the page shadow color. The stub is separated by a 2px dashed amber border — the perforation — and holds a vertical mono uppercase label (writing-mode: vertical-rl, 0.3em tracking). Main area: mono amber-text kicker, 20px extra-bold display title, 13.5px muted body. Amber signals "extra/bonus" — visually distinct from the red accent used on core CTAs.
+
+## Usage
+
+- Reserve for genuine extras: bonus packs, launch-week inclusions, coupons.
+- The kicker states the deal terms plainly ("Included free with launch-week orders") — no fake scarcity.
+- One ticket per page section; it loses its "special" reading when repeated.
+
+## Do / Don't
+
+- **Do** keep the stub label to one word ("Bonus", "Coupon").
+- **Don't** use the ticket for core product content — that's AutokitPartCard's job.
+- **Don't** recolor it to red; amber-vs-red is the bonus-vs-core distinction.

@@ -1,0 +1,5 @@
+name: autokit-amber
+category: color
+value: '#F5A300'
+css_var: '--amber'
+description: AutoKit Labs secondary accent — messenger amber (Hermes bundle primary). Fills/strokes only; text uses --amber-text (#8A5A00).

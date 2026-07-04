@@ -1,0 +1,29 @@
+---
+name: AutokitButton
+description: AutoKit Labs chunky CTA button — hard-shadow lift on hover, solid and ghost variants, themed per bundle via the accent layer.
+category: input
+tags: [autokit, button, cta]
+tokens_used: [color.autokit-accent, color.autokit-accent-text, type.autokit-display]
+related: [autokit-pill]
+status: stable
+source_path: src/autokit/button.css
+a11y_notes: Real anchor/button elements — no div buttons. White on --btn-bg measures 5.0:1. Hover lift is transform-only (no layout shift) and harmless without motion; no reduced-motion guard needed for a 140ms transition. Focus styles come from the browser default outline — do not remove it.
+created: 2026-07-04
+---
+
+## Prompt
+
+Build a chunky, toy-like CTA button in CSS. Solid variant: display-face bold text at 16px, white on a deep accent (`--btn-bg`), 14px radius, 2px border in a darker edge color (`--btn-edge`), and a hard 4px drop shadow in that same edge color — no blur. On hover, translate up 2px and grow the shadow to 6px so the button appears to lift off the page. Ghost variant swaps to card background, ink text, and neutral border/shadow colors. All colors come from CSS custom properties so bundle themes can restyle it by overriding the accent layer only.
+
+## Usage
+
+- Use the solid variant for THE primary action (checkout, download); ghost for secondary actions next to it.
+- Colors must come from the token layer — never hardcode the reds, or bundle themes (OpenClaw red, Hermes amber) break.
+- Pair with an arrow glyph (`→`) at the end of buyer-facing CTAs; it's part of the AutoKit voice.
+
+## Do / Don't
+
+- **Do** keep one solid button per section — the hard shadow is loud.
+- **Do** use `--btn-bg`/`--btn-edge`, which bundle themes override together.
+- **Don't** put long sentences in it; `white-space: nowrap` is intentional.
+- **Don't** use bright `--accent` for button text anywhere — text always uses the `-text` token variants.

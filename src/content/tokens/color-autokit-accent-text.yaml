@@ -1,0 +1,5 @@
+name: autokit-accent-text
+category: color
+value: '#C22C08'
+css_var: '--accent-text'
+description: AutoKit Labs text-safe accent — WCAG-checked red for accent-colored text and icon strokes on light surfaces. Every bright AutoKit accent has a -text variant; copy never uses the bright fill colors directly.

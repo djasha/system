@@ -1,0 +1,30 @@
+---
+name: AutokitGuideCover
+description: AutoKit Labs guide cover — A4 portrait PDF cover template with ghost guide numeral, display title, promise line, and a specs grid (time, needs, result, rescue).
+category: display
+tags: [autokit, print, artifact]
+tokens_used: [type.autokit-display, type.autokit-mono, color.autokit-accent]
+related: [autokit-lobby-lobster]
+status: stable
+source_path: src/autokit/GuideCover.astro
+a11y_notes: Real heading hierarchy and text content — exported PDFs stay searchable and screen-reader legible. Oversized guide numeral is outlined, decorative, and user-select none. Specs use label+value pairs in reading order.
+created: 2026-07-04
+---
+
+## Prompt
+
+Build an A4 portrait cover template for numbered guides in a boxed kit: paper page with tri-color gradient keyline, mono uppercase top row (kit name + edition), a giant outlined ghost numeral bleeding off the right edge (220px, transparent fill, 1.5px stroke), extra-bold display title at 52px, muted promise line, short accent rule, then a two-column specs grid — Time, Needs, Result, If-stuck — with dotted separators. Footer pairs the brand mark with a mono file/version block. All content swaps via data-field attributes; print stylesheet removes the backdrop.
+
+## Usage
+
+- One cover per numbered guide; the ghost numeral matches the part number on the box grid.
+- The specs grid is a promise — Time and Result must be real, verified numbers ("commands verified" + date in the footer).
+- Mascot appears on covers ONLY for OpenClaw-bundle guides (see AutokitLobbyMascot rules).
+- Live example at `/autokit/product-artifacts/guide-cover.html`.
+
+## Do / Don't
+
+- **Do** keep titles to a few words with a period — "Gateway checklists." is the voice.
+- **Do** fill the If-stuck row with a real section reference, not "contact support".
+- **Don't** let the ghost numeral gain a fill; outline-only is the look.
+- **Don't** ship a cover whose footer version/date doesn't match the guide inside.

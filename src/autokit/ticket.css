@@ -1,0 +1,22 @@
+/* AutoKit Labs — perforated bonus ticket (.ticket)
+   Requires the custom properties from src/autokit/tokens.css.
+   Reserved for bonuses and coupons — the amber border + dashed stub reads
+   as "extra", distinct from the red accent used on core CTAs.
+
+   Usage:
+     <div class="ticket">
+       <div class="ticket-main">
+         <span class="mono">Included free with launch-week orders</span>
+         <h3>Bonus prompt pack</h3>
+         <p>Perforated-ticket treatment for bonuses and coupons.</p>
+       </div>
+       <div class="ticket-stub"><span>Bonus</span></div>
+     </div>
+*/
+.ticket{background:var(--card);border:2px solid var(--amber);border-radius:22px;display:grid;grid-template-columns:1fr auto;overflow:hidden;position:relative;box-shadow:0 10px 0 var(--shadow);max-width:560px}
+.ticket-main{padding:24px 28px}
+.ticket-main .mono{color:var(--amber-text)}
+.ticket-main h3{font-family:var(--disp);font-size:20px;font-weight:800;margin:8px 0}
+.ticket-main p{font-size:13.5px;color:var(--ink-2)}
+.ticket-stub{width:84px;border-left:2px dashed var(--amber);display:flex;align-items:center;justify-content:center}
+.ticket-stub span{writing-mode:vertical-rl;font-family:var(--mono);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--amber-text)}
