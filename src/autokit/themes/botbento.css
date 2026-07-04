@@ -1,5 +1,5 @@
-/* Bundle theme: BotBento — bento teal. Mark: bento-box grid (no lobster).
-   PROPOSED accent (pending Diaa's approval) for the BotBento Agent Box line.
+/* Bundle theme: BotBento — bento teal. Mark: open bento box with cards (no lobster).
+   In use by funnels/botbento-agent-box (draft — confirm accent at launch).
    Apply with <body class="bundle-botbento">. */
 .bundle-botbento{
   --accent:#0FA5A0;

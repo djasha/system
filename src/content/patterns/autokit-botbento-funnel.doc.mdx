@@ -1,0 +1,31 @@
+---
+name: AutokitBotbentoFunnel
+description: BotBento Agent Box funnel — the second AutoKit funnel, proving the bundle-a-week pipeline. Same skeleton as the Starter Box, bento-teal accent layer, bento-box mark instead of the lobster.
+category: layout
+tags: [autokit, funnel, landing, botbento]
+tokens_used: [color.autokit-bg, color.autokit-amber, color.autokit-live, type.autokit-display, type.autokit-body, type.autokit-mono]
+related: [autokit-bundle-themes]
+status: beta
+source_path: src/autokit/BotBentoFunnel.astro
+a11y_notes: Same three-layer contract as the Starter Box funnel — works without JavaScript via the .js class gate, reduced motion respected in CSS, gsap.matchMedia and static fallbacks, theme set before first paint. The bento-teal accent layer ships its own WCAG-checked -text values for both light and dark.
+created: 2026-07-04
+components_used: [autokit-button, autokit-pill, autokit-part-card, autokit-ticket, autokit-phone-chat, autokit-icons, autokit-motion-recipes]
+---
+
+## Prompt
+
+Re-skin and re-narrate a complete funnel page for a second product using only the design system's levers: swap the accent layer to the bundle theme (bento teal), replace the mascot with the bundle's own mark (an open bento box with workflow cards — never the lobster), and rewrite the copy for a chat-workflow kit — junk-drawer comparison, mini-agent anatomy pipeline, card-run chat vignette, contents grid, fit check, system-layer ticket, three-tier pricing, FAQ. Keep every structural component, motion recipe, JSON-LD block and accessibility layer identical to the source funnel. No component forks.
+
+## Usage
+
+- Live example at `/autokit/funnels/botbento-agent-box/` (noindex — the production funnel ships from botbento.com/agent-box).
+- **Checkout hrefs and pricing are draft placeholders** — PLACEHOLDER comments in-source, `aria-disabled` on the two digital-tier CTAs, prices pending approval. The Setup Service mailto is real.
+- This page is the reference for the weekly-bundle re-skin step (DESIGN.md §7): compared to the Starter Box funnel, only the accent layer, the mark, and the words changed.
+- Copy is grounded in the shipped BotBento raw material: 20 workflow cards, prompt/roles libraries, run tracker, Notion database, safe-use notes.
+
+## Do / Don't
+
+- **Do** diff this file against `StarterBoxFunnel.astro` to see exactly what a bundle re-skin touches — that diff is the pipeline.
+- **Do** keep the review-step framing in every product vignette; it's the brand's core promise.
+- **Don't** put Lobby the lobster on this or any non-OpenClaw funnel.
+- **Don't** wire real checkout or analytics into the design-system copy of the page.

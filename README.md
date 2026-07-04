@@ -32,6 +32,7 @@ and bundle documents. Entries are tagged `autokit` and namespaced
 - Browsable demos (static, published as design examples):
   [`/autokit/catalog.html`](public/autokit/catalog.html),
   [`/autokit/funnels/ai-agent-starter-box/`](public/autokit/funnels/ai-agent-starter-box/index.html),
+  [`/autokit/funnels/botbento-agent-box/`](public/autokit/funnels/botbento-agent-box/index.html),
   [`/autokit/product-artifacts/`](public/autokit/product-artifacts/)
 - The funnel demo is `noindex` and its checkout CTAs are marked placeholders —
   the production funnel ships from botbento.com.
