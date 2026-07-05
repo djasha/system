@@ -545,11 +545,11 @@ footer .safe{max-width:46em;line-height:1.7}
         <div class="screen">
           <div class="tg-head">
             <span class="tg-ava"><svg viewBox="0 0 24 24" class="ic" style="color:var(--accent-text)"><use href="#i-key"/></svg></span>
-            <div><b>Vault · member update</b><span class="on">● drop 07 live</span></div>
+            <div><b>Vault · member update</b><span class="on">● drop 01 live</span></div>
           </div>
           <div class="chat" id="chat">
             <div class="msg out">what's in this month's drop?<span class="t">08:00</span></div>
-            <div class="msg in">Drop 07 — Returns Rescue Pack:
+            <div class="msg in">Drop 01 — Returns Rescue Pack:
               <ul>
                 <li>4 new seller cards (disputes, chargebacks)</li>
                 <li>Refund-math worksheet</li>
@@ -792,16 +792,16 @@ footer .safe{max-width:46em;line-height:1.7}
 /* ---- typewriter: single-owner, grapheme-safe, 2 passes then hold ---- */
 (function(){
   const body=document.getElementById('termBody');
-  const FULL='<span class="u">&gt; </span>vault status<br><span class="a">✓ member since 2026-07<br>✓ shelf: 4 kits · 60+ cards · 2 tools<br></span><span class="hl">drop 07: </span>returns rescue pack — live<br><br><span class="u">&gt; </span>vault next<br><span class="a">✓ next drop in 09 days<br>✓ kit nº 06 in the works — included</span>';
+  const FULL='<span class="u">&gt; </span>vault status<br><span class="a">✓ member since 2026-07<br>✓ shelf: 4 kits · 60+ cards · 2 tools<br></span><span class="hl">drop 01: </span>returns rescue pack — live<br><br><span class="u">&gt; </span>vault next<br><span class="a">✓ next drop in 09 days<br>✓ next kit in the works — included</span>';
   if(matchMedia('(prefers-reduced-motion: reduce)').matches){body.innerHTML=FULL;return}
   const script=[
     {t:'> ',c:'u'},{t:'vault status\n',c:'',type:true},
     {t:'✓ member since 2026-07\n',c:'a',pause:400},
     {t:'✓ shelf: 4 kits · 60+ cards · 2 tools\n',c:'a',pause:300},
-    {t:'drop 07: ',c:'hl',pause:500},{t:'returns rescue pack — live\n\n',c:'',type:true},
+    {t:'drop 01: ',c:'hl',pause:500},{t:'returns rescue pack — live\n\n',c:'',type:true},
     {t:'> ',c:'u',pause:700},{t:'vault next\n',c:'',type:true},
     {t:'✓ next drop in 09 days\n',c:'a',pause:450},
-    {t:'✓ kit nº 06 in the works — included\n',c:'a',pause:350},
+    {t:'✓ next kit in the works — included\n',c:'a',pause:350},
   ];
   let runId=0,pass=0,timer=null,running=false;
   function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/\n/g,'<br>')}
