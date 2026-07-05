@@ -1,0 +1,6 @@
+name: dd-card
+category: color
+value: '#fafbfa'
+tailwind_class: bg-card
+css_var: '--card'
+description: DealDash Emerald — card surface, one step above background on the elevation ramp. Dark mode `#121615`. Structure comes from hairline borders, not shadows.

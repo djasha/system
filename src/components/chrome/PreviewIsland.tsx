@@ -19,6 +19,11 @@ const registry: Record<string, () => Promise<any>> = {
   'editorial-hero': () => import('../EditorialHero.preview'),
   'case-study-body': () => import('../CaseStudyBody.preview'),
   'filterable-work-grid': () => import('../FilterableWorkGrid.preview'),
+  'emerald-button': () => import('../EmeraldButton.preview'),
+  'spark-cta': () => import('../SparkCta.preview'),
+  'status-chip': () => import('../StatusChip.preview'),
+  'type-roles': () => import('../TypeRoles.preview'),
+  'emerald-direction': () => import('../EmeraldDirection.preview'),
 };
 
 export function PreviewIsland({ slug }: { slug: string }) {

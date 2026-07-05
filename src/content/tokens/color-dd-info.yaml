@@ -1,0 +1,6 @@
+name: dd-info
+category: color
+value: '#1d4ed8'
+tailwind_class: text-info / bg-info
+css_var: '--info'
+description: DealDash Emerald — info status. Dark mode `#60a5fa` (with dark text `#082f49` on fills). Soft chip recipe bg-info/10 text-info border-info/20.

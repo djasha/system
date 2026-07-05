@@ -1,0 +1,6 @@
+name: dd-input
+category: color
+value: '#f6f8f7'
+tailwind_class: bg-input
+css_var: '--input'
+description: DealDash Emerald — form control fill, slightly raised from background. Dark mode `#161c19`.

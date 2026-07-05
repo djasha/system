@@ -1,0 +1,5 @@
+name: dd-base
+category: radius
+value: '0.5rem'
+css_var: '--radius'
+description: DealDash Emerald — base radius. Cards/dialogs 8px (--radius), controls 6px (--radius - 2px), chips 4px or full. No rounded-2xl+ outside marketing hero art.

@@ -1,0 +1,5 @@
+name: dd-btn-drop-subtle
+category: shadow
+value: '0 1px 2px 0 #0a140f0d'
+css_var: '--shadow-btn-drop-subtle'
+description: DealDash Emerald — whisper drop shadow for outline/secondary buttons. Dark mode `0 1px 2px 0 #00000040`.

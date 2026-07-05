@@ -1,0 +1,6 @@
+name: dd-warning
+category: color
+value: '#b45309'
+tailwind_class: text-warning / bg-warning
+css_var: '--warning'
+description: DealDash Emerald — warning status. Dark mode `#fbbf24` (with dark text `#451a03` on fills). Soft chips use a 15% fill for warning (10% elsewhere).

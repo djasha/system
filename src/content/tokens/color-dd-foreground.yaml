@@ -1,0 +1,6 @@
+name: dd-foreground
+category: color
+value: '#0e1512'
+tailwind_class: text-foreground
+css_var: '--foreground'
+description: DealDash Emerald — primary text. Dark mode `#f4f6f5`.

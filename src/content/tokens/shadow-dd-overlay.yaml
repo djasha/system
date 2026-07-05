@@ -1,0 +1,5 @@
+name: dd-overlay
+category: shadow
+value: '0 12px 50px -12px #0a140f38, 0 2px 8px -2px #0a140f1f'
+css_var: '--shadow-overlay'
+description: DealDash Emerald — ONE deep soft shadow shared by dialogs, dropdowns, popovers, and select menus so every floating surface feels identical. Dark mode `0 16px 70px -12px #000000a6, 0 2px 10px -2px #00000066`.

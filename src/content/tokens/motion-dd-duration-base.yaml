@@ -1,0 +1,5 @@
+name: dd-duration-base
+category: motion
+value: '180ms'
+css_var: '--duration-base'
+description: DealDash Emerald — hover and transform transitions. Pair with motion.dd-ease-standard.

@@ -1,0 +1,329 @@
+/* ---------------------------------------------------------------------------
+ * DealDash Emerald — complete drop-in theme.
+ * "Linear-grade calm with an emerald signature": near-black or near-white
+ * neutral surfaces, hairline borders, ONE green accent, tight display type,
+ * and motion that is quick, subtle, and purposeful.
+ *
+ * Tokens are the single source of truth. Never hardcode a palette color, a
+ * duration, or an easing curve in a page. If a value isn't expressible with
+ * tokens, add a token first. Tokens are hex — for alpha use
+ * color-mix(in oklab, var(--x) N%, transparent).
+ * ------------------------------------------------------------------------- */
+
+:root {
+  --radius: 0.5rem; /* cards/dialogs 8px, controls 6px (−2px), chips 4px/full */
+
+  /* Brand — THE accent. Color is a signal, not decoration. */
+  --primary: #1a7a5e;
+  --primary-foreground: #ffffff;
+
+  /* Core surfaces — Linear-style: near-white cards + hairline borders carry
+   * the structure; no gray slabs. bg → card → popover is an elevation RAMP. */
+  --background: #ffffff;
+  --foreground: #0e1512;
+  --card: #fafbfa;
+  --card-foreground: #0e1512;
+  --popover: #ffffff;
+  --popover-foreground: #0e1512;
+
+  /* Secondary / muted / accent */
+  --secondary: #f1f3f2;
+  --secondary-foreground: #0e1512;
+  --muted: #f1f3f2;
+  --muted-foreground: #66716c;
+  --accent: #e7f6ef;
+  --accent-foreground: #0f6a4f;
+
+  /* Semantic status — success/positive = primary, danger = destructive. */
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --warning: #b45309;
+  --warning-foreground: #ffffff;
+  --info: #1d4ed8;
+  --info-foreground: #ffffff;
+
+  /* Form elements — hairline borders carry structure. */
+  --border: #e6e9e7;
+  --input: #f6f8f7;
+  --ring: #1a7a5e;
+
+  /* Charts (teal gradient); chart-1 doubles as the spark comet color. */
+  --chart-1: #34d399;
+  --chart-2: #2eb086;
+  --chart-3: #10b981;
+  --chart-4: #059669;
+  --chart-5: #047857;
+
+  /* Sidebar navigation */
+  --sidebar: #fafbfa;
+  --sidebar-foreground: #0e1512;
+  --sidebar-primary: #1a7a5e;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #eef1ef;
+  --sidebar-accent-foreground: #0e1512;
+  --sidebar-border: #e6e9e7;
+  --sidebar-ring: #1a7a5e;
+
+  /* Motion — 3 duration tiers on ONE standard easing.
+   * fast = press/color, base = hover/transform, slow = enter/overlay. */
+  --duration-fast: 120ms;
+  --duration-base: 180ms;
+  --duration-slow: 260ms;
+  --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Button elevation — swap these to restyle EVERY button at once.
+   * highlight = top "lit" inner edge. */
+  --shadow-btn-highlight: inset 0 1px 0 0 #ffffff2e;
+  --shadow-btn-drop: 0 1px 2px 0 #0a140f40;
+  --shadow-btn-drop-subtle: 0 1px 2px 0 #0a140f0d;
+
+  /* Overlay elevation — ONE deep soft shadow shared by dialogs, dropdowns,
+   * popovers, and select menus so every floating surface feels identical. */
+  --shadow-overlay: 0 12px 50px -12px #0a140f38, 0 2px 8px -2px #0a140f1f;
+}
+
+/* Dark mode — near-black neutral base with a whisper of green, elevation as
+ * small surface steps, hairline borders instead of heavy fills. */
+.dark {
+  --primary: #1a7a5e;
+  --primary-foreground: #ffffff;
+
+  --background: #0a0d0c;
+  --foreground: #f4f6f5;
+  --card: #121615;
+  --card-foreground: #f4f6f5;
+  --popover: #151a18;
+  --popover-foreground: #f4f6f5;
+
+  --secondary: #1a201d;
+  --secondary-foreground: #f4f6f5;
+  --muted: #1a201d;
+  --muted-foreground: #8f9a94;
+  --accent: #15241e;
+  --accent-foreground: #34d399;
+
+  /* Lighter status hues for dark surfaces, dark text on fills. */
+  --destructive: #f87171;
+  --destructive-foreground: #ffffff;
+  --warning: #fbbf24;
+  --warning-foreground: #451a03;
+  --info: #60a5fa;
+  --info-foreground: #082f49;
+
+  --border: #212824;
+  --input: #161c19;
+  --ring: #1a7a5e;
+
+  --chart-1: #34d399;
+  --chart-2: #2eb086;
+  --chart-3: #10b981;
+  --chart-4: #059669;
+  --chart-5: #047857;
+
+  /* Sidebar sits one step BELOW the background, hairline divider. */
+  --sidebar: #0c0f0e;
+  --sidebar-foreground: #dfe4e1;
+  --sidebar-primary: #1a7a5e;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #161b19;
+  --sidebar-accent-foreground: #f4f6f5;
+  --sidebar-border: #1c2220;
+  --sidebar-ring: #1a7a5e;
+
+  --shadow-btn-highlight: inset 0 1px 0 0 #ffffff1f;
+  --shadow-btn-drop: 0 1px 2px 0 #00000066;
+  --shadow-btn-drop-subtle: 0 1px 2px 0 #00000040;
+  --shadow-overlay: 0 16px 70px -12px #000000a6, 0 2px 10px -2px #00000066;
+}
+
+/* ---------------------------------------------------------------------------
+ * Base — Inter variable everywhere, JetBrains Mono for code only. Crisp
+ * Linear-grade rendering: antialiased, contextual alternates, disambiguated
+ * lowercase l (cv05). Set globally — don't repeat per element.
+ * ------------------------------------------------------------------------- */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "liga" 1, "calt" 1, "cv05" 1;
+}
+
+/* ---------------------------------------------------------------------------
+ * Typography roles — ONE named scale. Use the t-* roles; never hand-roll a
+ * title. Titles use Inter's display optical size (opsz) with tight tracking.
+ * ------------------------------------------------------------------------- */
+.t-page-title {
+  font-size: 1.5rem;      /* 24px; 30px at ≥640px */
+  font-weight: 600;
+  line-height: 1.25;
+  font-optical-sizing: auto;
+  font-variation-settings: "opsz" 28;
+  letter-spacing: -0.02em;
+}
+@media (min-width: 640px) {
+  .t-page-title { font-size: 1.875rem; }
+}
+.t-section-title {
+  font-size: 1.125rem;    /* 18px */
+  font-weight: 600;
+  line-height: 1.375;
+  font-optical-sizing: auto;
+  font-variation-settings: "opsz" 22;
+  letter-spacing: -0.015em;
+}
+.t-card-title { font-size: 1rem; font-weight: 600; line-height: 1; }
+.t-body { font-size: 0.875rem; font-weight: 400; line-height: 1.625; }
+.t-small { font-size: 0.875rem; color: var(--muted-foreground); }
+.t-caption { font-size: 0.75rem; font-weight: 500; line-height: 1; }
+.t-overline {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  color: var(--muted-foreground);
+}
+
+/* ---------------------------------------------------------------------------
+ * Soft status chips — the sanctioned recipe:
+ *   bg {status}/10 · text {status} · border {status}/20  (15% fill: warning)
+ * success/positive = primary, warning = warning, info = info,
+ * danger = destructive. Errors are never rendered as empty states.
+ * ------------------------------------------------------------------------- */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 22px;
+  padding: 0 8px;
+  border-radius: 4px; /* or 9999px for pills */
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+}
+.chip--success {
+  background: color-mix(in oklab, var(--primary) 10%, transparent);
+  color: var(--primary);
+  border: 1px solid color-mix(in oklab, var(--primary) 20%, transparent);
+}
+.chip--warning {
+  background: color-mix(in oklab, var(--warning) 15%, transparent);
+  color: var(--warning);
+  border: 1px solid color-mix(in oklab, var(--warning) 20%, transparent);
+}
+.chip--info {
+  background: color-mix(in oklab, var(--info) 10%, transparent);
+  color: var(--info);
+  border: 1px solid color-mix(in oklab, var(--info) 20%, transparent);
+}
+.chip--danger {
+  background: color-mix(in oklab, var(--destructive) 10%, transparent);
+  color: var(--destructive);
+  border: 1px solid color-mix(in oklab, var(--destructive) 20%, transparent);
+}
+
+/* ---------------------------------------------------------------------------
+ * The spark (.btn-spark) — signature CTA effect: a comet of light orbiting
+ * the button edge. ::before = crisp 1px ring (dim track + long-tail comet,
+ * head near-white mint). ::after = same comet blurred into a bloom outside
+ * the edge so the light reads as emissive. Only the registered --spark-angle
+ * animates (GPU-cheap, no layout). 4.5s idle orbit, 2.2s on hover.
+ * RULES: at most ONE spark per view, primary CTA only.
+ * ------------------------------------------------------------------------- */
+@property --spark-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+@keyframes spark-orbit {
+  to { --spark-angle: 360deg; }
+}
+.btn-spark {
+  position: relative;
+  isolation: isolate;
+}
+.btn-spark::before,
+.btn-spark::after {
+  content: "";
+  position: absolute;
+  border-radius: inherit;
+  pointer-events: none;
+  background:
+    conic-gradient(
+        from var(--spark-angle),
+        transparent 0deg,
+        transparent 240deg,
+        color-mix(in oklab, var(--primary) 30%, transparent) 290deg,
+        color-mix(in oklab, var(--chart-1) 80%, transparent) 328deg,
+        color-mix(in oklab, #eafff5 92%, var(--chart-1)) 340deg,
+        color-mix(in oklab, var(--chart-1) 60%, transparent) 347deg,
+        transparent 353deg
+      )
+      border-box,
+    conic-gradient(
+        color-mix(in oklab, var(--chart-1) 12%, transparent) 0deg,
+        color-mix(in oklab, var(--chart-1) 12%, transparent) 360deg
+      )
+      border-box;
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  animation: spark-orbit 4.5s linear infinite;
+}
+.btn-spark::before {
+  inset: -1px;
+  padding: 1px;
+  z-index: -1;
+}
+.btn-spark::after {
+  inset: -2px;
+  padding: 2px;
+  z-index: -2;
+  filter: blur(6px);
+  opacity: 0.6;
+}
+.btn-spark:hover::before,
+.btn-spark:hover::after {
+  animation-duration: 2.2s;
+}
+.btn-spark:hover::after {
+  opacity: 0.85;
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-spark::before,
+  .btn-spark::after {
+    animation: none;
+    background: color-mix(in oklab, var(--chart-1) 28%, transparent);
+  }
+  .btn-spark::after {
+    display: none;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+ * Accessibility floor (non-negotiable): visible focus everywhere; every
+ * animation ships a reduced-motion fallback.
+ * ------------------------------------------------------------------------- */
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,6 @@
+name: dd-accent-foreground
+category: color
+value: '#0f6a4f'
+tailwind_class: text-accent-foreground
+css_var: '--accent-foreground'
+description: DealDash Emerald — text on accent tint surfaces. Dark mode `#34d399`.

@@ -1,0 +1,29 @@
+---
+name: TypeRoles
+description: The seven DealDash t-* typography roles — one named Inter scale with display optical sizing and Linear-tight tracking. Never hand-roll a title.
+category: display
+tags: [typography, scale, dealdash, emerald, inter]
+tokens_used: [color.dd-foreground, color.dd-muted-foreground]
+related: [emerald-button, status-chip]
+status: stable
+source_path: src/components/TypeRoles.tsx
+a11y_notes: Roles are classes, not elements — heading semantics come from the markup (one h1 per page on t-page-title, ordered h2/h3 below, no skips). Muted roles (t-small, t-overline) use #66716c light / #8f9a94 dark — AA on card surfaces in both modes. Font features (liga, calt, cv05) and antialiasing are set once globally on body.
+created: 2026-07-05
+---
+
+## Prompt
+
+Define the DealDash typography system: Inter variable (Google Fonts, opsz axis 14–32) everywhere; JetBrains Mono strictly for code/log/mono contexts. On body set: -webkit-font-smoothing antialiased, text-rendering optimizeLegibility, font-feature-settings "liga" 1, "calt" 1, "cv05" 1 (disambiguated lowercase l) — globally, never per element. Then expose exactly seven role classes and use nothing else for text: .t-page-title — 24px/1.25 weight 600 (30px at ≥640px), font-variation-settings "opsz" 28, letter-spacing -0.02em, one per page. .t-section-title — 18px/1.375 weight 600, "opsz" 22, letter-spacing -0.015em, section h2. .t-card-title — 16px weight 600 line-height 1. .t-body — 14px weight 400 line-height 1.625. .t-small — 14px in muted color #66716c (dark #8f9a94). .t-caption — 12px weight 500 line-height 1. .t-overline — 12px weight 500 uppercase letter-spacing 0.025em muted. Marketing display type may exceed the scale (up to 7xl) but keeps the same family, semibold weight, tight tracking, and brand-green emphasis — no second typeface, no second green.
+
+## Usage
+
+- Every title, label, and body run in the app maps to one of the seven roles — if none fits, the design is off-system.
+- t-page-title appears exactly once per route, inside the PageHeader.
+- t-overline is the eyebrow/column-label voice; pair it above a t-page-title or table columns.
+
+## Do / Don't
+
+- **Do** let optical sizing (opsz 28/22) do the display work — no manual font stretching.
+- **Do** keep mono for code, logs, and IDs only.
+- **Don't** hand-roll a title with ad-hoc size/weight/tracking combinations.
+- **Don't** repeat font-feature-settings per component — it is set once on body.

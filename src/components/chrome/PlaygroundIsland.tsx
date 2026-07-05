@@ -63,6 +63,22 @@ const registry: Record<string, { loadConfig: () => Promise<any>; loadDemo: () =>
     loadConfig: () => import('../TextMaskReveal.playground'),
     loadDemo: () => import('../TextMaskReveal.preview'),
   },
+  'emerald-button': {
+    loadConfig: () => import('../EmeraldButton.playground'),
+    loadDemo: () => import('../EmeraldButton.preview'),
+  },
+  'spark-cta': {
+    loadConfig: () => import('../SparkCta.playground'),
+    loadDemo: () => import('../SparkCta.preview'),
+  },
+  'status-chip': {
+    loadConfig: () => import('../StatusChip.playground'),
+    loadDemo: () => import('../StatusChip.preview'),
+  },
+  'type-roles': {
+    loadConfig: () => import('../TypeRoles.playground'),
+    loadDemo: () => import('../TypeRoles.preview'),
+  },
 };
 
 function PlaygroundAsync({ configPromise, Demo }: { configPromise: Promise<any>; Demo: any }) {

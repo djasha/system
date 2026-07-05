@@ -1,0 +1,6 @@
+name: dd-destructive
+category: color
+value: '#dc2626'
+tailwind_class: text-destructive / bg-destructive
+css_var: '--destructive'
+description: DealDash Emerald — danger status. Dark mode `#f87171` (lighter hue for dark surfaces). Soft chip recipe bg-destructive/10 text-destructive border-destructive/20.

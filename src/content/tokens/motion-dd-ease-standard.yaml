@@ -1,0 +1,5 @@
+name: dd-ease-standard
+category: motion
+value: 'cubic-bezier(0.22, 1, 0.36, 1)'
+css_var: '--ease-standard'
+description: DealDash Emerald — ONE standard easing for the whole app. Never inline a bezier; in JS use EASE/DUR constants from a shared motion module.

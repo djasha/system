@@ -1,0 +1,6 @@
+name: dd-primary-foreground
+category: color
+value: '#ffffff'
+tailwind_class: text-primary-foreground
+css_var: '--primary-foreground'
+description: DealDash Emerald — text/icon color on primary fills. Same in light and dark.

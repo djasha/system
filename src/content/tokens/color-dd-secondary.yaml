@@ -1,0 +1,6 @@
+name: dd-secondary
+category: color
+value: '#f1f3f2'
+tailwind_class: bg-secondary / bg-muted
+css_var: '--secondary'
+description: DealDash Emerald — secondary/muted fill (shares value with --muted). Dark mode `#1a201d`.

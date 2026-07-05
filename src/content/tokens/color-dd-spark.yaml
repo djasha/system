@@ -1,0 +1,6 @@
+name: dd-spark
+category: color
+value: '#34d399'
+tailwind_class: text-chart-1
+css_var: '--chart-1'
+description: DealDash Emerald — bright mint accent for dark surfaces, charts, glows, and the spark comet head. Same in light and dark.
