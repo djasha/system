@@ -1,0 +1,1138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<script>
+/* theme + js-gate: runs before first paint (no flash, no-JS users get visible content) */
+document.documentElement.classList.add('js');
+(function(){var t=null;try{t=localStorage.getItem('akl-theme')}catch(e){}
+document.documentElement.dataset.theme=t||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>BotBento: Seller Box — Listings, Reviews & Store Ops, Drafted by Your AI</title>
+<meta name="description" content="The seller workflow kit for the new rules era: 20 AI mini-agent cards for listings, reviews, customer messages and store ops, a dated 2026 marketplace policy reference, and the offline Listing Lab compliance checker. No code, no APIs." />
+<link rel="canonical" href="https://botbento.com/seller-box" />
+<meta name="robots" content="noindex" />
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#FAF3E3" />
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#16130E" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="BotBento: Seller Box — your store's boring half, drafted" />
+<meta property="og:description" content="20 seller workflow cards with the platform rules built in, plus the Listing Lab offline checker. Drafted by your AI, reviewed by you." />
+<meta property="og:url" content="https://botbento.com/seller-box" />
+<meta property="og:site_name" content="AutoKit Labs" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:image" content="https://botbento.com/assets/seller-box-og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="BotBento: Seller Box — seller workflow cards with a copper price-tag mark" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="BotBento: Seller Box — your store's boring half, drafted" />
+<meta name="twitter:description" content="20 seller workflow cards + 2026 policy reference + offline Listing Lab checker. No code, no APIs." />
+<meta name="twitter:image" content="https://botbento.com/assets/seller-box-og.png" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='24' font-size='24'%3E%F0%9F%8F%B7%EF%B8%8F%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700..800&family=Archivo:wght@400;500;600;700&family=Fragment+Mono&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","@id":"https://autokitlabs.com/#org","name":"AutoKit Labs","url":"https://autokitlabs.com","email":"support@autokitlabs.com","sameAs":["https://botbento.com"],"description":"AutoKit Labs builds practical boxed AI kits: install guides, checklists and workflow boxes for people who want working AI help without the confusion."}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Product","name":"BotBento: Seller Box","brand":{"@id":"https://autokitlabs.com/#org"},"description":"Seller workflow kit: 20 AI mini-agent cards for listings, reviews, customer messages, store ops and growth, a dated 2026 marketplace policy reference with sources, the offline Listing Lab compliance checker, seller roles library, run tracker and Notion database. No code, APIs or automation software required.","image":"https://botbento.com/assets/seller-box-og.png","url":"https://botbento.com/seller-box","offers":[
+{"@type":"Offer","name":"Seller Box","price":"24","priceCurrency":"USD","availability":"https://schema.org/PreOrder","url":"https://botbento.com/seller-box#pricing","hasMerchantReturnPolicy":{"@type":"MerchantReturnPolicy","returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow","merchantReturnDays":14,"applicableCountry":"US"}},
+{"@type":"Offer","name":"Seller Box Pro","price":"59","priceCurrency":"USD","availability":"https://schema.org/PreOrder","url":"https://botbento.com/seller-box#pricing","hasMerchantReturnPolicy":{"@type":"MerchantReturnPolicy","returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow","merchantReturnDays":14,"applicableCountry":"US"}},
+{"@type":"Offer","name":"Workflow Setup Service","priceSpecification":{"@type":"PriceSpecification","minPrice":1500,"priceCurrency":"USD"},"availability":"https://schema.org/LimitedAvailability","url":"https://botbento.com/seller-box#pricing"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"What is BotBento: Seller Box?","acceptedAnswer":{"@type":"Answer","text":"A workflow kit for online sellers: 20 AI mini-agent workflow cards for listings, reviews, customer messages, store ops and growth — plus a dated 2026 marketplace policy reference with sources, the offline Listing Lab compliance checker, a seller roles library, example walkthroughs, a run tracker and a Notion database. Each card gives the AI a job, your facts, the platform's rules, an output format, a review step and a next action."}},
+{"@type":"Question","name":"Do I need code, APIs or automation tools?","acceptedAnswer":{"@type":"Answer","text":"No. The cards run inside the AI chat assistant you already use, and Listing Lab is a single file that opens in any browser and works offline. Nothing to install, no accounts to create."}},
+{"@type":"Question","name":"Which marketplaces does it cover?","acceptedAnswer":{"@type":"Answer","text":"The policy reference covers Amazon, Etsy, eBay and Gumroad-style storefronts as of the verification date printed in the file, with sources. The cards themselves work for any marketplace or your own store — you paste the rules that apply to you."}},
+{"@type":"Question","name":"Is the policy information legal advice?","acceptedAnswer":{"@type":"Answer","text":"No. The reference summarizes platform rules with sources and a verification date so your AI drafts start from reality instead of guesses. Platforms change rules — the live policy page always wins, and decisions with legal consequences belong with a qualified professional."}},
+{"@type":"Question","name":"How is this different from the Agent Box?","acceptedAnswer":{"@type":"Answer","text":"The Agent Box (Kit Nº 02) is the general workflow kit for any small business. The Seller Box is specialized for selling online: marketplace rules are built into the cards, the review workflows are compliance-safe by design, and it ships with the Listing Lab checker. They share the same operating loop and stack well."}},
+{"@type":"Question","name":"Will this make me money?","acceptedAnswer":{"@type":"Answer","text":"We don't promise income or sales — anyone who does is selling you something else. The kit saves drafting hours and helps your listings survive platform rules. Your products, prices and effort decide the rest."}},
+{"@type":"Question","name":"What's the refund policy?","acceptedAnswer":{"@type":"Answer","text":"14 days, no drama: run three cards as written, and if they don't produce genuinely useful drafts for your store, you get your money back."}}]}
+</script>
+<style>
+/* AutoKit Labs design system — bundle-seller accent layer baked in
+   (see tokens/themes/seller.css). Everything else identical to core tokens. */
+:root{
+  --bg:#FAF3E3;--bg-2:#F2E8D0;--card:#FFFCF4;--line:#E3D7B8;--line-2:#CBBD98;--shadow:#E0D2AE;
+  --ink:#221D15;--ink-2:#5A5140;--ink-3:#7A6E53;
+  --accent:#E07A24;--accent-text:#9C4A06;--accent-deep:#C05E10;--accent-soft:#FDEAD8;
+  --btn-bg:#B45309;--btn-edge:#7F3B05;
+  --amber:#F5A300;--amber-text:#8A5A00;--amber-soft:#FFF2D2;
+  --live:#18A957;--live-text:#0E7A3C;--live-soft:#DDF4E4;
+  --term:#1B1712;--term-ink:#F2EAD8;
+  --paper:#FFFEF9;--paper-edge:#EFE6CF;
+  --tg:#EAF3FB;--tg-out:#DCF2C8;--tg-ink:#1A2530;
+  --max:1180px;
+  --disp:"Bricolage Grotesque",sans-serif;--sans:"Archivo",sans-serif;--mono:"Fragment Mono",monospace;
+}
+html[data-theme="dark"]{
+  --bg:#16130E;--bg-2:#1E1A13;--card:#211C14;--line:#352E20;--line-2:#4A4130;--shadow:#0C0A06;
+  --ink:#F6EEDC;--ink-2:#BFB299;--ink-3:#9A8D72;
+  --accent:#F59849;--accent-text:#FFAB66;--accent-deep:#C05E10;--accent-soft:#3B2712;
+  --btn-bg:#C05E10;--btn-edge:#6B3204;
+  --amber:#FFB01F;--amber-text:#FFB01F;--amber-soft:#3A2E12;
+  --live:#2ED573;--live-text:#2ED573;--live-soft:#12321F;
+  --term:#0F0D09;--term-ink:#F2EAD8;
+  --paper:#F6EFDC;--paper-edge:#D8CBAA;
+  --tg:#1B2733;--tg-out:#24371C;--tg-ink:#E8F0F8;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;transition:background .3s ease,color .3s ease;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:11;pointer-events:none;opacity:.4;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.4 0 0 0 0 0.36 0 0 0 0 0.28 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E")}
+a{color:inherit}
+img,svg{display:block;max-width:100%}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+.mono{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+h1,h2,h3{font-family:var(--disp)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:-9999px;top:12px;z-index:100;background:var(--ink);color:var(--bg);padding:12px 18px;border-radius:10px;font-family:var(--mono);font-size:13px}
+.skip:focus{left:12px}
+.ic{width:1em;height:1em;stroke:currentColor;stroke-width:1.9;fill:none;stroke-linecap:round;stroke-linejoin:round;display:inline-block;vertical-align:-.12em}
+
+/* ------------ buttons ------------ */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--disp);font-weight:700;font-size:16px;white-space:nowrap;
+  background:var(--btn-bg);color:#fff;text-decoration:none;padding:15px 26px;border-radius:14px;border:2px solid var(--btn-edge);
+  box-shadow:0 4px 0 var(--btn-edge);transition:transform .14s ease,box-shadow .14s ease,background .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 6px 0 var(--btn-edge);background:var(--accent)}
+.btn:active{transform:translateY(2px);box-shadow:0 1px 0 var(--btn-edge)}
+.btn.ghost{background:var(--card);color:var(--ink);border-color:var(--line-2);box-shadow:0 4px 0 var(--line-2)}
+.btn.ghost:hover{background:var(--bg-2)}
+.btn.small{padding:11px 18px;font-size:14px;border-radius:11px}
+
+/* ------------ header ------------ */
+header{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header::before{content:"";display:block;height:3px;background:linear-gradient(90deg,var(--accent),var(--amber) 55%,var(--live))}
+.bar{display:flex;align-items:center;justify-content:space-between;height:66px;gap:18px}
+.wordmark{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--disp);font-weight:800;font-size:19px;letter-spacing:-.02em;white-space:nowrap}
+.wordmark .dot{width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft);flex:none}
+.wordmark small{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--ink-3);text-transform:uppercase;font-weight:400}
+nav.links{display:flex;gap:24px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
+nav.links a{text-decoration:none}
+nav.links a:hover{color:var(--accent-text)}
+.bar-right{display:flex;align-items:center;gap:12px}
+.theme-btn{width:42px;height:42px;border-radius:12px;border:1px solid var(--line-2);background:var(--card);cursor:pointer;font-size:17px;display:flex;align-items:center;justify-content:center;transition:transform .15s;flex:none}
+.theme-btn:hover{transform:rotate(15deg)}
+
+/* ------------ marquee ------------ */
+.marquee{background:var(--accent-deep);color:#fff;overflow:hidden;white-space:nowrap;border-bottom:2px solid var(--btn-edge)}
+.marquee-track{display:inline-flex;animation:slide 26s linear infinite;padding:8px 0}
+.marquee:hover .marquee-track,.marquee:focus-within .marquee-track{animation-play-state:paused}
+.marquee span{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;padding:0 26px;border-right:1px solid rgba(255,255,255,.35)}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* ------------ hero ------------ */
+.hero{padding:72px 0 84px;position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(400px,.98fr);gap:56px;align-items:center;position:relative}
+.pill{display:inline-flex;align-items:center;gap:9px;background:var(--live-soft);color:var(--live-text);border:1px solid color-mix(in srgb,var(--live) 40%,transparent);border-radius:999px;padding:8px 16px;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase}
+.pill .beat{width:8px;height:8px;border-radius:50%;background:var(--live);animation:beat 1.6s ease infinite}
+@keyframes beat{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.7);opacity:.5}}
+h1{font-size:clamp(46px,5.8vw,82px);font-weight:800;line-height:.98;letter-spacing:-.035em;margin:24px 0}
+h1 .claw{color:var(--accent-text);white-space:nowrap}
+h1 .zap{color:var(--amber-text);white-space:nowrap}
+html[data-theme="dark"] h1 .zap{color:var(--amber)}
+.lead{font-size:19px;line-height:1.65;color:var(--ink-2);max-width:32em}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin:32px 0 22px}
+.micro{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--ink-3);text-transform:uppercase;display:flex;gap:18px;flex-wrap:wrap}
+.micro b{color:var(--accent-text);font-weight:400}
+
+/* terminal + floating tag mark */
+.stage{position:relative;padding-top:64px}
+.term{background:var(--term);color:var(--term-ink);border-radius:20px;border:2px solid #000;box-shadow:0 14px 0 var(--shadow);font-family:var(--mono);font-size:13.5px;line-height:1.95;position:relative;z-index:2}
+.term-bar{display:flex;align-items:center;gap:8px;padding:14px 18px;border-bottom:1px solid rgba(255,255,255,.12)}
+.term-bar i{width:11px;height:11px;border-radius:50%;background:#5A5142}
+.term-bar i:first-child{background:var(--accent)}
+.term-bar i:nth-child(2){background:var(--amber)}
+.term-bar i:nth-child(3){background:var(--live)}
+.term-bar .mono{margin-left:auto;color:#8F8672;font-size:10.5px}
+.term-body{padding:20px 22px 24px;height:300px;overflow:hidden}
+.term .u{color:#B8AD93}
+.term .a{color:#7FD79B}
+.term .hl{color:#F5B183}
+.cursor{display:inline-block;width:8px;height:15px;background:var(--live);vertical-align:-2px;animation:blinkc 1s steps(1) infinite}
+@keyframes blinkc{50%{opacity:0}}
+.tagmark{position:absolute;top:-40px;right:104px;width:180px;z-index:3;animation:bob 4.5s ease-in-out infinite;transform-origin:50% 90%}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-9px) rotate(1.5deg)}}
+.tagmark .t2{animation:tagswing 4.6s .4s ease-in-out infinite;transform-origin:106px 38px}
+@keyframes tagswing{0%,100%{transform:rotate(0)}50%{transform:rotate(4deg)}}
+
+/* ------------ sections + ghost numerals ------------ */
+section{padding:96px 0;border-top:1px solid var(--line);position:relative;overflow:hidden}
+.sec-num{position:absolute;top:34px;right:-10px;font-family:var(--disp);font-weight:800;font-size:clamp(120px,16vw,230px);line-height:1;color:transparent;-webkit-text-stroke:1.5px var(--line-2);opacity:.5;pointer-events:none;user-select:none;letter-spacing:-.05em}
+.sec-tag{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-text);margin-bottom:18px}
+.sec-tag::before{content:"" / "";width:26px;height:2px;background:var(--accent);border-radius:2px}
+h2{font-size:clamp(34px,4vw,56px);font-weight:800;line-height:1.02;letter-spacing:-.03em;max-width:17em}
+.sec-intro{color:var(--ink-2);max-width:44em;margin-top:16px;font-size:18px}
+
+/* reveal: hidden ONLY when JS present */
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.js .rv.in{opacity:1;transform:none}
+
+/* ------------ comparison cards ------------ */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:46px}
+.plat{background:var(--card);border:2px solid var(--line);border-radius:22px;padding:34px 32px;position:relative;overflow:hidden;transition:transform .2s ease,border-color .2s ease}
+.plat:hover{transform:translateY(-4px)}
+.plat.claw:hover{border-color:var(--accent)}
+.plat.zap:hover{border-color:var(--amber)}
+.plat .mark{width:74px;height:74px;border-radius:18px;display:flex;align-items:center;justify-content:center;margin-bottom:22px}
+.plat.claw .mark{background:var(--accent-soft)}
+.plat.zap .mark{background:var(--amber-soft)}
+.plat h3{font-size:27px;font-weight:800;letter-spacing:-.02em;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.plat h3 .mono{font-size:10px;padding:4px 9px;border-radius:6px;letter-spacing:.1em}
+.plat.claw h3 .mono{background:var(--accent-soft);color:var(--accent-text)}
+.plat.zap h3 .mono{background:var(--amber-soft);color:var(--amber-text)}
+.plat p{color:var(--ink-2);font-size:15.5px;margin-top:12px}
+.plat ul{margin-top:18px;padding:0}
+.plat li{list-style:none;position:relative;padding:8px 0 8px 24px;color:var(--ink-2);font-size:15px;border-top:1px dashed var(--line)}
+.plat.claw li::before{content:"▸" / "";position:absolute;left:2px;color:var(--accent);font-size:14px}
+.plat.zap li::before{content:"▸" / "";position:absolute;left:2px;color:var(--amber);font-size:14px}
+.both{grid-column:1/-1;text-align:center;background:var(--bg-2);border:2px dashed var(--line-2);border-radius:16px;padding:18px;font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.both b{color:var(--accent-text)}
+
+/* ------------ CTA band ------------ */
+.ctaband{margin-top:46px;background:var(--bg-2);border:2px dashed var(--line-2);border-radius:16px;padding:20px 26px;display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap}
+.ctaband p{font-family:var(--mono);font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-2)}
+.ctaband p b{color:var(--accent-text);font-weight:400}
+
+/* ------------ pipeline ------------ */
+.pipe-card{background:var(--card);border:2px solid var(--line);border-radius:24px;padding:38px 34px 30px;margin-top:46px;box-shadow:0 10px 0 var(--shadow)}
+.pipe-head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:10px;margin-bottom:26px}
+.pipe-head h3{font-size:22px;font-weight:800}
+.pipe-head .mono{color:var(--ink-3)}
+.pipe-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.pipe{width:100%;height:auto}
+.pipe text{font-family:var(--mono)}
+.pipe .lbl{font-size:14px;fill:var(--ink);font-weight:600}
+.pipe .sub{font-size:11px;fill:var(--ink-3);letter-spacing:.05em}
+.pipe .ref{font-size:11px;fill:var(--accent-text);letter-spacing:.04em}
+.pipe .node{fill:var(--bg-2);stroke:var(--line-2);stroke-width:1.6}
+.pipe .node-hot{fill:var(--accent-soft);stroke:var(--accent)}
+.pipe .node-amber{fill:var(--amber-soft);stroke:var(--amber)}
+.pipe .node-live{fill:var(--live-soft);stroke:var(--live)}
+.pipe .link{stroke:var(--line-2);stroke-width:2;fill:none;stroke-dasharray:6 7;animation:flow 1.2s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-13}}
+.pipe .nico{stroke:var(--ink-2);stroke-width:1.9;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.legend{display:flex;gap:20px;flex-wrap:wrap;margin-top:18px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.legend i{display:inline-block;width:9px;height:9px;border-radius:3px;margin-right:7px}
+.timeline{margin-top:52px;position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.timeline::before{content:"";position:absolute;top:26px;left:4%;right:4%;height:3px;background:repeating-linear-gradient(90deg,var(--line-2) 0 10px,transparent 10px 18px);z-index:0}
+.tstep{position:relative;z-index:1;padding-top:58px}
+.tstep .clock{position:absolute;top:0;left:0;width:52px;height:52px;border-radius:50%;background:var(--card);border:3px solid var(--accent);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:10.5px;color:var(--accent-text)}
+.tstep:last-child .clock{background:var(--live);border-color:var(--live);color:#fff}
+.tstep h3{font-size:18px;font-weight:700}
+.tstep p{font-size:14px;color:var(--ink-2);margin-top:6px}
+
+/* ------------ card-run showcase: phone ------------ */
+.alive{display:grid;grid-template-columns:minmax(0,1fr) minmax(340px,.8fr);gap:64px;align-items:center;margin-top:46px}
+.alive-copy h3{font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-.025em;line-height:1.05}
+.alive-copy p{color:var(--ink-2);margin-top:14px;max-width:34em}
+.alive-points{margin-top:26px;padding:0}
+.alive-points li{list-style:none;display:flex;gap:14px;align-items:flex-start;padding:13px 0;border-top:1px dashed var(--line);font-size:15.5px;color:var(--ink-2)}
+.alive-points .ic{flex:none;font-size:20px;color:var(--accent-text);margin-top:2px}
+.phone{width:min(320px,100%);margin:0 auto;background:var(--card);border:3px solid var(--ink);border-radius:44px;padding:12px;box-shadow:0 18px 0 var(--shadow);position:relative}
+.phone::before{content:"";position:absolute;top:12px;left:50%;transform:translateX(-50%);width:110px;height:26px;background:var(--ink);border-radius:0 0 16px 16px;z-index:3}
+.screen{background:var(--tg);border-radius:32px;overflow:hidden;color:var(--tg-ink)}
+.tg-head{display:flex;align-items:center;gap:11px;padding:38px 16px 12px;background:color-mix(in srgb,var(--tg) 60%,var(--card));border-bottom:1px solid color-mix(in srgb,var(--tg-ink) 12%,transparent)}
+.tg-ava{width:38px;height:38px;border-radius:50%;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;flex:none}
+.tg-ava svg{width:20px;height:20px}
+.tg-head b{font-size:14.5px;display:block;font-family:var(--sans)}
+.tg-head .on{font-size:11.5px;color:var(--live-text);font-family:var(--mono);text-transform:uppercase;letter-spacing:.06em}
+.chat{padding:16px 14px 20px;display:flex;flex-direction:column;gap:10px;min-height:330px}
+.msg{max-width:82%;padding:10px 14px;border-radius:16px;font-size:13.8px;line-height:1.5;font-family:var(--sans);position:relative}
+.msg.in{background:var(--card);border:1px solid color-mix(in srgb,var(--tg-ink) 10%,transparent);border-bottom-left-radius:5px;align-self:flex-start}
+.msg.out{background:var(--tg-out);border-bottom-right-radius:5px;align-self:flex-end}
+.msg .t{display:block;font-size:10px;color:var(--ink-3);font-family:var(--mono);margin-top:5px;text-align:right}
+.msg ul{margin:6px 0 0;padding-left:18px}
+.msg li{font-size:13px;padding:1.5px 0}
+.typing{display:inline-flex;gap:4px;padding:12px 16px;background:var(--card);border:1px solid color-mix(in srgb,var(--tg-ink) 10%,transparent);border-radius:16px;border-bottom-left-radius:5px;align-self:flex-start}
+.typing i{width:7px;height:7px;border-radius:50%;background:var(--ink-3);animation:tdots 1.2s ease infinite}
+.typing i:nth-child(2){animation-delay:.15s}
+.typing i:nth-child(3){animation-delay:.3s}
+@keyframes tdots{0%,60%,100%{transform:translateY(0);opacity:.5}30%{transform:translateY(-4px);opacity:1}}
+
+/* ------------ look inside: document mockups (CSS-only tabs) ------------ */
+.inside-grid{display:grid;grid-template-columns:minmax(300px,.9fr) minmax(0,1.1fr);gap:60px;align-items:center;margin-top:46px}
+.doctabs input{position:absolute;opacity:0;pointer-events:none}
+.doctab-btns{display:flex;flex-direction:column;gap:12px}
+.doctab-btns label{cursor:pointer;border:2px solid var(--line);border-radius:16px;background:var(--card);padding:18px 20px;display:flex;gap:14px;align-items:center;transition:border-color .2s,transform .2s}
+.doctab-btns label:hover{transform:translateX(4px)}
+.doctab-btns .ic{font-size:22px;color:var(--accent-text);flex:none}
+.doctab-btns b{font-family:var(--disp);font-size:16.5px;display:block}
+.doctab-btns span{font-size:13px;color:var(--ink-3);display:block}
+#doc1:checked ~ .inside-grid .doctab-btns label[for="doc1"],
+#doc2:checked ~ .inside-grid .doctab-btns label[for="doc2"],
+#doc3:checked ~ .inside-grid .doctab-btns label[for="doc3"]{border-color:var(--accent);box-shadow:0 6px 0 var(--shadow)}
+.docstage{position:relative;perspective:1200px;min-height:540px}
+.doc{position:absolute;inset:0;margin:auto;width:min(400px,92%);aspect-ratio:1/1.32;background:var(--paper);border:1px solid var(--paper-edge);border-radius:6px;
+  box-shadow:0 1px 2px rgba(0,0,0,.08),0 24px 48px -18px rgba(60,45,20,.35);padding:34px 32px;color:#2A241A;
+  opacity:0;transform:rotate(4deg) translateY(24px) scale(.96);transition:opacity .45s ease,transform .55s cubic-bezier(.2,.7,.2,1);pointer-events:none;display:flex;flex-direction:column}
+html[data-theme="dark"] .doc{color:#2A241A}
+#doc1:checked ~ .inside-grid .doc.d1,#doc2:checked ~ .inside-grid .doc.d2,#doc3:checked ~ .inside-grid .doc.d3{opacity:1;transform:rotate(-1deg) translateY(0) scale(1);pointer-events:auto;z-index:2}
+.doc .doc-kicker{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:#9C4A06;display:flex;justify-content:space-between}
+.doc h4{font-family:var(--disp);font-weight:800;font-size:27px;line-height:1.05;letter-spacing:-.025em;margin:18px 0 6px}
+.doc .doc-sub{font-size:12.5px;color:#77694C;line-height:1.55}
+.doc .rule{height:2px;background:#9C4A06;width:44px;border-radius:2px;margin:16px 0}
+.doc .doc-li{display:flex;gap:10px;align-items:flex-start;font-size:11.8px;line-height:1.5;color:#4A3F2C;padding:7px 0;border-bottom:1px dotted #D8CBAA}
+.doc .doc-li .cb{width:13px;height:13px;border:1.6px solid #9C4A06;border-radius:4px;flex:none;margin-top:2px}
+.doc .doc-li .cb.done{background:#9C4A06;position:relative}
+.doc .doc-li .cb.done::after{content:"";position:absolute;inset:2px 3px;border-left:2px solid #FFFEF9;border-bottom:2px solid #FFFEF9;transform:rotate(-45deg) translateY(-1px)}
+.doc .doc-li b{font-weight:600;color:#2A241A}
+.doc .promptbox{background:#221D15;color:#F2EAD8;border-radius:8px;padding:14px;font-family:var(--mono);font-size:10.2px;line-height:1.75;margin-top:4px}
+.doc .promptbox .v{color:#F5B183}
+.doc .doc-foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:#9A8A66;border-top:1px solid #E4D9BC;padding-top:12px}
+.doc .doc-foot .dot{width:8px;height:8px;border-radius:50%;background:#9C4A06}
+.doc .parts-mini{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px}
+.doc .parts-mini span{font-family:var(--mono);font-size:9px;color:#4A3F2C;border:1px solid #D8CBAA;border-radius:5px;padding:6px 8px;letter-spacing:.02em}
+
+/* ------------ contents grid ------------ */
+.parts{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:52px}
+.part{background:var(--card);border:2px solid var(--line);border-radius:18px;padding:24px 22px;transition:transform .2s ease,border-color .2s ease;position:relative}
+.part:hover{transform:translateY(-4px) rotate(-.4deg);border-color:var(--accent)}
+.part .no{position:absolute;top:-13px;left:18px;background:var(--btn-bg);color:#fff;font-family:var(--mono);font-size:11px;padding:4px 10px;border-radius:999px;letter-spacing:.08em}
+.part .ic{font-size:23px;color:var(--accent-text);margin:6px 0 10px}
+.part h3{font-size:17.5px;font-weight:700;letter-spacing:-.01em}
+.part p{font-size:14px;color:var(--ink-2);margin-top:8px;line-height:1.55}
+.part .file{font-family:var(--mono);font-size:10px;color:var(--ink-3);margin-top:12px;display:block;letter-spacing:.02em;word-break:break-all}
+
+/* ------------ fit check ------------ */
+.forwho{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:46px}
+.who{border-radius:22px;padding:32px;border:2px solid var(--line);background:var(--card)}
+.who.yes{border-color:color-mix(in srgb,var(--live) 45%,transparent)}
+.who h3{font-size:22px;font-weight:800;margin-bottom:16px}
+.who ul{padding:0}
+.who li{list-style:none;padding:9px 0 9px 30px;position:relative;font-size:15px;color:var(--ink-2);border-top:1px dashed var(--line)}
+.who.yes li::before{content:"✓" / "";position:absolute;left:2px;color:var(--live-text);font-weight:700}
+.who.no li::before{content:"✕" / "";position:absolute;left:2px;color:var(--ink-3)}
+
+/* ------------ policy-layer ticket ------------ */
+.ticket{margin-top:46px;background:var(--card);border:2px solid var(--amber);border-radius:22px;display:grid;grid-template-columns:1fr auto;overflow:hidden;position:relative;box-shadow:0 10px 0 var(--shadow)}
+.ticket::before,.ticket::after{content:"";position:absolute;width:26px;height:26px;border-radius:50%;background:var(--bg);border:2px solid var(--amber);top:50%;transform:translateY(-50%)}
+.ticket::before{left:-15px}
+.ticket::after{right:105px}
+.ticket-main{padding:34px 40px}
+.ticket-main .mono{color:var(--amber-text)}
+.ticket-main h3{font-size:26px;font-weight:800;margin:10px 0 10px}
+.ticket-main p{color:var(--ink-2);max-width:48em;font-size:15.5px}
+.ticket-main .fine{font-size:12.5px;color:var(--ink-3);margin-top:14px}
+.ticket-stub{width:118px;border-left:2px dashed var(--amber);display:flex;align-items:center;justify-content:center}
+.ticket-stub span{writing-mode:vertical-rl;font-family:var(--mono);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--amber-text)}
+
+/* ------------ pricing ------------ */
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px;align-items:stretch}
+.tier{background:var(--card);border:2px solid var(--line);border-radius:24px;padding:34px 30px;display:flex;flex-direction:column;position:relative;transition:transform .2s ease}
+.tier:hover{transform:translateY(-4px)}
+.tier.feat{border-color:var(--accent);box-shadow:0 12px 0 var(--shadow)}
+.tier .tab{position:absolute;top:-15px;left:50%;transform:translateX(-50%);background:var(--btn-bg);color:#fff;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;padding:6px 14px;border-radius:999px;white-space:nowrap}
+.tier .mono{color:var(--ink-3)}
+.tier h3{font-size:24px;font-weight:800;margin:8px 0 2px}
+.price{font-family:var(--disp);font-size:58px;font-weight:800;letter-spacing:-.04em;margin:14px 0 2px}
+.price sup{font-size:24px;font-weight:600;vertical-align:24px;margin-right:2px}
+.price small{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;color:var(--ink-3);margin-left:8px;text-transform:uppercase;font-weight:400}
+.price .from{font-family:var(--mono);font-size:11px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-right:6px;vertical-align:18px}
+.was{font-family:var(--mono);font-size:12px;color:var(--ink-3)}
+.was b{color:var(--accent-text);font-weight:400}
+.digital{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);margin-top:6px}
+.tier ul{margin:18px 0 26px;flex:1;padding:0}
+.tier li{list-style:none;padding:8px 0 8px 26px;position:relative;font-size:14.5px;color:var(--ink-2);border-top:1px dashed var(--line)}
+.tier li::before{content:"→" / "";position:absolute;left:0;color:var(--accent-text)}
+.tier .fine{margin-top:12px;text-align:center;font-size:12.5px;color:var(--ink-3)}
+.tier .fine b{color:var(--live-text);font-weight:600}
+.slots{margin-top:12px;text-align:center;font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--amber-text);text-transform:uppercase}
+
+/* ------------ faq ------------ */
+.faq{margin-top:46px;max-width:820px}
+.faq details{border:2px solid var(--line);border-radius:16px;background:var(--card);margin-bottom:12px;overflow:hidden}
+.faq details[open]{border-color:var(--accent)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;padding:20px 24px;font-family:var(--disp);font-size:18.5px;font-weight:700}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+" / "";color:var(--accent-text);font-size:22px;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 24px 22px;color:var(--ink-2);font-size:15.5px;max-width:46em;animation:faqIn .25s ease}
+@keyframes faqIn{from{opacity:0;transform:translateY(-4px)}}
+
+/* ------------ answer blocks ------------ */
+.answer{margin-top:44px;background:var(--bg-2);border-left:4px solid var(--accent);border-radius:0 16px 16px 0;padding:24px 28px;max-width:56em}
+.answer h3{font-size:15px;font-family:var(--mono);font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px}
+.answer p{font-size:16.5px;color:var(--ink)}
+
+/* ------------ final ------------ */
+.final{text-align:center;background:var(--bg-2);border-top:1px solid var(--line)}
+.final h2{margin:20px auto 16px;max-width:15em}
+.final p{color:var(--ink-2);max-width:34em;margin:0 auto 32px}
+.final .tag-wave{width:120px;margin:0 auto;animation:none}
+
+footer{padding:44px 0 60px;color:var(--ink-3);font-size:13px;border-top:1px solid var(--line)}
+footer .wrap{display:grid;grid-template-columns:1fr auto;gap:30px}
+footer .safe{max-width:46em;line-height:1.7}
+
+/* ------------ responsive ------------ */
+@media (max-width:1020px){
+  .hero .wrap{grid-template-columns:1fr;gap:60px}
+  .parts{grid-template-columns:1fr 1fr}
+  .timeline{grid-template-columns:1fr 1fr;gap:34px}
+  .timeline::before{display:none}
+  .duo,.forwho{grid-template-columns:1fr}
+  .alive{grid-template-columns:1fr;gap:48px}
+  .inside-grid{grid-template-columns:1fr;gap:44px}
+  .docstage{min-height:560px}
+  .tiers{grid-template-columns:1fr;max-width:520px;margin-left:auto;margin-right:auto}
+  nav.links a{display:none}
+  nav.links a.keep{display:inline}
+  .sec-num{opacity:.3}
+}
+@media (max-width:620px){
+  body{font-size:16px}
+  section{padding:64px 0}
+  .hero{padding:52px 0 64px}
+  .wrap{padding:0 20px}
+  .hero-cta .btn{width:100%}
+  .parts,.timeline{grid-template-columns:1fr}
+  .stage{padding-top:76px}
+  .tagmark{width:140px;right:10px;top:-34px}
+  .ticket{grid-template-columns:1fr}
+  .ticket-stub{width:100%;height:56px;border-left:0;border-top:2px dashed var(--amber)}
+  .ticket-stub span{writing-mode:horizontal-tb}
+  .ticket::after{display:none}
+  .hero .wrap{gap:44px}
+  .wordmark small{display:none}
+  .btn.small{padding:9px 14px;font-size:13px}
+  .bar{gap:10px}
+  .pipe-scroll{mask-image:linear-gradient(90deg,#000 90%,transparent);-webkit-mask-image:linear-gradient(90deg,#000 90%,transparent)}
+  .pipe{min-width:880px}
+  .term-body{height:340px}
+  .docstage{min-height:520px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+  .js .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body class="bundle-seller">
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- design-system icon set (stroke, currentColor) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-term" viewBox="0 0 24 24"><rect x="2.5" y="4" width="19" height="16" rx="3"/><path d="M7 9.5l3.2 2.5L7 14.5M12.5 15H17"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><path d="M3.5 8.5 12 4l8.5 4.5v7L12 20l-8.5-4.5z"/><path d="M3.5 8.5 12 13l8.5-4.5M12 13v7"/></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="9" r="4.5"/><path d="M11.5 12.5 20 21M16 17l2.4-2.4M13.5 14.5l2 2"/></symbol>
+    <symbol id="i-signal" viewBox="0 0 24 24"><circle cx="12" cy="18" r="1.6" fill="currentColor" stroke="none"/><path d="M8.5 14.5a5 5 0 0 1 7 0M5.5 11.5a9.2 9.2 0 0 1 13 0M2.8 8.4a13.5 13.5 0 0 1 18.4 0"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5c0 4.1-4 7.5-9 7.5-1 0-2-.14-2.9-.4L4 20l1.3-3.1C3.9 15.6 3 13.6 3 11.5 3 7.4 7 4 12 4s9 3.4 9 7.5z"/><path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01"/></symbol>
+    <symbol id="i-ring" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M5.7 5.7l3.5 3.5M18.3 5.7l-3.5 3.5M18.3 18.3l-3.5-3.5M5.7 18.3l3.5-3.5"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 2.8h8L20 8.8v12.4H6z"/><path d="M14 2.8v6h6M9.5 13h7M9.5 16.5h7M9.5 9.5H11"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12.4 2.6 2.6L16 9.5"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13.5 2.5 5.5 14h5l-1.5 7.5L17 10h-5z"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4.5 6v5.5c0 4.5 3 8 7.5 9.5 4.5-1.5 7.5-5 7.5-9.5V6z"/><path d="m8.8 12 2.2 2.2 4.2-4.4"/></symbol>
+    <symbol id="i-tag" viewBox="0 0 24 24"><path d="M12.5 3H21v8.5L11.5 21 3 12.5z" transform="rotate(180 12 12)"/><circle cx="7.5" cy="7.5" r="1.6"/></symbol>
+  </defs>
+</svg>
+
+<header>
+  <div class="wrap bar">
+    <a class="wordmark" href="#top"><span class="dot"></span>AutoKit&nbsp;Labs <small>Kit Nº 03</small></a>
+    <nav class="links" aria-label="Page sections">
+      <a href="#problem">Why this kit</a>
+      <a href="#anatomy">How it works</a>
+      <a href="#inside">Inside the box</a>
+      <a class="keep" href="#pricing">Pricing</a>
+      <a class="keep" href="#faq">FAQ</a>
+    </nav>
+    <div class="bar-right">
+      <button class="theme-btn" id="themeBtn" aria-label="Switch to dark theme" aria-pressed="false">🌙</button>
+      <a class="btn small" href="#pricing">Get it · $24</a>
+    </div>
+  </div>
+</header>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>🏷️ In the works — ships when verified</span><span>Kit Nº 03 · BotBento Seller Box</span><span>20 seller cards · policy reference · Listing Lab</span><span>Amazon 75-char titles · July 27</span><span>Review-safe by design</span><span>14-day refund</span>
+    <span>🏷️ In the works — ships when verified</span><span>Kit Nº 03 · BotBento Seller Box</span><span>20 seller cards · policy reference · Listing Lab</span><span>Amazon 75-char titles · July 27</span><span>Review-safe by design</span><span>14-day refund</span>
+  </div>
+</div>
+
+<main id="main">
+<section class="hero" id="top" style="border-top:0">
+  <div class="wrap">
+    <div>
+      <span class="pill"><i class="beat"></i> New title rules land July 27 — be ready</span>
+      <h1>Your store's boring half, <span class="claw" style="white-space:normal">drafted before lunch.</span></h1>
+      <p class="lead">Selling got rule-heavy: 75-character titles, AI disclosures, federal review rules. Generic prompts now get sellers flagged. The Seller Box is <strong>20 mini-agent workflow cards with the platform rules built in</strong> — listings, reviews, customer messages, store ops — plus a dated policy reference and an offline compliance checker. Drafted by your AI, reviewed by you.</p>
+      <div class="hero-cta">
+        <a class="btn" href="#pricing">Get the Seller Box — $24 →</a>
+        <a class="btn ghost" href="#anatomy">See a card run</a>
+      </div>
+      <p class="micro"><span><b>20</b> seller cards</span><span><b>4</b> marketplaces referenced</span><span><b>1</b> offline checker tool</span><span>14-day refund</span></p>
+    </div>
+
+    <div class="stage">
+      <svg class="tagmark" viewBox="0 0 200 150" fill="none" role="img" aria-label="The Seller Box mark: copper price tags with listing lines">
+        <g class="t1">
+          <path d="M30 52 L86 24 a10 10 0 0 1 9 0 L142 52 a10 10 0 0 1 5 9 V116 a10 10 0 0 1-10 10 H45 a10 10 0 0 1-10-10 V61 a10 10 0 0 1 5-9z" fill="#E07A24" stroke="#C05E10" stroke-width="3"/>
+          <rect x="52" y="66" width="76" height="8" rx="4" fill="#FFFCF4"/>
+          <rect x="52" y="84" width="56" height="7" rx="3.5" fill="#FDEAD8"/>
+          <rect x="52" y="100" width="66" height="7" rx="3.5" fill="#FDEAD8"/>
+          <circle cx="90" cy="44" r="6" fill="#FFFCF4" stroke="#C05E10" stroke-width="2.5"/>
+        </g>
+        <g class="t2">
+          <path d="M118 20 L164 20 a8 8 0 0 1 8 8 L172 66 L146 92 a8 8 0 0 1-11 0 L112 69 a8 8 0 0 1 0-11z" fill="#F5A300" stroke="#C98600" stroke-width="3" opacity=".95"/>
+          <circle cx="152" cy="38" r="5" fill="#FFFCF4" stroke="#C98600" stroke-width="2.4"/>
+          <path d="M128 58 l18 -18" stroke="#FFFCF4" stroke-width="4" stroke-linecap="round"/>
+        </g>
+      </svg>
+
+      <div class="term" role="img" aria-label="Log of a Title Doctor card run: rules loaded, twelve titles rewritten, counts verified in Listing Lab">
+        <div class="term-bar"><i></i><i></i><i></i><span class="mono">card-run.log</span></div>
+        <div class="term-body" id="termBody"><span class="u">&gt; </span><span class="cursor"></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="problem">
+  <span class="sec-num" aria-hidden="true">01</span>
+  <div class="wrap">
+    <span class="sec-tag rv">The rules era</span>
+    <h2 class="rv">Selling got rule-heavy. Your drafts didn't.</h2>
+    <p class="sec-intro rv">Amazon rewrites over-limit titles with its own AI. Etsy delists undisclosed AI content. Fake or incentivized reviews now carry federal penalties. A generic prompt doesn't know any of that — and it drafts like it doesn't.</p>
+    <div class="duo">
+      <div class="plat zap rv">
+        <div class="mark">
+          <svg width="46" height="46" viewBox="0 0 46 46" fill="none" aria-hidden="true">
+            <rect x="6" y="8" width="26" height="34" rx="3" fill="#F5A300" opacity=".35" transform="rotate(-9 19 25)"/>
+            <rect x="11" y="7" width="26" height="34" rx="3" fill="#F5A300" opacity=".55" transform="rotate(6 24 24)"/>
+            <rect x="9" y="9" width="27" height="34" rx="3" fill="#F5A300"/>
+            <path d="M14 17h17M14 23h13M14 29h16M14 35h10" stroke="#8A5A00" stroke-width="2.4" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Prompt-pack selling <span class="mono">the risky way</span></h3>
+        <p>"Write me a listing" — and the AI invents materials, stuffs keywords, drops in "Free Shipping!", and asks happy customers for 5 stars.</p>
+        <ul>
+          <li>Titles written for 2024's rules, flagged by 2026's</li>
+          <li>Confident claims nobody verified</li>
+          <li>Review asks that are now federal violations</li>
+          <li>No record of what changed or worked</li>
+        </ul>
+      </div>
+      <div class="plat claw rv" style="--d:.1s">
+        <div class="mark">
+          <svg width="46" height="46" viewBox="0 0 46 46" fill="none" aria-hidden="true">
+            <path d="M8 14 L20 8 a4 4 0 0 1 3.6 0 L35 14 a4 4 0 0 1 2 3.4 V34 a4 4 0 0 1-4 4 H10 a4 4 0 0 1-4-4 V17.4 a4 4 0 0 1 2-3.4z" fill="#E07A24" stroke="#C05E10" stroke-width="2.2"/>
+            <rect x="13" y="20" width="18" height="3.4" rx="1.7" fill="#FFFCF4"/>
+            <rect x="13" y="27" width="13" height="3" rx="1.5" fill="#FDEAD8"/>
+            <circle cx="21.5" cy="12.5" r="2.4" fill="#FFFCF4" stroke="#C05E10" stroke-width="1.8"/>
+          </svg>
+        </div>
+        <h3>The Seller Box <span class="mono">the boxed way</span></h3>
+        <p>Every card feeds the AI your facts AND the platform's rules, labels what needs verifying, and ends with your decision — then Listing Lab checks the mechanics offline.</p>
+        <ul>
+          <li>Policy reference: dated, sourced, pasted into the run</li>
+          <li>Facts labeled, never invented</li>
+          <li>Review workflows that are compliant by design</li>
+          <li>Run tracker + listing log — week two beats week one</li>
+        </ul>
+      </div>
+      <div class="both rv">The seller loop: <b>role + goal + your facts + the rules + output + QA + next action</b></div>
+    </div>
+  </div>
+</section>
+
+<section id="anatomy">
+  <span class="sec-num" aria-hidden="true">02</span>
+  <div class="wrap">
+    <span class="sec-tag rv">How it works</span>
+    <h2 class="rv">From rule change to fixed listing.</h2>
+    <p class="sec-intro rv">This is the loop for every seller job in the box — shown here for the one every Amazon seller faces this month: the 75-character title rule.</p>
+
+    <div class="pipe-card rv">
+      <div class="pipe-head"><h3>The card-run loop, seller edition</h3><span class="mono">each node = a section of the box</span></div>
+      <div class="pipe-scroll">
+      <svg class="pipe" viewBox="0 0 1100 260" aria-label="Seller card-run loop: rule lands, pick the card, feed your facts, draft with flags, verify in Listing Lab, ship — with the run tracker logging everything underneath">
+        <path class="link" d="M190 98 H238"/>
+        <path class="link" d="M428 98 H476"/>
+        <path class="link" d="M656 98 H704"/>
+        <path class="link" d="M894 98 H942"/>
+        <rect class="node node-amber" x="40" y="56" width="150" height="84" rx="14"/>
+        <g class="nico" transform="translate(60,72) scale(1)"><use href="#i-shield" width="22" height="22"/></g>
+        <text class="ref" x="176" y="76" text-anchor="end">POLICY-REF</text>
+        <text class="lbl" x="62" y="112">Rule lands</text>
+        <text class="sub" x="62" y="129">dated + sourced</text>
+        <rect class="node node-hot" x="238" y="56" width="190" height="84" rx="14"/>
+        <g class="nico" transform="translate(258,72)"><use href="#i-doc" width="22" height="22"/></g>
+        <text class="ref" x="414" y="76" text-anchor="end">20 cards</text>
+        <text class="lbl" x="260" y="112">Pick the card</text>
+        <text class="sub" x="260" y="129">rules pasted in</text>
+        <rect class="node node-amber" x="476" y="56" width="180" height="84" rx="14"/>
+        <g class="nico" transform="translate(496,72)"><use href="#i-key" width="22" height="22"/></g>
+        <text class="ref" x="642" y="76" text-anchor="end">your store</text>
+        <text class="lbl" x="498" y="112">Feed your facts</text>
+        <text class="sub" x="498" y="129">titles, reviews, policy</text>
+        <rect class="node node-hot" x="704" y="56" width="190" height="84" rx="14"/>
+        <g class="nico" transform="translate(724,72)"><use href="#i-term" width="22" height="22"/></g>
+        <text class="ref" x="880" y="76" text-anchor="end">card §output</text>
+        <text class="lbl" x="726" y="112">Draft + flags</text>
+        <text class="sub" x="726" y="129">verify list included</text>
+        <rect class="node node-live" x="942" y="56" width="130" height="84" rx="14"/>
+        <g class="nico" transform="translate(960,72)"><use href="#i-check" width="22" height="22"/></g>
+        <text class="ref" x="1058" y="76" text-anchor="end">LISTING-LAB</text>
+        <text class="lbl" x="962" y="112">Check → ship</text>
+        <text class="sub" x="962" y="129">offline, you decide</text>
+        <path class="link" d="M556 140 V184"/>
+        <rect class="node" x="416" y="184" width="280" height="48" rx="12"/>
+        <g class="nico" transform="translate(434,196)"><use href="#i-ring" width="20" height="20"/></g>
+        <text class="lbl" x="464" y="208">Run tracker + listing log</text>
+        <text class="sub" x="464" y="224">every change dated — numbers get context</text>
+      </svg>
+      </div>
+      <div class="legend">
+        <span><i style="background:var(--amber)"></i>Rules & your facts</span>
+        <span><i style="background:var(--accent)"></i>Card sections</span>
+        <span><i style="background:var(--live)"></i>Human check</span>
+        <span><i style="background:var(--line-2)"></i>Always-on tracking</span>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <div class="tstep rv"><span class="clock">00:00</span><h3>Paste rules + card</h3><p>The Amazon section of the policy reference, then Card 02 — Title Doctor.</p></div>
+      <div class="tstep rv" style="--d:.08s"><span class="clock">00:03</span><h3>Feed your titles</h3><p>Up to 20 at once, with the 2–3 facts each buyer must see.</p></div>
+      <div class="tstep rv" style="--d:.16s"><span class="clock">00:10</span><h3>Review the flags</h3><p>The AI compresses; you decide what's essential on the two it couldn't fit.</p></div>
+      <div class="tstep rv" style="--d:.24s"><span class="clock">00:15</span><h3>Verify &amp; ship</h3><p>Listing Lab counts the characters (AI counting isn't reliable). Update, log, done.</p></div>
+    </div>
+
+    <div class="answer rv">
+      <h3>What is BotBento: Seller Box?</h3>
+      <p><strong>BotBento: Seller Box</strong> is a workflow kit for online sellers: <strong>20 AI mini-agent cards</strong> for listings, reviews, customer messages, store ops and growth, a <strong>dated 2026 marketplace policy reference</strong> with sources, and the <strong>Listing Lab</strong> offline compliance checker. No code, no APIs — it runs in the chat assistant you already use, with a review step on every card.</p>
+    </div>
+  </div>
+</section>
+
+<section id="cardrun">
+  <span class="sec-num" aria-hidden="true">03</span>
+  <div class="wrap">
+    <span class="sec-tag rv">Friday, 9 AM</span>
+    <h2 class="rv">This is what a card run looks like.</h2>
+    <div class="alive">
+      <div class="alive-copy rv">
+        <h3>47 reviews in. One listing bug out.</h3>
+        <p>Card 06 is the Review Miner. You paste the role, the card, and your reviews. It counts honestly — and most "product problems" turn out to be expectation problems the listing created.</p>
+        <ul class="alive-points">
+          <li><svg class="ic"><use href="#i-shield"/></svg><span><b>Policy-aware by design.</b> Review workflows that never gate, never incentivize, never fake — the rules are in the cards.</span></li>
+          <li><svg class="ic"><use href="#i-check"/></svg><span><b>Counted evidence, not vibes.</b> "9 of 47 mention weight" beats "customers are saying" every time.</span></li>
+          <li><svg class="ic"><use href="#i-tag"/></svg><span><b>Mechanics verified offline.</b> Listing Lab checks counts, banned phrases and disclosures on your device — nothing leaves your browser.</span></li>
+        </ul>
+      </div>
+      <div class="phone rv" role="img" aria-label="Phone mockup: a chat where the seller runs the Review Miner card and learns the weight complaints are a listing gap">
+        <div class="screen">
+          <div class="tg-head">
+            <span class="tg-ava"><svg viewBox="0 0 24 24" class="ic" style="color:var(--accent-text)"><use href="#i-tag"/></svg></span>
+            <div><b>Your AI assistant</b><span class="on">● card 06 loaded</span></div>
+          </div>
+          <div class="chat" id="chat">
+            <div class="msg out">[Card 06: Review Miner] + all 47 reviews 📎<span class="t">09:02</span></div>
+            <div class="msg in">Counted. Top theme:
+              <ul>
+                <li>9/47 mention weight — 6 expected metal</li>
+                <li>Your listing never states the material</li>
+              </ul><span class="t">09:03</span>
+            </div>
+            <div class="msg out">so it's a listing bug, not a product bug?<span class="t">09:04</span></div>
+            <div class="typing" aria-hidden="true"><i></i><i></i><i></i></div>
+            <div class="msg in">Yes — cheapest true fix: state "lightweight ABS" plainly, and lead with the desk-tidy angle 11 reviews praise. Draft ready — verify the material name before publishing.<span class="t">09:04</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="inside">
+  <span class="sec-num" aria-hidden="true">04</span>
+  <div class="wrap">
+    <span class="sec-tag rv">Contents</span>
+    <h2 class="rv">Eight parts. Zero filler.</h2>
+    <p class="sec-intro rv">Working documents and one working tool — flip through actual pages from the box:</p>
+
+    <div class="doctabs rv">
+      <input type="radio" name="doctab" id="doc1" checked>
+      <input type="radio" name="doctab" id="doc2">
+      <input type="radio" name="doctab" id="doc3">
+      <div class="inside-grid">
+        <div class="doctab-btns">
+          <label for="doc1"><svg class="ic"><use href="#i-doc"/></svg><span><b>Workflow card</b><span>Card 02 · Title Doctor</span></span></label>
+          <label for="doc2"><svg class="ic"><use href="#i-shield"/></svg><span><b>Policy reference</b><span>Dated, sourced, pasted into runs</span></span></label>
+          <label for="doc3"><svg class="ic"><use href="#i-tag"/></svg><span><b>Listing Lab</b><span>The offline checker tool</span></span></label>
+        </div>
+        <div class="docstage">
+          <div class="doc d1">
+            <div class="doc-kicker"><span>Workflow cards · Kit Nº 03</span><span>Card 02</span></div>
+            <h4>Title Doctor</h4>
+            <p class="doc-sub">Compress every title to the platform's limit while keeping the facts buyers search for — built for the 75-character era.</p>
+            <div class="rule"></div>
+            <div class="doc-li"><span class="cb done"></span><span><b>Inputs</b> — up to 20 titles + each product's must-keep facts</span></div>
+            <div class="doc-li"><span class="cb done"></span><span><b>Rules</b> — the pasted platform section; nothing invented to fill space</span></div>
+            <div class="doc-li"><span class="cb done"></span><span><b>Output</b> — old title | new title | chars | what moved where</span></div>
+            <div class="doc-li"><span class="cb"></span><span><b>QA gate</b> — verify counts in Listing Lab; AI counting isn't reliable</span></div>
+            <div class="doc-li"><span class="cb"></span><span><b>Next action</b> — top sellers first, log every change</span></div>
+            <div class="doc-foot"><span>WORKFLOW-CARDS.pdf · card 2/20</span><span class="dot"></span><span>botbento.com</span></div>
+          </div>
+          <div class="doc d2">
+            <div class="doc-kicker"><span>Policy quick reference</span><span>verified 2026-07</span></div>
+            <h4>The rules your drafts must survive.</h4>
+            <p class="doc-sub">Amazon, Etsy, eBay, Gumroad — summarized in plain English with sources and a verification date. The live page always wins; this gets your AI to draft from reality.</p>
+            <div class="rule"></div>
+            <div class="doc-li"><span class="cb done"></span><span><b>Amazon</b> — 75-char titles from July 27; no promo phrases; neutral review asks only</span></div>
+            <div class="doc-li"><span class="cb done"></span><span><b>Etsy</b> — AI use disclosed in the description; "Designed by a seller" class</span></div>
+            <div class="doc-li"><span class="cb done"></span><span><b>eBay</b> — accuracy rule catches flattering AI photo edits</span></div>
+            <div class="doc-li"><span class="cb done"></span><span><b>Federal</b> — fake/incentivized reviews: up to $51,744 per violation</span></div>
+            <div class="doc-foot"><span>POLICY-QUICK-REFERENCE.md</span><span class="dot"></span><span>sources inside</span></div>
+          </div>
+          <div class="doc d3">
+            <div class="doc-kicker"><span>Listing Lab · custom tool</span><span>offline · v1.0</span></div>
+            <h4>The checks AI can't be trusted to count.</h4>
+            <p class="doc-sub">One file, opens in any browser, works offline. Paste a draft; it checks the mechanics while you keep the judgment.</p>
+            <div class="rule"></div>
+            <div class="promptbox">✓ title 74/75 characters<br>✗ promo phrase: <span class="v">"free shipping"</span><br>✗ emoji in title<br>! urgency copy: <span class="v">verify it's true</span><br>✓ AI disclosure present (Etsy)</div>
+            <div class="doc-li" style="border:0;margin-top:8px"><span class="cb done"></span><span><b>Private by design:</b> nothing you paste leaves your device</span></div>
+            <div class="doc-foot"><span>TOOLS/LISTING-LAB.html</span><span class="dot"></span><span>no install · no account</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="parts">
+      <div class="part rv"><span class="no">Part 01</span><svg class="ic"><use href="#i-box"/></svg><h3>Quick-start guide</h3><p>The seller's operating manual — why review-first is the whole product.</p><span class="file">QUICK-START.pdf</span></div>
+      <div class="part rv" style="--d:.05s"><span class="no">Part 02</span><svg class="ic"><use href="#i-doc"/></svg><h3>20 seller cards</h3><p>Listings, reviews, messages, ops, growth — Title Doctor to Expansion Checker.</p><span class="file">WORKFLOW-CARDS.pdf</span></div>
+      <div class="part rv" style="--d:.1s"><span class="no">Part 03</span><svg class="ic"><use href="#i-shield"/></svg><h3>Policy reference</h3><p>2026 rules for Amazon, Etsy, eBay, Gumroad — dated, sourced, plain English.</p><span class="file">POLICY-QUICK-REFERENCE.md</span></div>
+      <div class="part rv" style="--d:.15s"><span class="no">Part 04</span><svg class="ic"><use href="#i-tag"/></svg><h3>Listing Lab tool</h3><p>Offline compliance checker: counts, banned phrases, disclosures, tags.</p><span class="file">TOOLS/LISTING-LAB.html</span></div>
+      <div class="part rv"><span class="no">Part 05</span><svg class="ic"><use href="#i-chat"/></svg><h3>Seller roles library</h3><p>Five roles that keep the AI in its lane — Listing Editor to Positioning Scout.</p><span class="file">AGENT-ROLES.md</span></div>
+      <div class="part rv" style="--d:.05s"><span class="no">Part 06</span><svg class="ic"><use href="#i-check"/></svg><h3>Example walkthroughs</h3><p>Three full runs including where the human stepped in and why.</p><span class="file">EXAMPLE-WALKTHROUGHS.pdf</span></div>
+      <div class="part rv" style="--d:.1s"><span class="no">Part 07</span><svg class="ic"><use href="#i-ring"/></svg><h3>Trackers + Notion</h3><p>Run tracker and listing log — CSV and importable Notion databases.</p><span class="file">RUN-TRACKER.csv + LISTING-LOG.csv</span></div>
+      <div class="part rv" style="--d:.15s"><span class="no">Part 08</span><svg class="ic"><use href="#i-bolt"/></svg><h3>Agent upgrades</h3><p>Four cards as standing weekly jobs — for AI Agent Starter Box owners.</p><span class="file">AGENT-UPGRADES.md</span></div>
+    </div>
+    <div class="ctaband rv">
+      <p><b>20 cards</b> · policy reference · Listing Lab · founding price <b>$24</b></p>
+      <a class="btn small" href="#pricing">Get the Seller Box →</a>
+    </div>
+  </div>
+</section>
+
+<section id="who">
+  <span class="sec-num" aria-hidden="true">05</span>
+  <div class="wrap">
+    <span class="sec-tag rv">Fit check</span>
+    <h2 class="rv">Read this before buying.</h2>
+    <div class="forwho">
+      <div class="who yes rv">
+        <h3>The box is for you if…</h3>
+        <ul>
+          <li>You sell on Amazon, Etsy, eBay, or your own store — or several at once</li>
+          <li>Listings, reviews and messages eat hours you don't have</li>
+          <li>You'll review drafts before they go live — the cards assume an operator</li>
+          <li>You want the new rules handled, not another scare headline</li>
+        </ul>
+      </div>
+      <div class="who no rv" style="--d:.1s">
+        <h3>Skip it if…</h3>
+        <ul>
+          <li>You want bots that auto-post, auto-reply, or auto-buy — platforms ban that, and so do we</li>
+          <li>You expect income promises — this kit makes none</li>
+          <li>You need legal advice — the policy reference is orientation, not counsel</li>
+          <li>You won't review AI output before publishing it</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ctaband rv">
+      <p>General workflows instead? <b>The Agent Box (Kit Nº 02)</b> is the all-purpose sibling.</p>
+      <a class="btn small" href="#pricing">Or start the Seller Box →</a>
+    </div>
+  </div>
+</section>
+
+<section id="system">
+  <span class="sec-num" aria-hidden="true">06</span>
+  <div class="wrap">
+    <span class="sec-tag rv">In every box</span>
+    <h2 class="rv">The layer that keeps your store safe.</h2>
+    <div class="ticket rv">
+      <div class="ticket-main">
+        <span class="mono">Included in every box — not a limited bonus</span>
+        <h3>The policy layer: dated reference + Listing Lab</h3>
+        <p>Every compliance claim in this kit is verified against sources on a printed date — and the parts most likely to change ship as updatable files, with v1.x updates included. The Listing Lab checker runs entirely on your device: your drafts never leave your browser.</p>
+        <p class="fine">Platform rules are summarized for orientation, not legal advice. The live policy page always wins — and when it changes, tell us and the reference gets updated.</p>
+      </div>
+      <div class="ticket-stub"><span>Policy layer</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <span class="sec-num" aria-hidden="true">07</span>
+  <div class="wrap">
+    <span class="sec-tag rv">Pricing</span>
+    <h2 class="rv">One box. Three ways in.</h2>
+    <p class="sec-intro rv">Founding prices for launch — they rise when v1.1 ships with the expanded card set. No subscriptions, no drip content.</p>
+    <!-- DRAFT PRICING — ladder position between Agent Box ($19) and Starter Box ($29); final numbers pending Diaa's approval -->
+    <div class="tiers">
+      <div class="tier rv">
+        <span class="mono">Digital kit</span>
+        <h3>Seller Box</h3>
+        <div class="price"><sup>$</sup>24<small>one-time</small></div>
+        <span class="was">founding price · <b>rises at v1.1</b></span>
+        <p class="digital">Instant digital access — nothing ships</p>
+        <ul>
+          <li>All 8 parts — 20 cards, policy reference, roles, walkthroughs</li>
+          <li>Listing Lab offline checker tool</li>
+          <li>Run tracker + listing log (CSV + Notion)</li>
+          <li>All v1.x updates — including policy reference updates</li>
+        </ul>
+        <!-- PLACEHOLDER: checkout intentionally not wired — ships when content is verified; hosted checkout URL pending platform approval -->
+        <a class="btn ghost" href="#" data-checkout="seller-box" aria-disabled="true" title="In the works — ships when verified">Get the Seller Box →</a>
+        <p class="fine"><b>14-day guarantee</b> — if three cards don't produce useful drafts, money back.</p>
+      </div>
+      <div class="tier feat rv" style="--d:.08s">
+        <span class="tab">Best for multi-channel sellers</span>
+        <span class="mono">Digital kit +</span>
+        <h3>Seller Box Pro</h3>
+        <div class="price"><sup>$</sup>59<small>one-time</small></div>
+        <span class="was">founding price · <b>rises at v1.1</b></span>
+        <p class="digital">Instant digital access — nothing ships</p>
+        <ul>
+          <li>Everything in Seller Box</li>
+          <li>Editable Notion + Google Sheets tracker templates</li>
+          <li>Extended walkthrough set — more marketplaces, more edge cases</li>
+          <li>Priority email support for your first week of runs</li>
+        </ul>
+        <!-- PLACEHOLDER: checkout intentionally not wired — Pro content ships after base kit is verified -->
+        <a class="btn" href="#" data-checkout="seller-box-pro" aria-disabled="true" title="In the works — ships when verified">Get Pro →</a>
+        <p class="fine"><b>14-day guarantee</b> — if three cards don't produce useful drafts, money back.</p>
+      </div>
+      <div class="tier rv" style="--d:.16s">
+        <span class="mono">Done with you</span>
+        <h3>Workflow Setup</h3>
+        <div class="price"><span class="from">from</span><sup>$</sup>1,500</div>
+        <span class="was">live, 1-on-1 working session</span>
+        <ul>
+          <li>We adapt the cards to your store, live</li>
+          <li>Your five highest-value workflows wired and test-run</li>
+          <li>Trackers set up, first week of runs planned</li>
+        </ul>
+        <a class="btn ghost" href="mailto:support@autokitlabs.com?subject=Workflow%20Setup%20application%20(Seller%20Box)&body=Tell%20us%3A%20where%20do%20you%20sell%2C%20and%20which%20store%20jobs%20eat%20your%20week%3F" data-checkout="service">Apply for a slot →</a>
+        <div class="slots">Limited slots each month — capacity is real</div>
+      </div>
+    </div>
+    <div class="answer rv">
+      <h3>How much does BotBento: Seller Box cost?</h3>
+      <p>The <strong>Seller Box costs $24</strong> (all 8 parts including the Listing Lab tool) or <strong>$59 for Pro</strong> (adds editable trackers, the extended walkthrough set and priority support) — one-time founding prices that rise at v1.1. A done-with-you <strong>Workflow Setup starts at $1,500</strong>. Every paid kit has a 14-day refund policy.</p>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <span class="sec-num" aria-hidden="true">08</span>
+  <div class="wrap">
+    <span class="sec-tag rv">Questions</span>
+    <h2 class="rv">Asked before buying.</h2>
+    <div class="faq rv">
+      <details>
+        <summary>What is BotBento: Seller Box?</summary>
+        <p>A workflow kit for online sellers: 20 AI mini-agent workflow cards for listings, reviews, customer messages, store ops and growth — plus a dated 2026 marketplace policy reference with sources, the offline Listing Lab compliance checker, a seller roles library, example walkthroughs, a run tracker and a Notion database. Each card gives the AI a job, your facts, the platform's rules, an output format, a review step and a next action.</p>
+      </details>
+      <details>
+        <summary>Do I need code, APIs or automation tools?</summary>
+        <p>No. The cards run inside the AI chat assistant you already use, and Listing Lab is a single file that opens in any browser and works offline. Nothing to install, no accounts to create.</p>
+      </details>
+      <details>
+        <summary>Which marketplaces does it cover?</summary>
+        <p>The policy reference covers Amazon, Etsy, eBay and Gumroad-style storefronts as of the verification date printed in the file, with sources. The cards themselves work for any marketplace or your own store — you paste the rules that apply to you.</p>
+      </details>
+      <details>
+        <summary>Is the policy information legal advice?</summary>
+        <p>No. The reference summarizes platform rules with sources and a verification date so your AI drafts start from reality instead of guesses. Platforms change rules — the live policy page always wins, and decisions with legal consequences belong with a qualified professional.</p>
+      </details>
+      <details>
+        <summary>How is this different from the Agent Box?</summary>
+        <p>The Agent Box (Kit Nº 02) is the general workflow kit for any small business. The Seller Box is specialized for selling online: marketplace rules are built into the cards, the review workflows are compliance-safe by design, and it ships with the Listing Lab checker. They share the same operating loop and stack well.</p>
+      </details>
+      <details>
+        <summary>Will this make me money?</summary>
+        <p>We don't promise income or sales — anyone who does is selling you something else. The kit saves drafting hours and helps your listings survive platform rules. Your products, prices and effort decide the rest.</p>
+      </details>
+      <details>
+        <summary>What's the refund policy?</summary>
+        <p>14 days, no drama: run three cards as written, and if they don't produce genuinely useful drafts for your store, you get your money back.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <svg class="tag-wave" viewBox="0 0 200 150" fill="none" aria-hidden="true">
+      <g class="t1">
+        <path d="M30 52 L86 24 a10 10 0 0 1 9 0 L142 52 a10 10 0 0 1 5 9 V116 a10 10 0 0 1-10 10 H45 a10 10 0 0 1-10-10 V61 a10 10 0 0 1 5-9z" fill="#E07A24" stroke="#C05E10" stroke-width="3"/>
+        <rect x="52" y="66" width="76" height="8" rx="4" fill="#FFFCF4"/>
+        <rect x="52" y="84" width="56" height="7" rx="3.5" fill="#FDEAD8"/>
+        <rect x="52" y="100" width="66" height="7" rx="3.5" fill="#FDEAD8"/>
+        <circle cx="90" cy="44" r="6" fill="#FFFCF4" stroke="#C05E10" stroke-width="2.5"/>
+      </g>
+      <g class="t2">
+        <path d="M118 20 L164 20 a8 8 0 0 1 8 8 L172 66 L146 92 a8 8 0 0 1-11 0 L112 69 a8 8 0 0 1 0-11z" fill="#F5A300" stroke="#C98600" stroke-width="3" opacity=".95"/>
+        <circle cx="152" cy="38" r="5" fill="#FFFCF4" stroke="#C98600" stroke-width="2.4"/>
+        <path d="M128 58 l18 -18" stroke="#FFFCF4" stroke-width="4" stroke-linecap="round"/>
+      </g>
+    </svg>
+    <h2>The rules changed. Change with them, in an afternoon.</h2>
+    <p>Twenty seller cards, the 2026 rules on paper, and a checker that counts what AI can't — drafted by your AI, shipped by you.</p>
+    <a class="btn" href="#pricing">Get the Seller Box — $24 →</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="safe">AutoKit Labs builds practical AI kits. No income, sales or results guarantees — outcomes depend on your inputs, judgment and review. Not legal, financial, medical or tax advice; the policy reference summarizes platform rules for orientation and the live policy pages always win. AutoKit Labs and BotBento are independent and not affiliated with Amazon, Etsy, eBay, Gumroad, or any AI vendor.</p>
+    <div class="mono">© 2026 AutoKit Labs · autokitlabs.com<br>support@autokitlabs.com</div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/ScrollTrigger.min.js"></script>
+<script>
+/* ---- theme toggle (init ran in <head>) ---- */
+(function(){
+  const btn=document.getElementById('themeBtn'),root=document.documentElement;
+  sync();
+  btn.addEventListener('click',()=>{
+    const t=root.dataset.theme==='dark'?'light':'dark';
+    root.dataset.theme=t;
+    try{localStorage.setItem('akl-theme',t)}catch(e){}
+    sync();
+  });
+  function sync(){
+    const dark=root.dataset.theme==='dark';
+    btn.textContent=dark?'☀️':'🌙';
+    btn.setAttribute('aria-pressed',String(dark));
+    btn.setAttribute('aria-label',dark?'Switch to light theme':'Switch to dark theme');
+  }
+})();
+
+/* ---- Motion strategy (3 layers): CSS media block kills keyframes/transitions;
+   GSAP created only inside gsap.matchMedia(no-preference); typewriter prints statically under reduce. ---- */
+
+/* ---- scroll reveal (CSS fallback when GSAP absent) ---- */
+(function(){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){
+    document.querySelectorAll('.rv').forEach(el=>el.classList.add('in'));return;
+  }
+  if(window.gsap)return;
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+})();
+
+/* ---- typewriter: single-owner, grapheme-safe, 2 passes then hold ---- */
+(function(){
+  const body=document.getElementById('termBody');
+  const FULL='<span class="u">&gt; </span>run card-02 title-doctor<br><span class="a">✓ rules loaded: amazon 75-char (jul 27)<br>✓ 12 titles in — 12 rewrites out<br></span><span class="hl">draft: </span>10 pass · 2 need your call<br><br><span class="u">&gt; </span>check listing-lab<br><span class="a">✓ counts verified — offline<br>✓ next: update top sellers first</span>';
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){body.innerHTML=FULL;return}
+  const script=[
+    {t:'> ',c:'u'},{t:'run card-02 title-doctor\n',c:'',type:true},
+    {t:'✓ rules loaded: amazon 75-char (jul 27)\n',c:'a',pause:400},
+    {t:'✓ 12 titles in — 12 rewrites out\n',c:'a',pause:300},
+    {t:'draft: ',c:'hl',pause:500},{t:'10 pass · 2 need your call\n\n',c:'',type:true},
+    {t:'> ',c:'u',pause:700},{t:'check listing-lab\n',c:'',type:true},
+    {t:'✓ counts verified — offline\n',c:'a',pause:450},
+    {t:'✓ next: update top sellers first\n',c:'a',pause:350},
+  ];
+  let runId=0,pass=0,timer=null,running=false;
+  function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/\n/g,'<br>')}
+  function cur(on){const c=body.querySelector('.cursor');if(c)c.remove();if(on)body.insertAdjacentHTML('beforeend','<span class="cursor"></span>')}
+  function start(){
+    if(running)return;running=true;
+    const my=++runId;body.innerHTML='';let i=0;
+    (function step(){
+      if(my!==runId)return;
+      if(i>=script.length){
+        pass++;
+        if(pass>=2){cur(true);running=false;return}
+        timer=setTimeout(()=>{if(my===runId){running=false;start()}},6000);return;
+      }
+      const s=script[i++];
+      timer=setTimeout(()=>{
+        if(my!==runId)return;
+        if(s.type){
+          const chars=[...s.t];let j=0;
+          (function ch(){
+            if(my!==runId)return;
+            cur(false);
+            body.insertAdjacentHTML('beforeend',`<span class="${s.c}">${esc(chars[j])}</span>`);
+            cur(true);
+            if(++j<chars.length)timer=setTimeout(ch,34+((j*7)%40));else step();
+          })();
+        }else{
+          cur(false);
+          body.insertAdjacentHTML('beforeend',`<span class="${s.c}">${esc(s.t)}</span>`);
+          cur(true);
+          step();
+        }
+      },s.pause||60);
+    })();
+  }
+  function stop(){runId++;clearTimeout(timer);running=false}
+  document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();else if(pass<2)start()});
+  window.__termStart=start;
+  if(!window.gsap)start();
+})();
+
+/* ---- GSAP choreography ---- */
+(function(){
+  if(!window.gsap)return;
+  gsap.registerPlugin(ScrollTrigger);
+  const mm=gsap.matchMedia();
+  mm.add('(prefers-reduced-motion: no-preference)',()=>{
+    gsap.defaults({duration:.7,ease:'power3.out'});
+    const kill=document.createElement('style');
+    kill.textContent='.js .rv{transition:none!important;opacity:1;transform:none}';
+    document.head.appendChild(kill);
+    document.querySelectorAll('.rv').forEach(el=>el.classList.add('in'));
+
+    /* hero entrance */
+    const tl=gsap.timeline();
+    tl.from('.pill',{y:24,autoAlpha:0,scale:.85,ease:'back.out(1.6)'},.05)
+      .from('.hero h1',{y:56,autoAlpha:0,duration:.9,ease:'expo.out'},.15)
+      .from('.hero .lead',{y:30,autoAlpha:0},.38)
+      .from('.hero-cta .btn',{y:22,autoAlpha:0,scale:.92,stagger:.09,ease:'back.out(1.5)'},.52)
+      .from('.hero .micro span',{y:14,autoAlpha:0,stagger:.06,duration:.45},.68)
+      .from('.term',{y:70,autoAlpha:0,duration:.9,ease:'expo.out'},.3)
+      .from('.tagmark',{y:-110,autoAlpha:0,duration:.85,ease:'bounce.out'},.75)
+      .call(()=>window.__termStart&&window.__termStart(),null,1.1);
+
+    /* counters */
+    document.querySelectorAll('.micro b').forEach(b=>{
+      const n=parseInt(b.textContent,10);if(isNaN(n))return;
+      const o={v:0};
+      gsap.to(o,{v:n,duration:1.2,delay:.8,ease:'power2.out',onUpdate:()=>{b.textContent=Math.round(o.v)}});
+    });
+
+    /* ghost numerals: slow parallax drift */
+    document.querySelectorAll('.sec-num').forEach(el=>{
+      gsap.fromTo(el,{yPercent:18},{yPercent:-14,ease:'none',
+        scrollTrigger:{trigger:el.parentElement,start:'top bottom',end:'bottom top',scrub:1.2}});
+    });
+
+    /* section headers */
+    document.querySelectorAll('section .sec-tag, section h2, section .sec-intro').forEach(el=>{
+      gsap.from(el,{y:34,autoAlpha:0,duration:.75,scrollTrigger:{trigger:el,start:'top 88%',once:true}});
+    });
+
+    /* comparison cards */
+    gsap.from('.duo .plat',{y:44,autoAlpha:0,rotation:i=>i?1.2:-1.2,stagger:.12,duration:.8,ease:'back.out(1.3)',
+      scrollTrigger:{trigger:'.duo',start:'top 82%',once:true}});
+
+    /* pipeline */
+    const pc=document.querySelector('.pipe-card');
+    if(pc){
+      gsap.timeline({scrollTrigger:{trigger:pc,start:'top 78%',once:true}})
+        .from(pc,{y:50,autoAlpha:0,duration:.7,ease:'expo.out'})
+        .from('.pipe rect',{scale:.6,autoAlpha:0,transformOrigin:'center',stagger:.14,ease:'back.out(1.8)',duration:.5},.25)
+        .from('.pipe text, .pipe .nico',{autoAlpha:0,stagger:.025,duration:.3},.5)
+        .from('.pipe .link',{autoAlpha:0,stagger:.12,duration:.4},.45)
+        .from('.legend span',{y:12,autoAlpha:0,stagger:.07,duration:.4},'>-.2');
+    }
+    gsap.from('.tstep',{y:38,autoAlpha:0,stagger:.14,ease:'back.out(1.4)',
+      scrollTrigger:{trigger:'.timeline',start:'top 82%',once:true}});
+    document.querySelectorAll('.answer').forEach(el=>{
+      gsap.from(el,{x:-40,autoAlpha:0,duration:.8,scrollTrigger:{trigger:el,start:'top 86%',once:true}});
+    });
+
+    /* card run: phone + chat choreography */
+    const chat=document.getElementById('chat');
+    if(chat){
+      const msgs=chat.querySelectorAll('.msg, .typing');
+      gsap.set(msgs,{autoAlpha:0,y:16,scale:.96});
+      gsap.timeline({scrollTrigger:{trigger:'.phone',start:'top 72%',once:true}})
+        .from('.phone',{y:60,autoAlpha:0,rotation:2,duration:.8,ease:'back.out(1.2)'})
+        .to(msgs[0],{autoAlpha:1,y:0,scale:1,duration:.4,ease:'back.out(1.6)'},'+=.2')
+        .to(msgs[1],{autoAlpha:1,y:0,scale:1,duration:.4,ease:'back.out(1.6)'},'+=.5')
+        .to(msgs[2],{autoAlpha:1,y:0,scale:1,duration:.4,ease:'back.out(1.6)'},'+=.6')
+        .to(msgs[3],{autoAlpha:1,y:0,scale:1,duration:.3},'+=.4')
+        .to(msgs[3],{autoAlpha:0,duration:.25,display:'none'},'+=1.1')
+        .to(msgs[4],{autoAlpha:1,y:0,scale:1,duration:.45,ease:'back.out(1.5)'},'<+.1');
+      gsap.from('.alive-points li',{x:-24,autoAlpha:0,stagger:.12,duration:.6,
+        scrollTrigger:{trigger:'.alive-points',start:'top 85%',once:true}});
+    }
+
+    /* inside: doc stage + tab buttons */
+    gsap.from('.doctab-btns label',{x:-30,autoAlpha:0,stagger:.1,duration:.6,
+      scrollTrigger:{trigger:'.doctab-btns',start:'top 82%',once:true}});
+    gsap.from('.docstage',{y:50,autoAlpha:0,rotation:1.5,duration:.8,ease:'back.out(1.2)',
+      scrollTrigger:{trigger:'.docstage',start:'top 80%',once:true}});
+
+    /* parts, bands, fit, ticket, faq */
+    ScrollTrigger.batch('.parts .part',{start:'top 88%',once:true,
+      onEnter:els=>gsap.from(els,{y:40,autoAlpha:0,scale:.94,stagger:.08,ease:'back.out(1.3)',duration:.6})});
+    document.querySelectorAll('.ctaband').forEach(el=>{
+      gsap.from(el,{y:24,autoAlpha:0,duration:.6,scrollTrigger:{trigger:el,start:'top 90%',once:true}});
+    });
+    gsap.from('.forwho .who',{y:40,autoAlpha:0,stagger:.12,scrollTrigger:{trigger:'.forwho',start:'top 84%',once:true}});
+    gsap.from('.ticket',{rotation:-1.5,y:44,autoAlpha:0,duration:.8,ease:'back.out(1.2)',
+      scrollTrigger:{trigger:'.ticket',start:'top 84%',once:true}});
+    gsap.from('.faq details',{y:26,autoAlpha:0,stagger:.07,duration:.55,
+      scrollTrigger:{trigger:'.faq',start:'top 84%',once:true}});
+
+    /* pricing */
+    gsap.timeline({scrollTrigger:{trigger:'.tiers',start:'top 80%',once:true}})
+      .from('.tier',{y:52,autoAlpha:0,stagger:.13,duration:.75,ease:'back.out(1.25)'})
+      .from('.tier .tab',{scale:0,transformOrigin:'50% 100%',ease:'back.out(2.2)',duration:.45},'-=.15')
+      .from('.slots',{autoAlpha:0,y:6,duration:.4},'-=.1');
+
+    /* final: tag pop + swing */
+    gsap.timeline({scrollTrigger:{trigger:'.final',start:'top 65%',once:true}})
+      .from('.final .tag-wave',{y:24,autoAlpha:0,scale:.8,transformOrigin:'50% 90%',ease:'back.out(1.7)',duration:.6})
+      .from('.final .tag-wave .t2',{rotation:-14,transformOrigin:'106px 38px',ease:'elastic.out(1,.4)',duration:.9},'-=.3')
+      .from('.final h2',{y:18,autoAlpha:0,duration:.5},'-=.5')
+      .from('.final .btn',{y:12,autoAlpha:0,duration:.4},'-=.25');
+
+    /* pointer-only delights */
+    if(matchMedia('(pointer:fine)').matches){
+      /* doc tilt on hover */
+      const stage=document.querySelector('.docstage');
+      if(stage){
+        gsap.set(stage,{transformPerspective:900});
+        const rx=gsap.quickTo(stage,'rotationX',{duration:.5,ease:'power2.out'});
+        const ry=gsap.quickTo(stage,'rotationY',{duration:.5,ease:'power2.out'});
+        stage.addEventListener('mousemove',e=>{
+          const r=stage.getBoundingClientRect();
+          ry(gsap.utils.clamp(-6,6,((e.clientX-r.left)/r.width-.5)*10));
+          rx(gsap.utils.clamp(-6,6,-((e.clientY-r.top)/r.height-.5)*10));
+        });
+        stage.addEventListener('mouseleave',()=>{rx(0);ry(0)});
+      }
+      /* magnetic hero CTA */
+      const mag=document.querySelector('.hero-cta .btn:not(.ghost)');
+      if(mag){
+        const qx=gsap.quickTo(mag,'x',{duration:.35,ease:'power3'}),qy=gsap.quickTo(mag,'y',{duration:.35,ease:'power3'});
+        mag.addEventListener('mousemove',e=>{
+          const r=mag.getBoundingClientRect();
+          qx(gsap.utils.clamp(-4,4,(e.clientX-r.left-r.width/2)*.08));
+          qy(gsap.utils.clamp(-4,4,(e.clientY-r.top-r.height/2)*.15));
+        });
+        mag.addEventListener('mouseleave',()=>{gsap.to(mag,{x:0,y:0,duration:.45,ease:'elastic.out(1,.5)'})});
+      }
+    }
+    return ()=>{};
+  });
+  mm.add('(prefers-reduced-motion: reduce)',()=>{
+    document.querySelectorAll('.rv').forEach(el=>el.classList.add('in'));
+    const chat=document.getElementById('chat');
+    if(chat){const t=chat.querySelector('.typing');if(t)t.style.display='none'}
+  });
+})();
+</script>
+</body>
+</html>

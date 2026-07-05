@@ -1,0 +1,21 @@
+/* Bundle theme: Seller Box — market copper. Mark: price-tag / open stall (no lobster).
+   In use by funnels/botbento-seller-box (draft — confirm accent at launch).
+   NOTE: registry originally sketched Seller Box as amber #F5A300, which collides
+   with the Hermes accent — copper keeps warm-market feel with its own identity.
+   Apply with <body class="bundle-seller">. */
+.bundle-seller{
+  --accent:#E07A24;
+  --accent-text:#9C4A06;
+  --accent-deep:#C05E10;
+  --accent-soft:#FDEAD8;
+  --btn-bg:#B45309;
+  --btn-edge:#7F3B05;
+}
+[data-theme="dark"] .bundle-seller{
+  --accent:#F59849;
+  --accent-text:#FFAB66;
+  --accent-soft:#3B2712;
+  --btn-bg:#C05E10;
+  --btn-edge:#6B3204;
+}
+.bundle-seller .mascot-lobby{display:none}
