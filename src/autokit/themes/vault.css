@@ -1,6 +1,6 @@
-/* Bundle theme: Workflow Vault — vault plum. Mark: keyhole/vault dial (no lobster).
-   PROPOSED accent (pending Diaa's approval) for the AutoKit Workflow Vault
-   subscription line. Apply with <body class="bundle-vault">. */
+/* Bundle theme: Workflow Vault — vault plum. Mark: vault door/dial + key (no lobster).
+   In use by funnels/autokit-workflow-vault (draft — confirm accent at launch).
+   Apply with <body class="bundle-vault">. */
 .bundle-vault{
   --accent:#8B5CF6;
   --accent-text:#6023C0;

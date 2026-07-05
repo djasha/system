@@ -1,0 +1,31 @@
+---
+name: AutokitVaultFunnel
+description: AutoKit Workflow Vault funnel — fifth surface on the shared skeleton. Vault-plum accent, vault-door-and-key mark, membership narrative with the anti-drip house rule printed on the page.
+category: layout
+tags: [autokit, funnel, landing, vault, membership]
+tokens_used: [color.autokit-bg, color.autokit-amber, color.autokit-live, type.autokit-display, type.autokit-body, type.autokit-mono]
+related: [autokit-bundle-themes]
+status: beta
+source_path: src/autokit/VaultFunnel.astro
+a11y_notes: Same three-layer contract as its siblings — works without JavaScript via the .js class gate, reduced motion respected in CSS, gsap.matchMedia and static fallbacks, theme set before first paint. The plum accent layer ships WCAG-checked -text values for both light and dark.
+created: 2026-07-05
+components_used: [autokit-button, autokit-pill, autokit-ticket, autokit-phone-chat, autokit-icons, autokit-motion-recipes]
+---
+
+## Prompt
+
+Fifth surface on the funnel skeleton, first for a membership: vault-plum accent layer, a vault-door mark with a turning dial and a key, and a shelf section (per-kit color-keyed cards) replacing the parts grid. The narrative sells the all-access trade honestly: kits stay complete and separately purchasable forever; the membership adds the whole shelf, future kits at release, and a complete monthly drop. The anti-drip house rule is printed in the ticket section so buyers can hold the brand to it.
+
+## Usage
+
+- Live example at `/autokit/funnels/autokit-workflow-vault/` (noindex — production ships from botbento.com/vault when verified).
+- **Status honesty**: marquee reads "opens when verified". Pricing ($19/mo, $190/yr) is DRAFT; the Gumroad draft exists but recurrence must be configured in the UI before publish, and the Vault never launches with an empty drop queue (VAULT-SPEC.md rule).
+- The shelf card colors are each kit's accent — the design system's per-bundle theming shown on one page.
+- Caught by the factory QA gate pre-publish: honesty copy quoting a banned urgency phrase verbatim — reworded. Run `autokit-factory/qa-gate.sh` before shipping funnel changes.
+
+## Do / Don't
+
+- **Do** keep the "kits never go subscription-only" promise in the pricing section — it's the trust anchor.
+- **Do** update the shelf section every time a kit ships; it must always match the registry.
+- **Don't** publish while the drop queue is empty — a membership with no rhythm is a refund machine.
+- **Don't** use countdown or scarcity mechanics — membership pressure tactics violate the house voice.
