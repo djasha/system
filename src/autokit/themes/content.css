@@ -1,0 +1,20 @@
+/* Bundle theme: Content Box — creator berry. Mark: stacked post cards + pen (no lobster).
+   Accent matches catalog/bundles.json ("content" entry). In use by
+   funnels/botbento-content-box (draft — confirm accent at launch).
+   Apply with <body class="bundle-content">. */
+.bundle-content{
+  --accent:#C2478F;
+  --accent-text:#9C2F6E;
+  --accent-deep:#A8326F;
+  --accent-soft:#F9E3F0;
+  --btn-bg:#A02968;
+  --btn-edge:#711C49;
+}
+[data-theme="dark"] .bundle-content{
+  --accent:#E06BAE;
+  --accent-text:#F08BC4;
+  --accent-soft:#3A1229;
+  --btn-bg:#A8326F;
+  --btn-edge:#5E1740;
+}
+.bundle-content .mascot-lobby{display:none}

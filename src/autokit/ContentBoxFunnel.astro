@@ -1,0 +1,1122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<script>
+/* theme + js-gate: runs before first paint (no flash, no-JS users get visible content) */
+document.documentElement.classList.add('js');
+(function(){var t=null;try{t=localStorage.getItem('akl-theme')}catch(e){}
+document.documentElement.dataset.theme=t||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>BotBento: Content Box — A Month of Content Systems, Drafted by Your AI</title>
+<meta name="description" content="The creator workflow kit: 20 AI mini-agent cards for planning, drafting, repurposing and publishing — a voice guide built from your own best work, a dated 2026 disclosure-rules reference, and the offline Hook Lab checker. No code, no APIs." />
+<link rel="canonical" href="https://botbento.com/content-box" />
+<meta name="robots" content="noindex" />
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#FAF3E3" />
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#16130E" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="BotBento: Content Box — make once, publish everywhere, stay you" />
+<meta property="og:description" content="20 creator workflow cards with a voice guide system and repurposing pipeline. Drafted by your AI, edited by you — the pattern platforms reward." />
+<meta property="og:url" content="https://botbento.com/content-box" />
+<meta property="og:site_name" content="AutoKit Labs" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:image" content="https://botbento.com/assets/content-box-og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="BotBento: Content Box — stacked content cards with a berry pen mark" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="BotBento: Content Box — make once, publish everywhere, stay you" />
+<meta name="twitter:description" content="20 creator cards + voice guide system + repurposing pipeline + offline Hook Lab checker. No code, no APIs." />
+<meta name="twitter:image" content="https://botbento.com/assets/content-box-og.png" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='24' font-size='24'%3E%F0%9F%93%9D%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700..800&family=Archivo:wght@400;500;600;700&family=Fragment+Mono&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","@id":"https://autokitlabs.com/#org","name":"AutoKit Labs","url":"https://autokitlabs.com","email":"support@autokitlabs.com","sameAs":["https://botbento.com"],"description":"AutoKit Labs builds practical boxed AI kits: install guides, checklists and workflow boxes for people who want working AI help without the confusion."}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Product","name":"BotBento: Content Box","brand":{"@id":"https://autokitlabs.com/#org"},"description":"Creator workflow kit: 20 AI mini-agent cards for planning, drafting, repurposing, audience and publishing ops — plus a voice guide system built from your own work, a dated 2026 disclosure-rules reference (platform AI labels, FTC, EU AI Act), the offline Hook Lab checker, trackers and a Notion database. No code, APIs or automation software required.","image":"https://botbento.com/assets/content-box-og.png","url":"https://botbento.com/content-box","offers":[
+{"@type":"Offer","name":"Content Box","price":"24","priceCurrency":"USD","availability":"https://schema.org/PreOrder","url":"https://botbento.com/content-box#pricing","hasMerchantReturnPolicy":{"@type":"MerchantReturnPolicy","returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow","merchantReturnDays":14,"applicableCountry":"US"}},
+{"@type":"Offer","name":"Content Box Pro","price":"59","priceCurrency":"USD","availability":"https://schema.org/PreOrder","url":"https://botbento.com/content-box#pricing","hasMerchantReturnPolicy":{"@type":"MerchantReturnPolicy","returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow","merchantReturnDays":14,"applicableCountry":"US"}},
+{"@type":"Offer","name":"Workflow Setup Service","priceSpecification":{"@type":"PriceSpecification","minPrice":1500,"priceCurrency":"USD"},"availability":"https://schema.org/LimitedAvailability","url":"https://botbento.com/content-box#pricing"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"What is BotBento: Content Box?","acceptedAnswer":{"@type":"Answer","text":"A workflow kit for creators and marketers: 20 AI mini-agent workflow cards across planning, drafting, repurposing, audience and publishing ops — plus a voice guide system built from your own best work, a dated 2026 disclosure-rules reference with sources, the offline Hook Lab checker, trackers and a Notion database. Each card gives the AI a job, your material, your voice, a review step and a next action."}},
+{"@type":"Question","name":"Will platforms punish me for using AI?","acceptedAnswer":{"@type":"Answer","text":"Platforms punish mass-produced minimal-human-input content and unlabeled realistic synthetic media — not AI-assisted work. AI-written hooks, scripts and captions are explicitly exempt from labels on the major platforms, and content that passes human editorial review sits in the EU AI Act's disclosure carve-out. The review-first loop in this box is exactly the pattern the rules reward."}},
+{"@type":"Question","name":"Do I need code, APIs or automation tools?","acceptedAnswer":{"@type":"Answer","text":"No. The cards run inside the AI chat assistant you already use, and Hook Lab is a single file that opens in any browser and works offline. Nothing to install, no accounts to create."}},
+{"@type":"Question","name":"Will it still sound like me?","acceptedAnswer":{"@type":"Answer","text":"That's the kit's core mechanic: Card 13 builds a one-page voice guide from your own best work — with quoted evidence — and every drafting card treats it as law. Drafts arrive in your rhythm and your vocabulary, and you edit before anything ships."}},
+{"@type":"Question","name":"What exactly do I get after paying?","acceptedAnswer":{"@type":"Answer","text":"Instant digital access — nothing ships. The quick-start guide, all 20 cards, the roles library and voice guide system, the policy quick reference, Hook Lab, three full walkthroughs, run tracker and post log (CSV + Notion), and safe-use notes — designed PDFs plus editable Markdown, with all v1.x updates included."}},
+{"@type":"Question","name":"Will this get me views or make me money?","acceptedAnswer":{"@type":"Answer","text":"We don't promise views, followers, or income — anyone who does is selling you something else. The kit saves planning and drafting hours and keeps your publishing consistent and compliant. Your ideas and consistency decide the rest."}},
+{"@type":"Question","name":"What's the refund policy?","acceptedAnswer":{"@type":"Answer","text":"14 days, no drama: run three cards as written, and if they don't produce genuinely useful drafts for your content, you get your money back."}}]}
+</script>
+<style>
+/* AutoKit Labs design system — bundle-content accent layer baked in
+   (see tokens/themes/content.css). Everything else identical to core tokens. */
+:root{
+  --bg:#FAF3E3;--bg-2:#F2E8D0;--card:#FFFCF4;--line:#E3D7B8;--line-2:#CBBD98;--shadow:#E0D2AE;
+  --ink:#221D15;--ink-2:#5A5140;--ink-3:#7A6E53;
+  --accent:#C2478F;--accent-text:#9C2F6E;--accent-deep:#A8326F;--accent-soft:#F9E3F0;
+  --btn-bg:#A02968;--btn-edge:#711C49;
+  --amber:#F5A300;--amber-text:#8A5A00;--amber-soft:#FFF2D2;
+  --live:#18A957;--live-text:#0E7A3C;--live-soft:#DDF4E4;
+  --term:#1B1712;--term-ink:#F2EAD8;
+  --paper:#FFFEF9;--paper-edge:#EFE6CF;
+  --tg:#EAF3FB;--tg-out:#DCF2C8;--tg-ink:#1A2530;
+  --max:1180px;
+  --disp:"Bricolage Grotesque",sans-serif;--sans:"Archivo",sans-serif;--mono:"Fragment Mono",monospace;
+}
+html[data-theme="dark"]{
+  --bg:#16130E;--bg-2:#1E1A13;--card:#211C14;--line:#352E20;--line-2:#4A4130;--shadow:#0C0A06;
+  --ink:#F6EEDC;--ink-2:#BFB299;--ink-3:#9A8D72;
+  --accent:#E06BAE;--accent-text:#F08BC4;--accent-deep:#A8326F;--accent-soft:#3A1229;
+  --btn-bg:#A8326F;--btn-edge:#5E1740;
+  --amber:#FFB01F;--amber-text:#FFB01F;--amber-soft:#3A2E12;
+  --live:#2ED573;--live-text:#2ED573;--live-soft:#12321F;
+  --term:#0F0D09;--term-ink:#F2EAD8;
+  --paper:#F6EFDC;--paper-edge:#D8CBAA;
+  --tg:#1B2733;--tg-out:#24371C;--tg-ink:#E8F0F8;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;transition:background .3s ease,color .3s ease;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:11;pointer-events:none;opacity:.4;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.4 0 0 0 0 0.36 0 0 0 0 0.28 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E")}
+a{color:inherit}
+img,svg{display:block;max-width:100%}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+.mono{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+h1,h2,h3{font-family:var(--disp)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:-9999px;top:12px;z-index:100;background:var(--ink);color:var(--bg);padding:12px 18px;border-radius:10px;font-family:var(--mono);font-size:13px}
+.skip:focus{left:12px}
+.ic{width:1em;height:1em;stroke:currentColor;stroke-width:1.9;fill:none;stroke-linecap:round;stroke-linejoin:round;display:inline-block;vertical-align:-.12em}
+
+/* ------------ buttons ------------ */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--disp);font-weight:700;font-size:16px;white-space:nowrap;
+  background:var(--btn-bg);color:#fff;text-decoration:none;padding:15px 26px;border-radius:14px;border:2px solid var(--btn-edge);
+  box-shadow:0 4px 0 var(--btn-edge);transition:transform .14s ease,box-shadow .14s ease,background .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 6px 0 var(--btn-edge);background:var(--accent)}
+.btn:active{transform:translateY(2px);box-shadow:0 1px 0 var(--btn-edge)}
+.btn.ghost{background:var(--card);color:var(--ink);border-color:var(--line-2);box-shadow:0 4px 0 var(--line-2)}
+.btn.ghost:hover{background:var(--bg-2)}
+.btn.small{padding:11px 18px;font-size:14px;border-radius:11px}
+
+/* ------------ header ------------ */
+header{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header::before{content:"";display:block;height:3px;background:linear-gradient(90deg,var(--accent),var(--amber) 55%,var(--live))}
+.bar{display:flex;align-items:center;justify-content:space-between;height:66px;gap:18px}
+.wordmark{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--disp);font-weight:800;font-size:19px;letter-spacing:-.02em;white-space:nowrap}
+.wordmark .dot{width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft);flex:none}
+.wordmark small{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--ink-3);text-transform:uppercase;font-weight:400}
+nav.links{display:flex;gap:24px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
+nav.links a{text-decoration:none}
+nav.links a:hover{color:var(--accent-text)}
+.bar-right{display:flex;align-items:center;gap:12px}
+.theme-btn{width:42px;height:42px;border-radius:12px;border:1px solid var(--line-2);background:var(--card);cursor:pointer;font-size:17px;display:flex;align-items:center;justify-content:center;transition:transform .15s;flex:none}
+.theme-btn:hover{transform:rotate(15deg)}
+
+/* ------------ marquee ------------ */
+.marquee{background:var(--accent-deep);color:#fff;overflow:hidden;white-space:nowrap;border-bottom:2px solid var(--btn-edge)}
+.marquee-track{display:inline-flex;animation:slide 26s linear infinite;padding:8px 0}
+.marquee:hover .marquee-track,.marquee:focus-within .marquee-track{animation-play-state:paused}
+.marquee span{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;padding:0 26px;border-right:1px solid rgba(255,255,255,.35)}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* ------------ hero ------------ */
+.hero{padding:72px 0 84px;position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(400px,.98fr);gap:56px;align-items:center;position:relative}
+.pill{display:inline-flex;align-items:center;gap:9px;background:var(--live-soft);color:var(--live-text);border:1px solid color-mix(in srgb,var(--live) 40%,transparent);border-radius:999px;padding:8px 16px;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase}
+.pill .beat{width:8px;height:8px;border-radius:50%;background:var(--live);animation:beat 1.6s ease infinite}
+@keyframes beat{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.7);opacity:.5}}
+h1{font-size:clamp(46px,5.8vw,82px);font-weight:800;line-height:.98;letter-spacing:-.035em;margin:24px 0}
+h1 .claw{color:var(--accent-text)}
+h1 .zap{color:var(--amber-text)}
+html[data-theme="dark"] h1 .zap{color:var(--amber)}
+.lead{font-size:19px;line-height:1.65;color:var(--ink-2);max-width:32em}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin:32px 0 22px}
+.micro{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--ink-3);text-transform:uppercase;display:flex;gap:18px;flex-wrap:wrap}
+.micro b{color:var(--accent-text);font-weight:400}
+
+/* terminal + floating stack mark */
+.stage{position:relative;padding-top:64px}
+.term{background:var(--term);color:var(--term-ink);border-radius:20px;border:2px solid #000;box-shadow:0 14px 0 var(--shadow);font-family:var(--mono);font-size:13.5px;line-height:1.95;position:relative;z-index:2}
+.term-bar{display:flex;align-items:center;gap:8px;padding:14px 18px;border-bottom:1px solid rgba(255,255,255,.12)}
+.term-bar i{width:11px;height:11px;border-radius:50%;background:#5A5142}
+.term-bar i:first-child{background:var(--accent)}
+.term-bar i:nth-child(2){background:var(--amber)}
+.term-bar i:nth-child(3){background:var(--live)}
+.term-bar .mono{margin-left:auto;color:#8F8672;font-size:10.5px}
+.term-body{padding:20px 22px 24px;height:300px;overflow:hidden}
+.term .u{color:#B8AD93}
+.term .a{color:#7FD79B}
+.term .hl{color:#F2A5CE}
+.cursor{display:inline-block;width:8px;height:15px;background:var(--live);vertical-align:-2px;animation:blinkc 1s steps(1) infinite}
+@keyframes blinkc{50%{opacity:0}}
+.stackmark{position:absolute;top:-40px;right:104px;width:180px;z-index:3;animation:bob 4.5s ease-in-out infinite;transform-origin:50% 90%}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-9px) rotate(1.5deg)}}
+.stackmark .pen{animation:penwrite 4.8s .6s ease-in-out infinite;transform-origin:20% 80%}
+@keyframes penwrite{0%,70%,100%{transform:rotate(0)}80%{transform:rotate(-6deg)}90%{transform:rotate(3deg)}}
+
+/* ------------ sections + ghost numerals ------------ */
+section{padding:96px 0;border-top:1px solid var(--line);position:relative;overflow:hidden}
+.sec-num{position:absolute;top:34px;right:-10px;font-family:var(--disp);font-weight:800;font-size:clamp(120px,16vw,230px);line-height:1;color:transparent;-webkit-text-stroke:1.5px var(--line-2);opacity:.5;pointer-events:none;user-select:none;letter-spacing:-.05em}
+.sec-tag{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-text);margin-bottom:18px}
+.sec-tag::before{content:"" / "";width:26px;height:2px;background:var(--accent);border-radius:2px}
+h2{font-size:clamp(34px,4vw,56px);font-weight:800;line-height:1.02;letter-spacing:-.03em;max-width:17em}
+.sec-intro{color:var(--ink-2);max-width:44em;margin-top:16px;font-size:18px}
+
+/* reveal: hidden ONLY when JS present */
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.js .rv.in{opacity:1;transform:none}
+
+/* ------------ comparison cards ------------ */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:46px}
+.plat{background:var(--card);border:2px solid var(--line);border-radius:22px;padding:34px 32px;position:relative;overflow:hidden;transition:transform .2s ease,border-color .2s ease}
+.plat:hover{transform:translateY(-4px)}
+.plat.claw:hover{border-color:var(--accent)}
+.plat.zap:hover{border-color:var(--amber)}
+.plat .mark{width:74px;height:74px;border-radius:18px;display:flex;align-items:center;justify-content:center;margin-bottom:22px}
+.plat.claw .mark{background:var(--accent-soft)}
+.plat.zap .mark{background:var(--amber-soft)}
+.plat h3{font-size:27px;font-weight:800;letter-spacing:-.02em;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.plat h3 .mono{font-size:10px;padding:4px 9px;border-radius:6px;letter-spacing:.1em}
+.plat.claw h3 .mono{background:var(--accent-soft);color:var(--accent-text)}
+.plat.zap h3 .mono{background:var(--amber-soft);color:var(--amber-text)}
+.plat p{color:var(--ink-2);font-size:15.5px;margin-top:12px}
+.plat ul{margin-top:18px;padding:0}
+.plat li{list-style:none;position:relative;padding:8px 0 8px 24px;color:var(--ink-2);font-size:15px;border-top:1px dashed var(--line)}
+.plat.claw li::before{content:"▸" / "";position:absolute;left:2px;color:var(--accent);font-size:14px}
+.plat.zap li::before{content:"▸" / "";position:absolute;left:2px;color:var(--amber);font-size:14px}
+.both{grid-column:1/-1;text-align:center;background:var(--bg-2);border:2px dashed var(--line-2);border-radius:16px;padding:18px;font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.both b{color:var(--accent-text)}
+
+/* ------------ CTA band ------------ */
+.ctaband{margin-top:46px;background:var(--bg-2);border:2px dashed var(--line-2);border-radius:16px;padding:20px 26px;display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap}
+.ctaband p{font-family:var(--mono);font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-2)}
+.ctaband p b{color:var(--accent-text);font-weight:400}
+
+/* ------------ pipeline ------------ */
+.pipe-card{background:var(--card);border:2px solid var(--line);border-radius:24px;padding:38px 34px 30px;margin-top:46px;box-shadow:0 10px 0 var(--shadow)}
+.pipe-head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:10px;margin-bottom:26px}
+.pipe-head h3{font-size:22px;font-weight:800}
+.pipe-head .mono{color:var(--ink-3)}
+.pipe-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.pipe{width:100%;height:auto}
+.pipe text{font-family:var(--mono)}
+.pipe .lbl{font-size:14px;fill:var(--ink);font-weight:600}
+.pipe .sub{font-size:11px;fill:var(--ink-3);letter-spacing:.05em}
+.pipe .ref{font-size:11px;fill:var(--accent-text);letter-spacing:.04em}
+.pipe .node{fill:var(--bg-2);stroke:var(--line-2);stroke-width:1.6}
+.pipe .node-hot{fill:var(--accent-soft);stroke:var(--accent)}
+.pipe .node-amber{fill:var(--amber-soft);stroke:var(--amber)}
+.pipe .node-live{fill:var(--live-soft);stroke:var(--live)}
+.pipe .link{stroke:var(--line-2);stroke-width:2;fill:none;stroke-dasharray:6 7;animation:flow 1.2s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-13}}
+.pipe .nico{stroke:var(--ink-2);stroke-width:1.9;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.legend{display:flex;gap:20px;flex-wrap:wrap;margin-top:18px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.legend i{display:inline-block;width:9px;height:9px;border-radius:3px;margin-right:7px}
+.timeline{margin-top:52px;position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.timeline::before{content:"";position:absolute;top:26px;left:4%;right:4%;height:3px;background:repeating-linear-gradient(90deg,var(--line-2) 0 10px,transparent 10px 18px);z-index:0}
+.tstep{position:relative;z-index:1;padding-top:58px}
+.tstep .clock{position:absolute;top:0;left:0;width:52px;height:52px;border-radius:50%;background:var(--card);border:3px solid var(--accent);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:10.5px;color:var(--accent-text)}
+.tstep:last-child .clock{background:var(--live);border-color:var(--live);color:#fff}
+.tstep h3{font-size:18px;font-weight:700}
+.tstep p{font-size:14px;color:var(--ink-2);margin-top:6px}
+
+/* ------------ card-run showcase: phone ------------ */
+.alive{display:grid;grid-template-columns:minmax(0,1fr) minmax(340px,.8fr);gap:64px;align-items:center;margin-top:46px}
+.alive-copy h3{font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-.025em;line-height:1.05}
+.alive-copy p{color:var(--ink-2);margin-top:14px;max-width:34em}
+.alive-points{margin-top:26px;padding:0}
+.alive-points li{list-style:none;display:flex;gap:14px;align-items:flex-start;padding:13px 0;border-top:1px dashed var(--line);font-size:15.5px;color:var(--ink-2)}
+.alive-points .ic{flex:none;font-size:20px;color:var(--accent-text);margin-top:2px}
+.phone{width:min(320px,100%);margin:0 auto;background:var(--card);border:3px solid var(--ink);border-radius:44px;padding:12px;box-shadow:0 18px 0 var(--shadow);position:relative}
+.phone::before{content:"";position:absolute;top:12px;left:50%;transform:translateX(-50%);width:110px;height:26px;background:var(--ink);border-radius:0 0 16px 16px;z-index:3}
+.screen{background:var(--tg);border-radius:32px;overflow:hidden;color:var(--tg-ink)}
+.tg-head{display:flex;align-items:center;gap:11px;padding:38px 16px 12px;background:color-mix(in srgb,var(--tg) 60%,var(--card));border-bottom:1px solid color-mix(in srgb,var(--tg-ink) 12%,transparent)}
+.tg-ava{width:38px;height:38px;border-radius:50%;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;flex:none}
+.tg-ava svg{width:20px;height:20px}
+.tg-head b{font-size:14.5px;display:block;font-family:var(--sans)}
+.tg-head .on{font-size:11.5px;color:var(--live-text);font-family:var(--mono);text-transform:uppercase;letter-spacing:.06em}
+.chat{padding:16px 14px 20px;display:flex;flex-direction:column;gap:10px;min-height:330px}
+.msg{max-width:82%;padding:10px 14px;border-radius:16px;font-size:13.8px;line-height:1.5;font-family:var(--sans);position:relative}
+.msg.in{background:var(--card);border:1px solid color-mix(in srgb,var(--tg-ink) 10%,transparent);border-bottom-left-radius:5px;align-self:flex-start}
+.msg.out{background:var(--tg-out);border-bottom-right-radius:5px;align-self:flex-end}
+.msg .t{display:block;font-size:10px;color:var(--ink-3);font-family:var(--mono);margin-top:5px;text-align:right}
+.msg ul{margin:6px 0 0;padding-left:18px}
+.msg li{font-size:13px;padding:1.5px 0}
+.typing{display:inline-flex;gap:4px;padding:12px 16px;background:var(--card);border:1px solid color-mix(in srgb,var(--tg-ink) 10%,transparent);border-radius:16px;border-bottom-left-radius:5px;align-self:flex-start}
+.typing i{width:7px;height:7px;border-radius:50%;background:var(--ink-3);animation:tdots 1.2s ease infinite}
+.typing i:nth-child(2){animation-delay:.15s}
+.typing i:nth-child(3){animation-delay:.3s}
+@keyframes tdots{0%,60%,100%{transform:translateY(0);opacity:.5}30%{transform:translateY(-4px);opacity:1}}
+
+/* ------------ look inside: document mockups (CSS-only tabs) ------------ */
+.inside-grid{display:grid;grid-template-columns:minmax(300px,.9fr) minmax(0,1.1fr);gap:60px;align-items:center;margin-top:46px}
+.doctabs input{position:absolute;opacity:0;pointer-events:none}
+.doctab-btns{display:flex;flex-direction:column;gap:12px}
+.doctab-btns label{cursor:pointer;border:2px solid var(--line);border-radius:16px;background:var(--card);padding:18px 20px;display:flex;gap:14px;align-items:center;transition:border-color .2s,transform .2s}
+.doctab-btns label:hover{transform:translateX(4px)}
+.doctab-btns .ic{font-size:22px;color:var(--accent-text);flex:none}
+.doctab-btns b{font-family:var(--disp);font-size:16.5px;display:block}
+.doctab-btns span{font-size:13px;color:var(--ink-3);display:block}
+#doc1:checked ~ .inside-grid .doctab-btns label[for="doc1"],
+#doc2:checked ~ .inside-grid .doctab-btns label[for="doc2"],
+#doc3:checked ~ .inside-grid .doctab-btns label[for="doc3"]{border-color:var(--accent);box-shadow:0 6px 0 var(--shadow)}
+.docstage{position:relative;perspective:1200px;min-height:540px}
+.doc{position:absolute;inset:0;margin:auto;width:min(400px,92%);aspect-ratio:1/1.32;background:var(--paper);border:1px solid var(--paper-edge);border-radius:6px;
+  box-shadow:0 1px 2px rgba(0,0,0,.08),0 24px 48px -18px rgba(60,45,20,.35);padding:34px 32px;color:#2A241A;
+  opacity:0;transform:rotate(4deg) translateY(24px) scale(.96);transition:opacity .45s ease,transform .55s cubic-bezier(.2,.7,.2,1);pointer-events:none;display:flex;flex-direction:column}
+html[data-theme="dark"] .doc{color:#2A241A}
+#doc1:checked ~ .inside-grid .doc.d1,#doc2:checked ~ .inside-grid .doc.d2,#doc3:checked ~ .inside-grid .doc.d3{opacity:1;transform:rotate(-1deg) translateY(0) scale(1);pointer-events:auto;z-index:2}
+.doc .doc-kicker{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:#9C2F6E;display:flex;justify-content:space-between}
+.doc h4{font-family:var(--disp);font-weight:800;font-size:27px;line-height:1.05;letter-spacing:-.025em;margin:18px 0 6px}
+.doc .doc-sub{font-size:12.5px;color:#77694C;line-height:1.55}
+.doc .rule{height:2px;background:#9C2F6E;width:44px;border-radius:2px;margin:16px 0}
+.doc .doc-li{display:flex;gap:10px;align-items:flex-start;font-size:11.8px;line-height:1.5;color:#4A3F2C;padding:7px 0;border-bottom:1px dotted #D8CBAA}
+.doc .doc-li .cb{width:13px;height:13px;border:1.6px solid #9C2F6E;border-radius:4px;flex:none;margin-top:2px}
+.doc .doc-li .cb.done{background:#9C2F6E;position:relative}
+.doc .doc-li .cb.done::after{content:"";position:absolute;inset:2px 3px;border-left:2px solid #FFFEF9;border-bottom:2px solid #FFFEF9;transform:rotate(-45deg) translateY(-1px)}
+.doc .doc-li b{font-weight:600;color:#2A241A}
+.doc .promptbox{background:#221D15;color:#F2EAD8;border-radius:8px;padding:14px;font-family:var(--mono);font-size:10.2px;line-height:1.75;margin-top:4px}
+.doc .promptbox .v{color:#F2A5CE}
+.doc .doc-foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:#9A8A66;border-top:1px solid #E4D9BC;padding-top:12px}
+.doc .doc-foot .dot{width:8px;height:8px;border-radius:50%;background:#9C2F6E}
+.doc .parts-mini{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px}
+.doc .parts-mini span{font-family:var(--mono);font-size:9px;color:#4A3F2C;border:1px solid #D8CBAA;border-radius:5px;padding:6px 8px;letter-spacing:.02em}
+
+/* ------------ contents grid ------------ */
+.parts{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:52px}
+.part{background:var(--card);border:2px solid var(--line);border-radius:18px;padding:24px 22px;transition:transform .2s ease,border-color .2s ease;position:relative}
+.part:hover{transform:translateY(-4px) rotate(-.4deg);border-color:var(--accent)}
+.part .no{position:absolute;top:-13px;left:18px;background:var(--btn-bg);color:#fff;font-family:var(--mono);font-size:11px;padding:4px 10px;border-radius:999px;letter-spacing:.08em}
+.part .ic{font-size:23px;color:var(--accent-text);margin:6px 0 10px}
+.part h3{font-size:17.5px;font-weight:700;letter-spacing:-.01em}
+.part p{font-size:14px;color:var(--ink-2);margin-top:8px;line-height:1.55}
+.part .file{font-family:var(--mono);font-size:10px;color:var(--ink-3);margin-top:12px;display:block;letter-spacing:.02em;word-break:break-all}
+
+/* ------------ fit check ------------ */
+.forwho{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:46px}
+.who{border-radius:22px;padding:32px;border:2px solid var(--line);background:var(--card)}
+.who.yes{border-color:color-mix(in srgb,var(--live) 45%,transparent)}
+.who h3{font-size:22px;font-weight:800;margin-bottom:16px}
+.who ul{padding:0}
+.who li{list-style:none;padding:9px 0 9px 30px;position:relative;font-size:15px;color:var(--ink-2);border-top:1px dashed var(--line)}
+.who.yes li::before{content:"✓" / "";position:absolute;left:2px;color:var(--live-text);font-weight:700}
+.who.no li::before{content:"✕" / "";position:absolute;left:2px;color:var(--ink-3)}
+
+/* ------------ voice-layer ticket ------------ */
+.ticket{margin-top:46px;background:var(--card);border:2px solid var(--amber);border-radius:22px;display:grid;grid-template-columns:1fr auto;overflow:hidden;position:relative;box-shadow:0 10px 0 var(--shadow)}
+.ticket::before,.ticket::after{content:"";position:absolute;width:26px;height:26px;border-radius:50%;background:var(--bg);border:2px solid var(--amber);top:50%;transform:translateY(-50%)}
+.ticket::before{left:-15px}
+.ticket::after{right:105px}
+.ticket-main{padding:34px 40px}
+.ticket-main .mono{color:var(--amber-text)}
+.ticket-main h3{font-size:26px;font-weight:800;margin:10px 0 10px}
+.ticket-main p{color:var(--ink-2);max-width:48em;font-size:15.5px}
+.ticket-main .fine{font-size:12.5px;color:var(--ink-3);margin-top:14px}
+.ticket-stub{width:118px;border-left:2px dashed var(--amber);display:flex;align-items:center;justify-content:center}
+.ticket-stub span{writing-mode:vertical-rl;font-family:var(--mono);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--amber-text)}
+
+/* ------------ pricing ------------ */
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px;align-items:stretch}
+.tier{background:var(--card);border:2px solid var(--line);border-radius:24px;padding:34px 30px;display:flex;flex-direction:column;position:relative;transition:transform .2s ease}
+.tier:hover{transform:translateY(-4px)}
+.tier.feat{border-color:var(--accent);box-shadow:0 12px 0 var(--shadow)}
+.tier .tab{position:absolute;top:-15px;left:50%;transform:translateX(-50%);background:var(--btn-bg);color:#fff;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;padding:6px 14px;border-radius:999px;white-space:nowrap}
+.tier .mono{color:var(--ink-3)}
+.tier h3{font-size:24px;font-weight:800;margin:8px 0 2px}
+.price{font-family:var(--disp);font-size:58px;font-weight:800;letter-spacing:-.04em;margin:14px 0 2px}
+.price sup{font-size:24px;font-weight:600;vertical-align:24px;margin-right:2px}
+.price small{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;color:var(--ink-3);margin-left:8px;text-transform:uppercase;font-weight:400}
+.price .from{font-family:var(--mono);font-size:11px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-right:6px;vertical-align:18px}
+.was{font-family:var(--mono);font-size:12px;color:var(--ink-3)}
+.was b{color:var(--accent-text);font-weight:400}
+.digital{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);margin-top:6px}
+.tier ul{margin:18px 0 26px;flex:1;padding:0}
+.tier li{list-style:none;padding:8px 0 8px 26px;position:relative;font-size:14.5px;color:var(--ink-2);border-top:1px dashed var(--line)}
+.tier li::before{content:"→" / "";position:absolute;left:0;color:var(--accent-text)}
+.tier .fine{margin-top:12px;text-align:center;font-size:12.5px;color:var(--ink-3)}
+.tier .fine b{color:var(--live-text);font-weight:600}
+.slots{margin-top:12px;text-align:center;font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--amber-text);text-transform:uppercase}
+
+/* ------------ faq ------------ */
+.faq{margin-top:46px;max-width:820px}
+.faq details{border:2px solid var(--line);border-radius:16px;background:var(--card);margin-bottom:12px;overflow:hidden}
+.faq details[open]{border-color:var(--accent)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;padding:20px 24px;font-family:var(--disp);font-size:18.5px;font-weight:700}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+" / "";color:var(--accent-text);font-size:22px;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 24px 22px;color:var(--ink-2);font-size:15.5px;max-width:46em;animation:faqIn .25s ease}
+@keyframes faqIn{from{opacity:0;transform:translateY(-4px)}}
+
+/* ------------ answer blocks ------------ */
+.answer{margin-top:44px;background:var(--bg-2);border-left:4px solid var(--accent);border-radius:0 16px 16px 0;padding:24px 28px;max-width:56em}
+.answer h3{font-size:15px;font-family:var(--mono);font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px}
+.answer p{font-size:16.5px;color:var(--ink)}
+
+/* ------------ final ------------ */
+.final{text-align:center;background:var(--bg-2);border-top:1px solid var(--line)}
+.final h2{margin:20px auto 16px;max-width:15em}
+.final p{color:var(--ink-2);max-width:34em;margin:0 auto 32px}
+.final .stack-wave{width:120px;margin:0 auto;animation:none}
+
+footer{padding:44px 0 60px;color:var(--ink-3);font-size:13px;border-top:1px solid var(--line)}
+footer .wrap{display:grid;grid-template-columns:1fr auto;gap:30px}
+footer .safe{max-width:46em;line-height:1.7}
+
+/* ------------ responsive ------------ */
+@media (max-width:1020px){
+  .hero .wrap{grid-template-columns:1fr;gap:60px}
+  .parts{grid-template-columns:1fr 1fr}
+  .timeline{grid-template-columns:1fr 1fr;gap:34px}
+  .timeline::before{display:none}
+  .duo,.forwho{grid-template-columns:1fr}
+  .alive{grid-template-columns:1fr;gap:48px}
+  .inside-grid{grid-template-columns:1fr;gap:44px}
+  .docstage{min-height:560px}
+  .tiers{grid-template-columns:1fr;max-width:520px;margin-left:auto;margin-right:auto}
+  nav.links a{display:none}
+  nav.links a.keep{display:inline}
+  .sec-num{opacity:.3}
+}
+@media (max-width:620px){
+  body{font-size:16px}
+  section{padding:64px 0}
+  .hero{padding:52px 0 64px}
+  .wrap{padding:0 20px}
+  .hero-cta .btn{width:100%}
+  .parts,.timeline{grid-template-columns:1fr}
+  .stage{padding-top:76px}
+  .stackmark{width:140px;right:10px;top:-34px}
+  .ticket{grid-template-columns:1fr}
+  .ticket-stub{width:100%;height:56px;border-left:0;border-top:2px dashed var(--amber)}
+  .ticket-stub span{writing-mode:horizontal-tb}
+  .ticket::after{display:none}
+  .hero .wrap{gap:44px}
+  .wordmark small{display:none}
+  .btn.small{padding:9px 14px;font-size:13px}
+  .bar{gap:10px}
+  .pipe-scroll{mask-image:linear-gradient(90deg,#000 90%,transparent);-webkit-mask-image:linear-gradient(90deg,#000 90%,transparent)}
+  .pipe{min-width:880px}
+  .term-body{height:340px}
+  .docstage{min-height:520px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+  .js .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body class="bundle-content">
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- design-system icon set (stroke, currentColor) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-term" viewBox="0 0 24 24"><rect x="2.5" y="4" width="19" height="16" rx="3"/><path d="M7 9.5l3.2 2.5L7 14.5M12.5 15H17"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><path d="M3.5 8.5 12 4l8.5 4.5v7L12 20l-8.5-4.5z"/><path d="M3.5 8.5 12 13l8.5-4.5M12 13v7"/></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="9" r="4.5"/><path d="M11.5 12.5 20 21M16 17l2.4-2.4M13.5 14.5l2 2"/></symbol>
+    <symbol id="i-signal" viewBox="0 0 24 24"><circle cx="12" cy="18" r="1.6" fill="currentColor" stroke="none"/><path d="M8.5 14.5a5 5 0 0 1 7 0M5.5 11.5a9.2 9.2 0 0 1 13 0M2.8 8.4a13.5 13.5 0 0 1 18.4 0"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5c0 4.1-4 7.5-9 7.5-1 0-2-.14-2.9-.4L4 20l1.3-3.1C3.9 15.6 3 13.6 3 11.5 3 7.4 7 4 12 4s9 3.4 9 7.5z"/><path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01"/></symbol>
+    <symbol id="i-ring" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M5.7 5.7l3.5 3.5M18.3 5.7l-3.5 3.5M18.3 18.3l-3.5-3.5M5.7 18.3l3.5-3.5"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 2.8h8L20 8.8v12.4H6z"/><path d="M14 2.8v6h6M9.5 13h7M9.5 16.5h7M9.5 9.5H11"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12.4 2.6 2.6L16 9.5"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13.5 2.5 5.5 14h5l-1.5 7.5L17 10h-5z"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4.5 6v5.5c0 4.5 3 8 7.5 9.5 4.5-1.5 7.5-5 7.5-9.5V6z"/><path d="m8.8 12 2.2 2.2 4.2-4.4"/></symbol>
+    <symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20l1.2-4.2L15.6 5.4a2.1 2.1 0 0 1 3 0l0 0a2.1 2.1 0 0 1 0 3L8.2 18.8z"/><path d="M13.5 7.5l3 3"/></symbol>
+  </defs>
+</svg>
+
+<header>
+  <div class="wrap bar">
+    <a class="wordmark" href="#top"><span class="dot"></span>AutoKit&nbsp;Labs <small>Kit Nº 04</small></a>
+    <nav class="links" aria-label="Page sections">
+      <a href="#problem">Why this kit</a>
+      <a href="#anatomy">How it works</a>
+      <a href="#inside">Inside the box</a>
+      <a class="keep" href="#pricing">Pricing</a>
+      <a class="keep" href="#faq">FAQ</a>
+    </nav>
+    <div class="bar-right">
+      <button class="theme-btn" id="themeBtn" aria-label="Switch to dark theme" aria-pressed="false">🌙</button>
+      <a class="btn small" href="#pricing">Get it · $24</a>
+    </div>
+  </div>
+</header>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>📝 In the works — ships when verified</span><span>Kit Nº 04 · BotBento Content Box</span><span>20 creator cards · voice guide · Hook Lab</span><span>Human editors win the rules era</span><span>No engagement bots · ever</span><span>14-day refund</span>
+    <span>📝 In the works — ships when verified</span><span>Kit Nº 04 · BotBento Content Box</span><span>20 creator cards · voice guide · Hook Lab</span><span>Human editors win the rules era</span><span>No engagement bots · ever</span><span>14-day refund</span>
+  </div>
+</div>
+
+<main id="main">
+<section class="hero" id="top" style="border-top:0">
+  <div class="wrap">
+    <div>
+      <span class="pill"><i class="beat"></i> A month of content could be planned tonight</span>
+      <h1>Make once. <span class="zap">Publish everywhere.</span> <span class="claw">Stay you.</span></h1>
+      <p class="lead">The feed is a treadmill and generic AI drafts fall off it fast. The Content Box is <strong>20 mini-agent workflow cards</strong> that plan your week, draft in <strong>your voice</strong> (built from your own best work), and turn one strong piece into a platform-native family — with you as the editor on every single piece. No code, no APIs, no bots.</p>
+      <div class="hero-cta">
+        <a class="btn" href="#pricing">Get the Content Box — $24 →</a>
+        <a class="btn ghost" href="#anatomy">See the pipeline</a>
+      </div>
+      <p class="micro"><span><b>20</b> creator cards</span><span><b>10</b> assets from one anchor</span><span><b>1</b> voice guide, yours</span><span>14-day refund</span></p>
+    </div>
+
+    <div class="stage">
+      <svg class="stackmark" viewBox="0 0 200 150" fill="none" role="img" aria-label="The Content Box mark: a stack of post cards with a play button and a pen">
+        <g transform="rotate(-6 70 90)"><rect x="28" y="52" width="88" height="64" rx="9" fill="#FFFCF4" stroke="#CBBD98" stroke-width="2.5"/><rect x="40" y="66" width="56" height="5" rx="2.5" fill="#CBBD98"/><rect x="40" y="78" width="44" height="5" rx="2.5" fill="#E3D7B8"/><rect x="40" y="90" width="50" height="5" rx="2.5" fill="#E3D7B8"/></g>
+        <g transform="rotate(3 105 80)"><rect x="52" y="38" width="92" height="66" rx="9" fill="#FFF2D2" stroke="#F5A300" stroke-width="2.5"/><rect x="64" y="52" width="58" height="5" rx="2.5" fill="#F5A300"/><rect x="64" y="64" width="46" height="5" rx="2.5" fill="#E8D5A0"/><rect x="64" y="76" width="52" height="5" rx="2.5" fill="#E8D5A0"/></g>
+        <g><rect x="78" y="22" width="94" height="68" rx="10" fill="#C2478F" stroke="#A8326F" stroke-width="3"/><path d="M115 42 L138 56 L115 70 Z" fill="#FFFCF4"/></g>
+        <g class="pen"><path d="M30 128 L96 116 L108 122 L44 136 Z" fill="#F5A300" stroke="#C98600" stroke-width="2"/><path d="M24 130 L30 128 L44 136 L36 138 Z" fill="#221D15"/></g>
+      </svg>
+
+      <div class="term" role="img" aria-label="Log of a Repurposing Pipeline card run: source mined, asset map ranked, six variants drafted, folds and disclosure verified in Hook Lab">
+        <div class="term-bar"><i></i><i></i><i></i><span class="mono">card-run.log</span></div>
+        <div class="term-body" id="termBody"><span class="u">&gt; </span><span class="cursor"></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="problem">
+  <span class="sec-num" aria-hidden="true">01</span>
+  <div class="wrap">
+    <span class="sec-tag rv">The treadmill problem</span>
+    <h2 class="rv">The feed is hungry. You are one person.</h2>
+    <p class="sec-intro rv">Posting when inspired stopped scaling around week three. And the shortcut everyone sells — generic AI content at volume — is literally what platforms now demonetize. The way through is a system with you as the editor.</p>
+    <div class="duo">
+      <div class="plat zap rv">
+        <div class="mark">
+          <svg width="46" height="46" viewBox="0 0 46 46" fill="none" aria-hidden="true">
+            <circle cx="23" cy="23" r="17" fill="none" stroke="#F5A300" stroke-width="2.6"/>
+            <path d="M23 12v11l7 5" stroke="#8A5A00" stroke-width="2.6" stroke-linecap="round"/>
+            <path d="M9 40 Q15 34 21 39 T33 40" stroke="#F5A300" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Feed-chasing <span class="mono">the treadmill</span></h3>
+        <p>Post when inspired, panic when not. Trends pick your topics. One platform gets everything; the rest get guilt.</p>
+        <ul>
+          <li>Blank-page Mondays, burnout Fridays</li>
+          <li>AI drafts that sound like everyone's AI drafts</li>
+          <li>One good piece dies after one post</li>
+          <li>Sponsored posts with fingers-crossed disclosure</li>
+        </ul>
+      </div>
+      <div class="plat claw rv" style="--d:.1s">
+        <div class="mark">
+          <svg width="46" height="46" viewBox="0 0 46 46" fill="none" aria-hidden="true">
+            <rect x="6" y="14" width="24" height="18" rx="4" fill="#C2478F" stroke="#A8326F" stroke-width="2.2"/>
+            <path d="M14 20l6 3.5L14 27z" fill="#FFFCF4"/>
+            <rect x="18" y="8" width="22" height="16" rx="4" fill="#FFF2D2" stroke="#F5A300" stroke-width="2"/>
+            <path d="M24 30 L40 27 L42 30 L27 33.5 Z" fill="#F5A300" stroke="#C98600" stroke-width="1.6"/>
+          </svg>
+        </div>
+        <h3>The Content Box <span class="mono">the system</span></h3>
+        <p>Plan to your real hours, draft in your documented voice, repurpose one anchor into a platform-native family — and edit every piece before it ships.</p>
+        <ul>
+          <li>Monday plan in 15 minutes, from your idea bank</li>
+          <li>Voice guide built from YOUR best work — drafts sound like you</li>
+          <li>One anchor piece → 6-10 native variants</li>
+          <li>Disclosures and AI labels handled by checklist, not vibes</li>
+        </ul>
+      </div>
+      <div class="both rv">The creator loop: <b>your ideas + your voice + your hours → drafts → your edit → publish → learn</b></div>
+    </div>
+  </div>
+</section>
+
+<section id="anatomy">
+  <span class="sec-num" aria-hidden="true">02</span>
+  <div class="wrap">
+    <span class="sec-tag rv">How it works</span>
+    <h2 class="rv">One anchor piece. A week of content.</h2>
+    <p class="sec-intro rv">The pipeline that carries the whole box — shown for the flagship move: turning your best piece into a family instead of letting it die after one post.</p>
+
+    <div class="pipe-card rv">
+      <div class="pipe-head"><h3>The content pipeline</h3><span class="mono">each node = a card in the box</span></div>
+      <div class="pipe-scroll">
+      <svg class="pipe" viewBox="0 0 1100 260" aria-label="Content pipeline: idea bank, week plan, draft in your voice, repurpose into a family, editor pass then publish — with the post log and Friday debrief underneath">
+        <path class="link" d="M190 98 H238"/>
+        <path class="link" d="M428 98 H476"/>
+        <path class="link" d="M656 98 H704"/>
+        <path class="link" d="M894 98 H942"/>
+        <rect class="node" x="40" y="56" width="150" height="84" rx="14"/>
+        <g class="nico" transform="translate(60,72) scale(1)"><use href="#i-box" width="22" height="22"/></g>
+        <text class="ref" x="176" y="76" text-anchor="end">CARD 02</text>
+        <text class="lbl" x="62" y="112">Idea bank</text>
+        <text class="sub" x="62" y="129">demand-proven</text>
+        <rect class="node node-amber" x="238" y="56" width="190" height="84" rx="14"/>
+        <g class="nico" transform="translate(258,72)"><use href="#i-doc" width="22" height="22"/></g>
+        <text class="ref" x="414" y="76" text-anchor="end">CARD 01</text>
+        <text class="lbl" x="260" y="112">Week plan</text>
+        <text class="sub" x="260" y="129">fits your real hours</text>
+        <rect class="node node-hot" x="476" y="56" width="180" height="84" rx="14"/>
+        <g class="nico" transform="translate(496,72)"><use href="#i-pen" width="22" height="22"/></g>
+        <text class="ref" x="642" y="76" text-anchor="end">CARDS 05–08</text>
+        <text class="lbl" x="498" y="112">Draft in YOUR voice</text>
+        <text class="sub" x="498" y="129">voice guide is law</text>
+        <rect class="node node-hot" x="704" y="56" width="190" height="84" rx="14"/>
+        <g class="nico" transform="translate(724,72)"><use href="#i-signal" width="22" height="22"/></g>
+        <text class="ref" x="880" y="76" text-anchor="end">CARDS 09–12</text>
+        <text class="lbl" x="726" y="112">Repurpose family</text>
+        <text class="sub" x="726" y="129">native, not copy-paste</text>
+        <rect class="node node-live" x="942" y="56" width="130" height="84" rx="14"/>
+        <g class="nico" transform="translate(960,72)"><use href="#i-check" width="22" height="22"/></g>
+        <text class="ref" x="1058" y="76" text-anchor="end">CARD 17</text>
+        <text class="lbl" x="962" y="112">Editor pass</text>
+        <text class="sub" x="962" y="129">then publish</text>
+        <path class="link" d="M556 140 V184"/>
+        <rect class="node" x="416" y="184" width="280" height="48" rx="12"/>
+        <g class="nico" transform="translate(434,196)"><use href="#i-ring" width="20" height="20"/></g>
+        <text class="lbl" x="464" y="208">Post log + Friday debrief</text>
+        <text class="sub" x="464" y="224">what worked feeds next Monday</text>
+      </svg>
+      </div>
+      <div class="legend">
+        <span><i style="background:var(--amber)"></i>Planning</span>
+        <span><i style="background:var(--accent)"></i>Making</span>
+        <span><i style="background:var(--live)"></i>Editor gate</span>
+        <span><i style="background:var(--line-2)"></i>The learning loop</span>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <div class="tstep rv"><span class="clock">MON</span><h3>Plan — 15 min</h3><p>Card 01 turns your pillar and real hours into a week that ships.</p></div>
+      <div class="tstep rv" style="--d:.08s"><span class="clock">BATCH</span><h3>Make — one sitting</h3><p>Cards 05-08 draft in your voice; Card 20 keeps batch day burnout-proof.</p></div>
+      <div class="tstep rv" style="--d:.16s"><span class="clock">DRIP</span><h3>Repurpose all week</h3><p>Card 09 turns the anchor into satellites; each gets your edit pass.</p></div>
+      <div class="tstep rv" style="--d:.24s"><span class="clock">FRI</span><h3>Learn — 15 min</h3><p>Card 18: three keeps, one kill, one experiment — into next Monday.</p></div>
+    </div>
+
+    <div class="answer rv">
+      <h3>What is BotBento: Content Box?</h3>
+      <p><strong>BotBento: Content Box</strong> is a workflow kit for creators and marketers: <strong>20 AI mini-agent cards</strong> for planning, drafting, repurposing and publishing — with a <strong>voice guide built from your own work</strong>, a dated 2026 disclosure-rules reference, and the <strong>Hook Lab</strong> offline checker. No code, no APIs — you stay the editor on every piece.</p>
+    </div>
+  </div>
+</section>
+
+<section id="cardrun">
+  <span class="sec-num" aria-hidden="true">03</span>
+  <div class="wrap">
+    <span class="sec-tag rv">Monday, 9 AM</span>
+    <h2 class="rv">This is what a card run looks like.</h2>
+    <div class="alive">
+      <div class="alive-copy rv">
+        <h3>Blank calendar in. Shippable week out.</h3>
+        <p>Card 01 is the Content Week Planner. You give it a pillar, your idea bank, and the hours you actually have. It plans to reality — including which item to cut first when the week goes sideways.</p>
+        <ul class="alive-points">
+          <li><svg class="ic"><use href="#i-pen"/></svg><span><b>Your voice, documented.</b> Card 13 builds a voice guide from your best work — every draft quotes it, and you veto what's wrong.</span></li>
+          <li><svg class="ic"><use href="#i-shield"/></svg><span><b>Rules-era ready.</b> AI labels, FTC disclosure, the EU AI Act's human-review carve-out — handled by checklist, not anxiety.</span></li>
+          <li><svg class="ic"><use href="#i-check"/></svg><span><b>Honest capacity.</b> Plans fit your real hours with slack — a 3-post week that ships beats a 7-post fantasy.</span></li>
+        </ul>
+      </div>
+      <div class="phone rv" role="img" aria-label="Phone mockup: a chat where the creator runs the Content Week Planner card and receives a realistic week plan">
+        <div class="screen">
+          <div class="tg-head">
+            <span class="tg-ava"><svg viewBox="0 0 24 24" class="ic" style="color:var(--accent-text)"><use href="#i-pen"/></svg></span>
+            <div><b>Your AI assistant</b><span class="on">● card 01 loaded</span></div>
+          </div>
+          <div class="chat" id="chat">
+            <div class="msg out">[Card 01: Week Planner] pillar: workshop mistakes · 6 hrs · idea bank 📎<span class="t">09:01</span></div>
+            <div class="msg in">Week planned — 5.5 hrs with slack:
+              <ul>
+                <li>Anchor: "5 finish mistakes" video</li>
+                <li>3 satellites repurposed from it</li>
+                <li>Cut-first: the second post</li>
+              </ul><span class="t">09:02</span>
+            </div>
+            <div class="msg out">the video ran long last time. realistic?<span class="t">09:03</span></div>
+            <div class="typing" aria-hidden="true"><i></i><i></i><i></i></div>
+            <div class="msg in">Then pre-cut it: drop the second post now, keep the newsletter. 4.5 hrs planned, 1.5 slack. Next action: block Tuesday 7-9 for the shoot.<span class="t">09:03</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="inside">
+  <span class="sec-num" aria-hidden="true">04</span>
+  <div class="wrap">
+    <span class="sec-tag rv">Contents</span>
+    <h2 class="rv">Eight parts. Zero filler.</h2>
+    <p class="sec-intro rv">Working documents and one working tool — flip through actual pages from the box:</p>
+
+    <div class="doctabs rv">
+      <input type="radio" name="doctab" id="doc1" checked>
+      <input type="radio" name="doctab" id="doc2">
+      <input type="radio" name="doctab" id="doc3">
+      <div class="inside-grid">
+        <div class="doctab-btns">
+          <label for="doc1"><svg class="ic"><use href="#i-doc"/></svg><span><b>Workflow card</b><span>Card 09 · Repurposing Pipeline</span></span></label>
+          <label for="doc2"><svg class="ic"><use href="#i-pen"/></svg><span><b>Voice guide</b><span>Built from your own best work</span></span></label>
+          <label for="doc3"><svg class="ic"><use href="#i-bolt"/></svg><span><b>Hook Lab</b><span>The offline checker tool</span></span></label>
+        </div>
+        <div class="docstage">
+          <div class="doc d1">
+            <div class="doc-kicker"><span>Workflow cards · Kit Nº 04</span><span>Card 09</span></div>
+            <h4>Repurposing Pipeline</h4>
+            <p class="doc-sub">One strong piece becomes a platform-native family of 6-10 assets — by re-editing, never copy-paste.</p>
+            <div class="rule"></div>
+            <div class="doc-li"><span class="cb done"></span><span><b>Step 1</b> — mine the source: strongest ideas, lines, moments, ranked</span></div>
+            <div class="doc-li"><span class="cb done"></span><span><b>Step 2</b> — rebuild each variant native to its platform</span></div>
+            <div class="doc-li"><span class="cb done"></span><span><b>Step 3</b> — every variant stands alone, no orphan references</span></div>
+            <div class="doc-li"><span class="cb"></span><span><b>QA gate</b> — meaning-check every rephrase; your edit pass per variant</span></div>
+            <div class="doc-li"><span class="cb"></span><span><b>Next action</b> — drip schedule out, sources logged</span></div>
+            <div class="doc-foot"><span>WORKFLOW-CARDS.pdf · card 9/20</span><span class="dot"></span><span>botbento.com</span></div>
+          </div>
+          <div class="doc d2">
+            <div class="doc-kicker"><span>Voice guide · Card 13 output</span><span>1 page</span></div>
+            <h4>Sounds like you, on paper.</h4>
+            <p class="doc-sub">Built from five pieces that sound most like you and the drafts you hated — every rule evidenced with a quote from your real work.</p>
+            <div class="rule"></div>
+            <div class="doc-li"><span class="cb done"></span><span><b>Rhythm</b> — short declaratives; one-clause sentences on the point</span></div>
+            <div class="doc-li"><span class="cb done"></span><span><b>Openers</b> — mid-story or the concrete thing; never throat-clearing</span></div>
+            <div class="doc-li"><span class="cb done"></span><span><b>Anti-list</b> — the AI-isms you veto, in writing</span></div>
+            <div class="doc-li"><span class="cb done"></span><span><b>Paste header</b> — the 5-line version every card run uses</span></div>
+            <div class="doc-foot"><span>VOICE-GUIDE.md · yours</span><span class="dot"></span><span>revisit quarterly</span></div>
+          </div>
+          <div class="doc d3">
+            <div class="doc-kicker"><span>Hook Lab · custom tool</span><span>offline · v1.0</span></div>
+            <h4>The checks that save posts.</h4>
+            <p class="doc-sub">One file, opens in any browser, works offline. Folds, disclosures, bait patterns — checked while you keep the judgment.</p>
+            <div class="rule"></div>
+            <div class="promptbox">✓ hook 71 chars — inside the fold<br>✗ missing disclosure: <span class="v">material connection</span><br>! bait opener: <span class="v">"you won't believe"</span><br>✓ AI-media label reminder set<br>✓ hashtags: 3, no duplicates</div>
+            <div class="doc-li" style="border:0;margin-top:8px"><span class="cb done"></span><span><b>Private by design:</b> nothing you paste leaves your device</span></div>
+            <div class="doc-foot"><span>TOOLS/HOOK-LAB.html</span><span class="dot"></span><span>no install · no account</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="parts">
+      <div class="part rv"><span class="no">Part 01</span><svg class="ic"><use href="#i-box"/></svg><h3>Quick-start guide</h3><p>The creator's operating manual — why the editor pass is the moat.</p><span class="file">QUICK-START.pdf</span></div>
+      <div class="part rv" style="--d:.05s"><span class="no">Part 02</span><svg class="ic"><use href="#i-doc"/></svg><h3>20 creator cards</h3><p>Planning, drafting, repurposing, audience, publishing ops.</p><span class="file">WORKFLOW-CARDS.pdf</span></div>
+      <div class="part rv" style="--d:.1s"><span class="no">Part 03</span><svg class="ic"><use href="#i-shield"/></svg><h3>Policy reference</h3><p>AI labels, FTC disclosure, EU AI Act — dated, sourced, plain English.</p><span class="file">POLICY-QUICK-REFERENCE.md</span></div>
+      <div class="part rv" style="--d:.15s"><span class="no">Part 04</span><svg class="ic"><use href="#i-bolt"/></svg><h3>Hook Lab tool</h3><p>Offline checker: folds, disclosures, bait patterns, hashtag piles.</p><span class="file">TOOLS/HOOK-LAB.html</span></div>
+      <div class="part rv"><span class="no">Part 05</span><svg class="ic"><use href="#i-pen"/></svg><h3>Voice system + roles</h3><p>Voice Guide Builder plus five roles that keep the AI in your lane.</p><span class="file">AGENT-ROLES.md</span></div>
+      <div class="part rv" style="--d:.05s"><span class="no">Part 06</span><svg class="ic"><use href="#i-check"/></svg><h3>Example walkthroughs</h3><p>Three full runs including the vetoes — where the human made it work.</p><span class="file">EXAMPLE-WALKTHROUGHS.pdf</span></div>
+      <div class="part rv" style="--d:.1s"><span class="no">Part 07</span><svg class="ic"><use href="#i-ring"/></svg><h3>Trackers + Notion</h3><p>Run tracker and post log — your paper trail, CSV and Notion.</p><span class="file">RUN-TRACKER.csv + POST-LOG.csv</span></div>
+      <div class="part rv" style="--d:.15s"><span class="no">Part 08</span><svg class="ic"><use href="#i-signal"/></svg><h3>Agent upgrades</h3><p>Four cards as standing weekly jobs — for AI Agent Starter Box owners.</p><span class="file">AGENT-UPGRADES.md</span></div>
+    </div>
+    <div class="ctaband rv">
+      <p><b>20 cards</b> · voice guide system · Hook Lab · founding price <b>$24</b></p>
+      <a class="btn small" href="#pricing">Get the Content Box →</a>
+    </div>
+  </div>
+</section>
+
+<section id="who">
+  <span class="sec-num" aria-hidden="true">05</span>
+  <div class="wrap">
+    <span class="sec-tag rv">Fit check</span>
+    <h2 class="rv">Read this before buying.</h2>
+    <div class="forwho">
+      <div class="who yes rv">
+        <h3>The box is for you if…</h3>
+        <ul>
+          <li>You publish (or need to) weekly — creator, solo marketer, small brand team</li>
+          <li>Your AI drafts sound like everyone else's AI drafts</li>
+          <li>Good pieces die after one post because repurposing never happens</li>
+          <li>You'll edit before publishing — the cards assume an editor</li>
+        </ul>
+      </div>
+      <div class="who no rv" style="--d:.1s">
+        <h3>Skip it if…</h3>
+        <ul>
+          <li>You want a faceless auto-posting empire — that's what platforms demonetize, and we won't build it</li>
+          <li>You want engagement bots or follow/unfollow tricks — banned, everywhere, including here</li>
+          <li>You expect views or income promises — this kit makes none</li>
+          <li>You won't review AI output before it ships under your name</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ctaband rv">
+      <p>Also selling online? <b>The Seller Box (Kit Nº 03)</b> is this kit's marketplace sibling.</p>
+      <a class="btn small" href="#pricing">Or start the Content Box →</a>
+    </div>
+  </div>
+</section>
+
+<section id="system">
+  <span class="sec-num" aria-hidden="true">06</span>
+  <div class="wrap">
+    <span class="sec-tag rv">In every box</span>
+    <h2 class="rv">The layer that keeps it yours.</h2>
+    <div class="ticket rv">
+      <div class="ticket-main">
+        <span class="mono">Included in every box — not a limited bonus</span>
+        <h3>The voice layer: your guide, their drafts</h3>
+        <p>Card 13 builds a one-page voice guide from your own best work — rhythm, openers, vocabulary, the anti-list of AI-isms you veto — with quoted evidence for every rule. Every drafting card treats it as law. That's the difference between AI helping you write and AI replacing your sound.</p>
+        <p class="fine">Your voice guide is yours: a markdown file you own, edit, and paste anywhere — no lock-in, no account.</p>
+      </div>
+      <div class="ticket-stub"><span>Voice layer</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <span class="sec-num" aria-hidden="true">07</span>
+  <div class="wrap">
+    <span class="sec-tag rv">Pricing</span>
+    <h2 class="rv">One box. Three ways in.</h2>
+    <p class="sec-intro rv">Founding prices for launch — they rise when v1.1 ships with the expanded card set. No subscriptions, no drip content.</p>
+    <!-- DRAFT PRICING — matches Seller Box position in the ladder; final numbers pending Diaa's approval -->
+    <div class="tiers">
+      <div class="tier rv">
+        <span class="mono">Digital kit</span>
+        <h3>Content Box</h3>
+        <div class="price"><sup>$</sup>24<small>one-time</small></div>
+        <span class="was">founding price · <b>rises at v1.1</b></span>
+        <p class="digital">Instant digital access — nothing ships</p>
+        <ul>
+          <li>All 8 parts — 20 cards, voice system, walkthroughs</li>
+          <li>Hook Lab offline checker tool</li>
+          <li>Run tracker + post log (CSV + Notion)</li>
+          <li>All v1.x updates — including policy reference updates</li>
+        </ul>
+        <!-- PLACEHOLDER: checkout intentionally not wired — ships when content is verified; hosted checkout URL pending platform approval -->
+        <a class="btn ghost" href="#" data-checkout="content-box" aria-disabled="true" title="In the works — ships when verified">Get the Content Box →</a>
+        <p class="fine"><b>14-day guarantee</b> — if three cards don't produce useful drafts, money back.</p>
+      </div>
+      <div class="tier feat rv" style="--d:.08s">
+        <span class="tab">Best for multi-platform creators</span>
+        <span class="mono">Digital kit +</span>
+        <h3>Content Box Pro</h3>
+        <div class="price"><sup>$</sup>59<small>one-time</small></div>
+        <span class="was">founding price · <b>rises at v1.1</b></span>
+        <p class="digital">Instant digital access — nothing ships</p>
+        <ul>
+          <li>Everything in Content Box</li>
+          <li>Editable Notion + Google Sheets tracker templates</li>
+          <li>Extended walkthrough set — more formats, more edge cases</li>
+          <li>Priority email support for your first week of runs</li>
+        </ul>
+        <!-- PLACEHOLDER: checkout intentionally not wired — Pro content ships after base kit is verified -->
+        <a class="btn" href="#" data-checkout="content-box-pro" aria-disabled="true" title="In the works — ships when verified">Get Pro →</a>
+        <p class="fine"><b>14-day guarantee</b> — if three cards don't produce useful drafts, money back.</p>
+      </div>
+      <div class="tier rv" style="--d:.16s">
+        <span class="mono">Done with you</span>
+        <h3>Workflow Setup</h3>
+        <div class="price"><span class="from">from</span><sup>$</sup>1,500</div>
+        <span class="was">live, 1-on-1 working session</span>
+        <ul>
+          <li>We build your voice guide and idea bank with you, live</li>
+          <li>Your five highest-value workflows wired and test-run</li>
+          <li>Trackers set up, first month's calendar planned</li>
+        </ul>
+        <a class="btn ghost" href="mailto:support@autokitlabs.com?subject=Workflow%20Setup%20application%20(Content%20Box)&body=Tell%20us%3A%20where%20do%20you%20publish%2C%20and%20what%20eats%20your%20content%20week%3F" data-checkout="service">Apply for a slot →</a>
+        <div class="slots">Limited slots each month — capacity is real</div>
+      </div>
+    </div>
+    <div class="answer rv">
+      <h3>How much does BotBento: Content Box cost?</h3>
+      <p>The <strong>Content Box costs $24</strong> (all 8 parts including the Hook Lab tool) or <strong>$59 for Pro</strong> (adds editable trackers, the extended walkthrough set and priority support) — one-time founding prices that rise at v1.1. A done-with-you <strong>Workflow Setup starts at $1,500</strong>. Every paid kit has a 14-day refund policy.</p>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <span class="sec-num" aria-hidden="true">08</span>
+  <div class="wrap">
+    <span class="sec-tag rv">Questions</span>
+    <h2 class="rv">Asked before buying.</h2>
+    <div class="faq rv">
+      <details>
+        <summary>What is BotBento: Content Box?</summary>
+        <p>A workflow kit for creators and marketers: 20 AI mini-agent workflow cards across planning, drafting, repurposing, audience and publishing ops — plus a voice guide system built from your own best work, a dated 2026 disclosure-rules reference with sources, the offline Hook Lab checker, trackers and a Notion database. Each card gives the AI a job, your material, your voice, a review step and a next action.</p>
+      </details>
+      <details>
+        <summary>Will platforms punish me for using AI?</summary>
+        <p>Platforms punish mass-produced minimal-human-input content and unlabeled realistic synthetic media — not AI-assisted work. AI-written hooks, scripts and captions are explicitly exempt from labels on the major platforms, and content that passes human editorial review sits in the EU AI Act's disclosure carve-out. The review-first loop in this box is exactly the pattern the rules reward.</p>
+      </details>
+      <details>
+        <summary>Do I need code, APIs or automation tools?</summary>
+        <p>No. The cards run inside the AI chat assistant you already use, and Hook Lab is a single file that opens in any browser and works offline. Nothing to install, no accounts to create.</p>
+      </details>
+      <details>
+        <summary>Will it still sound like me?</summary>
+        <p>That's the kit's core mechanic: Card 13 builds a one-page voice guide from your own best work — with quoted evidence — and every drafting card treats it as law. Drafts arrive in your rhythm and your vocabulary, and you edit before anything ships.</p>
+      </details>
+      <details>
+        <summary>What exactly do I get after paying?</summary>
+        <p>Instant digital access — nothing ships. The quick-start guide, all 20 cards, the roles library and voice guide system, the policy quick reference, Hook Lab, three full walkthroughs, run tracker and post log (CSV + Notion), and safe-use notes — designed PDFs plus editable Markdown, with all v1.x updates included.</p>
+      </details>
+      <details>
+        <summary>Will this get me views or make me money?</summary>
+        <p>We don't promise views, followers, or income — anyone who does is selling you something else. The kit saves planning and drafting hours and keeps your publishing consistent and compliant. Your ideas and consistency decide the rest.</p>
+      </details>
+      <details>
+        <summary>What's the refund policy?</summary>
+        <p>14 days, no drama: run three cards as written, and if they don't produce genuinely useful drafts for your content, you get your money back.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <svg class="stack-wave" viewBox="0 0 200 150" fill="none" aria-hidden="true">
+      <g transform="rotate(-6 70 90)"><rect x="28" y="52" width="88" height="64" rx="9" fill="#FFFCF4" stroke="#CBBD98" stroke-width="2.5"/><rect x="40" y="66" width="56" height="5" rx="2.5" fill="#CBBD98"/><rect x="40" y="78" width="44" height="5" rx="2.5" fill="#E3D7B8"/></g>
+      <g transform="rotate(3 105 80)"><rect x="52" y="38" width="92" height="66" rx="9" fill="#FFF2D2" stroke="#F5A300" stroke-width="2.5"/><rect x="64" y="52" width="58" height="5" rx="2.5" fill="#F5A300"/><rect x="64" y="64" width="46" height="5" rx="2.5" fill="#E8D5A0"/></g>
+      <g><rect x="78" y="22" width="94" height="68" rx="10" fill="#C2478F" stroke="#A8326F" stroke-width="3"/><path d="M115 42 L138 56 L115 70 Z" fill="#FFFCF4"/></g>
+      <g class="pen"><path d="M30 128 L96 116 L108 122 L44 136 Z" fill="#F5A300" stroke="#C98600" stroke-width="2"/><path d="M24 130 L30 128 L44 136 L36 138 Z" fill="#221D15"/></g>
+    </svg>
+    <h2>The feed forgets. Systems don't.</h2>
+    <p>Twenty cards, your voice on paper, and a pipeline that turns one good piece into a week — drafted by your AI, edited by you.</p>
+    <a class="btn" href="#pricing">Get the Content Box — $24 →</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="safe">AutoKit Labs builds practical AI kits. No views, followers, income or results guarantees — outcomes depend on your ideas, consistency, judgment and review. Not legal, financial, medical or tax advice; the policy reference summarizes platform and regulatory rules for orientation and the live pages always win. AutoKit Labs and BotBento are independent and not affiliated with YouTube, TikTok, Meta, X, LinkedIn, or any AI vendor.</p>
+    <div class="mono">© 2026 AutoKit Labs · autokitlabs.com<br>support@autokitlabs.com</div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/ScrollTrigger.min.js"></script>
+<script>
+/* ---- theme toggle (init ran in <head>) ---- */
+(function(){
+  const btn=document.getElementById('themeBtn'),root=document.documentElement;
+  sync();
+  btn.addEventListener('click',()=>{
+    const t=root.dataset.theme==='dark'?'light':'dark';
+    root.dataset.theme=t;
+    try{localStorage.setItem('akl-theme',t)}catch(e){}
+    sync();
+  });
+  function sync(){
+    const dark=root.dataset.theme==='dark';
+    btn.textContent=dark?'☀️':'🌙';
+    btn.setAttribute('aria-pressed',String(dark));
+    btn.setAttribute('aria-label',dark?'Switch to light theme':'Switch to dark theme');
+  }
+})();
+
+/* ---- Motion strategy (3 layers): CSS media block kills keyframes/transitions;
+   GSAP created only inside gsap.matchMedia(no-preference); typewriter prints statically under reduce. ---- */
+
+/* ---- scroll reveal (CSS fallback when GSAP absent) ---- */
+(function(){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){
+    document.querySelectorAll('.rv').forEach(el=>el.classList.add('in'));return;
+  }
+  if(window.gsap)return;
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+})();
+
+/* ---- typewriter: single-owner, grapheme-safe, 2 passes then hold ---- */
+(function(){
+  const body=document.getElementById('termBody');
+  const FULL='<span class="u">&gt; </span>run card-09 repurposing-pipeline<br><span class="a">✓ source: "5 finish mistakes" (3× baseline)<br>✓ asset map: 8 moments ranked<br></span><span class="hl">draft: </span>6 variants — each needs your pass<br><br><span class="u">&gt; </span>check hook-lab<br><span class="a">✓ folds + disclosure verified<br>✓ next: drip over 9 days</span>';
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){body.innerHTML=FULL;return}
+  const script=[
+    {t:'> ',c:'u'},{t:'run card-09 repurposing-pipeline\n',c:'',type:true},
+    {t:'✓ source: "5 finish mistakes" (3× baseline)\n',c:'a',pause:400},
+    {t:'✓ asset map: 8 moments ranked\n',c:'a',pause:300},
+    {t:'draft: ',c:'hl',pause:500},{t:'6 variants — each needs your pass\n\n',c:'',type:true},
+    {t:'> ',c:'u',pause:700},{t:'check hook-lab\n',c:'',type:true},
+    {t:'✓ folds + disclosure verified\n',c:'a',pause:450},
+    {t:'✓ next: drip over 9 days\n',c:'a',pause:350},
+  ];
+  let runId=0,pass=0,timer=null,running=false;
+  function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/\n/g,'<br>')}
+  function cur(on){const c=body.querySelector('.cursor');if(c)c.remove();if(on)body.insertAdjacentHTML('beforeend','<span class="cursor"></span>')}
+  function start(){
+    if(running)return;running=true;
+    const my=++runId;body.innerHTML='';let i=0;
+    (function step(){
+      if(my!==runId)return;
+      if(i>=script.length){
+        pass++;
+        if(pass>=2){cur(true);running=false;return}
+        timer=setTimeout(()=>{if(my===runId){running=false;start()}},6000);return;
+      }
+      const s=script[i++];
+      timer=setTimeout(()=>{
+        if(my!==runId)return;
+        if(s.type){
+          const chars=[...s.t];let j=0;
+          (function ch(){
+            if(my!==runId)return;
+            cur(false);
+            body.insertAdjacentHTML('beforeend',`<span class="${s.c}">${esc(chars[j])}</span>`);
+            cur(true);
+            if(++j<chars.length)timer=setTimeout(ch,34+((j*7)%40));else step();
+          })();
+        }else{
+          cur(false);
+          body.insertAdjacentHTML('beforeend',`<span class="${s.c}">${esc(s.t)}</span>`);
+          cur(true);
+          step();
+        }
+      },s.pause||60);
+    })();
+  }
+  function stop(){runId++;clearTimeout(timer);running=false}
+  document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();else if(pass<2)start()});
+  window.__termStart=start;
+  if(!window.gsap)start();
+})();
+
+/* ---- GSAP choreography ---- */
+(function(){
+  if(!window.gsap)return;
+  gsap.registerPlugin(ScrollTrigger);
+  const mm=gsap.matchMedia();
+  mm.add('(prefers-reduced-motion: no-preference)',()=>{
+    gsap.defaults({duration:.7,ease:'power3.out'});
+    const kill=document.createElement('style');
+    kill.textContent='.js .rv{transition:none!important;opacity:1;transform:none}';
+    document.head.appendChild(kill);
+    document.querySelectorAll('.rv').forEach(el=>el.classList.add('in'));
+
+    /* hero entrance */
+    const tl=gsap.timeline();
+    tl.from('.pill',{y:24,autoAlpha:0,scale:.85,ease:'back.out(1.6)'},.05)
+      .from('.hero h1',{y:56,autoAlpha:0,duration:.9,ease:'expo.out'},.15)
+      .from('.hero .lead',{y:30,autoAlpha:0},.38)
+      .from('.hero-cta .btn',{y:22,autoAlpha:0,scale:.92,stagger:.09,ease:'back.out(1.5)'},.52)
+      .from('.hero .micro span',{y:14,autoAlpha:0,stagger:.06,duration:.45},.68)
+      .from('.term',{y:70,autoAlpha:0,duration:.9,ease:'expo.out'},.3)
+      .from('.stackmark',{y:-110,autoAlpha:0,duration:.85,ease:'bounce.out'},.75)
+      .call(()=>window.__termStart&&window.__termStart(),null,1.1);
+
+    /* counters */
+    document.querySelectorAll('.micro b').forEach(b=>{
+      const n=parseInt(b.textContent,10);if(isNaN(n))return;
+      const o={v:0};
+      gsap.to(o,{v:n,duration:1.2,delay:.8,ease:'power2.out',onUpdate:()=>{b.textContent=Math.round(o.v)}});
+    });
+
+    /* ghost numerals: slow parallax drift */
+    document.querySelectorAll('.sec-num').forEach(el=>{
+      gsap.fromTo(el,{yPercent:18},{yPercent:-14,ease:'none',
+        scrollTrigger:{trigger:el.parentElement,start:'top bottom',end:'bottom top',scrub:1.2}});
+    });
+
+    /* section headers */
+    document.querySelectorAll('section .sec-tag, section h2, section .sec-intro').forEach(el=>{
+      gsap.from(el,{y:34,autoAlpha:0,duration:.75,scrollTrigger:{trigger:el,start:'top 88%',once:true}});
+    });
+
+    /* comparison cards */
+    gsap.from('.duo .plat',{y:44,autoAlpha:0,rotation:i=>i?1.2:-1.2,stagger:.12,duration:.8,ease:'back.out(1.3)',
+      scrollTrigger:{trigger:'.duo',start:'top 82%',once:true}});
+
+    /* pipeline */
+    const pc=document.querySelector('.pipe-card');
+    if(pc){
+      gsap.timeline({scrollTrigger:{trigger:pc,start:'top 78%',once:true}})
+        .from(pc,{y:50,autoAlpha:0,duration:.7,ease:'expo.out'})
+        .from('.pipe rect',{scale:.6,autoAlpha:0,transformOrigin:'center',stagger:.14,ease:'back.out(1.8)',duration:.5},.25)
+        .from('.pipe text, .pipe .nico',{autoAlpha:0,stagger:.025,duration:.3},.5)
+        .from('.pipe .link',{autoAlpha:0,stagger:.12,duration:.4},.45)
+        .from('.legend span',{y:12,autoAlpha:0,stagger:.07,duration:.4},'>-.2');
+    }
+    gsap.from('.tstep',{y:38,autoAlpha:0,stagger:.14,ease:'back.out(1.4)',
+      scrollTrigger:{trigger:'.timeline',start:'top 82%',once:true}});
+    document.querySelectorAll('.answer').forEach(el=>{
+      gsap.from(el,{x:-40,autoAlpha:0,duration:.8,scrollTrigger:{trigger:el,start:'top 86%',once:true}});
+    });
+
+    /* card run: phone + chat choreography */
+    const chat=document.getElementById('chat');
+    if(chat){
+      const msgs=chat.querySelectorAll('.msg, .typing');
+      gsap.set(msgs,{autoAlpha:0,y:16,scale:.96});
+      gsap.timeline({scrollTrigger:{trigger:'.phone',start:'top 72%',once:true}})
+        .from('.phone',{y:60,autoAlpha:0,rotation:2,duration:.8,ease:'back.out(1.2)'})
+        .to(msgs[0],{autoAlpha:1,y:0,scale:1,duration:.4,ease:'back.out(1.6)'},'+=.2')
+        .to(msgs[1],{autoAlpha:1,y:0,scale:1,duration:.4,ease:'back.out(1.6)'},'+=.5')
+        .to(msgs[2],{autoAlpha:1,y:0,scale:1,duration:.4,ease:'back.out(1.6)'},'+=.6')
+        .to(msgs[3],{autoAlpha:1,y:0,scale:1,duration:.3},'+=.4')
+        .to(msgs[3],{autoAlpha:0,duration:.25,display:'none'},'+=1.1')
+        .to(msgs[4],{autoAlpha:1,y:0,scale:1,duration:.45,ease:'back.out(1.5)'},'<+.1');
+      gsap.from('.alive-points li',{x:-24,autoAlpha:0,stagger:.12,duration:.6,
+        scrollTrigger:{trigger:'.alive-points',start:'top 85%',once:true}});
+    }
+
+    /* inside: doc stage + tab buttons */
+    gsap.from('.doctab-btns label',{x:-30,autoAlpha:0,stagger:.1,duration:.6,
+      scrollTrigger:{trigger:'.doctab-btns',start:'top 82%',once:true}});
+    gsap.from('.docstage',{y:50,autoAlpha:0,rotation:1.5,duration:.8,ease:'back.out(1.2)',
+      scrollTrigger:{trigger:'.docstage',start:'top 80%',once:true}});
+
+    /* parts, bands, fit, ticket, faq */
+    ScrollTrigger.batch('.parts .part',{start:'top 88%',once:true,
+      onEnter:els=>gsap.from(els,{y:40,autoAlpha:0,scale:.94,stagger:.08,ease:'back.out(1.3)',duration:.6})});
+    document.querySelectorAll('.ctaband').forEach(el=>{
+      gsap.from(el,{y:24,autoAlpha:0,duration:.6,scrollTrigger:{trigger:el,start:'top 90%',once:true}});
+    });
+    gsap.from('.forwho .who',{y:40,autoAlpha:0,stagger:.12,scrollTrigger:{trigger:'.forwho',start:'top 84%',once:true}});
+    gsap.from('.ticket',{rotation:-1.5,y:44,autoAlpha:0,duration:.8,ease:'back.out(1.2)',
+      scrollTrigger:{trigger:'.ticket',start:'top 84%',once:true}});
+    gsap.from('.faq details',{y:26,autoAlpha:0,stagger:.07,duration:.55,
+      scrollTrigger:{trigger:'.faq',start:'top 84%',once:true}});
+
+    /* pricing */
+    gsap.timeline({scrollTrigger:{trigger:'.tiers',start:'top 80%',once:true}})
+      .from('.tier',{y:52,autoAlpha:0,stagger:.13,duration:.75,ease:'back.out(1.25)'})
+      .from('.tier .tab',{scale:0,transformOrigin:'50% 100%',ease:'back.out(2.2)',duration:.45},'-=.15')
+      .from('.slots',{autoAlpha:0,y:6,duration:.4},'-=.1');
+
+    /* final: stack pop + pen write */
+    gsap.timeline({scrollTrigger:{trigger:'.final',start:'top 65%',once:true}})
+      .from('.final .stack-wave',{y:24,autoAlpha:0,scale:.8,transformOrigin:'50% 90%',ease:'back.out(1.7)',duration:.6})
+      .from('.final .stack-wave .pen',{x:-30,rotation:-10,transformOrigin:'20% 80%',ease:'back.out(1.6)',duration:.5},'-=.25')
+      .from('.final h2',{y:18,autoAlpha:0,duration:.5},'-=.3')
+      .from('.final .btn',{y:12,autoAlpha:0,duration:.4},'-=.25');
+
+    /* pointer-only delights */
+    if(matchMedia('(pointer:fine)').matches){
+      /* doc tilt on hover */
+      const stage=document.querySelector('.docstage');
+      if(stage){
+        gsap.set(stage,{transformPerspective:900});
+        const rx=gsap.quickTo(stage,'rotationX',{duration:.5,ease:'power2.out'});
+        const ry=gsap.quickTo(stage,'rotationY',{duration:.5,ease:'power2.out'});
+        stage.addEventListener('mousemove',e=>{
+          const r=stage.getBoundingClientRect();
+          ry(gsap.utils.clamp(-6,6,((e.clientX-r.left)/r.width-.5)*10));
+          rx(gsap.utils.clamp(-6,6,-((e.clientY-r.top)/r.height-.5)*10));
+        });
+        stage.addEventListener('mouseleave',()=>{rx(0);ry(0)});
+      }
+      /* magnetic hero CTA */
+      const mag=document.querySelector('.hero-cta .btn:not(.ghost)');
+      if(mag){
+        const qx=gsap.quickTo(mag,'x',{duration:.35,ease:'power3'}),qy=gsap.quickTo(mag,'y',{duration:.35,ease:'power3'});
+        mag.addEventListener('mousemove',e=>{
+          const r=mag.getBoundingClientRect();
+          qx(gsap.utils.clamp(-4,4,(e.clientX-r.left-r.width/2)*.08));
+          qy(gsap.utils.clamp(-4,4,(e.clientY-r.top-r.height/2)*.15));
+        });
+        mag.addEventListener('mouseleave',()=>{gsap.to(mag,{x:0,y:0,duration:.45,ease:'elastic.out(1,.5)'})});
+      }
+    }
+    return ()=>{};
+  });
+  mm.add('(prefers-reduced-motion: reduce)',()=>{
+    document.querySelectorAll('.rv').forEach(el=>el.classList.add('in'));
+    const chat=document.getElementById('chat');
+    if(chat){const t=chat.querySelector('.typing');if(t)t.style.display='none'}
+  });
+})();
+</script>
+</body>
+</html>
