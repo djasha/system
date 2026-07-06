@@ -1,0 +1,28 @@
+---
+name: AutokitPhoneChat
+description: AutoKit Labs phone chat mockup — mini device frame with in/out message bubbles, showing the product outcome of an agent answering in chat.
+category: display
+tags: [autokit, mockup, chat]
+tokens_used: [color.autokit-card, color.autokit-ink]
+related: [autokit-motion-recipes]
+status: stable
+source_path: src/autokit/phone-chat.css
+a11y_notes: Bubbles are plain divs with real text in reading order — screen readers get the conversation as written. All bubbles are visible by default; chatPlay() animation only runs behind the .js gate inside the reduced-motion-guarded gsap.matchMedia block, so no-JS and reduced-motion users see the complete static conversation.
+created: 2026-07-04
+---
+
+## Prompt
+
+Build a miniature phone mockup, 250px wide: card background, 3px ink border, 36px radius, hard 12px drop shadow. Inside, a "screen" (chat-app blue-tinted background, 26px radius) stacks message bubbles in a column with 8px gap. Incoming bubbles: card background, hairline border, squared bottom-left corner, left-aligned. Outgoing: soft green, squared bottom-right corner, right-aligned. 12px text, max-width 85%. Provide dark-theme overrides for screen and bubble colors keyed off html[data-theme="dark"].
+
+## Usage
+
+- Use to show the outcome, not the setup — an agent already answering ("you alive?" → "Alive and listening.").
+- 3–5 bubbles max; it's a vignette, not a transcript.
+- Animate with `chatPlay()` from AutokitMotionRecipes — bubbles land in reading order, typing indicator swaps for the reply.
+
+## Do / Don't
+
+- **Do** write bubbles in the product's real voice — lowercase human asks, competent agent replies.
+- **Don't** fake features in the conversation the product doesn't have.
+- **Don't** hide bubbles by default in CSS — the static (all-visible) state is the no-JS fallback.

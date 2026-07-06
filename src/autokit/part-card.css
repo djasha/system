@@ -1,0 +1,17 @@
+/* AutoKit Labs — numbered part card (.part)
+   Requires the custom properties from src/autokit/tokens.css.
+   Used for the "what's in the box" grid — one card per numbered kit part.
+
+   Usage:
+     <div class="part">
+       <span class="no">Part 05</span>
+       <svg><use href="#i-signal"/></svg>  <!-- icon from src/autokit/icons.astro -->
+       <h3>Gateway checklists</h3>
+       <p>Telegram &amp; Slack step-by-step — every silent failure named.</p>
+     </div>
+*/
+.part{background:var(--card);border:2px solid var(--line);border-radius:18px;padding:24px 22px;position:relative;width:250px}
+.part .no{position:absolute;top:-13px;left:18px;background:var(--btn-bg);color:#fff;font-family:var(--mono);font-size:11px;padding:4px 10px;border-radius:999px;letter-spacing:.08em}
+.part svg{width:23px;height:23px;stroke:var(--accent-text);stroke-width:1.9;fill:none;stroke-linecap:round;margin:6px 0 10px}
+.part h3{font-family:var(--disp);font-size:17px;font-weight:700}
+.part p{font-size:13.5px;color:var(--ink-2);margin-top:8px}

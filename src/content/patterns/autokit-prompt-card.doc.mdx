@@ -1,0 +1,30 @@
+---
+name: AutokitPromptCard
+description: AutoKit Labs in-bundle prompt card — print-ready A5 landscape template with a terminal-styled prompt box, inputs, fit notes, risk callout, and a mandatory review-step footer.
+category: display
+tags: [autokit, print, artifact]
+tokens_used: [type.autokit-display, type.autokit-mono, color.autokit-term]
+related: []
+status: stable
+source_path: src/autokit/PromptCard.astro
+a11y_notes: Semantic heading and label structure survives PDF export. Prompt text is real text (not an image) so buyers can copy it. Paper palette keeps ink at high contrast for print; the risk row explicitly teaches uncertainty-flagging over blind trust.
+created: 2026-07-04
+---
+
+## Prompt
+
+Build a print-first prompt card template (A5 landscape, 1.414:1): paper surface with a thin tri-color gradient keyline on top, mono uppercase kicker row (pack name + card number), extra-bold display title, one-sentence promise, then a two-column grid — dark terminal-styled prompt box (mono, 12.5px, 1.8 line-height, variables highlighted) beside a meta column listing inputs as chips, "works best when", and "watch out for" rows. Footer carries the file/brand line and an always-present review-step reminder. Swap content via data-field attributes; print stylesheet strips the backdrop.
+
+## Usage
+
+- One card per page; print to PDF at A5 landscape or export 1600×1131 PNG.
+- Content swaps happen only in `[data-field]` nodes — the frame is fixed per bundle.
+- **The review-step footer is non-negotiable** — every AutoKit prompt artifact tells the buyer where the human decides.
+- Live example at `/autokit/product-artifacts/prompt-card.html`.
+
+## Do / Don't
+
+- **Do** keep `{variable}` placeholders visually distinct in the prompt box.
+- **Do** name a real failure mode in "watch out for" — honest artifacts build trust.
+- **Don't** remove the review-step footer to save space.
+- **Don't** exceed one prompt per card; density kills the print format.

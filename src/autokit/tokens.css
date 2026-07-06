@@ -1,0 +1,65 @@
+/* AutoKit Labs design system — core tokens
+   Every AutoKit surface (funnels, catalog, PDF/print artifacts, prompt cards)
+   reads these. Bundle themes override the accent layer only (see themes/). */
+:root{
+  /* surfaces */
+  --bg:#FAF3E3;
+  --bg-2:#F2E8D0;
+  --card:#FFFCF4;
+  --line:#E3D7B8;
+  --line-2:#CBBD98;
+  --shadow:#E0D2AE;
+  /* ink */
+  --ink:#221D15;
+  --ink-2:#5A5140;
+  --ink-3:#7A6E53;          /* text-safe: 4.6:1 on bg */
+  /* accent layer (bundle themes override) */
+  --accent:#F43F1E;
+  --accent-text:#C22C08;    /* text-safe */
+  --accent-deep:#D32F0E;
+  --accent-soft:#FFE8E0;
+  --btn-bg:#D32F0E;         /* white on this = 5.0:1 */
+  --btn-edge:#A82605;
+  /* secondary accent */
+  --amber:#F5A300;
+  --amber-text:#8A5A00;
+  --amber-soft:#FFF2D2;
+  /* status */
+  --live:#18A957;
+  --live-text:#0E7A3C;
+  --live-soft:#DDF4E4;
+  /* terminal */
+  --term:#1B1712;
+  --term-ink:#F2EAD8;
+  /* layout */
+  --max:1180px;
+  /* type */
+  --disp:"Bricolage Grotesque",sans-serif;
+  --sans:"Archivo",sans-serif;
+  --mono:"Fragment Mono",monospace;
+}
+[data-theme="dark"]{
+  --bg:#16130E;
+  --bg-2:#1E1A13;
+  --card:#211C14;
+  --line:#352E20;
+  --line-2:#4A4130;
+  --shadow:#0C0A06;
+  --ink:#F6EEDC;
+  --ink-2:#BFB299;
+  --ink-3:#9A8D72;
+  --accent:#FF5A33;
+  --accent-text:#FF6E4A;
+  --accent-deep:#D32F0E;
+  --accent-soft:#3A2018;
+  --btn-bg:#D32F0E;
+  --btn-edge:#8E2003;
+  --amber:#FFB01F;
+  --amber-text:#FFB01F;
+  --amber-soft:#3A2E12;
+  --live:#2ED573;
+  --live-text:#2ED573;
+  --live-soft:#12321F;
+  --term:#0F0D09;
+  --term-ink:#F2EAD8;
+}

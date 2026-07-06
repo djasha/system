@@ -1,0 +1,29 @@
+---
+name: AutokitMotionRecipes
+description: AutoKit Labs GSAP choreography — hero entrance, scroll reveals, pipeline diagram, chat playback, ghost-numeral parallax, magnetic button, tilt stage, and mascot wave.
+category: motion
+tags: [autokit, gsap, motion]
+tokens_used: []
+related: [autokit-phone-chat, autokit-lobby-lobster]
+status: stable
+source_path: src/autokit/gsap-recipes.js
+a11y_notes: Three-layer reduced-motion contract — a CSS media block for ambient loops, every GSAP recipe created only inside the reduced-motion-guarded gsap.matchMedia block, and static fallbacks for JS-composed states via the .js class gate so pages are complete with JavaScript off. Pointer-driven recipes are additionally gated on (pointer:fine).
+created: 2026-07-04
+---
+
+## Prompt
+
+Write a GSAP 3 + ScrollTrigger recipe module with a strict division of labor: CSS owns ambient loops (marquee, mascot bob, pulse dots) and all hovers; GSAP owns entrances, scroll choreography, and pointer-driven effects — created ONLY inside gsap.matchMedia for no-preference reduced motion. Export: heroEntrance (staggered copy column, hardware slide-in, mascot bounce last), sectionHeaders (one once-only trigger per element at top 88%), pipelineReveal (container in, nodes pop in flow order with back.out, then labels and links), chatPlay (bubbles land in reading order, typing indicator swaps for the reply), ghostNumerals (slow scrubbed parallax on section numerals), magneticButton and tiltStage (quickTo-based pointer effects, gated on pointer:fine), and lobWave (one-shot mascot claw wave). Pages must remain complete with JS off via a .js class gate on hidden states.
+
+## Usage
+
+- Import recipes per page and call them after DOM ready; each manages its own ScrollTrigger.
+- Never create loops in GSAP — if it repeats forever, it belongs in CSS.
+- `once: true` on all reveals: content never re-hides after entering.
+
+## Do / Don't
+
+- **Do** keep hidden-by-default states behind the `.js` class gate so no-JS users see everything.
+- **Do** gate pointer recipes on `(pointer:fine)` — touch devices skip them entirely.
+- **Don't** animate `top/left/width` — recipes stick to transforms and opacity.
+- **Don't** add a new recipe without deciding its reduced-motion fallback first.

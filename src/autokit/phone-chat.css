@@ -1,0 +1,20 @@
+/* AutoKit Labs — phone / chat mockup (.phone .screen .msg)
+   Requires the custom properties from src/autokit/tokens.css.
+   Shows the product outcome — an agent answering in chat. Animate with
+   chatPlay() from src/autokit/gsap-recipes.js; without JS all bubbles are
+   simply visible (static fallback is the default state).
+
+   Usage:
+     <div class="phone"><div class="screen">
+       <div class="msg out">you alive?</div>
+       <div class="msg in">Alive and listening. What are we building?</div>
+     </div></div>
+*/
+.phone{width:250px;background:var(--card);border:3px solid var(--ink);border-radius:36px;padding:10px;box-shadow:0 12px 0 var(--shadow)}
+.screen{background:#EAF3FB;border-radius:26px;overflow:hidden;padding:14px 10px;display:flex;flex-direction:column;gap:8px}
+html[data-theme="dark"] .screen{background:#1B2733}
+.msg{max-width:85%;padding:8px 11px;border-radius:13px;font-size:12px;line-height:1.45;color:#1A2530}
+html[data-theme="dark"] .msg{color:#E8F0F8}
+.msg.in{background:var(--card);border:1px solid rgba(0,0,0,.08);border-bottom-left-radius:4px;align-self:flex-start}
+.msg.out{background:#DCF2C8;border-bottom-right-radius:4px;align-self:flex-end}
+html[data-theme="dark"] .msg.out{background:#24371C}

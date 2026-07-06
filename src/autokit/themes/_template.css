@@ -1,0 +1,31 @@
+/* Bundle theme TEMPLATE — copy this file to <bundle>.css for every new bundle.
+   This is the whole "design a new product" step: one file, six variables,
+   two dark-mode overrides. Nothing else in the system changes.
+
+   Checklist before shipping a theme (target: minutes, not days):
+   1. Pick ONE accent hue. Fills/strokes use the bright value; text uses a
+      darkened -text value at ≥4.5:1 on --bg (#FAF3E3) AND on --card (#FFFCF4).
+   2. --btn-bg must hold white text at ≥4.5:1 (aim 5:1). --btn-edge is a
+      darker step of the same hue (used for border + hard shadow).
+   3. Dark block: brighten --accent and --accent-text (≥4.5:1 on #16130E),
+      darken --accent-soft to a tinted surface.
+   4. Mascot rule: only OpenClaw shows Lobby. Every non-OpenClaw theme keeps
+      the display:none line below.
+   5. Verify in components/catalog.html: add the class to <body>, toggle dark.
+
+   Apply with <body class="bundle-NAME">. */
+.bundle-NAME{
+  --accent:        /* bright hue — fills, strokes, icons only */;
+  --accent-text:   /* darkened hue — any accent-colored TEXT, ≥4.5:1 on cream */;
+  --accent-deep:   /* between accent and btn-edge — gradients, emphasis fills */;
+  --accent-soft:   /* pale tint — chips, soft backgrounds */;
+  --btn-bg:        /* deep hue — white button text needs ≥4.5:1 */;
+  --btn-edge:      /* darkest step — button border + hard shadow */;
+}
+[data-theme="dark"] .bundle-NAME{
+  --accent:        /* brighter version for dark surfaces */;
+  --accent-text:   /* light tint, ≥4.5:1 on #16130E */;
+  --accent-soft:   /* dark tinted surface */;
+  --btn-bg:        /* may stay the light-mode value if contrast holds */;
+}
+.bundle-NAME .mascot-lobby{display:none} /* Lobby = OpenClaw only. Keep this. */

@@ -1,0 +1,5 @@
+name: autokit-card
+category: color
+value: '#FFFCF4'
+css_var: '--card'
+description: AutoKit Labs card surface — brightest paper tone, sits on autokit-bg with a 2px --line border. Dark mode #211C14.

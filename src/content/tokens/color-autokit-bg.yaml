@@ -1,0 +1,5 @@
+name: autokit-bg
+category: color
+value: '#FAF3E3'
+css_var: '--bg'
+description: AutoKit Labs base surface — warm paper cream. Dark mode swaps to #16130E via [data-theme="dark"]. Namespaced under src/autokit/tokens.css, not the Djasha System palette.

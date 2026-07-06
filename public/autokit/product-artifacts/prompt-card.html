@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AutoKit prompt card — print template</title>
+<!-- In-bundle artifact template. Same design system as the funnels.
+     Print to PDF at A5 landscape (or export 1600×1131 PNG). One card per page.
+     Swap the [data-field] contents per card; keep the review-step footer ALWAYS. -->
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700..800&family=Archivo:wght@400;500;600&family=Fragment+Mono&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FFFEF9;--paper-edge:#EFE6CF;--ink:#2A241A;--ink-2:#4A3F2C;--ink-3:#77694C;
+  --accent:#B4470E;--accent-soft:#FFE8E0;--term:#221D15;--term-ink:#F2EAD8;
+  --disp:"Bricolage Grotesque",sans-serif;--sans:"Archivo",sans-serif;--mono:"Fragment Mono",monospace;
+}
+*{box-sizing:border-box;margin:0}
+body{background:#E8DFC9;font-family:var(--sans);display:flex;align-items:center;justify-content:center;min-height:100vh;padding:40px}
+.card{width:800px;aspect-ratio:1.414/1;background:var(--paper);border:1px solid var(--paper-edge);border-radius:10px;
+  box-shadow:0 2px 4px rgba(0,0,0,.08),0 30px 60px -20px rgba(60,45,20,.35);padding:44px 48px;color:var(--ink);display:flex;flex-direction:column;position:relative;overflow:hidden}
+.card::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,#F43F1E,#F5A300 55%,#18A957)}
+.kicker{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);display:flex;justify-content:space-between}
+h1{font-family:var(--disp);font-weight:800;font-size:38px;letter-spacing:-.025em;line-height:1.02;margin:16px 0 8px}
+.sub{font-size:14.5px;color:var(--ink-3);line-height:1.55;max-width:44em}
+.rule{height:2.5px;background:var(--accent);width:52px;border-radius:2px;margin:18px 0}
+.grid{display:grid;grid-template-columns:1.5fr 1fr;gap:28px;flex:1;min-height:0}
+.promptbox{background:var(--term);color:var(--term-ink);border-radius:10px;padding:20px 22px;font-family:var(--mono);font-size:12.5px;line-height:1.8;overflow:auto}
+.promptbox .v{color:#FFB98A}
+.meta h2{font-family:var(--mono);font-size:10px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px}
+.meta .row{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;color:var(--ink-2);padding:8px 0;border-bottom:1px dotted var(--paper-edge);line-height:1.5}
+.meta .row b{color:var(--ink);font-weight:600}
+.meta .chip{display:inline-block;font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;background:var(--accent-soft);color:var(--accent);border-radius:6px;padding:4px 8px;margin:2px 4px 2px 0}
+.foot{margin-top:22px;display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);border-top:1px solid var(--paper-edge);padding-top:14px}
+.foot .review{color:var(--accent)}
+.foot .dot{width:9px;height:9px;border-radius:50%;background:var(--accent)}
+@media print{body{background:none;padding:0}.card{box-shadow:none;width:100%;border:0}}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="kicker"><span data-field="pack">Bonus pack · operator prompts</span><span data-field="cardno">Card 03</span></div>
+  <h1 data-field="title">Morning Ops Brief</h1>
+  <p class="sub" data-field="promise">Give your new agent its first standing job: a daily brief that reads your calendar and inbox summary, then hands you the day in 8 lines.</p>
+  <div class="rule"></div>
+  <div class="grid">
+    <div class="promptbox" data-field="prompt">You are my operations briefer. Every morning at 07:30:<br><br>1. Read {calendar} and {inbox_summary}.<br>2. List the <span class="v">3 things that break today</span> if ignored.<br>3. Flag anything that needs a human decision.<br>4. End with one line: what would make today a win.<br><br>Rules: no fluff, no motivational quotes, flag uncertainty instead of guessing.</div>
+    <div class="meta">
+      <h2>Inputs</h2>
+      <div class="row"><span data-field="inputs"><span class="chip">{calendar}</span><span class="chip">{inbox_summary}</span></span></div>
+      <h2 style="margin-top:16px">Works best when</h2>
+      <div class="row" data-field="fit">You run it as a scheduled job — the install guides show how on both agents.</div>
+      <h2 style="margin-top:16px">Watch out for</h2>
+      <div class="row" data-field="risk"><b>Stale data:</b> if the calendar didn't sync, the brief will confidently miss things. The agent is told to flag uncertainty — read those flags.</div>
+    </div>
+  </div>
+  <div class="foot">
+    <span data-field="file">FABLE5-OPERATOR-PROMPTS · autokitlabs.com</span>
+    <span class="review">Review step: the brief drafts — you decide</span>
+    <span class="dot"></span>
+  </div>
+</div>
+</body>
+</html>

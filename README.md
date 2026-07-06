@@ -17,6 +17,29 @@ A standalone static design system library. Not another shadcn clone — the diff
 - **Command-K search** powered by Fuse.js across components, props, and prompts
 - **Per-component OG images** auto-generated via astro-og-canvas
 
+## AutoKit Labs collection
+
+The catalog also carries the **AutoKit Labs** design system — the token layer,
+components, motion recipes, and product artifacts behind the AutoKit funnels
+and bundle documents. Entries are tagged `autokit` and namespaced
+`autokit-*`; sources live in [`src/autokit/`](src/autokit/).
+
+- Tokens: `color.autokit-*` / `type.autokit-*` (core layer; bundle themes
+  override the accent layer only — see the AutokitBundleThemes entry)
+- Rules and rationale: [`src/autokit/DESIGN.md`](src/autokit/DESIGN.md) —
+  includes the weekly new-bundle checklist and the theme template
+  (`src/autokit/themes/_template.css`)
+- Browsable demos (static, published as design examples):
+  [`/autokit/catalog.html`](public/autokit/catalog.html),
+  [`/autokit/funnels/ai-agent-starter-box/`](public/autokit/funnels/ai-agent-starter-box/index.html),
+  [`/autokit/funnels/botbento-agent-box/`](public/autokit/funnels/botbento-agent-box/index.html),
+  [`/autokit/funnels/botbento-seller-box/`](public/autokit/funnels/botbento-seller-box/index.html),
+  [`/autokit/funnels/botbento-content-box/`](public/autokit/funnels/botbento-content-box/index.html),
+  [`/autokit/funnels/autokit-workflow-vault/`](public/autokit/funnels/autokit-workflow-vault/index.html),
+  [`/autokit/product-artifacts/`](public/autokit/product-artifacts/)
+- The funnel demo is `noindex` and its checkout CTAs are marked placeholders —
+  the production funnel ships from botbento.com.
+
 ## Quick start
 
 Browse the library at https://djasha-system.vercel.app.

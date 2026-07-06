@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AutoKit Labs — component catalog</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700..800&family=Archivo:wght@400;500;600;700&family=Fragment+Mono&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAF3E3;--bg-2:#F2E8D0;--card:#FFFCF4;--line:#E3D7B8;--line-2:#CBBD98;--shadow:#E0D2AE;
+  --ink:#221D15;--ink-2:#5A5140;--ink-3:#7A6E53;
+  --accent:#F43F1E;--accent-text:#C22C08;--accent-deep:#D32F0E;--accent-soft:#FFE8E0;
+  --btn-bg:#D32F0E;--btn-edge:#A82605;
+  --amber:#F5A300;--amber-text:#8A5A00;--amber-soft:#FFF2D2;
+  --live:#18A957;--live-text:#0E7A3C;--live-soft:#DDF4E4;
+  --term:#1B1712;--term-ink:#F2EAD8;
+  --disp:"Bricolage Grotesque",sans-serif;--sans:"Archivo",sans-serif;--mono:"Fragment Mono",monospace;
+}
+html[data-theme="dark"]{
+  --bg:#16130E;--bg-2:#1E1A13;--card:#211C14;--line:#352E20;--line-2:#4A4130;--shadow:#0C0A06;
+  --ink:#F6EEDC;--ink-2:#BFB299;--ink-3:#9A8D72;
+  --accent:#FF5A33;--accent-text:#FF6E4A;--accent-deep:#D32F0E;--accent-soft:#3A2018;
+  --btn-bg:#D32F0E;--btn-edge:#8E2003;
+  --amber:#FFB01F;--amber-text:#FFB01F;--amber-soft:#3A2E12;
+  --live:#2ED573;--live-text:#2ED573;--live-soft:#12321F;
+  --term:#0F0D09;
+}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;padding:0 0 80px;transition:background .3s,color .3s}
+.wrap{max-width:1100px;margin:0 auto;padding:0 28px}
+.mono{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase}
+header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);margin-bottom:44px}
+header::before{content:"";display:block;height:3px;background:linear-gradient(90deg,var(--accent),var(--amber) 55%,var(--live))}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+header b{font-family:var(--disp);font-weight:800;font-size:18px}
+header b span{color:var(--ink-3);font-family:var(--mono);font-size:10px;letter-spacing:.14em;font-weight:400;margin-left:10px;text-transform:uppercase}
+.theme-btn{width:40px;height:40px;border-radius:11px;border:1px solid var(--line-2);background:var(--card);cursor:pointer;font-size:16px}
+h2{font-family:var(--disp);font-weight:800;font-size:26px;letter-spacing:-.02em;margin:56px 0 6px;display:flex;align-items:baseline;gap:14px}
+h2 .mono{color:var(--ink-3)}
+.note{color:var(--ink-2);font-size:14px;max-width:60em;margin-bottom:20px}
+.note code{font-family:var(--mono);font-size:12px;background:var(--bg-2);border:1px solid var(--line);border-radius:6px;padding:2px 7px}
+.board{background:var(--card);border:2px solid var(--line);border-radius:20px;padding:30px;display:flex;gap:22px;flex-wrap:wrap;align-items:center}
+/* swatches */
+.sw{width:130px}
+.sw i{display:block;height:64px;border-radius:12px;border:1px solid var(--line)}
+.sw b{font-family:var(--mono);font-size:10.5px;font-weight:400;letter-spacing:.06em;display:block;margin-top:8px;color:var(--ink-2);text-transform:uppercase}
+/* type */
+.t-disp{font-family:var(--disp);font-weight:800;font-size:44px;letter-spacing:-.03em;line-height:1}
+.t-body{max-width:26em}
+.t-mono{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--disp);font-weight:700;font-size:16px;white-space:nowrap;background:var(--btn-bg);color:#fff;text-decoration:none;padding:14px 24px;border-radius:14px;border:2px solid var(--btn-edge);box-shadow:0 4px 0 var(--btn-edge);transition:transform .14s,box-shadow .14s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 6px 0 var(--btn-edge)}
+.btn.ghost{background:var(--card);color:var(--ink);border-color:var(--line-2);box-shadow:0 4px 0 var(--line-2)}
+.pill{display:inline-flex;align-items:center;gap:9px;background:var(--live-soft);color:var(--live-text);border:1px solid color-mix(in srgb,var(--live) 40%,transparent);border-radius:999px;padding:8px 16px;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase}
+.pill .beat{width:8px;height:8px;border-radius:50%;background:var(--live);animation:beat 1.6s ease infinite}
+@keyframes beat{50%{transform:scale(1.7);opacity:.5}}
+/* icons */
+.iconrow{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:14px;width:100%}
+.iconrow div{border:1px solid var(--line);border-radius:14px;background:var(--bg-2);padding:16px 10px;text-align:center}
+.iconrow svg{width:26px;height:26px;stroke:var(--accent-text);stroke-width:1.9;fill:none;stroke-linecap:round;stroke-linejoin:round;margin:0 auto 8px}
+.iconrow b{font-family:var(--mono);font-size:9.5px;font-weight:400;letter-spacing:.08em;color:var(--ink-3);text-transform:uppercase}
+/* part card */
+.part{background:var(--card);border:2px solid var(--line);border-radius:18px;padding:24px 22px;position:relative;width:250px}
+.part .no{position:absolute;top:-13px;left:18px;background:var(--btn-bg);color:#fff;font-family:var(--mono);font-size:11px;padding:4px 10px;border-radius:999px;letter-spacing:.08em}
+.part svg{width:23px;height:23px;stroke:var(--accent-text);stroke-width:1.9;fill:none;stroke-linecap:round;margin:6px 0 10px}
+.part h3{font-family:var(--disp);font-size:17px;font-weight:700}
+.part p{font-size:13.5px;color:var(--ink-2);margin-top:8px}
+/* ticket */
+.ticket{background:var(--card);border:2px solid var(--amber);border-radius:22px;display:grid;grid-template-columns:1fr auto;overflow:hidden;position:relative;box-shadow:0 10px 0 var(--shadow);max-width:560px}
+.ticket-main{padding:24px 28px}
+.ticket-main .mono{color:var(--amber-text)}
+.ticket-main h3{font-family:var(--disp);font-size:20px;font-weight:800;margin:8px 0}
+.ticket-main p{font-size:13.5px;color:var(--ink-2)}
+.ticket-stub{width:84px;border-left:2px dashed var(--amber);display:flex;align-items:center;justify-content:center}
+.ticket-stub span{writing-mode:vertical-rl;font-family:var(--mono);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--amber-text)}
+/* phone (mini) */
+.phone{width:250px;background:var(--card);border:3px solid var(--ink);border-radius:36px;padding:10px;box-shadow:0 12px 0 var(--shadow)}
+.screen{background:#EAF3FB;border-radius:26px;overflow:hidden;padding:14px 10px;display:flex;flex-direction:column;gap:8px}
+html[data-theme="dark"] .screen{background:#1B2733}
+.msg{max-width:85%;padding:8px 11px;border-radius:13px;font-size:12px;line-height:1.45;color:#1A2530}
+html[data-theme="dark"] .msg{color:#E8F0F8}
+.msg.in{background:var(--card);border:1px solid rgba(0,0,0,.08);border-bottom-left-radius:4px;align-self:flex-start}
+.msg.out{background:#DCF2C8;border-bottom-right-radius:4px;align-self:flex-end}
+html[data-theme="dark"] .msg.out{background:#24371C}
+/* usage table */
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+td,th{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);font-weight:400}
+td code{font-family:var(--mono);font-size:12px;color:var(--accent-text)}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-term" viewBox="0 0 24 24"><rect x="2.5" y="4" width="19" height="16" rx="3"/><path d="M7 9.5l3.2 2.5L7 14.5M12.5 15H17"/></symbol>
+<symbol id="i-box" viewBox="0 0 24 24"><path d="M3.5 8.5 12 4l8.5 4.5v7L12 20l-8.5-4.5z"/><path d="M3.5 8.5 12 13l8.5-4.5M12 13v7"/></symbol>
+<symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="9" r="4.5"/><path d="M11.5 12.5 20 21M16 17l2.4-2.4M13.5 14.5l2 2"/></symbol>
+<symbol id="i-signal" viewBox="0 0 24 24"><circle cx="12" cy="18" r="1.6" fill="currentColor" stroke="none"/><path d="M8.5 14.5a5 5 0 0 1 7 0M5.5 11.5a9.2 9.2 0 0 1 13 0M2.8 8.4a13.5 13.5 0 0 1 18.4 0"/></symbol>
+<symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5c0 4.1-4 7.5-9 7.5-1 0-2-.14-2.9-.4L4 20l1.3-3.1C3.9 15.6 3 13.6 3 11.5 3 7.4 7 4 12 4s9 3.4 9 7.5z"/><path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01"/></symbol>
+<symbol id="i-ring" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M5.7 5.7l3.5 3.5M18.3 5.7l-3.5 3.5M18.3 18.3l-3.5-3.5M5.7 18.3l3.5-3.5"/></symbol>
+<symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 2.8h8L20 8.8v12.4H6z"/><path d="M14 2.8v6h6M9.5 13h7M9.5 16.5h7M9.5 9.5H11"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12.4 2.6 2.6L16 9.5"/></symbol>
+<symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13.5 2.5 5.5 14h5l-1.5 7.5L17 10h-5z"/></symbol>
+<symbol id="i-claw" viewBox="0 0 24 24"><path d="M12 21c-4 0-7-3-7-7 0-3.5 2.5-6 5.5-6.5C9.5 5.5 8 4 6 3.5 9 2 12.5 3.5 13.5 6c.5-2 2.5-3.5 5-3.5-1.5 2-1.5 3.5-.5 5C20.5 9 21.5 11.5 21 14c-.6 3.5-4 7-9 7z"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4.5 6v5.5c0 4.5 3 8 7.5 9.5 4.5-1.5 7.5-5 7.5-9.5V6z"/><path d="m8.8 12 2.2 2.2 4.2-4.4"/></symbol>
+</defs></svg>
+
+<header><div class="wrap">
+  <b>AutoKit Labs <span>component catalog · v1</span></b>
+  <button class="theme-btn" onclick="const r=document.documentElement;r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';this.textContent=r.dataset.theme==='dark'?'☀️':'🌙'">🌙</button>
+</div></header>
+
+<div class="wrap">
+  <p class="note">Everything AutoKit ships — funnels, store assets, and the documents inside the bundles — is built from these pieces. Tokens live in <code>tokens/tokens.css</code>; bundle themes (<code>bundle-openclaw</code>, <code>bundle-hermes</code>) swap the accent layer only. Toggle ☾ to preview dark mode.</p>
+
+  <h2>Color <span class="mono">tokens/tokens.css</span></h2>
+  <div class="board">
+    <div class="sw"><i style="background:var(--bg)"></i><b>--bg</b></div>
+    <div class="sw"><i style="background:var(--card)"></i><b>--card</b></div>
+    <div class="sw"><i style="background:var(--accent)"></i><b>--accent</b></div>
+    <div class="sw"><i style="background:var(--accent-text)"></i><b>--accent-text</b></div>
+    <div class="sw"><i style="background:var(--amber)"></i><b>--amber</b></div>
+    <div class="sw"><i style="background:var(--live)"></i><b>--live</b></div>
+    <div class="sw"><i style="background:var(--term)"></i><b>--term</b></div>
+    <div class="sw"><i style="background:var(--ink)"></i><b>--ink</b></div>
+  </div>
+  <p class="note" style="margin-top:12px">Rule: bright accents (<code>--accent</code>, <code>--amber</code>, <code>--live</code>) are for fills, strokes and icons. Text always uses the <code>-text</code> variants — they're WCAG-checked on every surface.</p>
+
+  <h2>Type <span class="mono">Bricolage Grotesque · Archivo · Fragment Mono</span></h2>
+  <div class="board" style="align-items:flex-start;flex-direction:column">
+    <div class="t-disp">Display — Bricolage 800, tight leading.</div>
+    <div class="t-body">Body — Archivo, 16–19px, relaxed 1.6 line-height. Calm and legible; the display face carries the personality so the body doesn't have to.</div>
+    <div class="t-mono">Meta / labels — Fragment Mono, uppercase, tracked out</div>
+  </div>
+
+  <h2>Buttons &amp; badges <span class="mono">funnel index.html · .btn .pill</span></h2>
+  <div class="board">
+    <a class="btn" href="#">Get the Starter Box — $29 →</a>
+    <a class="btn ghost" href="#">See how it works</a>
+    <span class="pill"><i class="beat"></i> Your agent could be alive tonight</span>
+  </div>
+
+  <h2>Icon set <span class="mono">SVG symbols · stroke currentColor</span></h2>
+  <div class="board"><div class="iconrow">
+    <div><svg><use href="#i-term"/></svg><b>i-term</b></div>
+    <div><svg><use href="#i-box"/></svg><b>i-box</b></div>
+    <div><svg><use href="#i-key"/></svg><b>i-key</b></div>
+    <div><svg><use href="#i-signal"/></svg><b>i-signal</b></div>
+    <div><svg><use href="#i-chat"/></svg><b>i-chat</b></div>
+    <div><svg><use href="#i-ring"/></svg><b>i-ring</b></div>
+    <div><svg><use href="#i-doc"/></svg><b>i-doc</b></div>
+    <div><svg><use href="#i-check"/></svg><b>i-check</b></div>
+    <div><svg><use href="#i-bolt"/></svg><b>i-bolt</b></div>
+    <div><svg><use href="#i-claw"/></svg><b>i-claw</b></div>
+    <div><svg><use href="#i-shield"/></svg><b>i-shield</b></div>
+  </div></div>
+  <p class="note" style="margin-top:12px">Emoji are personality accents in copy only — never UI iconography.</p>
+
+  <h2>Cards <span class="mono">.part · .ticket</span></h2>
+  <div class="board">
+    <div class="part"><span class="no">Part 05</span><svg><use href="#i-signal"/></svg><h3>Gateway checklists</h3><p>Telegram &amp; Slack step-by-step — every silent failure named.</p></div>
+    <div class="ticket"><div class="ticket-main"><span class="mono">Included free with launch-week orders</span><h3>Bonus prompt pack</h3><p>Perforated-ticket treatment for bonuses and coupons.</p></div><div class="ticket-stub"><span>Bonus</span></div></div>
+  </div>
+
+  <h2>Phone / chat mockup <span class="mono">.phone .screen .msg</span></h2>
+  <div class="board">
+    <div class="phone"><div class="screen">
+      <div class="msg out">you alive?</div>
+      <div class="msg in">Alive and listening. What are we building?</div>
+      <div class="msg out">plan my week 📎</div>
+      <div class="msg in">Done — 6 tasks extracted. Want them as a table?</div>
+    </div></div>
+    <p class="note" style="flex:1;min-width:240px">Shows the product outcome — an agent answering in chat. Animate with <code>motion/gsap-recipes.js → chatPlay()</code>. Static (all bubbles visible) without JS.</p>
+  </div>
+
+  <h2>Where each piece lives</h2>
+  <div class="board" style="padding:10px 0">
+    <table>
+      <tr><th>Piece</th><th>Source</th><th>Notes</th></tr>
+      <tr><td>Tokens + bundle themes</td><td><code>tokens/</code></td><td>Accent layer only per bundle; Lobby = OpenClaw only</td></tr>
+      <tr><td>Full funnel (all components in context)</td><td><code>funnels/ai-agent-starter-box/index.html</code></td><td>v1 field-manual and v2/v3 iterations kept alongside</td></tr>
+      <tr><td>Mascot</td><td><code>mascots/lobby-lobster.svg</code></td><td>Animation class hooks documented in-file</td></tr>
+      <tr><td>Motion recipes</td><td><code>motion/gsap-recipes.js</code></td><td>Only inside <code>gsap.matchMedia</code>; CSS owns ambient loops</td></tr>
+      <tr><td>In-bundle documents</td><td><code>product-artifacts/</code></td><td>prompt-card.html + guide-cover.html — print to PDF</td></tr>
+    </table>
+  </div>
+</div>
+</body>
+</html>

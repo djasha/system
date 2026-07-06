@@ -1,0 +1,28 @@
+---
+name: AutokitIconSet
+description: AutoKit Labs icon set — 11 hand-drawn-feel stroke icons as inline SVG symbols (terminal, box, key, signal, chat, ring, doc, check, bolt, claw, shield).
+category: display
+tags: [autokit, icons, svg]
+tokens_used: [color.autokit-accent-text]
+related: [autokit-part-card]
+status: stable
+source_path: src/autokit/icons.astro
+a11y_notes: The symbol block is aria-hidden and zero-sized; icons are decorative by default. When an icon carries meaning on its own, the consuming markup must add role="img" and an aria-label. Strokes use text-safe accent colors, keeping ~4.5:1 against surfaces.
+created: 2026-07-04
+---
+
+## Prompt
+
+Create a set of 11 outline icons as SVG symbols in one hidden defs block (width/height 0, aria-hidden). 24×24 viewBox, 1.9px stroke, round caps and joins, fill none — colors come from CSS (stroke: currentColor or a text-safe accent variable). Icons: terminal window, package box, key, wifi signal, chat bubble with dots, radar ring, document, check circle, lightning bolt, lobster claw, shield check. Consumers inline the block once per page and reference icons with svg > use href="#i-name".
+
+## Usage
+
+- This set is the only UI iconography in AutoKit surfaces — emoji are allowed in copy as personality accents, never as interface icons.
+- Size via CSS on the consuming svg (23–26px in cards and rows).
+- Color with `stroke: var(--accent-text)` (or currentColor) so bundle themes recolor icons automatically.
+
+## Do / Don't
+
+- **Do** keep new icons on the same grid: 24 viewBox, 1.9 stroke, rounded caps.
+- **Don't** mix in icons from other sets — the uniform stroke weight is the look.
+- **Don't** use bright `--accent` for strokes on text-adjacent icons; use the `-text` variants.

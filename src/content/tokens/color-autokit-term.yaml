@@ -1,0 +1,5 @@
+name: autokit-term
+category: color
+value: '#1B1712'
+css_var: '--term'
+description: AutoKit Labs terminal surface — near-black panel for command/terminal mockups, with --term-ink (#F2EAD8) as its text color. Stays dark in both themes.

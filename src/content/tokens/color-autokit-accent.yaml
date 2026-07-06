@@ -1,0 +1,5 @@
+name: autokit-accent
+category: color
+value: '#F43F1E'
+css_var: '--accent'
+description: AutoKit Labs accent — lobster red, the OpenClaw default. Fills, strokes, and icons ONLY; text must use autokit-accent-text. Bundle themes (src/autokit/themes/) override this whole accent layer.

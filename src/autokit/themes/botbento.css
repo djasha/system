@@ -1,0 +1,18 @@
+/* Bundle theme: BotBento — bento teal. Mark: open bento box with cards (no lobster).
+   In use by funnels/botbento-agent-box (draft — confirm accent at launch).
+   Apply with <body class="bundle-botbento">. */
+.bundle-botbento{
+  --accent:#0FA5A0;
+  --accent-text:#0A6E64;
+  --accent-deep:#0C8B80;
+  --accent-soft:#D9F2EE;
+  --btn-bg:#0C7F76;
+  --btn-edge:#085E57;
+}
+[data-theme="dark"] .bundle-botbento{
+  --accent:#2BD1C4;
+  --accent-text:#3BD9CD;
+  --accent-soft:#10312D;
+  --btn-bg:#0C8B80;
+}
+.bundle-botbento .mascot-lobby{display:none}

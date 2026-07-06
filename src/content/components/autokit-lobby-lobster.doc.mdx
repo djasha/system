@@ -1,0 +1,28 @@
+---
+name: AutokitLobbyMascot
+description: Lobby the lobster — AutoKit Labs' OpenClaw bundle mascot as a single SVG with animation class hooks for antennae, claws, eyes, and pupils.
+category: display
+tags: [autokit, mascot, svg]
+tokens_used: [color.autokit-accent]
+related: [autokit-bundle-themes, autokit-motion-recipes]
+status: stable
+source_path: src/autokit/LobbyLobster.astro
+a11y_notes: Ships with role="img" and aria-label ("Lobby, the OpenClaw lobster mascot"). When used purely decoratively, switch to aria-hidden="true". Animations target class hooks and run only under the reduced-motion-gated recipes; the static SVG is the default state.
+created: 2026-07-04
+---
+
+## Prompt
+
+Draw a friendly cartoon lobster mascot as a flat SVG (200×150 viewBox): oval red body with darker segment lines, two big claws, thin antennae ending in dots, white eyes with dark pupils, and a small smile. Give every animatable part a class hook — .antL/.antR for antenna sway, .clawL/.clawR for snapping, .eyes for blinking, .pupil for cursor-follow — so GSAP recipes can target them without touching the artwork. Two reds only (bright + deep), matching the OpenClaw accent layer.
+
+## Usage
+
+- **Lobby appears ONLY on OpenClaw bundle surfaces.** The bundle theme enforces this: `.mascot-lobby` is display-none outside `.bundle-openclaw`.
+- Ambient idle motion (bob, claw snap) is CSS; one-shot moments (entrance bounce, wave) use `lobWave()`/`heroEntrance()` from AutokitMotionRecipes.
+- Keep Lobby near moments of success or greeting — he's a reward, not a watermark.
+
+## Do / Don't
+
+- **Do** wrap page placements in the `.mascot-lobby` class so theming can gate him.
+- **Don't** put the lobster on Hermes or any non-OpenClaw product — that rule survives every redesign.
+- **Don't** recolor Lobby per theme; if the bundle isn't lobster-red, it doesn't get the lobster.

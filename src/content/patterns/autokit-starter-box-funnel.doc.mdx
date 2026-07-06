@@ -1,0 +1,31 @@
+---
+name: AutokitStarterBoxFunnel
+description: Complete AutoKit Labs funnel page — the AI Agent Starter Box sales page composing every AutoKit component into one self-contained, no-build HTML file.
+category: layout
+tags: [autokit, funnel, landing]
+tokens_used: [color.autokit-bg, color.autokit-accent, color.autokit-amber, color.autokit-live, type.autokit-display, type.autokit-body, type.autokit-mono]
+related: [autokit-bundle-themes]
+status: beta
+source_path: src/autokit/StarterBoxFunnel.astro
+a11y_notes: Works fully without JavaScript (.js class gate on hidden states); reduced motion respected at CSS, gsap.matchMedia, and static-fallback layers. Theme set before first paint to avoid flash. Semantic sections with real headings; buyer-facing text uses WCAG-checked -text token variants throughout.
+created: 2026-07-04
+components_used: [autokit-button, autokit-pill, autokit-part-card, autokit-ticket, autokit-phone-chat, autokit-icons, autokit-lobby-lobster, autokit-motion-recipes]
+---
+
+## Prompt
+
+Build a single-file product funnel page for a boxed digital kit: sticky header with gradient keyline, hero with live-status pill + display headline + terminal mockup + mascot entrance, "what's inside" grid of numbered part cards, phone-chat outcome vignette, bonus ticket, three-tier pricing (two digital tiers + a done-with-you service tier), FAQ, and honest-copy footer. Self-contained HTML — inline CSS reading the AutoKit token layer, GSAP recipes as progressive enhancement behind a .js gate, JSON-LD Product/Organization/FAQ schema, and full OG/Twitter meta. Buyer-facing copy rules apply — no income guarantees, no fake urgency, real constraints stated plainly.
+
+## Usage
+
+- Live example published at `/autokit/funnels/ai-agent-starter-box/` (marked noindex — the production funnel ships from botbento.com).
+- **Checkout hrefs in the two digital tiers are intentionally unwired placeholders** (marked in-source with PLACEHOLDER comments and `aria-disabled` on the CTAs) — real hosted-checkout URLs land at launch.
+- Earlier design iterations (v1 field-manual, v2 playful, v3 reviewed) stay in the AutoKit working folder; this is the current one.
+- Theme it per bundle by adding `bundle-openclaw`/`bundle-hermes` to body — components recolor via the accent layer.
+
+## Do / Don't
+
+- **Do** keep the page working with JavaScript disabled — every reveal has a visible fallback.
+- **Do** keep pricing copy honest: founding prices, real slot limits, plain refund terms.
+- **Don't** wire analytics or checkout scripts into the design-system copy of the page.
+- **Don't** reuse the lobster hero on non-OpenClaw funnels; swap the bundle class and mascot instead.

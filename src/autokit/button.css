@@ -1,0 +1,11 @@
+/* AutoKit Labs — button (.btn / .btn.ghost)
+   Requires the custom properties from src/autokit/tokens.css (or a bundle
+   theme from src/autokit/themes/ layered on top).
+
+   Usage:
+     <a class="btn" href="…">Get the Starter Box — $29 →</a>
+     <a class="btn ghost" href="…">See how it works</a>
+*/
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--disp);font-weight:700;font-size:16px;white-space:nowrap;background:var(--btn-bg);color:#fff;text-decoration:none;padding:14px 24px;border-radius:14px;border:2px solid var(--btn-edge);box-shadow:0 4px 0 var(--btn-edge);transition:transform .14s,box-shadow .14s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 6px 0 var(--btn-edge)}
+.btn.ghost{background:var(--card);color:var(--ink);border-color:var(--line-2);box-shadow:0 4px 0 var(--line-2)}

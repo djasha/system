@@ -5,7 +5,8 @@
     "**/*"
   ],
   "exclude": [
-    "dist"
+    "dist",
+    "src/autokit"
   ],
   "compilerOptions": {
     "jsx": "react-jsx",

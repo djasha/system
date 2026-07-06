@@ -1,0 +1,5 @@
+name: autokit-body
+category: type
+value: Archivo 400-700
+css_var: '--sans'
+description: AutoKit Labs body face — 16-19px at 1.6 line-height. Deliberately quiet and legible; personality lives in the display face and copy, not the body type.

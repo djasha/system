@@ -1,0 +1,12 @@
+/* AutoKit Labs — live status pill (.pill)
+   Requires the custom properties from src/autokit/tokens.css.
+   The pulsing dot is a CSS ambient loop (GSAP never owns loops — see
+   src/autokit/gsap-recipes.js header rules).
+
+   Usage:
+     <span class="pill"><i class="beat"></i> Your agent could be alive tonight</span>
+*/
+.pill{display:inline-flex;align-items:center;gap:9px;background:var(--live-soft);color:var(--live-text);border:1px solid color-mix(in srgb,var(--live) 40%,transparent);border-radius:999px;padding:8px 16px;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase}
+.pill .beat{width:8px;height:8px;border-radius:50%;background:var(--live);animation:beat 1.6s ease infinite}
+@keyframes beat{50%{transform:scale(1.7);opacity:.5}}
+@media (prefers-reduced-motion: reduce){.pill .beat{animation:none}}
