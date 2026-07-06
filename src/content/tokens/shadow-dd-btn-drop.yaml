@@ -1,0 +1,5 @@
+name: dd-btn-drop
+category: shadow
+value: '0 1px 2px 0 #0a140f40'
+css_var: '--shadow-btn-drop'
+description: DealDash Emerald — drop shadow for filled buttons (default/destructive). Dark mode `0 1px 2px 0 #00000066`.

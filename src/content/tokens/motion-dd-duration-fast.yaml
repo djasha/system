@@ -1,0 +1,5 @@
+name: dd-duration-fast
+category: motion
+value: '120ms'
+css_var: '--duration-fast'
+description: DealDash Emerald — press and color feedback. Pair with motion.dd-ease-standard.

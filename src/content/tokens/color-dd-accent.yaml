@@ -1,0 +1,6 @@
+name: dd-accent
+category: color
+value: '#e7f6ef'
+tailwind_class: bg-accent
+css_var: '--accent'
+description: DealDash Emerald — soft green tint for hover surfaces (ghost/outline hover, menu item hover). Dark mode `#15241e`.

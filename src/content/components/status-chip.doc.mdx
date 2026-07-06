@@ -1,0 +1,29 @@
+---
+name: StatusChip
+description: DealDash's sanctioned soft status chip — 10% tint fill, full-strength text, 20% border, mapped to exactly four semantic tokens.
+category: feedback
+tags: [chip, badge, status, dealdash, emerald]
+tokens_used: [color.dd-primary, color.dd-warning, color.dd-info, color.dd-destructive, radius.dd-base]
+related: [emerald-button]
+status: stable
+source_path: src/components/StatusChip.tsx
+a11y_notes: Chip text is the full-strength status color on a 10–15% tint — AA at 12px/500 in both modes (dark mode swaps to lighter hues #fbbf24/#60a5fa/#f87171 to hold contrast on near-black). Chips are informational spans, not interactive; if a chip triggers filtering, wrap it in a real button. Color is never the only signal — the label text carries the status.
+created: 2026-07-05
+---
+
+## Prompt
+
+Build a soft status chip in the DealDash Emerald style. Recipe: background = status color at 10% (color-mix in oklab with transparent; 15% for warning), text = status color at full strength, border = 1px solid status color at 20%. Shape: inline-flex, height 22px, padding 0 8px, border-radius 4px (or 9999px for pills), font 500 12px/1 Inter. The four statuses map to semantic tokens — success/positive: #1a7a5e (--primary, same in dark), warning: #b45309 (dark #fbbf24), info: #1d4ed8 (dark #60a5fa), danger: #dc2626 (dark #f87171). No other palette is allowed: no emerald/amber/blue/zinc Tailwind classes, no raw hex in pages. In Tailwind terms the recipe is `bg-{status}/10 text-{status} border-{status}/20` (bg-warning/15 for warning). Keep the page's status→chip mapping in one const, typed against the status union.
+
+## Usage
+
+- Deal stages, payment states, sync states — anywhere a row needs a scannable status.
+- One status map const per page, typed against the domain's status union — not inline conditionals.
+- Errors are never rendered as empty states: a failed fetch shows a danger treatment with Retry, not "No items yet".
+
+## Do / Don't
+
+- **Do** use success=primary — the brand green doubles as the positive signal.
+- **Do** keep chips at rounded-sm (4px) or full pill — nothing in between.
+- **Don't** invent a fifth status color; extend the semantic tokens first if the domain truly needs it.
+- **Don't** fill chips with solid status color — solid fills are for buttons, soft tints are for states.

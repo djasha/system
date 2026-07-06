@@ -1,0 +1,6 @@
+name: dd-border
+category: color
+value: '#e6e9e7'
+tailwind_class: border-border
+css_var: '--border'
+description: DealDash Emerald — the hairline. Borders carry ALL structure (no gray slabs, no heavy shadows). Dark mode `#212824`.

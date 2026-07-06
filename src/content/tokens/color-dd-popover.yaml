@@ -1,0 +1,6 @@
+name: dd-popover
+category: color
+value: '#ffffff'
+tailwind_class: bg-popover
+css_var: '--popover'
+description: DealDash Emerald — floating surfaces (dialogs, dropdowns, popovers), top of the elevation ramp. Dark mode `#151a18`. Pair with shadow.dd-overlay.

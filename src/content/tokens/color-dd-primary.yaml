@@ -1,0 +1,6 @@
+name: dd-primary
+category: color
+value: '#1a7a5e'
+tailwind_class: bg-primary / text-primary
+css_var: '--primary'
+description: DealDash Emerald — THE brand accent. Buttons, active states, brand moments, focus ring (--ring shares this value). Same in light and dark. Use sparingly; color is a signal, not decoration.

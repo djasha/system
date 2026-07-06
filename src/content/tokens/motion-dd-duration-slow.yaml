@@ -1,0 +1,5 @@
+name: dd-duration-slow
+category: motion
+value: '260ms'
+css_var: '--duration-slow'
+description: 'DealDash Emerald — enter and overlay transitions. The ceiling: anything longer is a hero-only, deliberate moment.'

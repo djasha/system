@@ -1,0 +1,6 @@
+name: dd-sidebar
+category: color
+value: '#fafbfa'
+tailwind_class: bg-sidebar
+css_var: '--sidebar'
+description: DealDash Emerald — sidebar surface. Dark mode `#0c0f0e` — one step BELOW the background, separated by a hairline divider.

@@ -1,0 +1,6 @@
+name: dd-background
+category: color
+value: '#ffffff'
+tailwind_class: bg-background
+css_var: '--background'
+description: DealDash Emerald — page background, bottom of the elevation ramp. Dark mode `#0a0d0c` (near-black with a whisper of green).

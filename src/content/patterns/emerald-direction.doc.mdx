@@ -1,0 +1,30 @@
+---
+name: EmeraldDirection
+description: The DealDash Emerald design direction — Linear-grade calm with an emerald signature. Elevation as a surface ramp, hairline borders, one green, choreographed motion, and error≠empty≠loading as law.
+category: layout
+tags: [direction, dealdash, emerald, foundation, theme, motion]
+tokens_used: [color.dd-primary, color.dd-spark, color.dd-background, color.dd-foreground, color.dd-card, color.dd-popover, color.dd-sidebar, color.dd-secondary, color.dd-muted-foreground, color.dd-accent, color.dd-accent-foreground, color.dd-border, color.dd-input, color.dd-destructive, color.dd-warning, color.dd-info, shadow.dd-overlay, shadow.dd-btn-highlight, shadow.dd-btn-drop, shadow.dd-btn-drop-subtle, motion.dd-duration-fast, motion.dd-duration-base, motion.dd-duration-slow, motion.dd-ease-standard, radius.dd-base]
+related: []
+status: stable
+source_path: src/styles/dealdash-emerald.css
+a11y_notes: The direction ships an accessibility floor, not a target — AA contrast on all text including muted-on-card in both modes; focus visible everywhere (2px outline on --ring #1a7a5e); every animation has a prefers-reduced-motion fallback baked into the same stylesheet; loaders are role="status", errors role="alert"; nothing interactive below 24px; icon-only controls always carry aria-label.
+created: 2026-07-05
+components_used: [emerald-button, spark-cta, status-chip, type-roles]
+---
+
+## Prompt
+
+Theme an app as "Linear-grade calm with an emerald signature". Drop in the source stylesheet below, then hold four laws. (1) Elevation is a RAMP, not a shadow: dark mode climbs #0a0d0c background → #121615 card → #151a18 popover (sidebar sits one step BELOW at #0c0f0e); light mode #ffffff → #fafbfa → #ffffff. Structure comes from hairline borders — #212824 dark, #e6e9e7 light — never gray slabs or heavy shadows; the ONLY big shadow is --shadow-overlay ("0 12px 50px -12px #0a140f38, 0 2px 8px -2px #0a140f1f" light; "0 16px 70px -12px #000000a6, 0 2px 10px -2px #00000066" dark), shared by every floating surface. (2) One green: #1a7a5e is THE accent (buttons, active states, focus ring), #34d399 is its bright voice on dark surfaces (charts, glows, the spark comet). Everything else is neutral. Color is a signal, not decoration. (3) Motion is choreographed: three durations — 120ms press/color, 180ms hover/transform, 260ms enter/overlay — all on cubic-bezier(0.22, 1, 0.36, 1). Hover brightens or tints, never scales; press sinks 1px; nothing exceeds 260ms outside deliberate hero moments; at most one ambient animation per view and every animation ships a reduced-motion fallback. (4) Error, empty, and loading are THREE different states: loading = skeleton or a role="status" spinner (no layout jump); empty = honest, filter-aware copy with a CTA; error = destructive treatment with a Retry wired to the failed fetch. A failed fetch must never render "No items yet". Layout rhythm: 4px grid, 36px control row (32 sm / 40 lg), radius 8px cards / 6px controls / 4px-or-full chips, max-width 1280px gutters.
+
+## Usage
+
+- This is the contract for every DealDash surface — pages, extensions, marketing; deviations are bugs unless recorded in the standard.
+- Re-theme by swapping token values only (the --shadow-btn-* trio restyles every button at once); components never hardcode a hex, a duration, or a bezier.
+- The stylesheet is framework-agnostic: tokens on :root/.dark, roles and recipes as plain classes; Tailwind apps map utilities onto the same variables.
+
+## Do / Don't
+
+- **Do** express hierarchy with the surface ramp + hairlines; reach for --shadow-overlay only when something truly floats.
+- **Do** keep density Linear-compact: when in doubt, remove a wrapper, not padding.
+- **Don't** introduce a second green, a data-theme variant, or per-page palettes — one theme, light and dark.
+- **Don't** let any animation ship without its prefers-reduced-motion fallback — the two are one deliverable.

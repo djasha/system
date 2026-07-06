@@ -1,0 +1,29 @@
+---
+name: SparkCta
+description: DealDash's signature CTA effect — a comet of light orbiting the button edge. Pure CSS, GPU-cheap, one per view, reduced-motion safe.
+category: motion
+tags: [cta, spark, dealdash, emerald, ambient, hero]
+tokens_used: [color.dd-primary, color.dd-primary-foreground, color.dd-spark, shadow.dd-btn-highlight, shadow.dd-btn-drop, motion.dd-duration-fast, motion.dd-ease-standard, radius.dd-base]
+related: [emerald-button]
+status: stable
+source_path: src/components/SparkCta.tsx
+a11y_notes: Prefers-reduced-motion renders a static soft ring (28% mint) and removes the bloom layer entirely — nothing still moves. The effect is decorative overlay only (pointer-events none, no content) so screen readers see a plain button. Underlying button keeps the standard 3px focus-visible ring. Ambient animation limited to ONE instance per view by rule.
+created: 2026-07-05
+---
+
+## Prompt
+
+Add DealDash's "spark" effect to one primary CTA button. Register a custom property first — `@property --spark-angle { syntax: "<angle>"; inherits: false; initial-value: 0deg; }` — and animate ONLY it: `@keyframes spark-orbit { to { --spark-angle: 360deg; } }` (GPU-cheap, no layout). Give the button `position: relative; isolation: isolate` and two pseudo-element layers with `border-radius: inherit; pointer-events: none`. Both layers paint the same double background: (1) a comet — `conic-gradient(from var(--spark-angle), transparent 0deg, transparent 240deg, color-mix(in oklab, #1a7a5e 30%, transparent) 290deg, color-mix(in oklab, #34d399 80%, transparent) 328deg, color-mix(in oklab, #eafff5 92%, #34d399) 340deg, color-mix(in oklab, #34d399 60%, transparent) 347deg, transparent 353deg) border-box` — over (2) a faint always-on track, `conic-gradient(color-mix(in oklab, #34d399 12%, transparent) 0deg 360deg) border-box`. Ring-mask both layers with `mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); mask-composite: exclude` (plus -webkit-mask-composite: xor). ::before = crisp ring: inset -1px, padding 1px, z-index -1. ::after = bloom: inset -2px, padding 2px, z-index -2, blur(6px), opacity 0.6 (0.85 on hover). Animation: `spark-orbit 4.5s linear infinite`, quickening to 2.2s on hover. Under prefers-reduced-motion: animation none, background becomes a static `color-mix(in oklab, #34d399 28%, transparent)` ring, and ::after is display:none. In a tokenized app use var(--primary) for #1a7a5e and var(--chart-1) for #34d399. Use on AT MOST ONE CTA per view.
+
+## Usage
+
+- Reserved for the single most important CTA: hero "Start Free", the featured pricing plan, the final CTA section.
+- Works on any element with a border-radius — Button, asChild anchors — just add the `btn-spark` class when the CSS is global.
+- The spark is brand garnish, not a component default: if two things spark, nothing is special.
+
+## Do / Don't
+
+- **Do** keep the one-per-view rule absolute — audit the whole route, including modals.
+- **Do** ship the reduced-motion fallback with the effect — they are one unit, never separate.
+- **Don't** animate anything except the registered --spark-angle; no rotate/transform variants.
+- **Don't** put the spark on secondary, outline, ghost, or destructive buttons — primary fill only.

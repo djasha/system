@@ -1,0 +1,30 @@
+---
+name: EmeraldButton
+description: DealDash's flagship button — Linear-style 36px control, tokenized elevation, brand glow on hover, 1px press sink. Six variants, six sizes.
+category: input
+tags: [button, dealdash, emerald, cta, tokens]
+tokens_used: [color.dd-primary, color.dd-primary-foreground, color.dd-card, color.dd-accent, color.dd-accent-foreground, color.dd-border, color.dd-secondary, color.dd-destructive, color.dd-foreground, shadow.dd-btn-highlight, shadow.dd-btn-drop, shadow.dd-btn-drop-subtle, motion.dd-duration-fast, motion.dd-ease-standard, radius.dd-base]
+related: [spark-cta, status-chip]
+status: stable
+source_path: src/components/EmeraldButton.tsx
+a11y_notes: Real button/anchor elements, never divs. Focus-visible ring — 3px at 50% of --ring #1a7a5e — on every variant. Disabled uses the disabled attribute (pointer-events none, 50% opacity, shadow removed). Icon-only sizes require aria-label. Press feedback is transform+filter only; transitions collapse under prefers-reduced-motion. Text on primary #1a7a5e is white — AA at 14px/500.
+created: 2026-07-05
+---
+
+## Prompt
+
+Build a button component in the DealDash Emerald style. Base: inline-flex, gap 8px, border-radius 6px, font 500 14px Inter, transition all 120ms cubic-bezier(0.22, 1, 0.36, 1). Heights: default 36px (padding 0 16px), sm 32px, lg 40px, plus square icon sizes 36/32/40 (icon-only requires aria-label). Hover BRIGHTENS or tints — never scales; press sinks 1px (translateY) and darkens (brightness 0.95). Variants — default: bg #1a7a5e, white text, shadow "inset 0 1px 0 0 #ffffff2e, 0 1px 2px 0 #0a140f40" (dark mode: #ffffff1f / #00000066), hover adds brightness(1.08) plus a soft glow "0 0 20px -6px #1a7a5e". outline: 1px border #e6e9e7 (dark #212824), bg card #fafbfa (dark #121615), subtle drop "0 1px 2px 0 #0a140f0d" (dark #00000040); hover tints bg to accent #e7f6ef (dark #15241e), text #0f6a4f (dark #34d399), border to 25% primary. secondary: bg #f1f3f2 (dark #1a201d), highlight+subtle-drop shadows, hover 80% opacity fill. ghost: transparent, hover accent tint. destructive: bg #dc2626 (dark: #f87171 at 70% via color-mix), white text, filled shadows. link: text #1a7a5e, underline on hover, no press sink. Focus-visible: 3px ring at 50% of #1a7a5e. Disabled: opacity 0.5, no shadow, no pointer events. All values come from tokens (--primary, --border, --shadow-btn-*, --duration-fast, --ease-standard) — never hardcode them in call sites.
+
+## Usage
+
+- The only way to build buttons in an Emerald app — pages never compose raw button styles.
+- Keep one control-row height per row: default(36) with default inputs, never mixed.
+- Links that look like buttons render an anchor with the same classes (asChild pattern) — never nest a button inside an anchor.
+- The trio of --shadow-btn-* tokens re-themes every button at once; restyle there, not per-button.
+
+## Do / Don't
+
+- **Do** use `default` for the single primary action per view; everything else steps down (outline/ghost).
+- **Do** pair destructive actions with a confirm dialog — the red variant is not the confirmation.
+- **Don't** scale on hover — brightness and tint only; motion never exceeds 120ms here.
+- **Don't** hardcode #1a7a5e or a bezier in a page; if a value isn't a token, add the token first.

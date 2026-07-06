@@ -1,0 +1,6 @@
+name: dd-muted-foreground
+category: color
+value: '#66716c'
+tailwind_class: text-muted-foreground
+css_var: '--muted-foreground'
+description: DealDash Emerald — secondary text; must stay AA on card surfaces in both modes. Dark mode `#8f9a94`.
