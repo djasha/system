@@ -8,6 +8,9 @@ export default defineConfig({
   site: 'https://system.djasha.me',
   output: 'static',
   adapter: vercel(),
+  redirects: {
+    '/sitemap.xml': '/sitemap-index.xml',
+  },
   integrations: [react(), mdx(), sitemap()],
   markdown: {
     shikiConfig: { theme: 'github-dark-dimmed' },
